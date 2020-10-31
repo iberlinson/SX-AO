@@ -1,0 +1,131 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01JOD8L55C2MI5peRKPc6RDjNEqgI5UR7IR",
+    "name": "Workflow - Sub - JSONtoXSL Extended",
+    "title": "Workflow - Sub - JSONtoXSL Extended",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "xsl",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01JOD8L4V98MS4MoUyTVcki6NkXuFRGLwF8",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "report_id",
+          "type": "datatype.string",
+          "is_required": true
+        },
+        "unique_name": "variable_workflow_01JOD8L4V99VD34eKiPD0wIfJ8nyWE25tsw",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "json",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01JOD8L4V947E2Hv173JZqHl3ebC1OL7duF",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Workflow - Sub - JSONtoXSL Extended",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01JOD8LN6O1RJ1PWbsAcnnkRBt7WnxwYKYb",
+        "name": "Convert Json to Xml",
+        "title": "Convert Json to Xml",
+        "type": "core.json2xml",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Convert Json to Xml",
+          "input_json": "$workflow.definition_workflow_01JOD8L55C2MI5peRKPc6RDjNEqgI5UR7IR.input.variable_workflow_01JOD8L4V947E2Hv173JZqHl3ebC1OL7duF$",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01JOD8LSU13883mFHRiiWhp5CIih6fmQiHR",
+        "name": "XSL Transform",
+        "title": "XSL Transform",
+        "type": "core.xsl_transform",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "XSL Transform",
+          "document": "$activity.definition_activity_01JOD8LN6O1RJ1PWbsAcnnkRBt7WnxwYKYb.output.output_xml$",
+          "skip_execution": false,
+          "stylesheet": "\u003c?xml version=\"1.0\"?\u003e\n\u003cxsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"\u003e\n \u003cxsl:template match=\"/\"\u003e\n  \u003chtml\u003e \n   \u003cbody\u003e\n    \u003ctable border=\"1\" cellspacing=\"0\" cellpadding=\"3\"\u003e\n      \u003ctr bgcolor=\"#FFFFFF\"\u003e\n       \u003ctd\u003eObservable\u003c/td\u003e\n       \u003ctd\u003eType\u003c/td\u003e\n       \u003ctd\u003eProducer\u003c/td\u003e\n       \u003ctd\u003eValue\u003c/td\u003e\n       \u003ctd\u003eDetails\u003c/td\u003e\n       \u003ctd\u003eTarget\u003c/td\u003e\n       \u003ctd\u003eActions\u003c/td\u003e\n      \u003c/tr\u003e     \n     \u003cxsl:for-each select=\"root/object\"\u003e\n      \u003ctr\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Observable\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Information_Type\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Producer\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Value\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Details\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Target\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Actioin\"/\u003e\u003c/td\u003e\n      \u003c/tr\u003e\n     \u003c/xsl:for-each\u003e\n    \u003c/table\u003e \n   \u003c/body\u003e\n  \u003c/html\u003e\n \u003c/xsl:template\u003e\n\u003c/xsl:stylesheet\u003e"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01JOD8LZI7A7Q0swTm6lvOn7SSHIOAqDXjC",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01JOD8L55C2MI5peRKPc6RDjNEqgI5UR7IR.output.variable_workflow_01JOD8L4V98MS4MoUyTVcki6NkXuFRGLwF8$",
+              "variable_value_new": "$activity.definition_activity_01JOD8LSU13883mFHRiiWhp5CIih6fmQiHR.output.output_document$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a"
+    ]
+  },
+  "categories": {
+    "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a": {
+      "unique_name": "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a",
+      "name": "Ivan",
+      "title": "Ivan",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "Ivan Atomic Actions",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  }
+}
