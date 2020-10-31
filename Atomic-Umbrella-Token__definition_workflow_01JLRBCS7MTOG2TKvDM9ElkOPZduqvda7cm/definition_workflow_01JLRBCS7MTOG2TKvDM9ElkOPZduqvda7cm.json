@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_01JLRBCS7MTOG2TKvDM9ElkOPZduqvda7cm",
-    "name": "Ivan - Umbrella_Generate Access Token",
-    "title": "Ivan - Umbrella_Generate Access Token",
+    "name": "Atomic - Umbrella_Generate Access Token",
+    "title": "Atomic - Umbrella_Generate Access Token",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": [
@@ -25,7 +25,7 @@
         "is_atomic": true
       },
       "delete_workflow_instance": true,
-      "display_name": "Ivan - Umbrella_Generate Access Token",
+      "display_name": "Atomic - Umbrella_Generate Access Token",
       "runtime_user": {
         "override_target_runtime_user": false,
         "specify_on_workflow_start": false,
