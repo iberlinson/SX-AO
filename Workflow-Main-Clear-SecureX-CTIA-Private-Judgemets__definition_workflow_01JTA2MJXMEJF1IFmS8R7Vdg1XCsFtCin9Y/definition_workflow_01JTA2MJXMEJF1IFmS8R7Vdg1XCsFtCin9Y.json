@@ -1,23 +1,11 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_01JTA2MJXMEJF1IFmS8R7Vdg1XCsFtCin9Y",
-    "name": "Workflow - Main - Delete last CTIA Private Judgemets",
-    "title": "Workflow - Main - Delete last CTIA Private Judgemets",
+    "name": "Workflow - Main - Clear all Judgemets SX in CTIA Private ",
+    "title": "Workflow - Main - Clear all Judgemets SX in CTIA Private ",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": [
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "json",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01JTA2MJM34JX7enwpHKrEiZvXD8vvp89E6",
-        "object_type": "variable_workflow"
-      },
       {
         "schema_id": "datatype.string",
         "properties": {
@@ -29,6 +17,18 @@
         },
         "unique_name": "variable_workflow_01JTA2MJM33EF3q33n0GqQpF2IT5S3oWdyg",
         "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "json",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01JTA2MJM34JX7enwpHKrEiZvXD8vvp89E6",
+        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -37,7 +37,7 @@
       },
       "delete_workflow_instance": false,
       "description": "Delete All judgements created in CTIA Privte  with source SecureX MISP",
-      "display_name": "Workflow - Main - Delete last CTIA Private Judgemets",
+      "display_name": "Workflow - Main - Clear all Judgemets SX in CTIA Private ",
       "runtime_user": {
         "override_target_runtime_user": false,
         "specify_on_workflow_start": false,
