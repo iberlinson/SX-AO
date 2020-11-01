@@ -11,11 +11,35 @@
         "properties": {
           "value": "",
           "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": true
+        },
+        "unique_name": "variable_workflow_01JQVN9S6HHLW6G3qyhpDOUXOUZ7VOkHJyY",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
           "name": "CTR_enrich_json",
           "type": "datatype.string",
           "is_required": true
         },
         "unique_name": "variable_workflow_01JQVROPRFMMC2eDT0cGRe9A8HW03GZ1XZg",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Target_type",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01JVANS4R7BFJ1NHOCOrNqZOC6zNI606YCw",
         "object_type": "variable_workflow"
       },
       {
@@ -50,18 +74,6 @@
           "is_required": false
         },
         "unique_name": "variable_workflow_01JQVN9S6HOME07a9WEGbweBoz7lILpZqD7",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "observable_type",
-          "type": "datatype.string",
-          "is_required": true
-        },
-        "unique_name": "variable_workflow_01JQVN9S6HHLW6G3qyhpDOUXOUZ7VOkHJyY",
         "object_type": "variable_workflow"
       }
     ],
@@ -248,7 +260,31 @@
                   "action_timeout": 180,
                   "columns": [
                     {
+                      "column_name": "Observable",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "Information_Type",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "Producer",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "Value",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "Details",
+                      "column_type": "string"
+                    },
+                    {
                       "column_name": "Target",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "Actioin",
                       "column_type": "string"
                     }
                   ],
@@ -264,8 +300,7 @@
                   "sorting": {
                     "no_sort": true,
                     "sort_by": false
-                  },
-                  "where_clause": "Details == 'hostname' OR Details == 'email'"
+                  }
                 },
                 "object_type": "definition_activity"
               },
@@ -309,6 +344,37 @@
                 "object_type": "definition_activity",
                 "actions": [
                   {
+                    "unique_name": "definition_activity_01JVAO0316TIH0ni0943mXwGs2JriJqUsFJ",
+                    "name": "Select from Table",
+                    "title": "Select from Table",
+                    "type": "core.selectfromtable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "columns": [
+                        {
+                          "column_name": "Details",
+                          "column_type": "string"
+                        }
+                      ],
+                      "continue_on_failure": false,
+                      "display_name": "Select from Table",
+                      "input_table": "$workflow.definition_workflow_01JQVN9SHDS7U0aI6ARfYbDceWnEXWS9ExB.output.variable_workflow_01JQVN9S6HOME07a9WEGbweBoz7lILpZqD7$",
+                      "number_of_rows": {
+                        "at_most": true,
+                        "first_n_rows": 1
+                      },
+                      "persist_output": false,
+                      "skip_execution": false,
+                      "sorting": {
+                        "no_sort": true,
+                        "sort_by": false
+                      },
+                      "where_clause": "Target = '$activity.definition_activity_01JQVNVEG018F0WTHKP6VSAtgmLmke9XlgS.input.source_array[@].distinctvalue$'"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
                     "unique_name": "definition_activity_01JQVNVP3HBEL6JNPLI3LY9fiNLSJe6DLgW",
                     "name": "Add Row to Table",
                     "title": "Add Row to Table",
@@ -338,7 +404,7 @@
                         {
                           "key": "Value",
                           "type": "string",
-                          "value": "Target"
+                          "value": "$activity.definition_activity_01JVAO0316TIH0ni0943mXwGs2JriJqUsFJ.output.output_table[0].Details$"
                         },
                         {
                           "key": "Details",
@@ -403,6 +469,12 @@
       "columns": [
         {
           "is_required": true,
+          "name": "Observable",
+          "title": "Observable",
+          "type": "string"
+        },
+        {
+          "is_required": true,
           "name": "Producer",
           "title": "Producer",
           "type": "string"
@@ -433,12 +505,6 @@
           "name": "Information_Type",
           "title": "Module_Type",
           "type": "string"
-        },
-        {
-          "is_required": true,
-          "name": "Observable",
-          "title": "Observable",
-          "type": "string"
         }
       ],
       "base_type": "datatype",
@@ -454,6 +520,29 @@
         "type": "generic.workflow",
         "base_type": "workflow",
         "variables": [
+          {
+            "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
+            "properties": {
+              "scope": "output",
+              "name": "output_distinct_list",
+              "type": "datatype.table",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQV4DBHVHIX685M3pT0etFEJJ1YbyOX8E",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.boolean",
+            "properties": {
+              "value": false,
+              "scope": "input",
+              "name": "input_build_output_table",
+              "type": "datatype.boolean",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQV4DBHVK5X46k0aHTZH8fXtQhAanDmTl",
+            "object_type": "variable_workflow"
+          },
           {
             "schema_id": "datatype.string",
             "properties": {
@@ -488,29 +577,6 @@
               "is_required": true
             },
             "unique_name": "variable_workflow_01JQV4DBHVNS53rUEmsVYfguuLv92CHKcyo",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
-            "properties": {
-              "scope": "output",
-              "name": "output_distinct_list",
-              "type": "datatype.table",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQV4DBHVHIX685M3pT0etFEJJ1YbyOX8E",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.boolean",
-            "properties": {
-              "value": false,
-              "scope": "input",
-              "name": "input_build_output_table",
-              "type": "datatype.boolean",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQV4DBHVK5X46k0aHTZH8fXtQhAanDmTl",
             "object_type": "variable_workflow"
           }
         ],
