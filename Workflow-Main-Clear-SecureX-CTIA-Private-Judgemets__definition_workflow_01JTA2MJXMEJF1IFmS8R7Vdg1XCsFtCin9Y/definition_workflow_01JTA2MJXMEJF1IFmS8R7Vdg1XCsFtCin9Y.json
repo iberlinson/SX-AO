@@ -1,0 +1,372 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01JTA2MJXMEJF1IFmS8R7Vdg1XCsFtCin9Y",
+    "name": "Workflow - Main - Delete last CTIA Private Judgemets",
+    "title": "Workflow - Main - Delete last CTIA Private Judgemets",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "json",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01JTA2MJM34JX7enwpHKrEiZvXD8vvp89E6",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "*",
+          "scope": "local",
+          "name": "Threat",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01JTA2MJM33EF3q33n0GqQpF2IT5S3oWdyg",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "Delete All judgements created in CTIA Privte  with source SecureX MISP",
+      "display_name": "Workflow - Main - Delete last CTIA Private Judgemets",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01JTA2N7SVI4F5q7IviNOFIZ48C19gX88jF",
+        "name": "IVAN-CTR Generate Access Token",
+        "title": "IVAN-CTR Generate Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "IVAN-CTR Generate Access Token",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_01JRJK1COSB850Q9WVaBFqu6rG4bf7rYhni"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01JUZ4J7OI1KJ1SgVfiILgfSOVlx5zir6y1",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01JTA2MJXMEJF1IFmS8R7Vdg1XCsFtCin9Y.local.variable_workflow_01JTA2MJM34JX7enwpHKrEiZvXD8vvp89E6$",
+              "variable_value_new": "1"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01JUYG6L07XKI5LWNxhL02IDe1jIBUeIxQ1",
+        "name": "While Loop",
+        "title": "While Loop",
+        "type": "logic.while",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "While Loop",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01JUYG6RQHZQ10K3Nm8oD58UkP1NuvpBOMy",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01JTA2MJXMEJF1IFmS8R7Vdg1XCsFtCin9Y.local.variable_workflow_01JTA2MJM34JX7enwpHKrEiZvXD8vvp89E6$",
+                "operator": "ne",
+                "right_operand": "2"
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01JTA2NGWEPA26WVmSOvVyIeuYZo7pSBnfV",
+                "name": "HTTP Request",
+                "title": "HTTP Request",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "custom_headers": [
+                    {
+                      "name": "Authorization",
+                      "value": "Bearer $activity.definition_activity_01JTA2N7SVI4F5q7IviNOFIZ48C19gX88jF.output.variable_workflow_01JRJK1CEWBYY3hOpPjPBGBXoSBgtZFrPqt$"
+                    }
+                  ],
+                  "display_name": "HTTP Request",
+                  "method": "GET",
+                  "relative_url": "/ctia/judgement/search?fields=id\u0026source=SecureX%20MISP",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01JTA2NOLIG2P7LA7FRajQmP6ixZURH8yAF",
+                "name": "Read Table from JSON",
+                "title": "Read Table from JSON",
+                "type": "corejava.read_table_from_json",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Read Table from JSON",
+                  "input_json": "$activity.definition_activity_01JTA2NGWEPA26WVmSOvVyIeuYZo7pSBnfV.output.response_body$",
+                  "jsonpath_query": "$.[*]",
+                  "persist_output": false,
+                  "populate_columns": false,
+                  "skip_execution": false,
+                  "table_columns": [
+                    {
+                      "column_name": "id",
+                      "column_type": "string"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01JUZ6HU7YCJM2olyzYqNYmQNzYBduLfjS5",
+                "name": "Condition Block",
+                "title": "Condition Block",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Condition Block",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01JUZ6I14AC7Y79uAeOirR5RvLPrDckeWsx",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01JTA2NOLIG2P7LA7FRajQmP6ixZURH8yAF.output.succeeded$",
+                        "operator": "eq",
+                        "right_operand": true
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01JTA2NWI9WAU7GEPwaWH3L50rhKvOBEx7p",
+                        "name": "For Each",
+                        "title": "For Each",
+                        "type": "logic.for_each",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "For Each",
+                          "skip_execution": false,
+                          "source_array": "$activity.definition_activity_01JTA2NOLIG2P7LA7FRajQmP6ixZURH8yAF.output.read_table_from_json$"
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01JTA2O4UDN463yFYrE3rrNR9zE6XCU5kaL",
+                            "name": "Replace String",
+                            "title": "Replace String",
+                            "type": "core.replacestring",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Replace String",
+                              "input_string": "$activity.definition_activity_01JTA2NWI9WAU7GEPwaWH3L50rhKvOBEx7p.input.source_array[@].id$",
+                              "replace_list": [
+                                {
+                                  "replaced_string": "/",
+                                  "replacement_string": "%2F"
+                                },
+                                {
+                                  "replaced_string": ":",
+                                  "replacement_string": "%3A"
+                                }
+                              ],
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_01JTA6CAXDFK7658GNHgJWAueiL83kpKcAb",
+                            "name": "HTTP Request",
+                            "title": "HTTP Request",
+                            "type": "web-service.http_request",
+                            "base_type": "activity",
+                            "properties": {
+                              "action_timeout": 180,
+                              "allow_auto_redirect": true,
+                              "content_type": "application/json",
+                              "continue_on_error_status_code": false,
+                              "continue_on_failure": true,
+                              "custom_headers": [
+                                {
+                                  "name": "Authorization",
+                                  "value": "Bearer $activity.definition_activity_01JTA2N7SVI4F5q7IviNOFIZ48C19gX88jF.output.variable_workflow_01JRJK1CEWBYY3hOpPjPBGBXoSBgtZFrPqt$"
+                                }
+                              ],
+                              "display_name": "HTTP Request",
+                              "method": "DELETE",
+                              "relative_url": "/ctia/judgement/$activity.definition_activity_01JTA2O4UDN463yFYrE3rrNR9zE6XCU5kaL.output.result_string$",
+                              "runtime_user": {
+                                "override_target_runtime_user": false,
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "override_workflow_target": true,
+                                "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ"
+                              }
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01JUZ6I28G93G4y3Khf2UyGgjLV9YJUqJM8",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01JTA2NOLIG2P7LA7FRajQmP6ixZURH8yAF.output.succeeded$",
+                        "operator": "eq",
+                        "right_operand": false
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01JUZ6PO4QUGU72iaXDuTKyleHFSHZ0irfs",
+                        "name": "Set Variables",
+                        "title": "Set Variables",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set Variables",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_01JTA2MJXMEJF1IFmS8R7Vdg1XCsFtCin9Y.local.variable_workflow_01JTA2MJM34JX7enwpHKrEiZvXD8vvp89E6$",
+                              "variable_value_new": "2"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a"
+    ]
+  },
+  "categories": {
+    "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a": {
+      "unique_name": "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a",
+      "name": "Ivan",
+      "title": "Ivan",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "Ivan Atomic Actions",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ": {
+      "unique_name": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ",
+      "name": "CTR_IVAN_Private_Intel",
+      "title": "CTR_IVAN_Private_Intel",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "CTR_IVAN_Private_Intel",
+        "host": "private.intel.amp.cisco.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01JRJK1COSB850Q9WVaBFqu6rG4bf7rYhni"
+  ]
+}
