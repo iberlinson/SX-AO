@@ -287,6 +287,12 @@
       "columns": [
         {
           "is_required": true,
+          "name": "Observable",
+          "title": "Observable",
+          "type": "string"
+        },
+        {
+          "is_required": true,
           "name": "Producer",
           "title": "Producer",
           "type": "string"
@@ -317,12 +323,6 @@
           "name": "Information_Type",
           "title": "Module_Type",
           "type": "string"
-        },
-        {
-          "is_required": true,
-          "name": "Observable",
-          "title": "Observable",
-          "type": "string"
         }
       ],
       "base_type": "datatype",
@@ -338,30 +338,6 @@
         "type": "generic.workflow",
         "base_type": "workflow",
         "variables": [
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "0391d2a7c240cd3f6ae8",
-              "scope": "local",
-              "name": "A44user",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JSKP0VAW0620pnJCztlcUGqTDixCOTlMv",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "839e9a27-a8ff-4bb7-b06b-1488f384066d",
-              "scope": "local",
-              "name": "A4E-api",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JSKPTJT2XSF7NK38buZAasxAPqaQLlf33",
-            "object_type": "variable_workflow"
-          },
           {
             "schema_id": "datatype.string",
             "properties": {
@@ -395,6 +371,30 @@
               "is_required": false
             },
             "unique_name": "variable_workflow_01JSK99J1EGRV6tx7oi8FTmHn0zbEKL1VUi",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "0391d2a7c240cd3f6ae8",
+              "scope": "local",
+              "name": "A44user",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JSKP0VAW0620pnJCztlcUGqTDixCOTlMv",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "839e9a27-a8ff-4bb7-b06b-1488f384066d",
+              "scope": "local",
+              "name": "A4E-api",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JSKPTJT2XSF7NK38buZAasxAPqaQLlf33",
             "object_type": "variable_workflow"
           }
         ],
@@ -655,6 +655,29 @@
             "base_type": "workflow",
             "variables": [
               {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "CSOneStatus",
+                  "scope": "input",
+                  "name": "input_column_wanted",
+                  "type": "datatype.string",
+                  "is_required": true
+                },
+                "unique_name": "variable_workflow_01EGCM0P290DF3sZAcQ1sEOCTlFLTzHR2Em",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
+                "properties": {
+                  "scope": "output",
+                  "name": "output_distinct_list",
+                  "type": "datatype.table",
+                  "is_required": false
+                },
+                "unique_name": "variable_workflow_01EGEH0Z8POKO1JUFTZcymKpMLZobymVqvl",
+                "object_type": "variable_workflow"
+              },
+              {
                 "schema_id": "datatype.boolean",
                 "properties": {
                   "value": false,
@@ -688,29 +711,6 @@
                   "is_required": true
                 },
                 "unique_name": "variable_workflow_01EGCLLC8WDNT0YSczPXBGvmr5oioNaj9Xn",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "CSOneStatus",
-                  "scope": "input",
-                  "name": "input_column_wanted",
-                  "type": "datatype.string",
-                  "is_required": true
-                },
-                "unique_name": "variable_workflow_01EGCM0P290DF3sZAcQ1sEOCTlFLTzHR2Em",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
-                "properties": {
-                  "scope": "output",
-                  "name": "output_distinct_list",
-                  "type": "datatype.table",
-                  "is_required": false
-                },
-                "unique_name": "variable_workflow_01EGEH0Z8POKO1JUFTZcymKpMLZobymVqvl",
                 "object_type": "variable_workflow"
               }
             ],
@@ -937,18 +937,6 @@
         "base_type": "workflow",
         "variables": [
           {
-            "schema_id": "datatype.secure_string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "MISP_API",
-              "type": "datatype.secure_string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JRKNAKMKLPB42LcGxI9HXHD76tCbStsKH",
-            "object_type": "variable_workflow"
-          },
-          {
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
@@ -970,6 +958,30 @@
               "is_required": true
             },
             "unique_name": "variable_workflow_01JRKEISC4S064Ax1mOsEBc5R3Yp2WGzH5m",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "MISP_API",
+              "type": "datatype.secure_string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JRKNAKMKLPB42LcGxI9HXHD76tCbStsKH",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "local",
+              "name": "value_post",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JV0VZVT1XC03sxQKrENSXORFp8tV4Cmhv",
             "object_type": "variable_workflow"
           }
         ],
@@ -1019,18 +1031,67 @@
             "object_type": "definition_activity"
           },
           {
+            "unique_name": "definition_activity_01JUXBXL4QFUB0eGYM1eWWek544ydpdsW4X",
+            "name": "CTR Generate Access Token",
+            "title": "CTR Generate Access Token",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "CTR Generate Access Token",
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx",
+                "target_type": "web-service.endpoint"
+              },
+              "workflow_id": "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01JUXCEBE127S3paKAGzpw7tSbifHNYkQ2U",
+            "name": "CTR Enrich Observable",
+            "title": "CTR Enrich Observable",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "CTR Enrich Observable",
+              "input": {
+                "variable_workflow_01D6KGWYYEZ8D1PK5ezZXuXbBQ1ZKMSCKz9": "$workflow.definition_workflow_01JRKCZFTR3V57ICrEky4ZqnLqEJxlZbYzh.input.variable_workflow_01JRKEISC4S064Ax1mOsEBc5R3Yp2WGzH5m$",
+                "variable_workflow_01D6KGWYYF5AO1Vmr69KkbEUOLzHfGIsbPr": "$activity.definition_activity_01JUXBXL4QFUB0eGYM1eWWek544ydpdsW4X.output.variable_workflow_01BNOOXA3G6MV1PGAvsfZOKDdMYcE6XS726$",
+                "variable_workflow_01D6KGWYYFB8O1Ym8s5Snx7iN2aoTo23yYL": "$workflow.definition_workflow_01JRKCZFTR3V57ICrEky4ZqnLqEJxlZbYzh.input.variable_workflow_01JRKEDWJK7A93xH0JECNyfy6kkuaSbj02o$"
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01JPDZ4RQQ74N0y1iEUzWvpJh0TvuMSKFiI",
+                "target_type": "web-service.endpoint"
+              },
+              "workflow_id": "definition_workflow_01D6KGWC1QCSN7f2tnHrhIHVeZHLKBZubRz"
+            },
+            "object_type": "definition_activity"
+          },
+          {
             "unique_name": "definition_activity_01JSEA2NNWSTD5Xp6F7q52495sumcRSmtdX",
-            "name": "Copy-Ivan - Get CTR Indicators Table ",
-            "title": "Copy-Ivan - Get CTR Indicators Table ",
+            "name": "Workflow - Sub - Get CTR Indicators Table ",
+            "title": "Workflow - Sub - Get CTR Indicators Table ",
             "type": "workflow.sub_workflow",
             "base_type": "subworkflow",
             "properties": {
               "continue_on_failure": false,
-              "display_name": "Copy-Ivan - Get CTR Indicators Table ",
+              "display_name": "Workflow - Sub - Get CTR Indicators Table ",
               "input": {
                 "variable_workflow_01JSC422MTB5F1bxabyeD5XuWKOS7OHNzEw": "$workflow.definition_workflow_01JRKCZFTR3V57ICrEky4ZqnLqEJxlZbYzh.input.variable_workflow_01JRKEISC4S064Ax1mOsEBc5R3Yp2WGzH5m$",
                 "variable_workflow_01JSC422MTF497bbmkgkbjS6VF9nMBIpZmO": "$workflow.definition_workflow_01JRKCZFTR3V57ICrEky4ZqnLqEJxlZbYzh.input.variable_workflow_01JRKEDWJK7A93xH0JECNyfy6kkuaSbj02o$",
-                "variable_workflow_01JSC422MTG9J1GgZgS9KAJJyxAwkCYOHHT": ""
+                "variable_workflow_01JSC422MTG9J1GgZgS9KAJJyxAwkCYOHHT": "$activity.definition_activity_01JUXCEBE127S3paKAGzpw7tSbifHNYkQ2U.output.variable_workflow_01D6KGWYYF35W3B7G1o2xUXUjQDPmGK5osh$"
               },
               "runtime_user": {
                 "target_default": true
@@ -1088,6 +1149,79 @@
             "object_type": "definition_activity",
             "actions": [
               {
+                "unique_name": "definition_activity_01JV0WIRIQ2V86NSUqfV8shxk9z26yLyANo",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01JRKCZFTR3V57ICrEky4ZqnLqEJxlZbYzh.local.variable_workflow_01JV0VZVT1XC03sxQKrENSXORFp8tV4Cmhv$",
+                      "variable_value_new": "$activity.definition_activity_01JRKPV8W021Z3SJFc6HspPFM9WCIwDO4MG.input.source_array[@].Value$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01JV0UGM6UDQ915PUDk9ebnGFfNNhREjtiR",
+                "name": "Condition Block",
+                "title": "Condition Block",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Condition Block",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01JV0UGSZP1G1611JyrJd3ofcrQttKiFbsY",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01JRKPV8W021Z3SJFc6HspPFM9WCIwDO4MG.input.source_array[@].Actioin$",
+                        "operator": "ne",
+                        "right_operand": ""
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01JV0WGILB1B36xw3xeFvslhhWpmo6C88sr",
+                        "name": "Set Variables",
+                        "title": "Set Variables",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set Variables",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_01JRKCZFTR3V57ICrEky4ZqnLqEJxlZbYzh.local.variable_workflow_01JV0VZVT1XC03sxQKrENSXORFp8tV4Cmhv$",
+                              "variable_value_new": "$activity.definition_activity_01JRKPV8W021Z3SJFc6HspPFM9WCIwDO4MG.input.source_array[@].Actioin$"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
                 "unique_name": "definition_activity_01JRKWGQCBLO74yNBxZfs6yuN0NiL8RtuHN",
                 "name": "Replace String",
                 "title": "Replace String",
@@ -1096,7 +1230,7 @@
                 "properties": {
                   "continue_on_failure": true,
                   "display_name": "Replace String",
-                  "input_string": "$activity.definition_activity_01JRKPV8W021Z3SJFc6HspPFM9WCIwDO4MG.input.source_array[@].Value$",
+                  "input_string": "$workflow.definition_workflow_01JRKCZFTR3V57ICrEky4ZqnLqEJxlZbYzh.local.variable_workflow_01JV0VZVT1XC03sxQKrENSXORFp8tV4Cmhv$",
                   "replace_list": [
                     {
                       "replaced_string": "[",
@@ -1150,181 +1284,12 @@
       "subworkflows": [
         {
           "workflow": {
-            "unique_name": "definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI",
-            "name": "Workflow - Sub - Post Indicators to private CTIA",
-            "title": "Workflow - Sub - Post Indicators to private CTIA",
-            "type": "generic.workflow",
-            "base_type": "workflow",
-            "variables": [
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "input",
-                  "name": "Obs_type",
-                  "type": "datatype.string",
-                  "is_required": false
-                },
-                "unique_name": "variable_workflow_01JRKRJS0SOK253bM4kvHLwgbmlqTP89IJN",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "input",
-                  "name": "obbs_value",
-                  "type": "datatype.string",
-                  "is_required": false
-                },
-                "unique_name": "variable_workflow_01JRKRO6TUD7R7bVNdMpyZhQ7LrN4zLXWID",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "local",
-                  "name": "TR",
-                  "type": "datatype.string",
-                  "is_required": false
-                },
-                "unique_name": "variable_workflow_01JRJLOO8BB9R1rmILpS59AOJjM63U3rves",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "input",
-                  "name": "value",
-                  "type": "datatype.string",
-                  "is_required": false
-                },
-                "unique_name": "variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4",
-                "object_type": "variable_workflow"
-              }
-            ],
-            "properties": {
-              "atomic": {
-                "is_atomic": false
-              },
-              "delete_workflow_instance": false,
-              "display_name": "Workflow - Sub - Post Indicators to private CTIA",
-              "runtime_user": {
-                "override_target_runtime_user": false,
-                "specify_on_workflow_start": false,
-                "target_default": true
-              },
-              "target": {
-                "target_type": "web-service.endpoint",
-                "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ",
-                "execute_on_workflow_target": true
-              }
-            },
-            "object_type": "definition_workflow",
-            "actions": [
-              {
-                "unique_name": "definition_activity_01JRJMETFBKU76RI6BLPLRBOIgcdwtlF5Ji",
-                "name": "IVAN-CTR Generate Access Token",
-                "title": "IVAN-CTR Generate Access Token",
-                "type": "workflow.atomic_workflow",
-                "base_type": "subworkflow",
-                "properties": {
-                  "continue_on_failure": false,
-                  "display_name": "IVAN-CTR Generate Access Token",
-                  "runtime_user": {
-                    "target_default": true
-                  },
-                  "skip_execution": false,
-                  "target": {
-                    "override_workflow_target": true,
-                    "target_id": "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx",
-                    "target_type": "web-service.endpoint"
-                  },
-                  "workflow_id": "definition_workflow_01JRJK1COSB850Q9WVaBFqu6rG4bf7rYhni"
-                },
-                "object_type": "definition_activity"
-              },
-              {
-                "unique_name": "definition_activity_01JRJLRLD8ADX5mFm8LK1u3SRW28K5GHbij",
-                "name": "Set Variables",
-                "title": "Set Variables",
-                "type": "core.set_multiple_variables",
-                "base_type": "activity",
-                "properties": {
-                  "continue_on_failure": false,
-                  "display_name": "Set Variables",
-                  "skip_execution": true,
-                  "variables_to_update": [
-                    {
-                      "variable_to_update": "$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.local.variable_workflow_01JRJLOO8BB9R1rmILpS59AOJjM63U3rves$",
-                      "variable_value_new": "$activity.definition_activity_01JRJMETFBKU76RI6BLPLRBOIgcdwtlF5Ji.output.variable_workflow_01JRJKHEHC50Y2lkwA6syjnioycQfVBkj5Z$"
-                    }
-                  ]
-                },
-                "object_type": "definition_activity"
-              },
-              {
-                "unique_name": "definition_activity_01JRJ2CZ3UEE20xylN1DrTMfYPeizSOWjSh",
-                "name": "HTTP Request",
-                "title": "HTTP Request",
-                "type": "web-service.http_request",
-                "base_type": "activity",
-                "properties": {
-                  "action_timeout": 180,
-                  "allow_auto_redirect": true,
-                  "body": "{\n  \"valid_time\": {\n    \"start_time\": \"2020-10-28T11:47:25.622Z\",\n    \"end_time\": \"2020-10-28T11:47:25.622Z\"\n  },\n  \"observable\": {\n    \"value\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKRO6TUD7R7bVNdMpyZhQ7LrN4zLXWID$\",\n    \"type\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKRJS0SOK253bM4kvHLwgbmlqTP89IJN$\"\n  },\n  \"type\": \"judgement\",\n  \"source\": \"SecureX MISP\",\n  \"disposition\": 2,\n  \n  \"reason\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4$\",\n  \"disposition_name\": \"Malicious\",\n  \"priority\": 0,\n  \"severity\": \"Medium\",\n  \"tlp\": \"white\",\n  \"timestamp\": \"2020-10-28T11:47:25.622Z\",\n  \"confidence\": \"Medium\"\n}",
-                  "content_type": "application/json",
-                  "continue_on_error_status_code": false,
-                  "continue_on_failure": false,
-                  "custom_headers": [
-                    {
-                      "name": "Authorization",
-                      "value": "Bearer $activity.definition_activity_01JRJMETFBKU76RI6BLPLRBOIgcdwtlF5Ji.output.variable_workflow_01JRJK1CEWBYY3hOpPjPBGBXoSBgtZFrPqt$"
-                    }
-                  ],
-                  "display_name": "HTTP Request",
-                  "method": "POST",
-                  "relative_url": "/ctia/judgement?wait_for=false",
-                  "runtime_user": {
-                    "override_target_runtime_user": false,
-                    "target_default": true
-                  },
-                  "skip_execution": false,
-                  "target": {
-                    "override_workflow_target": true,
-                    "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ"
-                  }
-                },
-                "object_type": "definition_activity"
-              }
-            ],
-            "categories": [
-              "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
-            ]
-          }
-        },
-        {
-          "workflow": {
             "unique_name": "definition_workflow_01JQUKJVIK9RX4tcAuNFQUizLzg4yNI5OwV",
             "name": "Ivan To be deleted - MISP Get Indicators",
             "title": "Ivan To be deleted - MISP Get Indicators",
             "type": "generic.workflow",
             "base_type": "workflow",
             "variables": [
-              {
-                "schema_id": "datatype.secure_string",
-                "properties": {
-                  "value": "*****",
-                  "scope": "input",
-                  "name": "MISP_API",
-                  "type": "datatype.secure_string",
-                  "is_required": true
-                },
-                "unique_name": "variable_workflow_01JQUKJV0N5HF4hxdZRn3nYFCgUjEZgicFd",
-                "object_type": "variable_workflow"
-              },
               {
                 "schema_id": "datatype.string",
                 "properties": {
@@ -1381,6 +1346,18 @@
                   "is_required": false
                 },
                 "unique_name": "variable_workflow_01JQUKJV0N4BV2OTgD75s2xyk2eba9lzcap",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.secure_string",
+                "properties": {
+                  "value": "*****",
+                  "scope": "input",
+                  "name": "MISP_API",
+                  "type": "datatype.secure_string",
+                  "is_required": true
+                },
+                "unique_name": "variable_workflow_01JQUKJV0N5HF4hxdZRn3nYFCgUjEZgicFd",
                 "object_type": "variable_workflow"
               }
             ],
@@ -1555,9 +1532,9 @@
         },
         {
           "workflow": {
-            "unique_name": "definition_workflow_01JSC422Z7Y6P7j77mRKAODnr3h9IdWAMUg",
-            "name": "Workflow - Sub - Get CTR Indicators Table ",
-            "title": "Workflow - Sub - Get CTR Indicators Table ",
+            "unique_name": "definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI",
+            "name": "Workflow - Sub - Post Indicators to private CTIA",
+            "title": "Workflow - Sub - Post Indicators to private CTIA",
             "type": "generic.workflow",
             "base_type": "workflow",
             "variables": [
@@ -1565,25 +1542,159 @@
                 "schema_id": "datatype.string",
                 "properties": {
                   "value": "",
-                  "scope": "input",
-                  "name": "observable_value",
+                  "scope": "local",
+                  "name": "TR",
                   "type": "datatype.string",
-                  "is_required": true
+                  "is_required": false
                 },
-                "unique_name": "variable_workflow_01JSC422MTB5F1bxabyeD5XuWKOS7OHNzEw",
+                "unique_name": "variable_workflow_01JRJLOO8BB9R1rmILpS59AOJjM63U3rves",
                 "object_type": "variable_workflow"
               },
               {
-                "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
+                "schema_id": "datatype.string",
                 "properties": {
-                  "scope": "output",
-                  "name": "Indicators Table",
-                  "type": "datatype.table",
+                  "value": "",
+                  "scope": "input",
+                  "name": "value",
+                  "type": "datatype.string",
                   "is_required": false
                 },
-                "unique_name": "variable_workflow_01JSC422MTCHR0oCDQ759Ig2boyyELoNsJF",
+                "unique_name": "variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4",
                 "object_type": "variable_workflow"
               },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "input",
+                  "name": "Obs_type",
+                  "type": "datatype.string",
+                  "is_required": false
+                },
+                "unique_name": "variable_workflow_01JRKRJS0SOK253bM4kvHLwgbmlqTP89IJN",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "input",
+                  "name": "obbs_value",
+                  "type": "datatype.string",
+                  "is_required": false
+                },
+                "unique_name": "variable_workflow_01JRKRO6TUD7R7bVNdMpyZhQ7LrN4zLXWID",
+                "object_type": "variable_workflow"
+              }
+            ],
+            "properties": {
+              "atomic": {
+                "is_atomic": false
+              },
+              "delete_workflow_instance": false,
+              "display_name": "Workflow - Sub - Post Indicators to private CTIA",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "specify_on_workflow_start": false,
+                "target_default": true
+              },
+              "target": {
+                "target_type": "web-service.endpoint",
+                "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ",
+                "execute_on_workflow_target": true
+              }
+            },
+            "object_type": "definition_workflow",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01JRJMETFBKU76RI6BLPLRBOIgcdwtlF5Ji",
+                "name": "IVAN-CTR Generate Access Token",
+                "title": "IVAN-CTR Generate Access Token",
+                "type": "workflow.atomic_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "IVAN-CTR Generate Access Token",
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx",
+                    "target_type": "web-service.endpoint"
+                  },
+                  "workflow_id": "definition_workflow_01JRJK1COSB850Q9WVaBFqu6rG4bf7rYhni"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01JRJLRLD8ADX5mFm8LK1u3SRW28K5GHbij",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": true,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.local.variable_workflow_01JRJLOO8BB9R1rmILpS59AOJjM63U3rves$",
+                      "variable_value_new": "$activity.definition_activity_01JRJMETFBKU76RI6BLPLRBOIgcdwtlF5Ji.output.variable_workflow_01JRJKHEHC50Y2lkwA6syjnioycQfVBkj5Z$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01JRJ2CZ3UEE20xylN1DrTMfYPeizSOWjSh",
+                "name": "HTTP Request",
+                "title": "HTTP Request",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "body": "{\n  \"valid_time\": {\n    \"start_time\": \"2020-10-28T11:47:25.622Z\",\n    \"end_time\": \"2020-10-28T11:47:25.622Z\"\n  },\n  \"observable\": {\n    \"value\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKRO6TUD7R7bVNdMpyZhQ7LrN4zLXWID$\",\n    \"type\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKRJS0SOK253bM4kvHLwgbmlqTP89IJN$\"\n  },\n  \"type\": \"judgement\",\n  \"source\": \"SecureX MISP\",\n  \"disposition\": 2,\n  \n  \"reason\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4$\",\n  \"disposition_name\": \"Malicious\",\n  \"priority\": 0,\n  \"severity\": \"Medium\",\n  \"tlp\": \"white\",\n  \"timestamp\": \"2020-10-28T11:47:25.622Z\",\n  \"confidence\": \"Medium\"\n}",
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "custom_headers": [
+                    {
+                      "name": "Authorization",
+                      "value": "Bearer $activity.definition_activity_01JRJMETFBKU76RI6BLPLRBOIgcdwtlF5Ji.output.variable_workflow_01JRJK1CEWBYY3hOpPjPBGBXoSBgtZFrPqt$"
+                    }
+                  ],
+                  "display_name": "HTTP Request",
+                  "method": "POST",
+                  "relative_url": "/ctia/judgement?wait_for=false",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ"
+                  }
+                },
+                "object_type": "definition_activity"
+              }
+            ],
+            "categories": [
+              "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+            ]
+          }
+        },
+        {
+          "workflow": {
+            "unique_name": "definition_workflow_01JSC422Z7Y6P7j77mRKAODnr3h9IdWAMUg",
+            "name": "Workflow - Sub - Get CTR Indicators Table ",
+            "title": "Workflow - Sub - Get CTR Indicators Table ",
+            "type": "generic.workflow",
+            "base_type": "workflow",
+            "variables": [
               {
                 "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
                 "properties": {
@@ -1620,6 +1731,18 @@
                 "object_type": "variable_workflow"
               },
               {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "local",
+                  "name": "idicateur_temp_descripttion",
+                  "type": "datatype.string",
+                  "is_required": false
+                },
+                "unique_name": "variable_workflow_01JV0MULBPMKQ743wl56vAmEEgCm2PPcRgo",
+                "object_type": "variable_workflow"
+              },
+              {
                 "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
                 "properties": {
                   "scope": "local",
@@ -1641,6 +1764,29 @@
                   "is_required": false
                 },
                 "unique_name": "variable_workflow_01JSC422MT89Y5g6uvqkkB0anYunkuMk1cF",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "input",
+                  "name": "observable_value",
+                  "type": "datatype.string",
+                  "is_required": true
+                },
+                "unique_name": "variable_workflow_01JSC422MTB5F1bxabyeD5XuWKOS7OHNzEw",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
+                "properties": {
+                  "scope": "output",
+                  "name": "Indicators Table",
+                  "type": "datatype.table",
+                  "is_required": false
+                },
+                "unique_name": "variable_workflow_01JSC422MTCHR0oCDQ759Ig2boyyELoNsJF",
                 "object_type": "variable_workflow"
               }
             ],
@@ -1687,7 +1833,7 @@
                       "runtime_user": {
                         "target_default": true
                       },
-                      "skip_execution": false,
+                      "skip_execution": true,
                       "target": {
                         "override_workflow_target": true,
                         "target_id": "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx",
@@ -1714,7 +1860,7 @@
                       "runtime_user": {
                         "target_default": true
                       },
-                      "skip_execution": false,
+                      "skip_execution": true,
                       "target": {
                         "override_workflow_target": true,
                         "target_id": "definition_target_01JPDZ4RQQ74N0y1iEUzWvpJh0TvuMSKFiI",
@@ -1734,7 +1880,7 @@
                       "action_timeout": 180,
                       "continue_on_failure": false,
                       "display_name": "Read indicators from JSON",
-                      "input_json": "$activity.definition_activity_01JSE691DJM2G6qHQ2LmtF8ZVaUXhop8Mpn.output.variable_workflow_01D6KGWYYF35W3B7G1o2xUXUjQDPmGK5osh$",
+                      "input_json": "$workflow.definition_workflow_01JSC422Z7Y6P7j77mRKAODnr3h9IdWAMUg.input.variable_workflow_01JSC422MTG9J1GgZgS9KAJJyxAwkCYOHHT$",
                       "jsonpath_query": "$.data[*].data.indicators.docs[*]",
                       "persist_output": false,
                       "populate_columns": false,
@@ -1758,6 +1904,10 @@
                         },
                         {
                           "column_name": "short_description",
+                          "column_type": "string"
+                        },
+                        {
+                          "column_name": "description",
                           "column_type": "string"
                         }
                       ]
@@ -1850,15 +2000,34 @@
                         "object_type": "definition_activity"
                       },
                       {
+                        "unique_name": "definition_activity_01JV0NZHULY8163u79R1RIZJeOHxg8hSoZM",
+                        "name": "Set Variables",
+                        "title": "Set Variables",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Set Variables",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_01JSC422Z7Y6P7j77mRKAODnr3h9IdWAMUg.local.variable_workflow_01JV0MULBPMKQ743wl56vAmEEgCm2PPcRgo$",
+                              "variable_value_new": "$activity.definition_activity_01JSC43NB22RP0HvDmyVZSq8VuaCLTV8OdE.input.source_array[@].description$"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
                         "unique_name": "definition_activity_01JSC43VORUC81isJ7XOVFJI9UVYGnhNMsF",
                         "name": "Condition Block",
-                        "title": "Replace AND",
+                        "title": "Replace AND short description",
                         "type": "logic.if_else",
                         "base_type": "activity",
                         "properties": {
                           "continue_on_failure": false,
                           "description": "Replace \"and\" keword by \"n\"",
-                          "display_name": "Replace AND",
+                          "display_name": "Replace AND short description",
                           "skip_execution": false
                         },
                         "object_type": "definition_activity",
@@ -1925,6 +2094,81 @@
                         ]
                       },
                       {
+                        "unique_name": "definition_activity_01JV0KWLBA3RE4sBGd2QquDvhRcqTRhiCsF",
+                        "name": "Condition Block",
+                        "title": "Replace AND description",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "Replace \"and\" keword by \"n\"",
+                          "display_name": "Replace AND description",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_01JV0KWS6D9NM55DdN6V6NTsDd2KHI9IdTe",
+                            "name": "Condition Branch",
+                            "title": "Condition Branch",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_01JSC43NB22RP0HvDmyVZSq8VuaCLTV8OdE.input.source_array[@].description$",
+                                "operator": "mregex",
+                                "right_operand": "\\sand\\s"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Condition Branch",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_01JV0KWTEJ7DK5MwGSTLQfIdnK0eXAWyLIz",
+                                "name": "Replace String",
+                                "title": "Replace String",
+                                "type": "core.replacestring",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": false,
+                                  "display_name": "Replace String",
+                                  "input_string": "$activity.definition_activity_01JSC43NB22RP0HvDmyVZSq8VuaCLTV8OdE.input.source_array[@].short_description$",
+                                  "replace_list": [
+                                    {
+                                      "replaced_string": "and",
+                                      "replacement_string": "n"
+                                    }
+                                  ],
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity"
+                              },
+                              {
+                                "unique_name": "definition_activity_01JV0MXBCA4643eAV2C38Y3kwLCiwXN3n1J",
+                                "name": "Set Variables",
+                                "title": "Set Variables",
+                                "type": "core.set_multiple_variables",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": false,
+                                  "display_name": "Set Variables",
+                                  "skip_execution": false,
+                                  "variables_to_update": [
+                                    {
+                                      "variable_to_update": "$workflow.definition_workflow_01JSC422Z7Y6P7j77mRKAODnr3h9IdWAMUg.local.variable_workflow_01JV0MULBPMKQ743wl56vAmEEgCm2PPcRgo$",
+                                      "variable_value_new": "$activity.definition_activity_01JV0KWTEJ7DK5MwGSTLQfIdnK0eXAWyLIz.output.result_string$"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
                         "unique_name": "definition_activity_01JSC44NLJ88S3r3vDsp8lV01Q1lbGFs0op",
                         "name": "Add Row to Table",
                         "title": "Add Row to Table",
@@ -1968,7 +2212,8 @@
                             },
                             {
                               "key": "Actioin",
-                              "type": "string"
+                              "type": "string",
+                              "value": "$workflow.definition_workflow_01JSC422Z7Y6P7j77mRKAODnr3h9IdWAMUg.local.variable_workflow_01JV0MULBPMKQ743wl56vAmEEgCm2PPcRgo$"
                             }
                           ],
                           "skip_execution": false
@@ -1989,10 +2234,10 @@
     }
   ],
   "atomic_workflows": [
-    "definition_workflow_01JMIGZWGM9662E70aMz37sMa2RHk75nQ6h",
     "definition_workflow_01JMI8GET3NQU3DHM7CHjti7V0nmGgZmGpH",
     "definition_workflow_01D6KGWC1QCSN7f2tnHrhIHVeZHLKBZubRz",
+    "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4",
     "definition_workflow_01JRJK1COSB850Q9WVaBFqu6rG4bf7rYhni",
-    "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4"
+    "definition_workflow_01JMIGZWGM9662E70aMz37sMa2RHk75nQ6h"
   ]
 }
