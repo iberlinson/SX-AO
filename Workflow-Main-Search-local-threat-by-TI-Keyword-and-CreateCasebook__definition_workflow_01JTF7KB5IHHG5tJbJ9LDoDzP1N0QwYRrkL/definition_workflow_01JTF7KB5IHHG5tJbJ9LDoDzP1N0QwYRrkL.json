@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_01JTF7KB5IHHG5tJbJ9LDoDzP1N0QwYRrkL",
-    "name": "Workfflow - Main - Search local threat by TI_Keyword + Casebook",
-    "title": "Workfflow - Main - Search local threat by TI_Keyword + Casebook",
+    "name": "Workflow - Main - Search local threat by TI_Keyword + Casebook",
+    "title": "Workflow - Main - Search local threat by TI_Keyword + Casebook",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": [
@@ -48,7 +48,7 @@
       },
       "delete_workflow_instance": false,
       "description": "Search for Threat observed in your organisation based on an Indicator keyword (threat name, behavior, CVE ...)\n\nIf found a casebook will be created with each related observables detected in your organisation from multiple security solutions (A4E, Umbrella, ESA...)\n\nYou can use a file_name type observable with keywords as value to trigger the workflow (*, AND, OR supported in the search pattern - ex : file_name:\"Heodo OR Emote*\") \n",
-      "display_name": "Workfflow - Main - Search local threat by TI_Keyword + Casebook",
+      "display_name": "Workflow - Main - Search local threat by TI_Keyword + Casebook",
       "runtime_user": {
         "override_target_runtime_user": false,
         "specify_on_workflow_start": false,
@@ -65,13 +65,13 @@
     "actions": [
       {
         "unique_name": "definition_activity_01JTFTW22QMVM279BNbwjDirr6CcUk8yy65",
-        "name": "CTR Generate Access Token",
-        "title": "CTR Generate Access Token",
+        "name": "CTR Generate Access Token CTIA NAM",
+        "title": "CTR Generate Access Token CTIA NAM",
         "type": "workflow.atomic_workflow",
         "base_type": "subworkflow",
         "properties": {
           "continue_on_failure": false,
-          "display_name": "CTR Generate Access Token",
+          "display_name": "CTR Generate Access Token CTIA NAM",
           "runtime_user": {
             "target_default": true
           },
@@ -395,6 +395,28 @@
         "object_type": "definition_activity"
       },
       {
+        "unique_name": "definition_activity_01JV32AJ5P20E4sZc8h1cq2ziEjfevLbXIG",
+        "name": "CTR Generate Access Token Berlab",
+        "title": "CTR Generate Access Token Berlab",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "CTR Generate Access Token Berlab",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01GXG4D8QHQXY1khEkHYgC6I6lvPfhRNkFu",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4"
+        },
+        "object_type": "definition_activity"
+      },
+      {
         "unique_name": "definition_activity_01JTFYKE7YP4Y1qnmaB1PwXuhVdw9Mb9arN",
         "name": "CTR Create Casebook",
         "title": "CTR Create Casebook",
@@ -404,9 +426,9 @@
           "continue_on_failure": false,
           "display_name": "CTR Create Casebook",
           "input": {
-            "variable_workflow_01E8OQUDV95VA45dnDR0Kzm5HlMxNSnk7HH": "$activity.definition_activity_01JTFTW22QMVM279BNbwjDirr6CcUk8yy65.output.variable_workflow_01BNOOXA3G6MV1PGAvsfZOKDdMYcE6XS726$",
-            "variable_workflow_01FI7GJDK40MI6qNg2jcng0YaHlmz0Zgwq5": "Created by SecureX AO with Observables seen in your organisation with indicators matching the Threat keyword $workflow.definition_workflow_01JTF7KB5IHHG5tJbJ9LDoDzP1N0QwYRrkL.input.variable_workflow_01JTG5VKS3G154p6HRlmNC6NPhE53yolTUN$;\n\nIt includes following indicators : $activity.definition_activity_01JU9AVZOEVQU4Q9ZxrM0uWgaoORW6bs7Xq.output.variable_workflow_01JQV4DBHVLI62IgPXRU6IkYoKppufifvU6$;\n",
-            "variable_workflow_01FI7JJEVXRFA5s9maRdVwlqV7ENc6KhST2": "SecureX - Observable for Threat Keyword $workflow.definition_workflow_01JTF7KB5IHHG5tJbJ9LDoDzP1N0QwYRrkL.input.variable_workflow_01JTG5VKS3G154p6HRlmNC6NPhE53yolTUN$",
+            "variable_workflow_01E8OQUDV95VA45dnDR0Kzm5HlMxNSnk7HH": "$activity.definition_activity_01JV32AJ5P20E4sZc8h1cq2ziEjfevLbXIG.output.variable_workflow_01BNOOXA3G6MV1PGAvsfZOKDdMYcE6XS726$",
+            "variable_workflow_01FI7GJDK40MI6qNg2jcng0YaHlmz0Zgwq5": "Created by SecureX AO with Observables seen in your organisation with indicators matching the Threat keyword $workflow.definition_workflow_01JTF7KB5IHHG5tJbJ9LDoDzP1N0QwYRrkL.input.variable_workflow_01JTG5VKS3G154p6HRlmNC6NPhE53yolTUN$;Includes following indicators : $activity.definition_activity_01JU9AVZOEVQU4Q9ZxrM0uWgaoORW6bs7Xq.output.variable_workflow_01JQV4DBHVLI62IgPXRU6IkYoKppufifvU6$\n",
+            "variable_workflow_01FI7JJEVXRFA5s9maRdVwlqV7ENc6KhST2": "SecureX - Observable(s) for Threat Keyword $workflow.definition_workflow_01JTF7KB5IHHG5tJbJ9LDoDzP1N0QwYRrkL.input.variable_workflow_01JTG5VKS3G154p6HRlmNC6NPhE53yolTUN$",
             "variable_workflow_01FI7NA9QZI9I46crflRbf7I6zIfajxuHrX": "$activity.definition_activity_01JTFABVMI05S3e1HRCFbeNdWnD4FAzQCLM.output.response_body$",
             "variable_workflow_01FRLITVY3NO678mmPZHG5lCdqLjEyY2j1h": "raw"
           },
@@ -416,7 +438,7 @@
           "skip_execution": false,
           "target": {
             "override_workflow_target": true,
-            "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ",
+            "target_id": "definition_target_01GXG4DPTICV70VpqXIX0CaYbFsPS5Bqbpe",
             "target_type": "web-service.endpoint"
           },
           "workflow_id": "definition_workflow_01DS6ELBOO8YR3uFJZju566LqiqR18VlE6r"
@@ -459,6 +481,40 @@
     }
   },
   "targets": {
+    "definition_target_01GXG4D8QHQXY1khEkHYgC6I6lvPfhRNkFu": {
+      "unique_name": "definition_target_01GXG4D8QHQXY1khEkHYgC6I6lvPfhRNkFu",
+      "name": "CTR_For_Access_Token",
+      "title": "CTR Target for access token",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01GXG4C5HDM6G27ueXHkdswwPdN0te5rhZB",
+        "description": "CTR_For_Access_Token",
+        "disable_certificate_validation": false,
+        "display_name": "CTR_For_Access_Token",
+        "host": "visibility.eu.amp.cisco.com",
+        "no_runtime_user": false,
+        "path": "/iroh",
+        "protocol": "https"
+      }
+    },
+    "definition_target_01GXG4DPTICV70VpqXIX0CaYbFsPS5Bqbpe": {
+      "unique_name": "definition_target_01GXG4DPTICV70VpqXIX0CaYbFsPS5Bqbpe",
+      "name": "Private_CTIA_Target",
+      "title": "Private_CTIA_Target",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "Private_CTIA_Target",
+        "disable_certificate_validation": false,
+        "display_name": "Private_CTIA_Target",
+        "host": "private.intel.eu.amp.cisco.com",
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    },
     "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx": {
       "unique_name": "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx",
       "name": "CTR_IVAN_TOKEN",
@@ -496,6 +552,21 @@
     }
   },
   "runtime_users": {
+    "definition_runtime_user_01GXG4C5HDM6G27ueXHkdswwPdN0te5rhZB": {
+      "unique_name": "definition_runtime_user_01GXG4C5HDM6G27ueXHkdswwPdN0te5rhZB",
+      "name": "CTR_Credentials",
+      "title": "CTR_Credentials",
+      "description": "Account Key for CTR",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "*****",
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "CTR_Credentials"
+      }
+    },
     "definition_runtime_user_01JPDX0PZZKT533W9RABl04sC6b11nf0XAs": {
       "unique_name": "definition_runtime_user_01JPDX0PZZKT533W9RABl04sC6b11nf0XAs",
       "name": "CTR_IVAN",
@@ -534,14 +605,14 @@
       "columns": [
         {
           "is_required": true,
-          "name": "type",
-          "title": "type",
+          "name": "value",
+          "title": "value",
           "type": "string"
         },
         {
           "is_required": true,
-          "name": "value",
-          "title": "value",
+          "name": "type",
+          "title": "type",
           "type": "string"
         }
       ],
@@ -550,250 +621,6 @@
     }
   },
   "subworkflows": [
-    {
-      "workflow": {
-        "unique_name": "definition_workflow_01JRLQCWBIGPR0fmN6NvUxEYSSbTuqJQGTc",
-        "name": "Workflow - Sub  - Search keyword in CTIA Private",
-        "title": "Workflow - Sub  - Search keyword in CTIA Private",
-        "type": "generic.workflow",
-        "base_type": "workflow",
-        "variables": [
-          {
-            "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
-            "properties": {
-              "scope": "output",
-              "name": "Indicators_by_threat",
-              "type": "datatype.table",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JROXKOA6YJB5vu75Di3cjic8MPtYOEp2U",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.secure_string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "CTR_Token",
-              "type": "datatype.secure_string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JRLS30B4MES2Kq19uS0QqUCJRuVvwVJgr",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Threat",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JRLSLSBJ4VS6BHwQsTNyuiZfJSLntPgGq",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Observable_type",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JRLSSNZSL8A0A9kEKHTa3n2R03ZjHIXHd",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "obserable_value",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JRLT8L5TJ1D3Xc8kBcJxvDQim8hQSuROZ",
-            "object_type": "variable_workflow"
-          }
-        ],
-        "properties": {
-          "atomic": {
-            "is_atomic": false
-          },
-          "delete_workflow_instance": false,
-          "description": "IVAN - Search a Threat by keyword in CTIA Private intel (judgemennt/reason ) event  feeds by threrat detected real tiime enrrichment",
-          "display_name": "Workflow - Sub  - Search keyword in CTIA Private",
-          "runtime_user": {
-            "override_target_runtime_user": false,
-            "specify_on_workflow_start": false,
-            "target_default": true
-          },
-          "target": {
-            "target_type": "web-service.endpoint",
-            "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ",
-            "execute_on_workflow_target": true
-          }
-        },
-        "object_type": "definition_workflow",
-        "actions": [
-          {
-            "unique_name": "definition_activity_01JROJ6V50VZR58l9ILjgat5iMkHIhXxQCG",
-            "name": "IVAN-CTR Generate Access Token",
-            "title": "IVAN-CTR Generate Access Token",
-            "type": "workflow.atomic_workflow",
-            "base_type": "subworkflow",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "IVAN-CTR Generate Access Token",
-              "runtime_user": {
-                "target_default": true
-              },
-              "skip_execution": false,
-              "target": {
-                "override_workflow_target": true,
-                "target_id": "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx",
-                "target_type": "web-service.endpoint"
-              },
-              "workflow_id": "definition_workflow_01JRJK1COSB850Q9WVaBFqu6rG4bf7rYhni"
-            },
-            "object_type": "definition_activity"
-          },
-          {
-            "unique_name": "definition_activity_01JRLTU8RO6F274Rkxk2ufumYX6t0bMcIuG",
-            "name": "HTTP Request",
-            "title": "HTTP Request",
-            "type": "web-service.http_request",
-            "base_type": "activity",
-            "properties": {
-              "action_timeout": 180,
-              "allow_auto_redirect": true,
-              "content_type": "application/json",
-              "continue_on_error_status_code": false,
-              "continue_on_failure": false,
-              "custom_headers": [
-                {
-                  "name": "Authorization",
-                  "value": "Bearer $activity.definition_activity_01JROJ6V50VZR58l9ILjgat5iMkHIhXxQCG.output.variable_workflow_01JRJK1CEWBYY3hOpPjPBGBXoSBgtZFrPqt$"
-                }
-              ],
-              "display_name": "HTTP Request",
-              "method": "GET",
-              "relative_url": "/ctia/judgement/search?fields=reason\u0026query=$workflow.definition_workflow_01JRLQCWBIGPR0fmN6NvUxEYSSbTuqJQGTc.input.variable_workflow_01JRLSLSBJ4VS6BHwQsTNyuiZfJSLntPgGq$",
-              "runtime_user": {
-                "override_target_runtime_user": false,
-                "target_default": true
-              },
-              "skip_execution": false,
-              "target": {
-                "override_workflow_target": true,
-                "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ"
-              }
-            },
-            "object_type": "definition_activity"
-          },
-          {
-            "unique_name": "definition_activity_01JRM09OGH7P62FOK8Yh5TYLPWs1xjj6YGR",
-            "name": "Read Table from JSON",
-            "title": "Read Table from JSON",
-            "type": "corejava.read_table_from_json",
-            "base_type": "activity",
-            "properties": {
-              "action_timeout": 180,
-              "continue_on_failure": false,
-              "display_name": "Read Table from JSON",
-              "input_json": "$activity.definition_activity_01JRLTU8RO6F274Rkxk2ufumYX6t0bMcIuG.output.response_body$",
-              "jsonpath_query": "$.[*]",
-              "persist_output": false,
-              "populate_columns": false,
-              "skip_execution": false,
-              "table_columns": [
-                {
-                  "column_name": "reason",
-                  "column_type": "string"
-                },
-                {
-                  "column_name": "id",
-                  "column_type": "string"
-                }
-              ]
-            },
-            "object_type": "definition_activity"
-          },
-          {
-            "unique_name": "definition_activity_01JROW0FM6OQ72XQ4npsyJmPTrKsxkPtXdS",
-            "name": "For Each",
-            "title": "For Each",
-            "type": "logic.for_each",
-            "base_type": "activity",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "For Each",
-              "skip_execution": false,
-              "source_array": "$activity.definition_activity_01JRM09OGH7P62FOK8Yh5TYLPWs1xjj6YGR.output.read_table_from_json$"
-            },
-            "object_type": "definition_activity",
-            "actions": [
-              {
-                "unique_name": "definition_activity_01JROXQH091Z46hwzTxZDIyCrlPJrArPxGF",
-                "name": "Replace String",
-                "title": "Replace String",
-                "type": "core.replacestring",
-                "base_type": "activity",
-                "properties": {
-                  "continue_on_failure": false,
-                  "display_name": "Replace String",
-                  "input_string": "$activity.definition_activity_01JROW0FM6OQ72XQ4npsyJmPTrKsxkPtXdS.input.source_array[@].reason$",
-                  "replace_list": [
-                    {
-                      "replaced_string": "malware-",
-                      "replacement_string": ""
-                    },
-                    {
-                      "replaced_string": "-detected",
-                      "replacement_string": ""
-                    }
-                  ],
-                  "skip_execution": false
-                },
-                "object_type": "definition_activity"
-              },
-              {
-                "unique_name": "definition_activity_01JRP2QDXRW1N7YIHCNTWRbdRmH4OYwpukk",
-                "name": "Add Row to Table",
-                "title": "Add Row to Table",
-                "type": "core.addrowtotable",
-                "base_type": "activity",
-                "properties": {
-                  "action_timeout": 180,
-                  "continue_on_failure": false,
-                  "display_name": "Add Row to Table",
-                  "input_table": "$workflow.definition_workflow_01JRLQCWBIGPR0fmN6NvUxEYSSbTuqJQGTc.output.variable_workflow_01JROXKOA6YJB5vu75Di3cjic8MPtYOEp2U$",
-                  "row": [
-                    {
-                      "key": "type",
-                      "type": "string",
-                      "value": "$activity.definition_activity_01JROW0FM6OQ72XQ4npsyJmPTrKsxkPtXdS.input.source_array[@].id$"
-                    },
-                    {
-                      "key": "value",
-                      "type": "string",
-                      "value": "$activity.definition_activity_01JROXQH091Z46hwzTxZDIyCrlPJrArPxGF.output.result_string$"
-                    }
-                  ],
-                  "skip_execution": false
-                },
-                "object_type": "definition_activity"
-              }
-            ]
-          }
-        ],
-        "categories": [
-          "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a"
-        ]
-      }
-    },
     {
       "workflow": {
         "unique_name": "definition_workflow_01JQV4DC02D934XLB7J1u6CcmV9yNotBbE3",
@@ -1353,11 +1180,255 @@
           "category_01APQ1SF3EVRH4WYM1c0JtOZbGDtxU0sJQd"
         ]
       }
+    },
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_01JRLQCWBIGPR0fmN6NvUxEYSSbTuqJQGTc",
+        "name": "Workflow - Sub  - Search keyword in CTIA Private",
+        "title": "Workflow - Sub  - Search keyword in CTIA Private",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "CTR_Token",
+              "type": "datatype.secure_string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JRLS30B4MES2Kq19uS0QqUCJRuVvwVJgr",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Threat",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JRLSLSBJ4VS6BHwQsTNyuiZfJSLntPgGq",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Observable_type",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JRLSSNZSL8A0A9kEKHTa3n2R03ZjHIXHd",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "obserable_value",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JRLT8L5TJ1D3Xc8kBcJxvDQim8hQSuROZ",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+            "properties": {
+              "scope": "output",
+              "name": "Indicators_by_threat",
+              "type": "datatype.table",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JROXKOA6YJB5vu75Di3cjic8MPtYOEp2U",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "description": "IVAN - Search a Threat by keyword in CTIA Private intel (judgemennt/reason ) event  feeds by threrat detected real tiime enrrichment",
+          "display_name": "Workflow - Sub  - Search keyword in CTIA Private",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "specify_on_workflow_start": false,
+            "target_default": true
+          },
+          "target": {
+            "target_type": "web-service.endpoint",
+            "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ",
+            "execute_on_workflow_target": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01JROJ6V50VZR58l9ILjgat5iMkHIhXxQCG",
+            "name": "IVAN-CTR Generate Access Token",
+            "title": "IVAN-CTR Generate Access Token",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "IVAN-CTR Generate Access Token",
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx",
+                "target_type": "web-service.endpoint"
+              },
+              "workflow_id": "definition_workflow_01JRJK1COSB850Q9WVaBFqu6rG4bf7rYhni"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01JRLTU8RO6F274Rkxk2ufumYX6t0bMcIuG",
+            "name": "HTTP Request",
+            "title": "HTTP Request",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "custom_headers": [
+                {
+                  "name": "Authorization",
+                  "value": "Bearer $activity.definition_activity_01JROJ6V50VZR58l9ILjgat5iMkHIhXxQCG.output.variable_workflow_01JRJK1CEWBYY3hOpPjPBGBXoSBgtZFrPqt$"
+                }
+              ],
+              "display_name": "HTTP Request",
+              "method": "GET",
+              "relative_url": "/ctia/judgement/search?fields=reason\u0026query=$workflow.definition_workflow_01JRLQCWBIGPR0fmN6NvUxEYSSbTuqJQGTc.input.variable_workflow_01JRLSLSBJ4VS6BHwQsTNyuiZfJSLntPgGq$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01JRM09OGH7P62FOK8Yh5TYLPWs1xjj6YGR",
+            "name": "Read Table from JSON",
+            "title": "Read Table from JSON",
+            "type": "corejava.read_table_from_json",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Read Table from JSON",
+              "input_json": "$activity.definition_activity_01JRLTU8RO6F274Rkxk2ufumYX6t0bMcIuG.output.response_body$",
+              "jsonpath_query": "$.[*]",
+              "persist_output": false,
+              "populate_columns": false,
+              "skip_execution": false,
+              "table_columns": [
+                {
+                  "column_name": "reason",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "id",
+                  "column_type": "string"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01JROW0FM6OQ72XQ4npsyJmPTrKsxkPtXdS",
+            "name": "For Each",
+            "title": "For Each",
+            "type": "logic.for_each",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "For Each",
+              "skip_execution": false,
+              "source_array": "$activity.definition_activity_01JRM09OGH7P62FOK8Yh5TYLPWs1xjj6YGR.output.read_table_from_json$"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01JROXQH091Z46hwzTxZDIyCrlPJrArPxGF",
+                "name": "Replace String",
+                "title": "Replace String",
+                "type": "core.replacestring",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Replace String",
+                  "input_string": "$activity.definition_activity_01JROW0FM6OQ72XQ4npsyJmPTrKsxkPtXdS.input.source_array[@].reason$",
+                  "replace_list": [
+                    {
+                      "replaced_string": "malware-",
+                      "replacement_string": ""
+                    },
+                    {
+                      "replaced_string": "-detected",
+                      "replacement_string": ""
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01JRP2QDXRW1N7YIHCNTWRbdRmH4OYwpukk",
+                "name": "Add Row to Table",
+                "title": "Add Row to Table",
+                "type": "core.addrowtotable",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Add Row to Table",
+                  "input_table": "$workflow.definition_workflow_01JRLQCWBIGPR0fmN6NvUxEYSSbTuqJQGTc.output.variable_workflow_01JROXKOA6YJB5vu75Di3cjic8MPtYOEp2U$",
+                  "row": [
+                    {
+                      "key": "type",
+                      "type": "string",
+                      "value": "$activity.definition_activity_01JROW0FM6OQ72XQ4npsyJmPTrKsxkPtXdS.input.source_array[@].id$"
+                    },
+                    {
+                      "key": "value",
+                      "type": "string",
+                      "value": "$activity.definition_activity_01JROXQH091Z46hwzTxZDIyCrlPJrArPxGF.output.result_string$"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ],
+        "categories": [
+          "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a"
+        ]
+      }
     }
   ],
   "atomic_workflows": [
-    "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4",
     "definition_workflow_01DS6ELBOO8YR3uFJZju566LqiqR18VlE6r",
+    "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4",
     "definition_workflow_01JRJK1COSB850Q9WVaBFqu6rG4bf7rYhni"
   ]
 }
