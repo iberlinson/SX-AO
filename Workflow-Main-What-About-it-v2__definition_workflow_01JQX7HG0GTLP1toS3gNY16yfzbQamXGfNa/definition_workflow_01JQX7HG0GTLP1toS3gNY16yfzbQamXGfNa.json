@@ -9,6 +9,30 @@
       {
         "schema_id": "datatype.string",
         "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "TR_Verdict",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01JQX7HFOAEWF1gxnfuVSoESmclU21KXpyp",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": true
+        },
+        "unique_name": "variable_workflow_01JQX7HFOADP30lVmVOQRmdKqhDd3pjILLh",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
           "value": "ivberlin@cisco.com",
           "scope": "local",
           "name": "Email",
@@ -64,30 +88,6 @@
           "is_required": false
         },
         "unique_name": "variable_workflow_01JQX7HFOAQXS5IoGdHH2Y8rkKOEAvcj20T",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "TR_Verdict",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01JQX7HFOAEWF1gxnfuVSoESmclU21KXpyp",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "observable_type",
-          "type": "datatype.string",
-          "is_required": true
-        },
-        "unique_name": "variable_workflow_01JQX7HFOADP30lVmVOQRmdKqhDd3pjILLh",
         "object_type": "variable_workflow"
       }
     ],
@@ -1056,7 +1056,7 @@
         "properties": {
           "continue_on_failure": false,
           "display_name": "Set Variables",
-          "skip_execution": false,
+          "skip_execution": true,
           "variables_to_update": [
             {
               "variable_to_update": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
@@ -1075,7 +1075,7 @@
         "properties": {
           "continue_on_failure": true,
           "display_name": "verdict",
-          "skip_execution": false
+          "skip_execution": true
         },
         "object_type": "definition_activity",
         "actions": [
@@ -1089,15 +1089,15 @@
               "action_timeout": 180,
               "continue_on_failure": false,
               "display_name": "concatenation verdict",
-              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\nprint(d)\n",
+              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\n\n",
               "script_arguments": [
                 "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
                 "$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWPA04CPWS23wGNEf5SyUwkcSHhhH2Ls$"
               ],
               "script_queries": [
                 {
-                  "script_query": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOALMD7UOLSsK6sOr0r3B8tf1CdH$",
-                  "script_query_name": "d",
+                  "script_query": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
+                  "script_query_name": "c",
                   "script_query_type": "string"
                 }
               ],
@@ -1114,11 +1114,11 @@
             "properties": {
               "continue_on_failure": false,
               "display_name": "Set Variables",
-              "skip_execution": false,
+              "skip_execution": true,
               "variables_to_update": [
                 {
                   "variable_to_update": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
-                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.d$"
+                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.c$"
                 }
               ]
             },
@@ -1135,7 +1135,7 @@
         "properties": {
           "continue_on_failure": true,
           "display_name": "Attack Pattern",
-          "skip_execution": false
+          "skip_execution": true
         },
         "object_type": "definition_activity",
         "actions": [
@@ -1149,15 +1149,15 @@
               "action_timeout": 180,
               "continue_on_failure": false,
               "display_name": "aggregate",
-              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\nprint(d)\n",
+              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\nprint(c)\n",
               "script_arguments": [
                 "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
                 "$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWNM2PV58R2dundBMa4HcXu1bqQZpnx6$"
               ],
               "script_queries": [
                 {
-                  "script_query": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOALMD7UOLSsK6sOr0r3B8tf1CdH$",
-                  "script_query_name": "d",
+                  "script_query": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
+                  "script_query_name": "c",
                   "script_query_type": "string"
                 }
               ],
@@ -1174,11 +1174,11 @@
             "properties": {
               "continue_on_failure": false,
               "display_name": "Set Variables",
-              "skip_execution": false,
+              "skip_execution": true,
               "variables_to_update": [
                 {
                   "variable_to_update": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
-                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.d$"
+                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.c$"
                 }
               ]
             },
@@ -1195,7 +1195,7 @@
         "properties": {
           "continue_on_failure": true,
           "display_name": "Target Light",
-          "skip_execution": false
+          "skip_execution": true
         },
         "object_type": "definition_activity",
         "actions": [
@@ -1209,7 +1209,7 @@
               "action_timeout": 180,
               "continue_on_failure": false,
               "display_name": "concatenation verdict",
-              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\nprint(d)\n",
+              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\nprint(c)\n",
               "script_arguments": [
                 "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
                 "$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWQOHHUTQZ7eJornRmyGlR9F8xi9ziZ8$"
@@ -1217,7 +1217,7 @@
               "script_queries": [
                 {
                   "script_query": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOALMD7UOLSsK6sOr0r3B8tf1CdH$",
-                  "script_query_name": "d",
+                  "script_query_name": "c",
                   "script_query_type": "string"
                 }
               ],
@@ -1234,11 +1234,11 @@
             "properties": {
               "continue_on_failure": false,
               "display_name": "Set Variables",
-              "skip_execution": false,
+              "skip_execution": true,
               "variables_to_update": [
                 {
                   "variable_to_update": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
-                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.d$"
+                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.c$"
                 }
               ]
             },
@@ -1255,7 +1255,7 @@
         "properties": {
           "continue_on_failure": true,
           "display_name": "Indictators",
-          "skip_execution": false
+          "skip_execution": true
         },
         "object_type": "definition_activity",
         "actions": [
@@ -1269,7 +1269,7 @@
               "action_timeout": 180,
               "continue_on_failure": false,
               "display_name": "aggregate",
-              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\nprint(d)\n",
+              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\nprint(c)\n",
               "script_arguments": [
                 "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
                 "$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWO351LGW52dr77Yzzv9mXI2RhufnNR4$"
@@ -1277,7 +1277,7 @@
               "script_queries": [
                 {
                   "script_query": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOALMD7UOLSsK6sOr0r3B8tf1CdH$",
-                  "script_query_name": "d",
+                  "script_query_name": "c",
                   "script_query_type": "string"
                 }
               ],
@@ -1294,11 +1294,11 @@
             "properties": {
               "continue_on_failure": false,
               "display_name": "Set Variables",
-              "skip_execution": false,
+              "skip_execution": true,
               "variables_to_update": [
                 {
                   "variable_to_update": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
-                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.d$"
+                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.c$"
                 }
               ]
             },
@@ -1315,7 +1315,7 @@
         "properties": {
           "continue_on_failure": true,
           "display_name": "MISP",
-          "skip_execution": false
+          "skip_execution": true
         },
         "object_type": "definition_activity",
         "actions": [
@@ -1329,7 +1329,7 @@
               "action_timeout": 180,
               "continue_on_failure": false,
               "display_name": "aggregate",
-              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\nprint(d)\n",
+              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\nprint(c)\n",
               "script_arguments": [
                 "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
                 "$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWPFQHR80A6UFHicDh2c6bzoNKej4mKU$"
@@ -1337,7 +1337,7 @@
               "script_queries": [
                 {
                   "script_query": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOALMD7UOLSsK6sOr0r3B8tf1CdH$",
-                  "script_query_name": "d",
+                  "script_query_name": "c",
                   "script_query_type": "string"
                 }
               ],
@@ -1354,11 +1354,11 @@
             "properties": {
               "continue_on_failure": false,
               "display_name": "Set Variables",
-              "skip_execution": false,
+              "skip_execution": true,
               "variables_to_update": [
                 {
                   "variable_to_update": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
-                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.d$"
+                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.c$"
                 }
               ]
             },
@@ -1375,7 +1375,7 @@
         "properties": {
           "continue_on_failure": true,
           "display_name": "Incident",
-          "skip_execution": false
+          "skip_execution": true
         },
         "object_type": "definition_activity",
         "actions": [
@@ -1389,7 +1389,7 @@
               "action_timeout": 180,
               "continue_on_failure": false,
               "display_name": "aggregate",
-              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\nprint(d)\n",
+              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\nprint(c)\n",
               "script_arguments": [
                 "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
                 "$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWNUFDHEPZ3rf9ZLJo5ok6dmieAwr0Yl$"
@@ -1397,7 +1397,7 @@
               "script_queries": [
                 {
                   "script_query": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOALMD7UOLSsK6sOr0r3B8tf1CdH$",
-                  "script_query_name": "d",
+                  "script_query_name": "c",
                   "script_query_type": "string"
                 }
               ],
@@ -1414,11 +1414,11 @@
             "properties": {
               "continue_on_failure": false,
               "display_name": "Set Variables",
-              "skip_execution": false,
+              "skip_execution": true,
               "variables_to_update": [
                 {
                   "variable_to_update": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
-                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.d$"
+                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.c$"
                 }
               ]
             },
@@ -1435,7 +1435,7 @@
         "properties": {
           "continue_on_failure": true,
           "display_name": "Target Full",
-          "skip_execution": false
+          "skip_execution": true
         },
         "object_type": "definition_activity",
         "actions": [
@@ -1449,7 +1449,7 @@
               "action_timeout": 180,
               "continue_on_failure": false,
               "display_name": "aggregate",
-              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\nprint(d)\n",
+              "script": "import sys\na = sys.argv[1]\nb = sys.argv[2]\nc = a + b\nprint(c)\n",
               "script_arguments": [
                 "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
                 "$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWQCCMOGJX58z3bctcnIWkszCoiZvAbU$"
@@ -1457,7 +1457,7 @@
               "script_queries": [
                 {
                   "script_query": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOALMD7UOLSsK6sOr0r3B8tf1CdH$",
-                  "script_query_name": "d",
+                  "script_query_name": "c",
                   "script_query_type": "string"
                 }
               ],
@@ -1474,11 +1474,11 @@
             "properties": {
               "continue_on_failure": false,
               "display_name": "Set Variables",
-              "skip_execution": false,
+              "skip_execution": true,
               "variables_to_update": [
                 {
                   "variable_to_update": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
-                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.d$"
+                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.c$"
                 }
               ]
             },
@@ -1495,7 +1495,7 @@
         "properties": {
           "continue_on_failure": true,
           "display_name": "End HTML",
-          "skip_execution": false
+          "skip_execution": true
         },
         "object_type": "definition_activity",
         "actions": [
@@ -1509,14 +1509,14 @@
               "action_timeout": 180,
               "continue_on_failure": false,
               "display_name": "aggregate",
-              "script": "import sys\na = sys.argv[1]\nb = \"\u003c\\body\u003e\u003c\\html\u003e\nc = a + b\nprint(d)\n",
+              "script": "import sys\na = sys.argv[1]\nb = \"\u003c\\body\u003e\u003c\\html\u003e\nc = a + b\nprint(c)\n",
               "script_arguments": [
-                "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$"
+                ""
               ],
               "script_queries": [
                 {
                   "script_query": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOALMD7UOLSsK6sOr0r3B8tf1CdH$",
-                  "script_query_name": "d",
+                  "script_query_name": "c",
                   "script_query_type": "string"
                 }
               ],
@@ -1537,7 +1537,7 @@
               "variables_to_update": [
                 {
                   "variable_to_update": "$workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAOTJ5eWRbBIlzTdcVLFhjZtrcy$",
-                  "variable_value_new": "$activity.definition_activity_01JR09KS3NI8R7AlJPactGHJtO2aejNV1Sd.output.script_queries.d$"
+                  "variable_value_new": "$activity.definition_activity_01JUASPGFVJ1Q0RhkszGiQNF63VHe3yy7Xf.output.response_body$"
                 }
               ]
             },
@@ -1582,7 +1582,7 @@
             "variable_workflow_01JQ4X24NAN2C5Jjw5KTj7B3Id2spTUwbZG": "ivan.berlinson@gmail.com",
             "variable_workflow_01JQ4X24NAO8607jAXdOSmTfKagjmCj9g8h": "",
             "variable_workflow_01JQ4X24NAR5S0H5VlkJAeitbQ3HVvr2MRT": "",
-            "variable_workflow_01JQ4X24NASAH5NbBp3kTtBdtr2tojldpau": "SecureX Answer : $workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.input.variable_workflow_01JQX7HFOA2ZX4txAhwuEINoj0mpwmJO2M6$ is $workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAEWF1gxnfuVSoESmclU21KXpyp$. [View full report in Browser](http://ivberlin.hopto.org:81/$activity.definition_activity_01JQZFPFQSTFK12oOJqGYpFz7jJNWzDARxd.output.variable_workflow_01JQZ9K71YT6N1ITsYozkEKCp4BULWOEqGs$.html). Raw data XLSX attached",
+            "variable_workflow_01JQ4X24NASAH5NbBp3kTtBdtr2tojldpau": "SecureX Answer : $workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.input.variable_workflow_01JQX7HFOA2ZX4txAhwuEINoj0mpwmJO2M6$ is $workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.local.variable_workflow_01JQX7HFOAEWF1gxnfuVSoESmclU21KXpyp$. . Raw data XLSX attached",
             "variable_workflow_01JQQ43KD9NHA2bUyMaKi5Ee9cCmuY6rEqi": "http://ivberlin.hopto.org:81/$activity.definition_activity_01JQZFPFQSTFK12oOJqGYpFz7jJNWzDARxd.output.variable_workflow_01JQZ9K71YT6N1ITsYozkEKCp4BULWOEqGs$.xlsx"
           },
           "runtime_user": {
@@ -1606,7 +1606,7 @@
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
-          "body": "\u003chtml\u003e\n\u003cbody\u003e\nYour report about the $workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.input.variable_workflow_01JQX7HFOADP30lVmVOQRmdKqhDd3pjILLh$ $workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.input.variable_workflow_01JQX7HFOA2ZX4txAhwuEINoj0mpwmJO2M6$ :\n\u003cb\u003e\u003cp\u003eTargets :  :\u003c/b\u003e\n\u003cbr\u003e\n$activity.01JQX85U0PTPX6g7W7ZGNcARfbXYwLnMCin.output.result_string$\n\u003cbr\u003e\n\u003cb\u003eTargets Summary:\u003c/b\u003e\n\u003cbr\u003e\n$activity.01JQX8B7JSU812jmwPDyOQSOGBLQfP4Qlj4.output.01JQX7I06G8MW3kxtCkFBiRv5FYJJP09FAd$\n\u003cbr\u003e\n\u003cb\u003eAttack Patterns:\u003c/b\u003e\n\u003cbr\u003e\n$activity.01JQX88P7F8QP2QMR0G681OhFGX2qUKBbPk.output.result_string$\n\u003cbr\u003e\n\u003cb\u003eIndicators :\u003c/b\u003e\n\u003cbr\u003e\n$activity.01JQX86R97Q6F1wHAIHAzGC3p2cL4VPUOeD.output.result_string$\n\u003cbr\u003e\n\u003cb\u003eJudgements :\u003c/b\u003e\n\u003cbr\u003e\n$activity.01JQX87OYVYDZ5Sj43To6zI5fGxuOncgadE.output.result_string$\n\u003cbr\u003e\n\u003cb\u003eMalwares :\u003c/b\u003e\n\u003cbr\u003e\n$activity.01JQX89M5A87S46rWnThgLTdxdQp9nqLNMT.output.result_string$\n\u003cbr\u003e\n\u003cb\u003eIncidents :\u003c/b\u003e\n\u003cbr\u003e\n$activity.01JQX8AIYNLMO6h5bGOjEvARXmcA2SoWj5t.output.result_string$\n\u003cbr\u003e\n\u003cb\u003eTarget Details:\u003c/b\u003e\n\u003cbr\u003e\n$activity.01JQX8C4LTMCQ6FgU09CnTVIAesUeNakh1G.output.01JQX7I06G8MW3kxtCkFBiRv5FYJJP09FAd$\n\u003c/html\u003e\n",
+          "body": "\u003chtml\u003e\n\u003cbody\u003e\nYour report about the $workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.input.variable_workflow_01JQX7HFOADP30lVmVOQRmdKqhDd3pjILLh$ $workflow.definition_workflow_01JQX7HG0GTLP1toS3gNY16yfzbQamXGfNa.input.variable_workflow_01JQX7HFOA2ZX4txAhwuEINoj0mpwmJO2M6$ :\n\u003cb\u003e\u003cp\u003eTargets :  :\u003c/b\u003e\n\u003cbr\u003e\n$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWPA04CPWS23wGNEf5SyUwkcSHhhH2Ls$\n\u003cbr\u003e\n\u003cb\u003eTargets Summary:\u003c/b\u003e\n\u003cbr\u003e\n$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWQOHHUTQZ7eJornRmyGlR9F8xi9ziZ8$\u003cbr\u003e\n\u003cb\u003eAttack Patterns:\u003c/b\u003e\n\u003cbr\u003e\n$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWNM2PV58R2dundBMa4HcXu1bqQZpnx6$\n\u003cbr\u003e\n\u003cb\u003eIndicators :\u003c/b\u003e\n\u003cbr\u003e\n$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWO351LGW52dr77Yzzv9mXI2RhufnNR4$\n\u003cbr\u003e\n\u003cb\u003eJudgements :\u003c/b\u003e\n\u003cbr\u003e\n$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWOFRJ64RT57bmPecdUGk3EEA9iw4p5c$\n\u003cbr\u003e\n\u003cb\u003eMalwares :\u003c/b\u003e\n\u003cbr\u003e\n$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWON9FO9835Sgbzh9YiLkjpWckKDhOWK$\n\u003cbr\u003e\n\u003cb\u003eIncidents :\u003c/b\u003e\n\u003cbr\u003e\n$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWNUFDHEPZ3rf9ZLJo5ok6dmieAwr0Yl$\n\u003cbr\u003e\n\u003cb\u003eTarget Details:\u003c/b\u003e\n\u003cbr\u003e\n$activity.definition_activity_01JQXNG2WLJGZ3ofVRqwgMha5Y5vO8hvIZS.output.variable_workflow_01JQWQCCMOGJX58z3bctcnIWkszCoiZvAbU$\n\u003c/body\u003e\n\u003c/html\u003e\n",
           "continue_if_one_address_valid": false,
           "continue_on_failure": false,
           "display_name": "Send Email",
@@ -1825,23 +1825,6 @@
       "display_name": "Ivan-ObservableEnrichment",
       "columns": [
         {
-          "is_required": true,
-          "name": "Producer",
-          "title": "Producer",
-          "type": "string"
-        },
-        {
-          "name": "Target",
-          "title": "Target",
-          "type": "string"
-        },
-        {
-          "is_required": true,
-          "name": "Value",
-          "title": "Value",
-          "type": "string"
-        },
-        {
           "name": "Actioin",
           "title": "Action",
           "type": "string"
@@ -1862,6 +1845,23 @@
           "name": "Observable",
           "title": "Observable",
           "type": "string"
+        },
+        {
+          "is_required": true,
+          "name": "Producer",
+          "title": "Producer",
+          "type": "string"
+        },
+        {
+          "name": "Target",
+          "title": "Target",
+          "type": "string"
+        },
+        {
+          "is_required": true,
+          "name": "Value",
+          "title": "Value",
+          "type": "string"
         }
       ],
       "base_type": "datatype",
@@ -1877,30 +1877,6 @@
         "type": "generic.workflow",
         "base_type": "workflow",
         "variables": [
-          {
-            "schema_id": "datatype.secure_string",
-            "properties": {
-              "value": "*****",
-              "scope": "local",
-              "name": "API",
-              "type": "datatype.secure_string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JN8S15XEKFG1fh0Ua5m4ezd9CQRNPQqgM",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Observable",
-              "type": "datatype.string",
-              "is_required": true
-            },
-            "unique_name": "variable_workflow_01JN8V20WV4CZ1cxa6szVnjKLGuC8UmhHQO",
-            "object_type": "variable_workflow"
-          },
           {
             "schema_id": "datatype.string",
             "properties": {
@@ -1934,6 +1910,30 @@
               "is_required": false
             },
             "unique_name": "variable_workflow_01JNDXHDWPHP22YcRg3P8BGrEi6AzyxBQsE",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "*****",
+              "scope": "local",
+              "name": "API",
+              "type": "datatype.secure_string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JN8S15XEKFG1fh0Ua5m4ezd9CQRNPQqgM",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Observable",
+              "type": "datatype.string",
+              "is_required": true
+            },
+            "unique_name": "variable_workflow_01JN8V20WV4CZ1cxa6szVnjKLGuC8UmhHQO",
             "object_type": "variable_workflow"
           }
         ],
@@ -2291,6 +2291,29 @@
             "properties": {
               "value": "",
               "scope": "input",
+              "name": "observable_value",
+              "type": "datatype.string",
+              "is_required": true
+            },
+            "unique_name": "variable_workflow_01JQVFH7CNCE96rdpoGwJqrXadGxEubOzfq",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
+            "properties": {
+              "scope": "output",
+              "name": "Incidents Table",
+              "type": "datatype.table",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQVFH7CNK684J1zRwsgBgyQPIFghu4CbO",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
               "name": "observable_type",
               "type": "datatype.string",
               "is_required": true
@@ -2308,29 +2331,6 @@
               "is_required": true
             },
             "unique_name": "variable_workflow_01JQVMAEI68PR6AppGA0uwNqhuvabRbEU0H",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "observable_value",
-              "type": "datatype.string",
-              "is_required": true
-            },
-            "unique_name": "variable_workflow_01JQVFH7CNCE96rdpoGwJqrXadGxEubOzfq",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
-            "properties": {
-              "scope": "output",
-              "name": "Incidents Table",
-              "type": "datatype.table",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQVFH7CNK684J1zRwsgBgyQPIFghu4CbO",
             "object_type": "variable_workflow"
           }
         ],
@@ -2623,7 +2623,7 @@
                   "runtime_user": {
                     "target_default": true
                   },
-                  "skip_execution": false,
+                  "skip_execution": true,
                   "target": {
                     "override_workflow_target": true,
                     "target_id": "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx",
@@ -2650,7 +2650,7 @@
                   "runtime_user": {
                     "target_default": true
                   },
-                  "skip_execution": false,
+                  "skip_execution": true,
                   "target": {
                     "override_workflow_target": true,
                     "target_id": "definition_target_01JPDZ4RQQ74N0y1iEUzWvpJh0TvuMSKFiI",
@@ -2670,7 +2670,7 @@
                   "action_timeout": 180,
                   "continue_on_failure": false,
                   "display_name": "Read indicators from JSON",
-                  "input_json": "$activity.definition_activity_01JSE691DJM2G6qHQ2LmtF8ZVaUXhop8Mpn.output.variable_workflow_01D6KGWYYF35W3B7G1o2xUXUjQDPmGK5osh$",
+                  "input_json": "$workflow.definition_workflow_01JSC422Z7Y6P7j77mRKAODnr3h9IdWAMUg.input.variable_workflow_01JSC422MTG9J1GgZgS9KAJJyxAwkCYOHHT$",
                   "jsonpath_query": "$.data[*].data.indicators.docs[*]",
                   "persist_output": false,
                   "populate_columns": false,
@@ -3039,8 +3039,8 @@
     {
       "workflow": {
         "unique_name": "definition_workflow_01JQVUTI06M1X2Y5Zdm755MyTiEMDdSrSwV",
-        "name": "Ivan - Sub Workflow XLSX generation (remote linux)",
-        "title": "Ivan - Sub Workflow XLSX generation (remote linux)",
+        "name": "Workflow - Sub - XLSX generation (remote linux)",
+        "title": "Workflow - Sub - XLSX generation (remote linux)",
         "type": "generic.workflow",
         "base_type": "workflow",
         "variables": [
@@ -3074,7 +3074,8 @@
             "is_atomic": false
           },
           "delete_workflow_instance": false,
-          "display_name": "Ivan - Sub Workflow XLSX generation (remote linux)",
+          "description": "XLSX generation from a XSL and publish to the /var/www/html/ directory of the remote server\n\nNeed a remote linux endpoint and the following script execute remotely\n\n# Importing pandas\nimport pandas as pd\nimport sys\n# The webpage URL whose table we want to extract\nurl = \"http://127.0.0.1/\"\nurl = url+sys.argv[1]\n\n# Assign the table data to a Pandas dataframe\ntable = pd.read_html(url)[0]\n\n# Store the dataframe in Excel file\next = \".xlsx\"\nout = sys.argv[1]+ext\ntable.to_excel(out)",
+          "display_name": "Workflow - Sub - XLSX generation (remote linux)",
           "runtime_user": {
             "override_target_runtime_user": false,
             "specify_on_workflow_start": false,
@@ -3708,6 +3709,18 @@
               {
                 "schema_id": "datatype.string",
                 "properties": {
+                  "value": "",
+                  "scope": "output",
+                  "name": "output_list_of_values",
+                  "type": "datatype.string",
+                  "is_required": false
+                },
+                "unique_name": "variable_workflow_01JQV4DBHVLI62IgPXRU6IkYoKppufifvU6",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
                   "value": "[\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"Assigned\"\n  },\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"New\"\n  },\n  {\n    \"CSOneStatus\": \"Customer Pending\",\n    \"SYNCaseStatus\": \"???\"\n  },\n  {\n    \"CSOneStatus\": \"Solution Monitoring\",\n    \"SYNCaseStatus\": \"Monitoring Recovery\"\n  },\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"Engineering Engaged\"\n  },\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"Work In Progress\"\n  }\n]",
                   "scope": "input",
                   "name": "input_table_response_object",
@@ -3750,18 +3763,6 @@
                   "is_required": false
                 },
                 "unique_name": "variable_workflow_01JQV4DBHVK5X46k0aHTZH8fXtQhAanDmTl",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "output",
-                  "name": "output_list_of_values",
-                  "type": "datatype.string",
-                  "is_required": false
-                },
-                "unique_name": "variable_workflow_01JQV4DBHVLI62IgPXRU6IkYoKppufifvU6",
                 "object_type": "variable_workflow"
               }
             ],
@@ -3988,30 +3989,6 @@
         "base_type": "workflow",
         "variables": [
           {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "CTR_enrich_json",
-              "type": "datatype.string",
-              "is_required": true
-            },
-            "unique_name": "variable_workflow_01JQVROPRFMMC2eDT0cGRe9A8HW03GZ1XZg",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "observable_value",
-              "type": "datatype.string",
-              "is_required": true
-            },
-            "unique_name": "variable_workflow_01JQVN9S6HT9R0GfzNaXucHZlKLjI92yMdD",
-            "object_type": "variable_workflow"
-          },
-          {
             "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
             "properties": {
               "scope": "output",
@@ -4043,6 +4020,30 @@
               "is_required": true
             },
             "unique_name": "variable_workflow_01JQVN9S6HHLW6G3qyhpDOUXOUZ7VOkHJyY",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "CTR_enrich_json",
+              "type": "datatype.string",
+              "is_required": true
+            },
+            "unique_name": "variable_workflow_01JQVROPRFMMC2eDT0cGRe9A8HW03GZ1XZg",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "observable_value",
+              "type": "datatype.string",
+              "is_required": true
+            },
+            "unique_name": "variable_workflow_01JQVN9S6HT9R0GfzNaXucHZlKLjI92yMdD",
             "object_type": "variable_workflow"
           }
         ],
@@ -4689,114 +4690,6 @@
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "output",
-              "name": "Full_XSL",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQWR3HUGNAQ4FBOS4adsl5XzviWvObcSA",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "Judgement_XSL",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQWOFRJ64RT57bmPecdUGk3EEA9iw4p5c",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "target_full_json",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQYSUGX0CJT5YeispxVNWjj6V0KjlynJO",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "Attack_patttern_XSL",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQWNM2PV58R2dundBMa4HcXu1bqQZpnx6",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "malware_json",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQYRGLQE14Q4SPTbTwGee5UDAwZg2cPRe",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "MISP_XSL",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQWPFQHR80A6UFHicDh2c6bzoNKej4mKU",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "Incidents_XSL",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQWNUFDHEPZ3rf9ZLJo5ok6dmieAwr0Yl",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "target_summary_json",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQYT29VLZYU62erXXOIml6j53GT7l5Rwg",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "Target_Summary_XSL",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQWQOHHUTQZ7eJornRmyGlR9F8xi9ziZ8",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
               "scope": "input",
               "name": "incidents_json",
               "type": "datatype.string",
@@ -4809,108 +4702,12 @@
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "output",
-              "name": "Indicators_XSL",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQWO351LGW52dr77Yzzv9mXI2RhufnNR4",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "AttackPattern_json",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQYQB8MFAEB6uv0ZuVbD0YdmvVlCMMDh8",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "verdict_json",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQYTN45OM381RKPMikbPes6wTnvrnCbOt",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "MISP_Json",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQYS6P5SG106SjsceUr0Iyi7D2nRBolvv",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "Verdict_XSL",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQWPA04CPWS23wGNEf5SyUwkcSHhhH2Ls",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "observable_value",
-              "type": "datatype.string",
-              "is_required": true
-            },
-            "unique_name": "variable_workflow_01JQW4M849V944YZDKK6Xnr3JHKFkGpuB9g",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
               "scope": "input",
               "name": "Indiictors_json",
               "type": "datatype.string",
               "is_required": false
             },
             "unique_name": "variable_workflow_01JQYQYL0GWGY0yg9pqfxZftU5jPHtaI2m9",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "Malware_XSL",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQWON9FO9835Sgbzh9YiLkjpWckKDhOWK",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "Target_full_XSL",
-              "type": "datatype.string",
-              "is_required": false
-            },
-            "unique_name": "variable_workflow_01JQWQCCMOGJX58z3bctcnIWkszCoiZvAbU",
             "object_type": "variable_workflow"
           },
           {
@@ -4930,11 +4727,215 @@
             "properties": {
               "value": "",
               "scope": "input",
+              "name": "AttackPattern_json",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQYQB8MFAEB6uv0ZuVbD0YdmvVlCMMDh8",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "target_full_json",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQYSUGX0CJT5YeispxVNWjj6V0KjlynJO",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Verdict_XSL",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQWPA04CPWS23wGNEf5SyUwkcSHhhH2Ls",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "target_summary_json",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQYT29VLZYU62erXXOIml6j53GT7l5Rwg",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "malware_json",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQYRGLQE14Q4SPTbTwGee5UDAwZg2cPRe",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Attack_patttern_XSL",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQWNM2PV58R2dundBMa4HcXu1bqQZpnx6",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Incidents_XSL",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQWNUFDHEPZ3rf9ZLJo5ok6dmieAwr0Yl",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Indicators_XSL",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQWO351LGW52dr77Yzzv9mXI2RhufnNR4",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Judgement_XSL",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQWOFRJ64RT57bmPecdUGk3EEA9iw4p5c",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "observable_value",
+              "type": "datatype.string",
+              "is_required": true
+            },
+            "unique_name": "variable_workflow_01JQW4M849V944YZDKK6Xnr3JHKFkGpuB9g",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Target_full_XSL",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQWQCCMOGJX58z3bctcnIWkszCoiZvAbU",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "MISP_Json",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQYS6P5SG106SjsceUr0Iyi7D2nRBolvv",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "verdict_json",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQYTN45OM381RKPMikbPes6wTnvrnCbOt",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "MISP_XSL",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQWPFQHR80A6UFHicDh2c6bzoNKej4mKU",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Target_Summary_XSL",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQWQOHHUTQZ7eJornRmyGlR9F8xi9ziZ8",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Malware_XSL",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQWON9FO9835Sgbzh9YiLkjpWckKDhOWK",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
               "name": "Judgement_json",
               "type": "datatype.string",
               "is_required": false
             },
             "unique_name": "variable_workflow_01JQYR7XRRNHG5rTndKEW55m8OPJXXchymi",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Full_XSL",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01JQWR3HUGNAQ4FBOS4adsl5XzviWvObcSA",
             "object_type": "variable_workflow"
           }
         ],
@@ -5906,6 +5907,125 @@
       "subworkflows": [
         {
           "workflow": {
+            "unique_name": "definition_workflow_01JOD8L55C2MI5peRKPc6RDjNEqgI5UR7IR",
+            "name": "Workflow - Sub - JSONtoXSL Extended",
+            "title": "Workflow - Sub - JSONtoXSL Extended",
+            "type": "generic.workflow",
+            "base_type": "workflow",
+            "variables": [
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "output",
+                  "name": "xsl",
+                  "type": "datatype.string",
+                  "is_required": false
+                },
+                "unique_name": "variable_workflow_01JOD8L4V98MS4MoUyTVcki6NkXuFRGLwF8",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "input",
+                  "name": "report_id",
+                  "type": "datatype.string",
+                  "is_required": true
+                },
+                "unique_name": "variable_workflow_01JOD8L4V99VD34eKiPD0wIfJ8nyWE25tsw",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "input",
+                  "name": "json",
+                  "type": "datatype.string",
+                  "is_required": false
+                },
+                "unique_name": "variable_workflow_01JOD8L4V947E2Hv173JZqHl3ebC1OL7duF",
+                "object_type": "variable_workflow"
+              }
+            ],
+            "properties": {
+              "atomic": {
+                "is_atomic": false
+              },
+              "delete_workflow_instance": false,
+              "display_name": "Workflow - Sub - JSONtoXSL Extended",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "specify_on_workflow_start": false,
+                "target_default": true
+              },
+              "target": {
+                "execute_on_target_group": false,
+                "execute_on_workflow_target": false,
+                "no_target": true,
+                "specify_on_workflow_start": false
+              }
+            },
+            "object_type": "definition_workflow",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01JOD8LN6O1RJ1PWbsAcnnkRBt7WnxwYKYb",
+                "name": "Convert Json to Xml",
+                "title": "Convert Json to Xml",
+                "type": "core.json2xml",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Convert Json to Xml",
+                  "input_json": "$workflow.definition_workflow_01JOD8L55C2MI5peRKPc6RDjNEqgI5UR7IR.input.variable_workflow_01JOD8L4V947E2Hv173JZqHl3ebC1OL7duF$",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01JOD8LSU13883mFHRiiWhp5CIih6fmQiHR",
+                "name": "XSL Transform",
+                "title": "XSL Transform",
+                "type": "core.xsl_transform",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "XSL Transform",
+                  "document": "$activity.definition_activity_01JOD8LN6O1RJ1PWbsAcnnkRBt7WnxwYKYb.output.output_xml$",
+                  "skip_execution": false,
+                  "stylesheet": "\u003c?xml version=\"1.0\"?\u003e\n\u003cxsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"\u003e\n \u003cxsl:template match=\"/\"\u003e\n  \u003chtml\u003e \n   \u003cbody\u003e\n    \u003ctable border=\"1\" cellspacing=\"0\" cellpadding=\"3\"\u003e\n      \u003ctr bgcolor=\"#FFFFFF\"\u003e\n       \u003ctd\u003eObservable\u003c/td\u003e\n       \u003ctd\u003eType\u003c/td\u003e\n       \u003ctd\u003eProducer\u003c/td\u003e\n       \u003ctd\u003eValue\u003c/td\u003e\n       \u003ctd\u003eDetails\u003c/td\u003e\n       \u003ctd\u003eTarget\u003c/td\u003e\n       \u003ctd\u003eActions\u003c/td\u003e\n      \u003c/tr\u003e     \n     \u003cxsl:for-each select=\"root/object\"\u003e\n      \u003ctr\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Observable\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Information_Type\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Producer\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Value\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Details\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Target\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Actioin\"/\u003e\u003c/td\u003e\n      \u003c/tr\u003e\n     \u003c/xsl:for-each\u003e\n    \u003c/table\u003e \n   \u003c/body\u003e\n  \u003c/html\u003e\n \u003c/xsl:template\u003e\n\u003c/xsl:stylesheet\u003e"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01JOD8LZI7A7Q0swTm6lvOn7SSHIOAqDXjC",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01JOD8L55C2MI5peRKPc6RDjNEqgI5UR7IR.output.variable_workflow_01JOD8L4V98MS4MoUyTVcki6NkXuFRGLwF8$",
+                      "variable_value_new": "$activity.definition_activity_01JOD8LSU13883mFHRiiWhp5CIih6fmQiHR.output.output_document$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ],
+            "categories": [
+              "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a"
+            ]
+          }
+        },
+        {
+          "workflow": {
             "unique_name": "definition_workflow_01JMT0OQYCAOO0WsskP6C9XsDMNF55O68cG",
             "name": "Workflow - Sub -  JSONtoXSL Light",
             "title": "Workflow - Sub -  JSONtoXSL Light",
@@ -6022,135 +6142,16 @@
               "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a"
             ]
           }
-        },
-        {
-          "workflow": {
-            "unique_name": "definition_workflow_01JOD8L55C2MI5peRKPc6RDjNEqgI5UR7IR",
-            "name": "Workflow - Sub - JSONtoXSL Extended",
-            "title": "Workflow - Sub - JSONtoXSL Extended",
-            "type": "generic.workflow",
-            "base_type": "workflow",
-            "variables": [
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "input",
-                  "name": "json",
-                  "type": "datatype.string",
-                  "is_required": false
-                },
-                "unique_name": "variable_workflow_01JOD8L4V947E2Hv173JZqHl3ebC1OL7duF",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "output",
-                  "name": "xsl",
-                  "type": "datatype.string",
-                  "is_required": false
-                },
-                "unique_name": "variable_workflow_01JOD8L4V98MS4MoUyTVcki6NkXuFRGLwF8",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "input",
-                  "name": "report_id",
-                  "type": "datatype.string",
-                  "is_required": true
-                },
-                "unique_name": "variable_workflow_01JOD8L4V99VD34eKiPD0wIfJ8nyWE25tsw",
-                "object_type": "variable_workflow"
-              }
-            ],
-            "properties": {
-              "atomic": {
-                "is_atomic": false
-              },
-              "delete_workflow_instance": false,
-              "display_name": "Workflow - Sub - JSONtoXSL Extended",
-              "runtime_user": {
-                "override_target_runtime_user": false,
-                "specify_on_workflow_start": false,
-                "target_default": true
-              },
-              "target": {
-                "execute_on_target_group": false,
-                "execute_on_workflow_target": false,
-                "no_target": true,
-                "specify_on_workflow_start": false
-              }
-            },
-            "object_type": "definition_workflow",
-            "actions": [
-              {
-                "unique_name": "definition_activity_01JOD8LN6O1RJ1PWbsAcnnkRBt7WnxwYKYb",
-                "name": "Convert Json to Xml",
-                "title": "Convert Json to Xml",
-                "type": "core.json2xml",
-                "base_type": "activity",
-                "properties": {
-                  "continue_on_failure": false,
-                  "display_name": "Convert Json to Xml",
-                  "input_json": "$workflow.definition_workflow_01JOD8L55C2MI5peRKPc6RDjNEqgI5UR7IR.input.variable_workflow_01JOD8L4V947E2Hv173JZqHl3ebC1OL7duF$",
-                  "skip_execution": false
-                },
-                "object_type": "definition_activity"
-              },
-              {
-                "unique_name": "definition_activity_01JOD8LSU13883mFHRiiWhp5CIih6fmQiHR",
-                "name": "XSL Transform",
-                "title": "XSL Transform",
-                "type": "core.xsl_transform",
-                "base_type": "activity",
-                "properties": {
-                  "continue_on_failure": false,
-                  "display_name": "XSL Transform",
-                  "document": "$activity.definition_activity_01JOD8LN6O1RJ1PWbsAcnnkRBt7WnxwYKYb.output.output_xml$",
-                  "skip_execution": false,
-                  "stylesheet": "\u003c?xml version=\"1.0\"?\u003e\n\u003cxsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"\u003e\n \u003cxsl:template match=\"/\"\u003e\n  \u003chtml\u003e \n   \u003cbody\u003e\n    \u003ctable border=\"1\" cellspacing=\"0\" cellpadding=\"3\"\u003e\n      \u003ctr bgcolor=\"#FFFFFF\"\u003e\n       \u003ctd\u003eObservable\u003c/td\u003e\n       \u003ctd\u003eType\u003c/td\u003e\n       \u003ctd\u003eProducer\u003c/td\u003e\n       \u003ctd\u003eValue\u003c/td\u003e\n       \u003ctd\u003eDetails\u003c/td\u003e\n       \u003ctd\u003eTarget\u003c/td\u003e\n       \u003ctd\u003eActions\u003c/td\u003e\n      \u003c/tr\u003e     \n     \u003cxsl:for-each select=\"root/object\"\u003e\n      \u003ctr\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Observable\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Information_Type\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Producer\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Value\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Details\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Target\"/\u003e\u003c/td\u003e\n       \u003ctd\u003e\u003cxsl:value-of select=\"Actioin\"/\u003e\u003c/td\u003e\n      \u003c/tr\u003e\n     \u003c/xsl:for-each\u003e\n    \u003c/table\u003e \n   \u003c/body\u003e\n  \u003c/html\u003e\n \u003c/xsl:template\u003e\n\u003c/xsl:stylesheet\u003e"
-                },
-                "object_type": "definition_activity"
-              },
-              {
-                "unique_name": "definition_activity_01JOD8LZI7A7Q0swTm6lvOn7SSHIOAqDXjC",
-                "name": "Set Variables",
-                "title": "Set Variables",
-                "type": "core.set_multiple_variables",
-                "base_type": "activity",
-                "properties": {
-                  "continue_on_failure": false,
-                  "display_name": "Set Variables",
-                  "skip_execution": false,
-                  "variables_to_update": [
-                    {
-                      "variable_to_update": "$workflow.definition_workflow_01JOD8L55C2MI5peRKPc6RDjNEqgI5UR7IR.output.variable_workflow_01JOD8L4V98MS4MoUyTVcki6NkXuFRGLwF8$",
-                      "variable_value_new": "$activity.definition_activity_01JOD8LSU13883mFHRiiWhp5CIih6fmQiHR.output.output_document$"
-                    }
-                  ]
-                },
-                "object_type": "definition_activity"
-              }
-            ],
-            "categories": [
-              "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a"
-            ]
-          }
         }
       ]
     }
   ],
   "atomic_workflows": [
     "definition_workflow_01JQ4X24X76JT05A05QhDmJMERQGZFoe7sm",
-    "definition_workflow_01D6KGWC1QCSN7f2tnHrhIHVeZHLKBZubRz",
     "definition_workflow_01BMYF7PCRLRM3pfYcuM9yYFsKoYBEBO4PK",
     "definition_workflow_01BNICU7U44OT4opnJG3VnV1zk9b9TC8bEr",
-    "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4",
-    "definition_workflow_01JMI8GET3NQU3DHM7CHjti7V0nmGgZmGpH"
+    "definition_workflow_01JMI8GET3NQU3DHM7CHjti7V0nmGgZmGpH",
+    "definition_workflow_01D6KGWC1QCSN7f2tnHrhIHVeZHLKBZubRz",
+    "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4"
   ]
 }
