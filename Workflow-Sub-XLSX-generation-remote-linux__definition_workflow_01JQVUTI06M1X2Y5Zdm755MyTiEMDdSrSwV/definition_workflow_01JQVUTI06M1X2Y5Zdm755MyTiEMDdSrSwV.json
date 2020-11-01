@@ -164,7 +164,8 @@
               },
               "skip_execution": false,
               "target": {
-                "use_workflow_target": true
+                "override_workflow_target": true,
+                "target_id": "definition_target_01JNEUUFB64GP54P1UDpbYQxK2S3blzHxNj"
               }
             },
             "object_type": "definition_activity"
