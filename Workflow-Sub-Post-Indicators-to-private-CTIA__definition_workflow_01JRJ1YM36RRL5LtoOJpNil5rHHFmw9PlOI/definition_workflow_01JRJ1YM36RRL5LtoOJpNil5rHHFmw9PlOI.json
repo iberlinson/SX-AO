@@ -11,21 +11,10 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "Obs_type",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01JRKRJS0SOK253bM4kvHLwgbmlqTP89IJN",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
           "name": "obbs_value",
           "type": "datatype.string",
-          "is_required": false
+          "is_required": false,
+          "is_invisible": false
         },
         "unique_name": "variable_workflow_01JRKRO6TUD7R7bVNdMpyZhQ7LrN4zLXWID",
         "object_type": "variable_workflow"
@@ -35,11 +24,38 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "disposition",
+          "name": "value",
           "type": "datatype.string",
-          "is_required": false
+          "is_required": false,
+          "is_invisible": false
         },
-        "unique_name": "variable_workflow_01JV2A7W9IYGZ2HVzCA6IldHqxvcMDNwidQ",
+        "unique_name": "variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "disposition_number",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01JWZONSNQ1MQ42KqsDEEbu7SJt5EuxxqHf",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Obs_type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01JRKRJS0SOK253bM4kvHLwgbmlqTP89IJN",
         "object_type": "variable_workflow"
       },
       {
@@ -49,7 +65,8 @@
           "scope": "local",
           "name": "TR",
           "type": "datatype.string",
-          "is_required": false
+          "is_required": false,
+          "is_invisible": false
         },
         "unique_name": "variable_workflow_01JRJLOO8BB9R1rmILpS59AOJjM63U3rves",
         "object_type": "variable_workflow"
@@ -59,11 +76,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "value",
+          "name": "disposition",
           "type": "datatype.string",
-          "is_required": false
+          "is_required": false,
+          "is_invisible": false
         },
-        "unique_name": "variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4",
+        "unique_name": "variable_workflow_01JV2A7W9IYGZ2HVzCA6IldHqxvcMDNwidQ",
         "object_type": "variable_workflow"
       }
     ],
@@ -136,7 +154,7 @@
         "properties": {
           "action_timeout": 180,
           "allow_auto_redirect": true,
-          "body": "{\n  \"valid_time\": {\n    \"start_time\": \"2020-10-28T11:47:25.622Z\",\n    \"end_time\": \"2020-10-28T11:47:25.622Z\"\n  },\n  \"observable\": {\n    \"value\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKRO6TUD7R7bVNdMpyZhQ7LrN4zLXWID$\",\n    \"type\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKRJS0SOK253bM4kvHLwgbmlqTP89IJN$\"\n  },\n  \"type\": \"judgement\",\n  \"source\": \"SecureX AO\",\n  \"disposition\": 2,\n  \n  \"reason\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4$\",\n  \"disposition_name\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JV2A7W9IYGZ2HVzCA6IldHqxvcMDNwidQ$\",\n  \"priority\": 0,\n  \"severity\": \"Medium\",\n  \"tlp\": \"white\",\n  \"timestamp\": \"2020-10-28T11:47:25.622Z\",\n  \"confidence\": \"Medium\"\n}",
+          "body": "{\n  \"valid_time\": {\n    \"start_time\": \"2020-10-28T11:47:25.622Z\",\n    \"end_time\": \"2020-10-28T11:47:25.622Z\"\n  },\n  \"observable\": {\n    \"value\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKRO6TUD7R7bVNdMpyZhQ7LrN4zLXWID$\",\n    \"type\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKRJS0SOK253bM4kvHLwgbmlqTP89IJN$\"\n  },\n  \"type\": \"judgement\",\n  \"source\": \"SecureX AO\",\n  \"disposition\": $workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JWZONSNQ1MQ42KqsDEEbu7SJt5EuxxqHf$,\n  \n  \"reason\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4$\",\n  \"disposition_name\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JV2A7W9IYGZ2HVzCA6IldHqxvcMDNwidQ$\",\n  \"priority\": 0,\n  \"severity\": \"Medium\",\n  \"tlp\": \"white\",\n  \"timestamp\": \"2020-10-28T11:47:25.622Z\",\n  \"confidence\": \"Medium\"\n}",
           "content_type": "application/json",
           "continue_on_error_status_code": false,
           "continue_on_failure": false,
