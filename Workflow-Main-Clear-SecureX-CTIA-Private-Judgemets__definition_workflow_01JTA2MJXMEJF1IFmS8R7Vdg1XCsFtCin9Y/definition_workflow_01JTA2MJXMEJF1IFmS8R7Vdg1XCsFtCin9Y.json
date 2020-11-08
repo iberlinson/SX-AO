@@ -13,7 +13,8 @@
           "scope": "local",
           "name": "Threat",
           "type": "datatype.string",
-          "is_required": false
+          "is_required": false,
+          "is_invisible": false
         },
         "unique_name": "variable_workflow_01JTA2MJM33EF3q33n0GqQpF2IT5S3oWdyg",
         "object_type": "variable_workflow"
@@ -25,7 +26,8 @@
           "scope": "local",
           "name": "json",
           "type": "datatype.string",
-          "is_required": false
+          "is_required": false,
+          "is_invisible": false
         },
         "unique_name": "variable_workflow_01JTA2MJM34JX7enwpHKrEiZvXD8vvp89E6",
         "object_type": "variable_workflow"
@@ -143,7 +145,7 @@
                   ],
                   "display_name": "HTTP Request",
                   "method": "GET",
-                  "relative_url": "/ctia/judgement/search?fields=id\u0026source=SecureX%20MISP",
+                  "relative_url": "/ctia/judgement/search?fields=id\u0026source=SecureX%20AO",
                   "runtime_user": {
                     "override_target_runtime_user": false,
                     "target_default": true
