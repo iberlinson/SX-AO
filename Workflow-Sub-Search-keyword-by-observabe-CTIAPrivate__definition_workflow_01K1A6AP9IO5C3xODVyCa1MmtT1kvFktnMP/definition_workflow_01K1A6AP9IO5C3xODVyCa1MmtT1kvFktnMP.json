@@ -155,7 +155,7 @@
           ],
           "display_name": "HTTP Request",
           "method": "GET",
-          "relative_url": "/ctia/judgement/search?fields=observable\u0026query=$workflow.definition_workflow_01K1A6AP9IO5C3xODVyCa1MmtT1kvFktnMP.input.variable_workflow_01K1A6AOYVTRM1EeQ9RZWAtmMvcW003E0OL$",
+          "relative_url": "/ctia/judgement/search?fields=id\u0026fields=reason\u0026fields=observable.value\u0026query=$workflow.definition_workflow_01K1A6AP9IO5C3xODVyCa1MmtT1kvFktnMP.input.variable_workflow_01K1A6AOYVZ575Ua53zsmKVJXyb1bbN4t9U$",
           "runtime_user": {
             "override_target_runtime_user": false,
             "target_default": true
@@ -310,14 +310,14 @@
       "columns": [
         {
           "is_required": true,
-          "name": "type",
-          "title": "type",
+          "name": "value",
+          "title": "value",
           "type": "string"
         },
         {
           "is_required": true,
-          "name": "value",
-          "title": "value",
+          "name": "type",
+          "title": "type",
           "type": "string"
         }
       ],
