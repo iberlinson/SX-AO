@@ -1,0 +1,364 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01JRLQCWBIGPR0fmN6NvUxEYSSbTuqJQGTc",
+    "name": "Sub  - Search keyword in CTIA Private",
+    "title": "Sub  - Search keyword in CTIA Private",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+        "properties": {
+          "scope": "output",
+          "name": "Indicators_by_threat",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01JROXKOA6YJB5vu75Di3cjic8MPtYOEp2U",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Observable_type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01JRLSSNZSL8A0A9kEKHTa3n2R03ZjHIXHd",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Threat",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01JRLSLSBJ4VS6BHwQsTNyuiZfJSLntPgGq",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "CTR_Token",
+          "type": "datatype.secure_string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01JRLS30B4MES2Kq19uS0QqUCJRuVvwVJgr",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "obserable_value",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01JRLT8L5TJ1D3Xc8kBcJxvDQim8hQSuROZ",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "IVAN - Search a Threat by keyword in CTIA Private intel (judgemennt/reason ) event  feeds by threrat detected real tiime enrrichment",
+      "display_name": "Sub  - Search keyword in CTIA Private",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01JROJ6V50VZR58l9ILjgat5iMkHIhXxQCG",
+        "name": "IVAN-CTR Generate Access Token",
+        "title": "IVAN-CTR Generate Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "IVAN-CTR Generate Access Token",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": true,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_01JRJK1COSB850Q9WVaBFqu6rG4bf7rYhni"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01JVS4OPOKQG55g2WPvbKtRGVW0rFcYfAy4",
+        "name": "CTR Generate Access Token",
+        "title": "CTR Generate Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "CTR Generate Access Token",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01JRLTU8RO6F274Rkxk2ufumYX6t0bMcIuG",
+        "name": "HTTP Request",
+        "title": "HTTP Request",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer $activity.definition_activity_01JVS4OPOKQG55g2WPvbKtRGVW0rFcYfAy4.output.variable_workflow_01BNOOXA3G6MV1PGAvsfZOKDdMYcE6XS726$"
+            }
+          ],
+          "display_name": "HTTP Request",
+          "method": "GET",
+          "relative_url": "/ctia/judgement/search?fields=reason\u0026query=$workflow.definition_workflow_01JRLQCWBIGPR0fmN6NvUxEYSSbTuqJQGTc.input.variable_workflow_01JRLSLSBJ4VS6BHwQsTNyuiZfJSLntPgGq$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01JRM09OGH7P62FOK8Yh5TYLPWs1xjj6YGR",
+        "name": "Read Table from JSON",
+        "title": "Read Table from JSON",
+        "type": "corejava.read_table_from_json",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Read Table from JSON",
+          "input_json": "$activity.definition_activity_01JRLTU8RO6F274Rkxk2ufumYX6t0bMcIuG.output.response_body$",
+          "jsonpath_query": "$.[*]",
+          "persist_output": false,
+          "populate_columns": false,
+          "skip_execution": false,
+          "table_columns": [
+            {
+              "column_name": "reason",
+              "column_type": "string"
+            },
+            {
+              "column_name": "id",
+              "column_type": "string"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01JROW0FM6OQ72XQ4npsyJmPTrKsxkPtXdS",
+        "name": "For Each",
+        "title": "For Each",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "For Each",
+          "skip_execution": false,
+          "source_array": "$activity.definition_activity_01JRM09OGH7P62FOK8Yh5TYLPWs1xjj6YGR.output.read_table_from_json$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01JROXQH091Z46hwzTxZDIyCrlPJrArPxGF",
+            "name": "Replace String",
+            "title": "Replace String",
+            "type": "core.replacestring",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Replace String",
+              "input_string": "$activity.definition_activity_01JROW0FM6OQ72XQ4npsyJmPTrKsxkPtXdS.input.source_array[@].reason$",
+              "replace_list": [
+                {
+                  "replaced_string": "malware-",
+                  "replacement_string": ""
+                },
+                {
+                  "replaced_string": "-detected",
+                  "replacement_string": ""
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01JRP2QDXRW1N7YIHCNTWRbdRmH4OYwpukk",
+            "name": "Add Row to Table",
+            "title": "Add Row to Table",
+            "type": "core.addrowtotable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Add Row to Table",
+              "input_table": "$workflow.definition_workflow_01JRLQCWBIGPR0fmN6NvUxEYSSbTuqJQGTc.output.variable_workflow_01JROXKOA6YJB5vu75Di3cjic8MPtYOEp2U$",
+              "row": [
+                {
+                  "key": "type",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01JROW0FM6OQ72XQ4npsyJmPTrKsxkPtXdS.input.source_array[@].id$"
+                },
+                {
+                  "key": "value",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01JROXQH091Z46hwzTxZDIyCrlPJrArPxGF.output.result_string$"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a"
+    ]
+  },
+  "categories": {
+    "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a": {
+      "unique_name": "category_01JJ11UE53YIS5clm3SXtUlWeEFq43p9n3a",
+      "name": "Ivan",
+      "title": "Ivan",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "Ivan Atomic Actions",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx": {
+      "unique_name": "definition_target_01JPDXZHEKFXE0DCxZKwz6FwRdYRl4UHHQx",
+      "name": "CTR_IVAN_TOKEN",
+      "title": "CTR_IVAN_TOKEN",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01JPDX0PZZKT533W9RABl04sC6b11nf0XAs",
+        "disable_certificate_validation": false,
+        "display_name": "CTR_IVAN_TOKEN",
+        "host": "visibility.amp.cisco.com",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "path": "/iroh",
+        "port": 443,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ": {
+      "unique_name": "definition_target_01JR32G4G61IQ5tJFSRwH7Jd5jZggGc4NFQ",
+      "name": "CTR_IVAN_Private_Intel",
+      "title": "CTR_IVAN_Private_Intel",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "CTR_IVAN_Private_Intel",
+        "host": "private.intel.amp.cisco.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01JPDX0PZZKT533W9RABl04sC6b11nf0XAs": {
+      "unique_name": "definition_runtime_user_01JPDX0PZZKT533W9RABl04sC6b11nf0XAs",
+      "name": "CTR_IVAN",
+      "title": "CTR_IVAN",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "*****",
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "CTR_IVAN"
+      }
+    }
+  },
+  "table_types": {
+    "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6": {
+      "unique_name": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+      "data_type": "datatype.tabletype",
+      "display_name": "Observable",
+      "description": "Observable Type and Value",
+      "columns": [
+        {
+          "is_required": true,
+          "name": "type",
+          "title": "type",
+          "type": "string"
+        },
+        {
+          "is_required": true,
+          "name": "value",
+          "title": "value",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01JRJK1COSB850Q9WVaBFqu6rG4bf7rYhni",
+    "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4"
+  ]
+}
