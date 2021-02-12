@@ -7,6 +7,30 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+        "properties": {
+          "scope": "local",
+          "name": "TEMP",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01KDX5OW0YJG74Im9LtL2hD9CYD8hU608AW",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+        "properties": {
+          "scope": "local",
+          "name": "temp_indicator",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01KG6F559JU0H5A9oMlRqWHsfggu9J4udMQ",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.integer",
         "properties": {
           "value": 240,
@@ -22,13 +46,21 @@
       {
         "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
         "properties": {
+          "value": [
+            {
+              "column_data": {
+                "type": "sha256",
+                "value": "97303c178b5d439a15b0e6770eb63a24f3f7a7901c7de1941c6088a60b1dfd1b"
+              }
+            }
+          ],
           "scope": "local",
-          "name": "TEMP",
+          "name": "Test Obs",
           "type": "datatype.table",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01KDX5OW0YJG74Im9LtL2hD9CYD8hU608AW",
+        "unique_name": "variable_workflow_01KFJKBRA4SOC41ru5lfaSJG3jG9LrPS9r4",
         "object_type": "variable_workflow"
       },
       {
@@ -54,38 +86,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01KDY1GURER6Y4eCqNGSKiyvlIQZI7dqKGv",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
-        "properties": {
-          "value": [
-            {
-              "column_data": {
-                "type": "sha256",
-                "value": "97303c178b5d439a15b0e6770eb63a24f3f7a7901c7de1941c6088a60b1dfd1b"
-              }
-            }
-          ],
-          "scope": "local",
-          "name": "Test Obs",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01KFJKBRA4SOC41ru5lfaSJG3jG9LrPS9r4",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
-        "properties": {
-          "scope": "local",
-          "name": "temp_indicator",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01KG6F559JU0H5A9oMlRqWHsfggu9J4udMQ",
         "object_type": "variable_workflow"
       }
     ],
@@ -1227,6 +1227,12 @@
       "columns": [
         {
           "is_required": true,
+          "name": "Information_Type",
+          "title": "Module_Type",
+          "type": "string"
+        },
+        {
+          "is_required": true,
           "name": "Observable",
           "title": "Observable",
           "type": "string"
@@ -1257,12 +1263,6 @@
           "name": "Details",
           "title": "Details",
           "type": "string"
-        },
-        {
-          "is_required": true,
-          "name": "Information_Type",
-          "title": "Module_Type",
-          "type": "string"
         }
       ],
       "base_type": "datatype",
@@ -1292,16 +1292,17 @@
             "object_type": "variable_workflow"
           },
           {
-            "schema_id": "datatype.string",
+            "schema_id": "datatype.integer",
             "properties": {
-              "value": "",
+              "value": 240,
               "scope": "local",
-              "name": "date_minus_delay",
-              "type": "datatype.string",
+              "name": "delay_in_hour",
+              "type": "datatype.integer",
+              "description": "min 1 (0 = all)",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01KFB756MG7GR1DZUp9ZyftbksHfktnCDVp",
+            "unique_name": "variable_workflow_01KFAXSZGEU2M0eQ6beOAs75MMtCAxcE8nj",
             "object_type": "variable_workflow"
           },
           {
@@ -1318,15 +1319,16 @@
             "object_type": "variable_workflow"
           },
           {
-            "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+            "schema_id": "datatype.string",
             "properties": {
-              "scope": "output",
-              "name": "Observables",
-              "type": "datatype.table",
+              "value": "",
+              "scope": "local",
+              "name": "HTTP_JSON_temp",
+              "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01KDU0I0S23XN7DOlEPElVsYH4sUjYM6Mjg",
+            "unique_name": "variable_workflow_01KFAX2H4K5LN6hfHjVFHSiz7bY6kh96PDM",
             "object_type": "variable_workflow"
           },
           {
@@ -1346,6 +1348,19 @@
             "properties": {
               "value": "",
               "scope": "local",
+              "name": "date_minus_delay",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01KFB756MG7GR1DZUp9ZyftbksHfktnCDVp",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "local",
               "name": "date",
               "type": "datatype.string",
               "is_required": false,
@@ -1355,30 +1370,15 @@
             "object_type": "variable_workflow"
           },
           {
-            "schema_id": "datatype.integer",
+            "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
             "properties": {
-              "value": 240,
-              "scope": "local",
-              "name": "delay_in_hour",
-              "type": "datatype.integer",
-              "description": "min 1 (0 = all)",
+              "scope": "output",
+              "name": "Observables",
+              "type": "datatype.table",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01KFAXSZGEU2M0eQ6beOAs75MMtCAxcE8nj",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "local",
-              "name": "HTTP_JSON_temp",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01KFAX2H4K5LN6hfHjVFHSiz7bY6kh96PDM",
+            "unique_name": "variable_workflow_01KDU0I0S23XN7DOlEPElVsYH4sUjYM6Mjg",
             "object_type": "variable_workflow"
           }
         ],
@@ -1888,19 +1888,6 @@
             "base_type": "workflow",
             "variables": [
               {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "output",
-                  "name": "output_list_of_values",
-                  "type": "datatype.string",
-                  "is_required": false,
-                  "is_invisible": false
-                },
-                "unique_name": "variable_workflow_01EGFCVMHO7RW0dQ5RfuSxeqTs4Fv9GOsXf",
-                "object_type": "variable_workflow"
-              },
-              {
                 "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
                 "properties": {
                   "scope": "output",
@@ -1915,14 +1902,27 @@
               {
                 "schema_id": "datatype.string",
                 "properties": {
-                  "value": "CSOneStatus",
+                  "value": "",
+                  "scope": "output",
+                  "name": "output_list_of_values",
+                  "type": "datatype.string",
+                  "is_required": false,
+                  "is_invisible": false
+                },
+                "unique_name": "variable_workflow_01EGFCVMHO7RW0dQ5RfuSxeqTs4Fv9GOsXf",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "[\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"Assigned\"\n  },\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"New\"\n  },\n  {\n    \"CSOneStatus\": \"Customer Pending\",\n    \"SYNCaseStatus\": \"???\"\n  },\n  {\n    \"CSOneStatus\": \"Solution Monitoring\",\n    \"SYNCaseStatus\": \"Monitoring Recovery\"\n  },\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"Engineering Engaged\"\n  },\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"Work In Progress\"\n  }\n]",
                   "scope": "input",
-                  "name": "input_column_wanted",
+                  "name": "input_table_response_object",
                   "type": "datatype.string",
                   "is_required": true,
                   "is_invisible": false
                 },
-                "unique_name": "variable_workflow_01EGCM0P290DF3sZAcQ1sEOCTlFLTzHR2Em",
+                "unique_name": "variable_workflow_01EGCLLC8WDNT0YSczPXBGvmr5oioNaj9Xn",
                 "object_type": "variable_workflow"
               },
               {
@@ -1941,14 +1941,14 @@
               {
                 "schema_id": "datatype.string",
                 "properties": {
-                  "value": "[\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"Assigned\"\n  },\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"New\"\n  },\n  {\n    \"CSOneStatus\": \"Customer Pending\",\n    \"SYNCaseStatus\": \"???\"\n  },\n  {\n    \"CSOneStatus\": \"Solution Monitoring\",\n    \"SYNCaseStatus\": \"Monitoring Recovery\"\n  },\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"Engineering Engaged\"\n  },\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"Work In Progress\"\n  }\n]",
+                  "value": "CSOneStatus",
                   "scope": "input",
-                  "name": "input_table_response_object",
+                  "name": "input_column_wanted",
                   "type": "datatype.string",
                   "is_required": true,
                   "is_invisible": false
                 },
-                "unique_name": "variable_workflow_01EGCLLC8WDNT0YSczPXBGvmr5oioNaj9Xn",
+                "unique_name": "variable_workflow_01EGCM0P290DF3sZAcQ1sEOCTlFLTzHR2Em",
                 "object_type": "variable_workflow"
               }
             ],
@@ -2175,18 +2175,6 @@
         "base_type": "workflow",
         "variables": [
           {
-            "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
-            "properties": {
-              "scope": "output",
-              "name": "Report_Table_full",
-              "type": "datatype.table",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01JSC422MTDSI0lPeUkFZ9ElLxVVvkPkvAN",
-            "object_type": "variable_workflow"
-          },
-          {
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
@@ -2197,6 +2185,19 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01JV0MULBPMKQ743wl56vAmEEgCm2PPcRgo",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "CTRenrich_json",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01JSC422MTG9J1GgZgS9KAJJyxAwkCYOHHT",
             "object_type": "variable_workflow"
           },
           {
@@ -2229,6 +2230,18 @@
           {
             "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
             "properties": {
+              "scope": "output",
+              "name": "Indicators Table",
+              "type": "datatype.table",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01JSC422MTCHR0oCDQ759Ig2boyyELoNsJF",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
+            "properties": {
               "scope": "local",
               "name": "Indicator_temp_table",
               "type": "datatype.table",
@@ -2242,25 +2255,12 @@
             "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
             "properties": {
               "scope": "output",
-              "name": "Indicators Table",
+              "name": "Report_Table_full",
               "type": "datatype.table",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01JSC422MTCHR0oCDQ759Ig2boyyELoNsJF",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "CTRenrich_json",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01JSC422MTG9J1GgZgS9KAJJyxAwkCYOHHT",
+            "unique_name": "variable_workflow_01JSC422MTDSI0lPeUkFZ9ElLxVVvkPkvAN",
             "object_type": "variable_workflow"
           },
           {
@@ -2685,6 +2685,18 @@
         "base_type": "workflow",
         "variables": [
           {
+            "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
+            "properties": {
+              "scope": "output",
+              "name": "Target_Table",
+              "type": "datatype.table",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01JQVN9S6HOME07a9WEGbweBoz7lILpZqD7",
+            "object_type": "variable_workflow"
+          },
+          {
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
@@ -2695,18 +2707,6 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01JQVN9S6HHLW6G3qyhpDOUXOUZ7VOkHJyY",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
-            "properties": {
-              "scope": "output",
-              "name": "Target_Table",
-              "type": "datatype.table",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01JQVN9S6HOME07a9WEGbweBoz7lILpZqD7",
             "object_type": "variable_workflow"
           },
           {
@@ -3131,6 +3131,19 @@
               {
                 "schema_id": "datatype.string",
                 "properties": {
+                  "value": "",
+                  "scope": "output",
+                  "name": "output_list_of_values",
+                  "type": "datatype.string",
+                  "is_required": false,
+                  "is_invisible": false
+                },
+                "unique_name": "variable_workflow_01JQV4DBHVLI62IgPXRU6IkYoKppufifvU6",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
                   "value": "[\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"Assigned\"\n  },\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"New\"\n  },\n  {\n    \"CSOneStatus\": \"Customer Pending\",\n    \"SYNCaseStatus\": \"???\"\n  },\n  {\n    \"CSOneStatus\": \"Solution Monitoring\",\n    \"SYNCaseStatus\": \"Monitoring Recovery\"\n  },\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"Engineering Engaged\"\n  },\n  {\n    \"CSOneStatus\": \"CE Pending\",\n    \"SYNCaseStatus\": \"Work In Progress\"\n  }\n]",
                   "scope": "input",
                   "name": "input_table_response_object",
@@ -3139,6 +3152,18 @@
                   "is_invisible": false
                 },
                 "unique_name": "variable_workflow_01JQV4DBHVMNL1rPNLvE0PK8qngYffuxXiK",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
+                "properties": {
+                  "scope": "output",
+                  "name": "output_distinct_list",
+                  "type": "datatype.table",
+                  "is_required": false,
+                  "is_invisible": false
+                },
+                "unique_name": "variable_workflow_01JQV4DBHVHIX685M3pT0etFEJJ1YbyOX8E",
                 "object_type": "variable_workflow"
               },
               {
@@ -3155,18 +3180,6 @@
                 "object_type": "variable_workflow"
               },
               {
-                "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
-                "properties": {
-                  "scope": "output",
-                  "name": "output_distinct_list",
-                  "type": "datatype.table",
-                  "is_required": false,
-                  "is_invisible": false
-                },
-                "unique_name": "variable_workflow_01JQV4DBHVHIX685M3pT0etFEJJ1YbyOX8E",
-                "object_type": "variable_workflow"
-              },
-              {
                 "schema_id": "datatype.boolean",
                 "properties": {
                   "value": false,
@@ -3177,19 +3190,6 @@
                   "is_invisible": false
                 },
                 "unique_name": "variable_workflow_01JQV4DBHVK5X46k0aHTZH8fXtQhAanDmTl",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "output",
-                  "name": "output_list_of_values",
-                  "type": "datatype.string",
-                  "is_required": false,
-                  "is_invisible": false
-                },
-                "unique_name": "variable_workflow_01JQV4DBHVLI62IgPXRU6IkYoKppufifvU6",
                 "object_type": "variable_workflow"
               }
             ],
@@ -3567,10 +3567,10 @@
   ],
   "atomic_workflows": [
     "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4",
-    "definition_workflow_01DS6ELBOO8YR3uFJZju566LqiqR18VlE6r",
-    "definition_workflow_01F69H5M1M9AD0pmHMKElvsoyIpWleycdX3",
+    "definition_workflow_01FHS2UPUQNCZ0PCqtR2BcNyTpy7oPfnIV4",
     "definition_workflow_01KE0RO272GRY1cOhLs5S0qXEn6TUnmP2ZF",
+    "definition_workflow_01DS6ELBOO8YR3uFJZju566LqiqR18VlE6r",
     "definition_workflow_01D6KGWC1QCSN7f2tnHrhIHVeZHLKBZubRz",
-    "definition_workflow_01FHS2UPUQNCZ0PCqtR2BcNyTpy7oPfnIV4"
+    "definition_workflow_01F69H5M1M9AD0pmHMKElvsoyIpWleycdX3"
   ]
 }
