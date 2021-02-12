@@ -1,0 +1,379 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX",
+    "name": "Search User",
+    "title": "Search User",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MAOSADRIJR73T7fkW7YDHcirtIGHNIFsi",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Alerting",
+          "scope": "local",
+          "name": "Webex Room",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MAXKFRKT7OL5nB4E8KShFx4Ox6EUxbXBl",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "Search for a given username via Orbital (Account Monotoring and Logged_In",
+      "display_name": "Search User",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01MAOTJYLX34T0Goveis2zaaTbkGBIMIs0T",
+        "name": "Threat Response v2 - Generate Access Token",
+        "title": "Threat Response v2 - Generate Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Threat Response v2 - Generate Access Token",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01M8822VZOKER0ntTNIpOFk1DpIUvleP51k",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MAP35RYJE5O6xJwNvcHFcDe0NZrH2s54Q",
+        "name": "Orbital - Query All Endpoints",
+        "title": "Orbital - Query All Endpoints",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Orbital - Query All Endpoints",
+          "input": {
+            "variable_workflow_01JGM8XOCL3992k7Wt6FuiBlIzEIMI6V8y5": "",
+            "variable_workflow_01JGM8XOCL8NJ2QcI1lUMksO4uAjPZAoglR": "SX-User Search",
+            "variable_workflow_01JGM8XOCLCNK4sWmmEChXZug28aJ9QANdy": true,
+            "variable_workflow_01JGM8XOCLEYQ14xbtBvSGBBOU8JPkGibyq": "$activity.definition_activity_01MAOTJYLX34T0Goveis2zaaTbkGBIMIs0T.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
+            "variable_workflow_01JGM8XOCLHGH6d9lwc3hvI4sBaCDZlLjXi": "SELECT username FROM users WHERE username LIKE '$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$';",
+            "variable_workflow_01JGM8XOCLKTJ3rIoOhQoYD6yS9xhkRIIer": 1
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01M8822P7H0E26nljMtnpKpJcqg8sRXUI6y",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_01JGM8XOOZ5J64EWGHln955eAJFIOwmjbZr"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MAPCAJPUE6M272yggYTF7v52vFiE2GvOt",
+        "name": "Webex Teams - Search for Room",
+        "title": "Webex Teams - Search for Room",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Webex Teams - Search for Room",
+          "input": {
+            "variable_workflow_01FHMU6RWYQWI3QFUEzjWMT7JYBcz5vquuD": "",
+            "variable_workflow_01FHMU6RWYWY822p43LeMi8Lcx89Q9jeyek": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01MAXKFRKT7OL5nB4E8KShFx4Ox6EUxbXBl$",
+            "variable_workflow_01FHMU6RWYY481TVWDm0BQ1p0rWnqak191l": "$global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8.global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8$",
+            "variable_workflow_01FHNGCYY2O6Z0NcPmUDabszT2P4P0oqMNd": ""
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01KJANNE7TR2C6ahGVhbhP3X5JvEtPoSLKV",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MAPDUP610Y2065DyutWTUtk6P2G8818pP",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Condition Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01MAXHOIE2HLG2NBFivUJUnYeLknBZxolQC",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01MAP35RYJE5O6xJwNvcHFcDe0NZrH2s54Q.output.succeeded$",
+                "operator": "eq",
+                "right_operand": true
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MAPCT530I1C3woZuNZOImb2KcCOB3i7aS",
+                "name": "Webex Teams - Post Message to Room",
+                "title": "Webex Teams - Post Message to Room",
+                "type": "workflow.atomic_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Webex Teams - Post Message to Room",
+                  "input": {
+                    "variable_workflow_01FGYY44G3MZ55amJu9YqgUeKS8GT49bZx3": "$global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8.global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8$",
+                    "variable_workflow_01FGYY44G3TK951Crpnd8g2izonyM4bFtpW": "$activity.definition_activity_01MAPCAJPUE6M272yggYTF7v52vFiE2GvOt.output.variable_workflow_01FHSVE2R6ZTQ6L92WEi0kWgR5T8zhMAUzO$",
+                    "variable_workflow_01FGYY44G3UPV3heGGc3vXCV47YL5WoI2X6": "",
+                    "variable_workflow_01FGYZ9BV4QTP19CuMwcW8QywvCP9ymx2BZ": "User $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$ Found"
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01KJANNE7TR2C6ahGVhbhP3X5JvEtPoSLKV",
+                    "target_type": "web-service.endpoint"
+                  },
+                  "workflow_id": "definition_workflow_01FGYY44YU521254ygN3Le0In0kEHpiPNpf"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MAPDVANBI7L3eIsSJIQHmj2z9FLKWfET3",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01MAP35RYJE5O6xJwNvcHFcDe0NZrH2s54Q.output.succeeded$",
+                "operator": "eq",
+                "right_operand": false
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MAXJNOWRIJL6cQFEIz8kRPmfD5v6NKkJb",
+                "name": "Webex Teams - Post Message to Room",
+                "title": "Webex Teams - Post Message to Room",
+                "type": "workflow.atomic_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Webex Teams - Post Message to Room",
+                  "input": {
+                    "variable_workflow_01FGYY44G3MZ55amJu9YqgUeKS8GT49bZx3": "$global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8.global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8$",
+                    "variable_workflow_01FGYY44G3TK951Crpnd8g2izonyM4bFtpW": "$activity.definition_activity_01MAPCAJPUE6M272yggYTF7v52vFiE2GvOt.output.variable_workflow_01FHSVE2R6ZTQ6L92WEi0kWgR5T8zhMAUzO$",
+                    "variable_workflow_01FGYY44G3UPV3heGGc3vXCV47YL5WoI2X6": "",
+                    "variable_workflow_01FGYZ9BV4QTP19CuMwcW8QywvCP9ymx2BZ": "User $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$  not Found"
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01KJANNE7TR2C6ahGVhbhP3X5JvEtPoSLKV",
+                    "target_type": "web-service.endpoint"
+                  },
+                  "workflow_id": "definition_workflow_01FGYY44YU521254ygN3Le0In0kEHpiPNpf"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r",
+      "category_01FM7CGPZZCMY0KcvgiGjVH5UaB4y4aDJ7m"
+    ]
+  },
+  "categories": {
+    "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r": {
+      "unique_name": "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r",
+      "name": "SecureX",
+      "title": "SecureX",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01FM7CGPZZCMY0KcvgiGjVH5UaB4y4aDJ7m": {
+      "unique_name": "category_01FM7CGPZZCMY0KcvgiGjVH5UaB4y4aDJ7m",
+      "name": "response",
+      "title": "response",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_01KJANNE7TR2C6ahGVhbhP3X5JvEtPoSLKV": {
+      "unique_name": "definition_target_01KJANNE7TR2C6ahGVhbhP3X5JvEtPoSLKV",
+      "name": "Cisco Teams API",
+      "title": "Cisco Teams API",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "Cisco Teams API",
+        "host": "webexapis.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01M8822P7H0E26nljMtnpKpJcqg8sRXUI6y": {
+      "unique_name": "definition_target_01M8822P7H0E26nljMtnpKpJcqg8sRXUI6y",
+      "name": "Orbital_Target",
+      "title": "Orbital_Target",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "Orbital_Target",
+        "disable_certificate_validation": false,
+        "display_name": "Orbital_Target",
+        "host": "orbital.amp.cisco.com",
+        "no_runtime_user": true,
+        "path": "/v0",
+        "port": 443,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01M8822VZOKER0ntTNIpOFk1DpIUvleP51k": {
+      "unique_name": "definition_target_01M8822VZOKER0ntTNIpOFk1DpIUvleP51k",
+      "name": "Orbital_For_Access_Token",
+      "title": "Orbital Target for access token",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01M8821Q16KL94Lad4v07Xs0dB22oWJ52Re",
+        "description": "Orbital_For_Access_Token",
+        "disable_certificate_validation": false,
+        "display_name": "Orbital_For_Access_Token",
+        "host": "visibility.amp.cisco.com",
+        "no_runtime_user": false,
+        "path": "/iroh",
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01M8821Q16KL94Lad4v07Xs0dB22oWJ52Re": {
+      "unique_name": "definition_runtime_user_01M8821Q16KL94Lad4v07Xs0dB22oWJ52Re",
+      "name": "Orbital_Credentials",
+      "title": "Orbital_Credentials",
+      "description": "Account Key for Orbital",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "*****",
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "Orbital_Credentials"
+      }
+    }
+  },
+  "variables": {
+    "variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8": {
+      "unique_name": "variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8",
+      "properties": {
+        "value": "*****",
+        "scope": "global",
+        "name": "Cisco Teams BOT Token",
+        "type": "datatype.secure_string",
+        "description": "Enter here your Teams Bot token (https://developer.webex.com/docs/bots)- Remember to create a room named Alerting in Teams and add your bot as member",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
+    "definition_workflow_01FGYY44YU521254ygN3Le0In0kEHpiPNpf",
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
+    "definition_workflow_01JGM8XOOZ5J64EWGHln955eAJFIOwmjbZr"
+  ]
+}
