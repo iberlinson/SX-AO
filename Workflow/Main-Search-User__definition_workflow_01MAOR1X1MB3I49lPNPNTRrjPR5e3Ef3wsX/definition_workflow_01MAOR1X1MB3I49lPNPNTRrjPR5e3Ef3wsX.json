@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX",
-    "name": "Search User",
-    "title": "Search User",
+    "name": "Hunt - Search User - Orbital",
+    "title": "Hunt - Search User - Orbital",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": [
@@ -52,7 +52,7 @@
       },
       "delete_workflow_instance": false,
       "description": "Search for a given username via Orbital (Account Monotoring and Logged_In",
-      "display_name": "Search User",
+      "display_name": "Hunt - Search User - Orbital",
       "runtime_user": {
         "override_target_runtime_user": false,
         "specify_on_workflow_start": false,
@@ -90,34 +90,105 @@
         "object_type": "definition_activity"
       },
       {
-        "unique_name": "definition_activity_01MAP35RYJE5O6xJwNvcHFcDe0NZrH2s54Q",
-        "name": "Orbital - Query All Endpoints",
-        "title": "Orbital - Query All Endpoints",
-        "type": "workflow.atomic_workflow",
-        "base_type": "subworkflow",
+        "unique_name": "definition_activity_01MBGW8S4XM76529lFGLGNwDj5pbSmDmMqK",
+        "name": "Parallel Block",
+        "title": "Parallel Block",
+        "type": "logic.parallel",
+        "base_type": "activity",
         "properties": {
           "continue_on_failure": false,
-          "display_name": "Orbital - Query All Endpoints",
-          "input": {
-            "variable_workflow_01JGM8XOCL3992k7Wt6FuiBlIzEIMI6V8y5": "",
-            "variable_workflow_01JGM8XOCL8NJ2QcI1lUMksO4uAjPZAoglR": "SX-User Search",
-            "variable_workflow_01JGM8XOCLCNK4sWmmEChXZug28aJ9QANdy": true,
-            "variable_workflow_01JGM8XOCLEYQ14xbtBvSGBBOU8JPkGibyq": "$activity.definition_activity_01MAOTJYLX34T0Goveis2zaaTbkGBIMIs0T.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
-            "variable_workflow_01JGM8XOCLHGH6d9lwc3hvI4sBaCDZlLjXi": "SELECT username FROM users WHERE username LIKE '$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$';",
-            "variable_workflow_01JGM8XOCLKTJ3rIoOhQoYD6yS9xhkRIIer": 1
-          },
-          "runtime_user": {
-            "target_default": true
-          },
-          "skip_execution": false,
-          "target": {
-            "override_workflow_target": true,
-            "target_id": "definition_target_01M8822P7H0E26nljMtnpKpJcqg8sRXUI6y",
-            "target_type": "web-service.endpoint"
-          },
-          "workflow_id": "definition_workflow_01JGM8XOOZ5J64EWGHln955eAJFIOwmjbZr"
+          "display_name": "Parallel Block",
+          "skip_execution": false
         },
-        "object_type": "definition_activity"
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01MBGW9MQXE065NRy9foOgrPki1ItHDmU5S",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "display_name": "Parallel Branch"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MAP35RYJE5O6xJwNvcHFcDe0NZrH2s54Q",
+                "name": "Orbital - Query All Endpoints",
+                "title": "Orbital - Query All Endpoints",
+                "type": "workflow.atomic_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "Orbital - Query All Endpoints",
+                  "input": {
+                    "variable_workflow_01JGM8XOCL3992k7Wt6FuiBlIzEIMI6V8y5": "",
+                    "variable_workflow_01JGM8XOCL8NJ2QcI1lUMksO4uAjPZAoglR": "SX-User Search",
+                    "variable_workflow_01JGM8XOCLCNK4sWmmEChXZug28aJ9QANdy": true,
+                    "variable_workflow_01JGM8XOCLEYQ14xbtBvSGBBOU8JPkGibyq": "$activity.definition_activity_01MAOTJYLX34T0Goveis2zaaTbkGBIMIs0T.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
+                    "variable_workflow_01JGM8XOCLHGH6d9lwc3hvI4sBaCDZlLjXi": "SELECT username FROM users WHERE username LIKE '$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$';",
+                    "variable_workflow_01JGM8XOCLKTJ3rIoOhQoYD6yS9xhkRIIer": 1
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01M8822P7H0E26nljMtnpKpJcqg8sRXUI6y",
+                    "target_type": "web-service.endpoint"
+                  },
+                  "workflow_id": "definition_workflow_01JGM8XOOZ5J64EWGHln955eAJFIOwmjbZr"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MBGW9NF9GUL4de731uSfgFgqTYDIreHRN",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "display_name": "Parallel Branch"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MBGWGE24WP70eSojKlTdsUUk7o5dZp40Q",
+                "name": "Orbital - Query All Endpoints Logged_in",
+                "title": "Orbital - Query All Endpoints Logged_in",
+                "type": "workflow.atomic_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "Orbital - Query All Endpoints Logged_in",
+                  "input": {
+                    "variable_workflow_01JGM8XOCL3992k7Wt6FuiBlIzEIMI6V8y5": "",
+                    "variable_workflow_01JGM8XOCL8NJ2QcI1lUMksO4uAjPZAoglR": "SX-User Search",
+                    "variable_workflow_01JGM8XOCLCNK4sWmmEChXZug28aJ9QANdy": true,
+                    "variable_workflow_01JGM8XOCLEYQ14xbtBvSGBBOU8JPkGibyq": "$activity.definition_activity_01MAOTJYLX34T0Goveis2zaaTbkGBIMIs0T.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
+                    "variable_workflow_01JGM8XOCLHGH6d9lwc3hvI4sBaCDZlLjXi": "SELECT user FROM logged_in_users WHERE user LIKE '$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$';",
+                    "variable_workflow_01JGM8XOCLKTJ3rIoOhQoYD6yS9xhkRIIer": 1
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01M8822P7H0E26nljMtnpKpJcqg8sRXUI6y",
+                    "target_type": "web-service.endpoint"
+                  },
+                  "workflow_id": "definition_workflow_01JGM8XOOZ5J64EWGHln955eAJFIOwmjbZr"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
       },
       {
         "unique_name": "definition_activity_01MAPCAJPUE6M272yggYTF7v52vFiE2GvOt",
@@ -179,6 +250,54 @@
             "object_type": "definition_activity",
             "actions": [
               {
+                "unique_name": "definition_activity_01MBDOB4Q3KJ30RXFC2bEpwMugJ9Bgg75qe",
+                "name": "Read Table from JSON",
+                "title": "Get Hostname",
+                "type": "corejava.read_table_from_json",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Get Hostname",
+                  "input_json": "$activity.definition_activity_01MAP35RYJE5O6xJwNvcHFcDe0NZrH2s54Q.output.variable_workflow_01JGM8XOCLJR95aRiy0KBGi0AdBneH5tZ9g$",
+                  "jsonpath_query": "$.[*].hostinfo",
+                  "persist_output": false,
+                  "populate_columns": false,
+                  "skip_execution": false,
+                  "table_columns": [
+                    {
+                      "column_name": "hostname",
+                      "column_type": "string"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01MBGY31OGK3I2vu0PwDjfvhrxFF6xxA95V",
+                "name": "Read Table from JSON",
+                "title": "Get Hostname Logged",
+                "type": "corejava.read_table_from_json",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Get Hostname Logged",
+                  "input_json": "$activity.definition_activity_01MBGWGE24WP70eSojKlTdsUUk7o5dZp40Q.output.variable_workflow_01JGM8XOCLJR95aRiy0KBGi0AdBneH5tZ9g$",
+                  "jsonpath_query": "$.[*].hostinfo",
+                  "persist_output": false,
+                  "populate_columns": false,
+                  "skip_execution": false,
+                  "table_columns": [
+                    {
+                      "column_name": "hostname",
+                      "column_type": "string"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
                 "unique_name": "definition_activity_01MAPCT530I1C3woZuNZOImb2KcCOB3i7aS",
                 "name": "Webex Teams - Post Message to Room",
                 "title": "Webex Teams - Post Message to Room",
@@ -191,7 +310,7 @@
                     "variable_workflow_01FGYY44G3MZ55amJu9YqgUeKS8GT49bZx3": "$global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8.global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8$",
                     "variable_workflow_01FGYY44G3TK951Crpnd8g2izonyM4bFtpW": "$activity.definition_activity_01MAPCAJPUE6M272yggYTF7v52vFiE2GvOt.output.variable_workflow_01FHSVE2R6ZTQ6L92WEi0kWgR5T8zhMAUzO$",
                     "variable_workflow_01FGYY44G3UPV3heGGc3vXCV47YL5WoI2X6": "",
-                    "variable_workflow_01FGYZ9BV4QTP19CuMwcW8QywvCP9ymx2BZ": "User $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$ Found"
+                    "variable_workflow_01FGYZ9BV4QTP19CuMwcW8QywvCP9ymx2BZ": "User $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$ exists on $activity.definition_activity_01MBDOB4Q3KJ30RXFC2bEpwMugJ9Bgg75qe.output.row_count$ Endpoint(s) and currently logged on $activity.definition_activity_01MBGY31OGK3I2vu0PwDjfvhrxFF6xxA95V.output.row_count$"
                   },
                   "runtime_user": {
                     "target_default": true
@@ -371,9 +490,9 @@
     }
   },
   "atomic_workflows": [
-    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
     "definition_workflow_01FGYY44YU521254ygN3Le0In0kEHpiPNpf",
     "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
-    "definition_workflow_01JGM8XOOZ5J64EWGHln955eAJFIOwmjbZr"
+    "definition_workflow_01JGM8XOOZ5J64EWGHln955eAJFIOwmjbZr",
+    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU"
   ]
 }
