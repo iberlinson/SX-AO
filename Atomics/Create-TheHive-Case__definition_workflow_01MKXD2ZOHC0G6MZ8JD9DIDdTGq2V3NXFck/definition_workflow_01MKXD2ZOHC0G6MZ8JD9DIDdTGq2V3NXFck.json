@@ -1,0 +1,722 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck",
+    "name": "Create TheHive Case 🐝",
+    "title": "Create TheHive Case 🐝",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "empty",
+          "scope": "input",
+          "name": "title",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MKXD2ZH8MBB4VBPi3NRUdCJCTJlWQXVjV",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "TheHiveCase_ID",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MKXD2ZH8Q3I6CB9SfghNT2dJ4ThtvqpUk",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MKXD2ZH8TPA6gPI2WekNzlZCuXbnDlIme",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "observable_type_TheHive",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MKXD2ZH8SJL43KlFRF9NLQMpi0bmuf37Z",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "empty",
+          "scope": "input",
+          "name": "description",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MKXD2ZH8UR04nmyuwmw0Tq95RcTUE4lY1",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MKXD2ZH8RCY6AeBrWM5a5YRATOgihoGr5",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "TheHive",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "Takes in any observable and will create a new case TheHive\n- adds the observable to the Case\n- starts every applicable Anaylzer\n",
+      "display_name": "Create TheHive Case 🐝",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01MKXDC86QEKM7IaPjgsKFg1wL7b89tDbs7",
+        "name": "Condition Block",
+        "title": "Which observable type was provided?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Which observable type was provided?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01MKXDCUUXQIF0Jwv1sb7GO3ANsTbsRr8FS",
+            "name": "Condition Branch",
+            "title": "IP Address",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8TPA6gPI2WekNzlZCuXbnDlIme$",
+                "operator": "eqi",
+                "right_operand": "IP"
+              },
+              "continue_on_failure": false,
+              "display_name": "IP Address",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MKXDD7TS4700Q8J36GNNoSNbzbjk041FK",
+                "name": "Set Variables",
+                "title": "Set Local Variable",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Local Variable",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.local.variable_workflow_01MKXD2ZH8SJL43KlFRF9NLQMpi0bmuf37Z$",
+                      "variable_value_new": "ip"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MKXDDUBOIEK4jcQakMNEkY9evdMZuLUNx",
+            "name": "Condition Branch",
+            "title": "Hostname",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8TPA6gPI2WekNzlZCuXbnDlIme$",
+                "operator": "eqi",
+                "right_operand": "hostname"
+              },
+              "continue_on_failure": false,
+              "display_name": "Hostname",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MKXDE6NH7BA7FgHt8OVIoewx9GCEgEBGC",
+                "name": "Set Variables",
+                "title": "Set Local Variable",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Local Variable",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.local.variable_workflow_01MKXD2ZH8SJL43KlFRF9NLQMpi0bmuf37Z$",
+                      "variable_value_new": "hostname"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MKXDET063XB1FGTVHfJjlXhPguanaixsp",
+            "name": "Condition Branch",
+            "title": "domain",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8TPA6gPI2WekNzlZCuXbnDlIme$",
+                "operator": "eqi",
+                "right_operand": "domain"
+              },
+              "continue_on_failure": false,
+              "display_name": "domain",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MKXDF5BOTK068xLpg8qHzcw4uvDvgumZM",
+                "name": "Set Variables",
+                "title": "Set Local Variable",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Local Variable",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.local.variable_workflow_01MKXD2ZH8SJL43KlFRF9NLQMpi0bmuf37Z$",
+                      "variable_value_new": "domain"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MKXDFSE8KIH0ikScVk6D7ThpQjihn8VCS",
+            "name": "Condition Branch",
+            "title": "AMP GUID",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8TPA6gPI2WekNzlZCuXbnDlIme$",
+                "operator": "eqi",
+                "right_operand": "amp_computer_guid"
+              },
+              "continue_on_failure": false,
+              "display_name": "AMP GUID",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MKXDG4LR5K03PPVS7DeRoZqXcupojewmH",
+                "name": "Set Variables",
+                "title": "Set Local Variable",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Local Variable",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.local.variable_workflow_01MKXD2ZH8SJL43KlFRF9NLQMpi0bmuf37Z$",
+                      "variable_value_new": "other"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MKXDGGTK5Z13CsLhWkudpRIapLpotPdYe",
+            "name": "Condition Branch",
+            "title": "URL",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8TPA6gPI2WekNzlZCuXbnDlIme$",
+                "operator": "eqi",
+                "right_operand": "url"
+              },
+              "continue_on_failure": false,
+              "display_name": "URL",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MKXDGSFWGPW5A7E16PkOGkeKmrbAzQ32U",
+                "name": "Set Variables",
+                "title": "Set Local Variable",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Local Variable",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.local.variable_workflow_01MKXD2ZH8SJL43KlFRF9NLQMpi0bmuf37Z$",
+                      "variable_value_new": "url"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MKXDHQ3Y5PJ0Qft5IezK0PcPFss1HO7S9",
+            "name": "Condition Branch",
+            "title": "SHA256",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8TPA6gPI2WekNzlZCuXbnDlIme$",
+                "operator": "eqi",
+                "right_operand": "sha256"
+              },
+              "continue_on_failure": false,
+              "display_name": "SHA256",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MKXDHSUGABZ7Fri7jrMBxpqYP3Y1YLouj",
+                "name": "Set Variables",
+                "title": "Set Local Variable",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Local Variable",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.local.variable_workflow_01MKXD2ZH8SJL43KlFRF9NLQMpi0bmuf37Z$",
+                      "variable_value_new": "hash"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MKXDIF5FHVO5WskmKm1EGfxz5ExSXnR27",
+            "name": "Condition Branch",
+            "title": "Something else",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": {
+                  "left_operand": {
+                    "left_operand": {
+                      "left_operand": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8TPA6gPI2WekNzlZCuXbnDlIme$",
+                      "operator": "ne",
+                      "right_operand": "url"
+                    },
+                    "operator": "or",
+                    "right_operand": {
+                      "left_operand": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8TPA6gPI2WekNzlZCuXbnDlIme$",
+                      "operator": "ne",
+                      "right_operand": "ip"
+                    }
+                  },
+                  "operator": "or",
+                  "right_operand": {
+                    "left_operand": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8TPA6gPI2WekNzlZCuXbnDlIme$",
+                    "operator": "ne",
+                    "right_operand": "hostname"
+                  }
+                },
+                "operator": "or",
+                "right_operand": {
+                  "left_operand": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8TPA6gPI2WekNzlZCuXbnDlIme$",
+                  "operator": "ne",
+                  "right_operand": "amp_computer_guid"
+                }
+              },
+              "continue_on_failure": false,
+              "display_name": "Something else",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MKXDIRAHXKS4dztwSBM5l74CBddgpDQiN",
+                "name": "Completed",
+                "title": "Unsupported observable",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "failed-completed",
+                  "continue_on_failure": false,
+                  "display_name": "Unsupported observable",
+                  "result_message": "This workflow does not support the observable type $workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8TPA6gPI2WekNzlZCuXbnDlIme$",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01MKXDJDV6FS62erL0Mi70Hfd26Wt3DKff9",
+        "name": "Parallel Block",
+        "title": "Parallel Block",
+        "type": "logic.parallel",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Parallel Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01MKXDJPXIX321kL5lCc6E5axuyEH1K5Jvx",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch title",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch title",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MKXDJRQDHR96RT89gYubPX8hqRdupabf6",
+                "name": "Condition Block",
+                "title": "Condition Block",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Condition Block",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01MKXDKDXVQH94R3QGHkBBsAgMOfgZQ8Q0f",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8MBB4VBPi3NRUdCJCTJlWQXVjV$",
+                        "operator": "eq",
+                        "right_operand": "empty"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01MKXDKQF7FK81QRYTmJdXUwwZEjehnuaG8",
+                        "name": "Set Variables",
+                        "title": "Set Variables",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set Variables",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8MBB4VBPi3NRUdCJCTJlWQXVjV$",
+                              "variable_value_new": "Casebook for $workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8RCY6AeBrWM5a5YRATOgihoGr5$ - Created by SecureX Orchestration"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MKXDLFQYL0P56cdnMsDqmHULRUuVc98s5",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch description",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch description",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MKXDLHLJRX625dGxF5fPVheFoaxl5fJur",
+                "name": "Condition Block",
+                "title": "Condition Block",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Condition Block",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01MKXDM4BMSGX426ya0aZ7fr2x9abwHHPtB",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8UR04nmyuwmw0Tq95RcTUE4lY1$",
+                        "operator": "eq",
+                        "right_operand": "empty"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01MKXDM6D02XI4xI1uA6KQVlpJg4PY16Ajk",
+                        "name": "Set Variables",
+                        "title": "Set Variables",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set Variables",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8UR04nmyuwmw0Tq95RcTUE4lY1$",
+                              "variable_value_new": "This case has been created by Created by SecureX Orchestration and is in sync state to the referenced Casebook Case!"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01MKXDMT5FTOA7cqQ4xmNV5LV97sngx3VkX",
+        "name": "HTTP Request",
+        "title": "Create TheHive Case",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "body": "{\n  \"title\": \"$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8MBB4VBPi3NRUdCJCTJlWQXVjV$\",\n  \"description\": \"$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8UR04nmyuwmw0Tq95RcTUE4lY1$\"\n}",
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer $global.variable_01JFSSZPEIFML6kKBvOTdiRsSYJveW6WDCw.global.variable_01JFSSZPEIFML6kKBvOTdiRsSYJveW6WDCw$"
+            }
+          ],
+          "display_name": "Create TheHive Case",
+          "method": "POST",
+          "relative_url": "/api/case",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01INF591NOZWT4Rq1VbQQB6FAncMRfGlDni"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MKXDNGA2WRY4Ft6D3gfYB2q5GuIMZwy7R",
+        "name": "JSONPath Query",
+        "title": "Get CaseID",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Get CaseID",
+          "input_json": "$activity.definition_activity_01MKXDMT5FTOA7cqQ4xmNV5LV97sngx3VkX.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.id",
+              "jsonpath_query_name": "id",
+              "jsonpath_query_type": "integer"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MKXDO357X7X7K9xY2fD5NFcqogR6cQdyi",
+        "name": "HTTP Request",
+        "title": "Add Observables ",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "body": "{\n  \"dataType\": \"$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.local.variable_workflow_01MKXD2ZH8SJL43KlFRF9NLQMpi0bmuf37Z$\",\n  \"data\": \"$workflow.definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck.input.variable_workflow_01MKXD2ZH8RCY6AeBrWM5a5YRATOgihoGr5$\"\n}",
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer $global.variable_01JFSSZPEIFML6kKBvOTdiRsSYJveW6WDCw.global.variable_01JFSSZPEIFML6kKBvOTdiRsSYJveW6WDCw$"
+            }
+          ],
+          "description": "Adding the Observable to the created Case",
+          "display_name": "Add Observables ",
+          "method": "POST",
+          "relative_url": "/api/case/$activity.definition_activity_01MKXDNGA2WRY4Ft6D3gfYB2q5GuIMZwy7R.output.jsonpath_queries.id$/artifact",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01INF591NOZWT4Rq1VbQQB6FAncMRfGlDni"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MKXDOQJXVV02Q4VP3iovkqv8bfQsMd75A",
+        "name": "JSONPath Query",
+        "title": "Get ObservableID",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "description": "in order to run the Analyzer we need to determine the Observable ID",
+          "display_name": "Get ObservableID",
+          "input_json": "$activity.definition_activity_01MKXDO357X7X7K9xY2fD5NFcqogR6cQdyi.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$..id",
+              "jsonpath_query_name": "id",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01INF591NOZWT4Rq1VbQQB6FAncMRfGlDni": {
+      "unique_name": "definition_target_01INF591NOZWT4Rq1VbQQB6FAncMRfGlDni",
+      "name": "TheHive",
+      "title": "TheHive",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "TheHive Instance\n- to sync up the Cases and Observables\n- to start the Analyzers",
+        "disable_certificate_validation": true,
+        "display_name": "TheHive",
+        "host": "ivberlin.hopto.org",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "port": 9000,
+        "protocol": "http"
+      }
+    }
+  },
+  "variables": {
+    "variable_01JFSSZPEIFML6kKBvOTdiRsSYJveW6WDCw": {
+      "unique_name": "variable_01JFSSZPEIFML6kKBvOTdiRsSYJveW6WDCw",
+      "properties": {
+        "value": "*****",
+        "scope": "global",
+        "name": "TheHive___BearerToken",
+        "type": "datatype.secure_string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  }
+}
