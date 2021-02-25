@@ -1,3 +1,3 @@
 # SX-AO
 
-Repository for unclassiifed workflow currently in review
+Repository for workflows and AtomicActions
