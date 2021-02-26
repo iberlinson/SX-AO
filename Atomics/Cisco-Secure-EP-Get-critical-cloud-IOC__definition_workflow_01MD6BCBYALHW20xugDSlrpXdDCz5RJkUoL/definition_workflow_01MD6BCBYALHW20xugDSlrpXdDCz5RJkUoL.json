@@ -20,16 +20,15 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
         "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "TEMP",
-          "type": "datatype.string",
+          "scope": "output",
+          "name": "IOC_Table",
+          "type": "datatype.table",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MD6BCBRO9AK61U7ChVwyPdb33nc7BBtXY",
+        "unique_name": "variable_workflow_01MD6BCBRO2UA7RbqmtDtfNMSxe5srQU0kW",
         "object_type": "variable_workflow"
       },
       {
@@ -46,15 +45,16 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+        "schema_id": "datatype.string",
         "properties": {
-          "scope": "output",
-          "name": "IOC_Table",
-          "type": "datatype.table",
+          "value": "",
+          "scope": "local",
+          "name": "TEMP",
+          "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MD6BCBRO2UA7RbqmtDtfNMSxe5srQU0kW",
+        "unique_name": "variable_workflow_01MD6BCBRO9AK61U7ChVwyPdb33nc7BBtXY",
         "object_type": "variable_workflow"
       }
     ],
@@ -226,7 +226,7 @@
                   "continue_on_failure": false,
                   "display_name": "Get security activity ",
                   "method": "GET",
-                  "relative_url": "/events?start_date=$activity.definition_activity_01MD6BLKMMKEZ3i3TLVzEjzVtUomlhQdpEm.output.response_body$\u0026event_type[]=1107296274\u0026event_type[]=1107296272\u0026event_type[]=1107296284\u0026event_type[]=1090519105",
+                  "relative_url": "/events?start_date=$activity.definition_activity_01MD6BLKMMKEZ3i3TLVzEjzVtUomlhQdpEm.output.response_body$\u0026event_type[]=1107296274\u0026event_type[]=1107296272\u0026event_type[]=1107296284\u0026event_type[]=1090519105\u0026event_type[]=1107296344\u0026event_type[]=1090519105",
                   "runtime_user": {
                     "override_target_runtime_user": false,
                     "target_default": true
@@ -495,14 +495,14 @@
       "columns": [
         {
           "is_required": true,
-          "name": "value",
-          "title": "value",
+          "name": "type",
+          "title": "type",
           "type": "string"
         },
         {
           "is_required": true,
-          "name": "type",
-          "title": "type",
+          "name": "value",
+          "title": "value",
           "type": "string"
         }
       ],
