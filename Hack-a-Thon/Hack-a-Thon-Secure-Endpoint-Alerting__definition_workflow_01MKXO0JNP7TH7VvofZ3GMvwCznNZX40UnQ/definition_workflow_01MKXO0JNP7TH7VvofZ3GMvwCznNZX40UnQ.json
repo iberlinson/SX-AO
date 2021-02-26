@@ -24,12 +24,12 @@
         "properties": {
           "value": "",
           "scope": "local",
-          "name": "Incident Description",
+          "name": "Incident Title",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MKXO0JFWCMB1HkZYAlY9UDD3OIfWKEHPQ",
+        "unique_name": "variable_workflow_01MKXO0JFWBI42RzVLdcB2kLYpaEVFapuf6",
         "object_type": "variable_workflow"
       },
       {
@@ -46,29 +46,16 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.integer",
+        "schema_id": "datatype.boolean",
         "properties": {
-          "value": 10,
+          "value": true,
           "scope": "local",
-          "name": "Delay",
-          "type": "datatype.integer",
-          "description": "Number of minutes for the last security activity (use to calculate timestamp from past date)",
+          "name": "Webex",
+          "type": "datatype.boolean",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MKXO0JFWDR07841S2EaF5thUS5VmUqKXL",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
-        "properties": {
-          "scope": "local",
-          "name": "IOC_Temp",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MMJ0U7K8QWE7IedJLttgtjWBNfO2xE2K3",
+        "unique_name": "variable_workflow_01MKXO0JFWG3G2BUFafca2xUVKkAdIRYTnr",
         "object_type": "variable_workflow"
       },
       {
@@ -85,29 +72,15 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.boolean",
+        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
         "properties": {
-          "value": true,
           "scope": "local",
-          "name": "Webex",
-          "type": "datatype.boolean",
+          "name": "IOC_Temp",
+          "type": "datatype.table",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MKXO0JFWG3G2BUFafca2xUVKkAdIRYTnr",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Incident Title",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MKXO0JFWBI42RzVLdcB2kLYpaEVFapuf6",
+        "unique_name": "variable_workflow_01MMJ0U7K8QWE7IedJLttgtjWBNfO2xE2K3",
         "object_type": "variable_workflow"
       },
       {
@@ -135,13 +108,40 @@
         },
         "unique_name": "variable_workflow_01MKXO0JFWEVH2aGoCo17MBHsPPE7rdH6rL",
         "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 10,
+          "scope": "local",
+          "name": "Delay",
+          "type": "datatype.integer",
+          "description": "Number of minutes for the last security activity (use to calculate timestamp from past date)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MKXO0JFWDR07841S2EaF5thUS5VmUqKXL",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Incident Description",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MKXO0JFWCMB1HkZYAlY9UDD3OIfWKEHPQ",
+        "object_type": "variable_workflow"
       }
     ],
     "properties": {
       "atomic": {
         "is_atomic": false
       },
-      "delete_workflow_instance": false,
+      "delete_workflow_instance": true,
       "description": "Enable near real time notification for secure endpoint high critical detection events\n- Notify in Cisco Webex\n- Enrichment CTR + Investigate\n- Create Casebook and Incident in CTR\n- Create Case in The Hive\n- Create Case in ServiceNow\n- Notification update in Cisco Teams\n\nSet Global Variable Umbrella_loop_counter to 500 before to run\nEnable Triggers 5mn for permanent execution",
       "display_name": "Hack-a-Thon-Secure Endpoint (AMP)  - Alerting",
       "runtime_user": {
@@ -357,373 +357,121 @@
                             "object_type": "definition_activity"
                           },
                           {
-                            "unique_name": "definition_activity_01MKXO633774F5QDDhcKWH53rqqFfGntivx",
-                            "name": "Read Table from JSON",
-                            "title": "Read Table from JSON",
-                            "type": "corejava.read_table_from_json",
+                            "unique_name": "definition_activity_01MMJ592W6QSK12iJBADTeFH5TMVPSiFAzn",
+                            "name": "For Each",
+                            "title": "For Each",
+                            "type": "logic.for_each",
                             "base_type": "activity",
                             "properties": {
-                              "action_timeout": 180,
-                              "continue_on_failure": true,
-                              "display_name": "Read Table from JSON",
-                              "input_json": "$activity.01MKXO5DN7UZZ0wQGVR2LalmMSA1YIszjP7.output.response_body$",
-                              "jsonpath_query": "$.requests.[*]",
-                              "persist_output": true,
-                              "populate_columns": false,
-                              "skip_execution": true,
-                              "table_columns": [
-                                {
-                                  "column_name": "destination",
-                                  "column_type": "string"
-                                }
-                              ]
-                            },
-                            "object_type": "definition_activity"
-                          },
-                          {
-                            "unique_name": "definition_activity_01MKXO71EZ0J52YF07v3qq2A04GvP99Yi2H",
-                            "name": "Condition Block",
-                            "title": "Remove duplicate",
-                            "type": "logic.if_else",
-                            "base_type": "activity",
-                            "properties": {
-                              "continue_on_failure": true,
-                              "display_name": "Remove duplicate",
-                              "skip_execution": false
+                              "continue_on_failure": false,
+                              "display_name": "For Each",
+                              "skip_execution": false,
+                              "source_array": "$activity.definition_activity_01MMICI408MTM4OF4755HhoA1ZyNpUOH1Ky.output.output_table$"
                             },
                             "object_type": "definition_activity",
-                            "blocks": [
+                            "actions": [
                               {
-                                "unique_name": "definition_activity_01MKXO7EZMPJ90l4cWIIDunVrWcXV4dMxTl",
-                                "name": "Condition Branch",
-                                "title": "Condition  only 1 event",
-                                "type": "logic.condition_block",
+                                "unique_name": "definition_activity_01MKXO8ED21TV7HQQctwiProN10KK2vCSMN",
+                                "name": "Match Regex",
+                                "title": "Extract Computer",
+                                "type": "core.matchregex",
                                 "base_type": "activity",
                                 "properties": {
-                                  "condition": {
-                                    "left_operand": "$activity.definition_activity_01MMICI408MTM4OF4755HhoA1ZyNpUOH1Ky.output.row_count$",
-                                    "operator": "ne",
-                                    "right_operand": 0
-                                  },
                                   "continue_on_failure": false,
-                                  "display_name": "Condition  only 1 event",
+                                  "display_name": "Extract Computer",
+                                  "input_regex": "hostname\":\"([a-zA-Z0-9\\.\\-]+)\",\"network",
+                                  "input_string": "$activity.definition_activity_01MMICI408MTM4OF4755HhoA1ZyNpUOH1Ky.output.output_table[0].value$",
+                                  "match_case": true,
                                   "skip_execution": false
                                 },
-                                "object_type": "definition_activity",
-                                "actions": [
-                                  {
-                                    "unique_name": "definition_activity_01MMJ592W6QSK12iJBADTeFH5TMVPSiFAzn",
-                                    "name": "For Each",
-                                    "title": "For Each",
-                                    "type": "logic.for_each",
-                                    "base_type": "activity",
-                                    "properties": {
-                                      "continue_on_failure": false,
-                                      "display_name": "For Each",
-                                      "skip_execution": false,
-                                      "source_array": "$activity.definition_activity_01MMICI408MTM4OF4755HhoA1ZyNpUOH1Ky.output.output_table$"
-                                    },
-                                    "object_type": "definition_activity",
-                                    "actions": [
-                                      {
-                                        "unique_name": "definition_activity_01MKXO8ED21TV7HQQctwiProN10KK2vCSMN",
-                                        "name": "Match Regex",
-                                        "title": "Extract Computer",
-                                        "type": "core.matchregex",
-                                        "base_type": "activity",
-                                        "properties": {
-                                          "continue_on_failure": false,
-                                          "display_name": "Extract Computer",
-                                          "input_regex": "hostname\":\"([a-zA-Z0-9\\.\\-]+)\",\"network",
-                                          "input_string": "$activity.definition_activity_01MMICI408MTM4OF4755HhoA1ZyNpUOH1Ky.output.output_table[0].value$",
-                                          "match_case": true,
-                                          "skip_execution": false
-                                        },
-                                        "object_type": "definition_activity"
-                                      },
-                                      {
-                                        "unique_name": "definition_activity_01MKXO7R8HJP74SlaaMQPPnpsBuuRl4E9ck",
-                                        "name": "Replace String",
-                                        "title": "Format Computer",
-                                        "type": "core.replacestring",
-                                        "base_type": "activity",
-                                        "properties": {
-                                          "continue_on_failure": true,
-                                          "display_name": "Format Computer",
-                                          "input_string": "$activity.definition_activity_01MKXO8ED21TV7HQQctwiProN10KK2vCSMN.output.matching_strings[0]$",
-                                          "replace_list": [
-                                            {
-                                              "replaced_string": "hostname\":\"",
-                                              "replacement_string": ""
-                                            },
-                                            {
-                                              "replaced_string": "\",\"network",
-                                              "replacement_string": ""
-                                            }
-                                          ],
-                                          "skip_execution": false
-                                        },
-                                        "object_type": "definition_activity"
-                                      },
-                                      {
-                                        "unique_name": "definition_activity_01MMJMU9MF8HG77Me8feJvpy8vxBGU5eeWm",
-                                        "name": "Replace String",
-                                        "title": "Format IOC",
-                                        "type": "core.replacestring",
-                                        "base_type": "activity",
-                                        "properties": {
-                                          "continue_on_failure": true,
-                                          "display_name": "Format IOC",
-                                          "input_string": "$activity.definition_activity_01MMJ592W6QSK12iJBADTeFH5TMVPSiFAzn.input.source_array[@].type$",
-                                          "replace_list": [
-                                            {
-                                              "replaced_string": "{",
-                                              "replacement_string": ""
-                                            },
-                                            {
-                                              "replaced_string": "}",
-                                              "replacement_string": ""
-                                            },
-                                            {
-                                              "replaced_string": "\"",
-                                              "replacement_string": ""
-                                            },
-                                            {
-                                              "replaced_string": "short_description:",
-                                              "replacement_string": "_"
-                                            },
-                                            {
-                                              "replaced_string": "description",
-                                              "replacement_string": "_"
-                                            }
-                                          ],
-                                          "skip_execution": false
-                                        },
-                                        "object_type": "definition_activity"
-                                      },
-                                      {
-                                        "unique_name": "definition_activity_01MKXO91UKV1H3HM1pjimDfHZ7D5wklN6EZ",
-                                        "name": "Add Row to Table",
-                                        "title": "Add Row to Temp Domain Table",
-                                        "type": "core.addrowtotable",
-                                        "base_type": "activity",
-                                        "properties": {
-                                          "action_timeout": 180,
-                                          "continue_on_failure": false,
-                                          "display_name": "Add Row to Temp Domain Table",
-                                          "input_table": "$workflow.definition_workflow_01MKXO0JNP7TH7VvofZ3GMvwCznNZX40UnQ.local.variable_workflow_01MMJ0U7K8QWE7IedJLttgtjWBNfO2xE2K3$",
-                                          "row": [
-                                            {
-                                              "key": "type",
-                                              "type": "string",
-                                              "value": "$activity.definition_activity_01MMJMU9MF8HG77Me8feJvpy8vxBGU5eeWm.output.result_string$"
-                                            },
-                                            {
-                                              "key": "value",
-                                              "type": "string",
-                                              "value": "$activity.definition_activity_01MKXO7R8HJP74SlaaMQPPnpsBuuRl4E9ck.output.result_string$"
-                                            }
-                                          ],
-                                          "skip_execution": false
-                                        },
-                                        "object_type": "definition_activity"
-                                      }
-                                    ]
-                                  }
-                                ]
+                                "object_type": "definition_activity"
                               },
                               {
-                                "unique_name": "definition_activity_01MKXO9ZU0XV25Melga9YbU6SnDzAPFOEJe",
-                                "name": "Condition Branch",
-                                "title": "Condition more than 1 event",
-                                "type": "logic.condition_block",
+                                "unique_name": "definition_activity_01MKXO7R8HJP74SlaaMQPPnpsBuuRl4E9ck",
+                                "name": "Replace String",
+                                "title": "Format Computer",
+                                "type": "core.replacestring",
                                 "base_type": "activity",
                                 "properties": {
-                                  "condition": {
-                                    "left_operand": "$activity.definition_activity_01MMICI408MTM4OF4755HhoA1ZyNpUOH1Ky.output.row_count$",
-                                    "operator": "gt",
-                                    "right_operand": 1
-                                  },
-                                  "continue_on_failure": false,
-                                  "display_name": "Condition more than 1 event",
-                                  "skip_execution": true
+                                  "continue_on_failure": true,
+                                  "display_name": "Format Computer",
+                                  "input_string": "$activity.definition_activity_01MKXO8ED21TV7HQQctwiProN10KK2vCSMN.output.matching_strings[0]$",
+                                  "replace_list": [
+                                    {
+                                      "replaced_string": "hostname\":\"",
+                                      "replacement_string": ""
+                                    },
+                                    {
+                                      "replaced_string": "\",\"network",
+                                      "replacement_string": ""
+                                    }
+                                  ],
+                                  "skip_execution": false
                                 },
-                                "object_type": "definition_activity",
-                                "actions": [
-                                  {
-                                    "unique_name": "definition_activity_01MKXOACGNZCN3aLhaNvQyOIRZKh6a47G8h",
-                                    "name": "JSONPath Query",
-                                    "title": "Get all destination values",
-                                    "type": "corejava.jsonpathquery",
-                                    "base_type": "activity",
-                                    "properties": {
-                                      "action_timeout": 180,
-                                      "continue_on_failure": false,
-                                      "display_name": "Get all destination values",
-                                      "input_json": "$activity.definition_activity_01MKXO633774F5QDDhcKWH53rqqFfGntivx.output.response_body$",
-                                      "jsonpath_queries": [
-                                        {
-                                          "jsonpath_query": "$.[*].destination",
-                                          "jsonpath_query_name": "destination",
-                                          "jsonpath_query_type": "string"
-                                        }
-                                      ],
-                                      "skip_execution": false
+                                "object_type": "definition_activity"
+                              },
+                              {
+                                "unique_name": "definition_activity_01MMJMU9MF8HG77Me8feJvpy8vxBGU5eeWm",
+                                "name": "Replace String",
+                                "title": "Format IOC",
+                                "type": "core.replacestring",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": true,
+                                  "display_name": "Format IOC",
+                                  "input_string": "$activity.definition_activity_01MMJ592W6QSK12iJBADTeFH5TMVPSiFAzn.input.source_array[@].type$",
+                                  "replace_list": [
+                                    {
+                                      "replaced_string": "{",
+                                      "replacement_string": ""
                                     },
-                                    "object_type": "definition_activity"
-                                  },
-                                  {
-                                    "unique_name": "definition_activity_01MKXOB03RAKX0BpGd8Z0dTzOQ6MjZtxIVs",
-                                    "name": "Replace String",
-                                    "title": "Remove http:// https://",
-                                    "type": "core.replacestring",
-                                    "base_type": "activity",
-                                    "properties": {
-                                      "continue_on_failure": true,
-                                      "display_name": "Remove http:// https://",
-                                      "input_string": "$activity.definition_activity_01MKXOACGNZCN3aLhaNvQyOIRZKh6a47G8h.output.jsonpath_queries.destination$",
-                                      "replace_list": [
-                                        {
-                                          "replaced_string": "http://",
-                                          "replacement_string": ""
-                                        },
-                                        {
-                                          "replaced_string": "https://",
-                                          "replacement_string": ""
-                                        }
-                                      ],
-                                      "skip_execution": false
+                                    {
+                                      "replaced_string": "}",
+                                      "replacement_string": ""
                                     },
-                                    "object_type": "definition_activity"
-                                  },
-                                  {
-                                    "unique_name": "definition_activity_01MKXOBOOX15C2YxaLBpn6wXvcjMRl8ageV",
-                                    "name": "Execute Python Script",
-                                    "title": "Get list of unique values",
-                                    "type": "python3.script",
-                                    "base_type": "activity",
-                                    "properties": {
-                                      "action_timeout": 180,
-                                      "continue_on_failure": false,
-                                      "display_name": "Get list of unique values",
-                                      "script": "import json, sys\nlist1  = json.loads(sys.argv[1])\nlist_set = set(list1)\nunique = []\nunique_list = (list(list_set))\nfor x in unique_list:\n    unique.append(x)",
-                                      "script_arguments": [
-                                        "$activity.definition_activity_01MKXOB03RAKX0BpGd8Z0dTzOQ6MjZtxIVs.output.result_string$"
-                                      ],
-                                      "script_queries": [
-                                        {
-                                          "script_query": "unique",
-                                          "script_query_name": "unique",
-                                          "script_query_type": "string"
-                                        }
-                                      ],
-                                      "skip_execution": false
+                                    {
+                                      "replaced_string": "\"",
+                                      "replacement_string": ""
                                     },
-                                    "object_type": "definition_activity"
-                                  },
-                                  {
-                                    "unique_name": "definition_activity_01MKXOCDG21WM7FERtGgPnV95LM6VBhbu84",
-                                    "name": "Replace String",
-                                    "title": "Remove special caracters",
-                                    "type": "core.replacestring",
-                                    "base_type": "activity",
-                                    "properties": {
-                                      "continue_on_failure": false,
-                                      "display_name": "Remove special caracters",
-                                      "input_string": "$activity.definition_activity_01MKXOBOOX15C2YxaLBpn6wXvcjMRl8ageV.output.script_queries.unique$",
-                                      "replace_list": [
-                                        {
-                                          "replaced_string": "[",
-                                          "replacement_string": ""
-                                        },
-                                        {
-                                          "replaced_string": "]",
-                                          "replacement_string": ""
-                                        },
-                                        {
-                                          "replaced_string": "'",
-                                          "replacement_string": ""
-                                        }
-                                      ],
-                                      "skip_execution": false
+                                    {
+                                      "replaced_string": "short_description:",
+                                      "replacement_string": "_"
                                     },
-                                    "object_type": "definition_activity"
-                                  },
-                                  {
-                                    "unique_name": "definition_activity_01MKXOD0HMBBV1CfawQgDh5X5NpTpT8spGu",
-                                    "name": "Split String",
-                                    "title": "Split list",
-                                    "type": "core.splitstring",
-                                    "base_type": "activity",
-                                    "properties": {
-                                      "boundaries": [
-                                        {
-                                          "boundary": ","
-                                        }
-                                      ],
-                                      "continue_on_failure": false,
-                                      "display_name": "Split list",
-                                      "input_string": "$activity.definition_activity_01MKXOCDG21WM7FERtGgPnV95LM6VBhbu84.output.result_string$",
-                                      "remove_empty": true,
-                                      "skip_execution": false
+                                    {
+                                      "replaced_string": "description",
+                                      "replacement_string": "_"
+                                    }
+                                  ],
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity"
+                              },
+                              {
+                                "unique_name": "definition_activity_01MKXO91UKV1H3HM1pjimDfHZ7D5wklN6EZ",
+                                "name": "Add Row to Table",
+                                "title": "Add Row to Temp Domain Table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Row to Temp Domain Table",
+                                  "input_table": "$workflow.definition_workflow_01MKXO0JNP7TH7VvofZ3GMvwCznNZX40UnQ.local.variable_workflow_01MMJ0U7K8QWE7IedJLttgtjWBNfO2xE2K3$",
+                                  "row": [
+                                    {
+                                      "key": "type",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_01MMJMU9MF8HG77Me8feJvpy8vxBGU5eeWm.output.result_string$"
                                     },
-                                    "object_type": "definition_activity"
-                                  },
-                                  {
-                                    "unique_name": "definition_activity_01MKXODDLE7FS23fUBmxfNDMnBKbCSEE1H6",
-                                    "name": "For Each",
-                                    "title": "For Each",
-                                    "type": "logic.for_each",
-                                    "base_type": "activity",
-                                    "properties": {
-                                      "continue_on_failure": false,
-                                      "display_name": "For Each",
-                                      "skip_execution": false,
-                                      "source_array": "$activity.definition_activity_01MKXOD0HMBBV1CfawQgDh5X5NpTpT8spGu.output.parts$"
-                                    },
-                                    "object_type": "definition_activity",
-                                    "actions": [
-                                      {
-                                        "unique_name": "definition_activity_01MKXOE22EW6F0zPFiUVDhzFM3i0ncGtSip",
-                                        "name": "Match Regex",
-                                        "title": "Get domain only",
-                                        "type": "core.matchregex",
-                                        "base_type": "activity",
-                                        "properties": {
-                                          "continue_on_failure": false,
-                                          "display_name": "Get domain only",
-                                          "input_regex": "([a-zA-Z0-9\\.\\-]+)",
-                                          "input_string": "$activity.definition_activity_01MKXODDLE7FS23fUBmxfNDMnBKbCSEE1H6.input.source_array[@]$",
-                                          "match_case": true,
-                                          "skip_execution": false
-                                        },
-                                        "object_type": "definition_activity"
-                                      },
-                                      {
-                                        "unique_name": "definition_activity_01MKXOEQ4IPD90Q06pmAUQUJI1KtLAI21wZ",
-                                        "name": "Add Row to Table",
-                                        "title": "Add Row to Temp Domain Table",
-                                        "type": "core.addrowtotable",
-                                        "base_type": "activity",
-                                        "properties": {
-                                          "action_timeout": 180,
-                                          "continue_on_failure": false,
-                                          "display_name": "Add Row to Temp Domain Table",
-                                          "input_table": "$workflow.definition_workflow_01MKXO0JNP7TH7VvofZ3GMvwCznNZX40UnQ.local.variable_workflow_01MKXO0JFWH9G5eAaCkzG9A7Ie4p4THeADU$",
-                                          "row": [
-                                            {
-                                              "key": "distinctvalue",
-                                              "type": "string",
-                                              "value": "$activity.definition_activity_01MKXOE22EW6F0zPFiUVDhzFM3i0ncGtSip.output.matching_strings[0]$"
-                                            }
-                                          ],
-                                          "skip_execution": false
-                                        },
-                                        "object_type": "definition_activity"
-                                      }
-                                    ]
-                                  }
-                                ]
+                                    {
+                                      "key": "value",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_01MKXO7R8HJP74SlaaMQPPnpsBuuRl4E9ck.output.result_string$"
+                                    }
+                                  ],
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity"
                               }
                             ]
                           }
@@ -2295,7 +2043,7 @@
     "variable_01LGYFHE8DD8A7767SRhj0daGxv5R67jPTk": {
       "unique_name": "variable_01LGYFHE8DD8A7767SRhj0daGxv5R67jPTk",
       "properties": {
-        "value": 260,
+        "value": 280,
         "scope": "global",
         "name": "Loop Counter  Umbrella Alerting AO",
         "type": "datatype.integer",
@@ -2344,7 +2092,7 @@
     "variable_01MMKHSEW0NZX7jABstKKVWU4iIw8Lnax3P": {
       "unique_name": "variable_01MMKHSEW0NZX7jABstKKVWU4iIw8Lnax3P",
       "properties": {
-        "value": 500,
+        "value": 0,
         "scope": "global",
         "name": "Loop_counter_amp_alerting",
         "type": "datatype.integer",
@@ -2393,22 +2141,22 @@
     }
   },
   "atomic_workflows": [
-    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
-    "definition_workflow_01LFCW7C2Q1BU6Szjo7JqBWHWPmevmW7uIn",
-    "definition_workflow_01JSC422Z7Y6P7j77mRKAODnr3h9IdWAMUg",
-    "definition_workflow_01C0BYD0GI1KZ0mxScCSxVrfX70zrUdqLlW",
-    "definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL",
-    "definition_workflow_01FGYY44YU521254ygN3Le0In0kEHpiPNpf",
-    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
-    "definition_workflow_01G5O02N3T9NE0uN8IfRFUh7UzLG7IdEWlq",
     "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4",
+    "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x",
+    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
+    "definition_workflow_01FGYY44YU521254ygN3Le0In0kEHpiPNpf",
+    "definition_workflow_01LFCW7C2Q1BU6Szjo7JqBWHWPmevmW7uIn",
+    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
+    "definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck",
+    "definition_workflow_01JSC422Z7Y6P7j77mRKAODnr3h9IdWAMUg",
     "definition_workflow_01KVVWMB2UTRF5uVHVH9DtiT6vgIfnzTdRS",
     "definition_workflow_01MD80H8PYWKP3F28UqWl0nlZ02R0hFCsrX",
-    "definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck",
     "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q",
-    "definition_workflow_01JQVN9SHDS7U0aI6ARfYbDceWnEXWS9ExB",
-    "definition_workflow_01JQV4CNFF20759mppNEVKw4P4bSRKDXhuC",
     "definition_workflow_01KGGEY4ZKDEV4QRry4LmBMFV8HjjkdKUQY",
-    "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x"
+    "definition_workflow_01JQV4CNFF20759mppNEVKw4P4bSRKDXhuC",
+    "definition_workflow_01G5O02N3T9NE0uN8IfRFUh7UzLG7IdEWlq",
+    "definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL",
+    "definition_workflow_01C0BYD0GI1KZ0mxScCSxVrfX70zrUdqLlW",
+    "definition_workflow_01JQVN9SHDS7U0aI6ARfYbDceWnEXWS9ExB"
   ]
 }
