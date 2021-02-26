@@ -1,0 +1,148 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q",
+    "name": "Webex - Simple adaptive card",
+    "title": "Webex - Simple adaptive card",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Room ID",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MMHH8IS8PTR32u92oD1XMDKNIi2fjyTgE",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Notification Type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MMHOHW16I2J6Cmf3xCUPyIGFdeedwTyO1",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Text",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MMHHW30X10J1cMC46WuPsjt8q0hQYE9yW",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Title",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MMHHEDVCSOW3zhhNRuTxv1gkDC1zkTcWK",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Webex Token",
+          "type": "datatype.secure_string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MMHSK7D5GN05jG3AcBdoX8EaSkgyQQ0R5",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Image",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MMHHLIYYM704tyL7uFsP417pcVBWo4lEm",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco Webex Teams",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Webex - Simple adaptive card",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01MMHG3XJ1UYI4TEnTnlhSJZSuvp81VHSlh",
+        "name": "HTTP Request",
+        "title": "HTTP Request",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "body": "{\n  \"roomId\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHH8IS8PTR32u92oD1XMDKNIi2fjyTgE$\",\n  \"markdown\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHHW30X10J1cMC46WuPsjt8q0hQYE9yW$\",\n  \"attachments\": [\n{\n    \"contentType\": \"application/vnd.microsoft.card.adaptive\",\n      \"content\": {\n        \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n        \"type\": \"AdaptiveCard\",\n        \"version\": \"1.0\",\n    \"body\": [\n        {\n            \"type\": \"ColumnSet\",\n            \"columns\": [\n                {\n                    \"type\": \"Column\",\n                    \"items\": [\n                        {\n                            \"type\": \"Image\",\n                            \"style\": \"Person\",\n                            \"url\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHHLIYYM704tyL7uFsP417pcVBWo4lEm$\",\n                            \"size\": \"Medium\",\n                            \"height\": \"50px\"\n                        }\n                    ],\n                    \"width\": \"auto\"\n                },\n                {\n                    \"type\": \"Column\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHOHW16I2J6Cmf3xCUPyIGFdeedwTyO1$\",\n                            \"weight\": \"Lighter\",\n                            \"color\": \"Accent\"\n                        },\n                        {\n                            \"type\": \"TextBlock\",\n                            \"weight\": \"Bolder\",\n                            \"text\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHHEDVCSOW3zhhNRuTxv1gkDC1zkTcWK$\",\n                            \"horizontalAlignment\": \"Left\",\n                            \"wrap\": true,\n                            \"color\": \"Light\",\n                            \"size\": \"Large\",\n                            \"spacing\": \"Small\"\n                        }\n                    ],\n                    \"width\": \"stretch\"\n                }\n            ]\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHHW30X10J1cMC46WuPsjt8q0hQYE9yW$\",\n            \"wrap\": true\n        }\n       ]\n      }\n    }\n  ]\n}",
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer $workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHSK7D5GN05jG3AcBdoX8EaSkgyQQ0R5$"
+            }
+          ],
+          "display_name": "HTTP Request",
+          "method": "POST",
+          "relative_url": "/v1/messages",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
