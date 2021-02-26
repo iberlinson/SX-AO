@@ -1,0 +1,178 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01MMN4YOT42PO2FxRJ8U52rYtsQEGGIMWPX",
+    "name": "Admin - Daily Remove All Alerting Lock",
+    "title": "Admin - Daily Remove All Alerting Lock",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": true,
+      "display_name": "Admin - Daily Remove All Alerting Lock",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01MMN4ZTEE2B21vrGIGhf4mAKxL5lFgygAn",
+        "name": "Delete from Table",
+        "title": "Delete from Table Umbrella",
+        "type": "core.deleterowfromtable",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Delete from Table Umbrella",
+          "input_table": "$global.variable_01MGJAP9XYQ682iEgn3j9lPz7JaWeisRUXY.global.variable_01MGJAP9XYQ682iEgn3j9lPz7JaWeisRUXY$",
+          "rows": {
+            "all_rows": true
+          },
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MMN5090NH331LOhMsQ7ZKZpmzR6yYqswX",
+        "name": "Delete from Table",
+        "title": "Delete from Table AMP",
+        "type": "core.deleterowfromtable",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Delete from Table AMP",
+          "input_table": "$global.variable_01MMJE2U2ME885U85mhfW61mbItbsbwWFn4.global.variable_01MMJE2U2ME885U85mhfW61mbItbsbwWFn4$",
+          "rows": {
+            "rows_matching_criteria": true,
+            "where_clause": ""
+          },
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01APQ1SF3EVRH4WYM1c0JtOZbGDtxU0sJQd"
+    ]
+  },
+  "categories": {
+    "category_01APQ1SF3EVRH4WYM1c0JtOZbGDtxU0sJQd": {
+      "unique_name": "category_01APQ1SF3EVRH4WYM1c0JtOZbGDtxU0sJQd",
+      "name": "AO.General.Utilities",
+      "title": "AO.General.Utilities",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "triggers": {
+    "triggerschedule_01MMN8BJ6EA515qXGrJpIkitQnggi2IhkX9": {
+      "workflow_id": "definition_workflow_01MMN4YOT42PO2FxRJ8U52rYtsQEGGIMWPX",
+      "name": "Dailty",
+      "title": "",
+      "lowercase_name": "schedule.dailty",
+      "type": "schedule",
+      "base_type": "trigger",
+      "ref_id": "schedule_01MMN7M1F6SWV6ApD6Sd7BVBmY3ybnn0BG4",
+      "version": "1.0.0",
+      "disabled": false,
+      "unique_name": "triggerschedule_01MMN8BJ6EA515qXGrJpIkitQnggi2IhkX9",
+      "object_type": "triggerschedule"
+    }
+  },
+  "schedules": {
+    "schedule_01MMN7M1F6SWV6ApD6Sd7BVBmY3ybnn0BG4": {
+      "unique_name": "schedule_01MMN7M1F6SWV6ApD6Sd7BVBmY3ybnn0BG4",
+      "name": "Daily 1AM",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "Etc/GMT+0",
+        "starttime": "01:00",
+        "interval_hours": 0,
+        "interval_minutes": 0,
+        "number_of_times": 1,
+        "display_name": "Daily 1AM",
+        "description": ""
+      },
+      "version": "1.0.0",
+      "object_type": "schedule"
+    }
+  },
+  "variables": {
+    "variable_01MGJAP9XYQ682iEgn3j9lPz7JaWeisRUXY": {
+      "unique_name": "variable_01MGJAP9XYQ682iEgn3j9lPz7JaWeisRUXY",
+      "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
+      "properties": {
+        "value": [
+          {
+            "column_data": {
+              "distinctvalue": "domain"
+            }
+          }
+        ],
+        "scope": "global",
+        "name": "Umbrella - alerting - domain list",
+        "type": "datatype.table",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01MMJE2U2ME885U85mhfW61mbItbsbwWFn4": {
+      "unique_name": "variable_01MMJE2U2ME885U85mhfW61mbItbsbwWFn4",
+      "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
+      "properties": {
+        "value": [
+          {
+            "column_data": {
+              "distinctvalue": "Computer_FAKE"
+            }
+          },
+          {
+            "column_data": {
+              "distinctvalue": "IE10WIN7"
+            }
+          }
+        ],
+        "scope": "global",
+        "name": "AMP - Alerting - Computer lock",
+        "type": "datatype.table",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "table_types": {
+    "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj": {
+      "unique_name": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
+      "data_type": "datatype.tabletype",
+      "display_name": "distinct_value_table",
+      "columns": [
+        {
+          "name": "distinctvalue",
+          "title": "distinctvalue",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
