@@ -1,0 +1,200 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01MQ4V1BGQ3DW0s15vJkZQZAe81HYSfYGz3",
+    "name": "Hack-a-Thon - Template Permanent Loop",
+    "title": "Hack-a-Thon - Template Permanent Loop",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 1,
+          "scope": "local",
+          "name": "Always True",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MQ4XHQN3UCN3idwwA2GEm4tamcvRp31kv",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "Template for a permanent workflow",
+      "display_name": "Hack-a-Thon - Template Permanent Loop",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01MQ4VZAFJ4EJ1CGSvY6H4wmFfpXXbLptjU",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Condition Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01MQ4VZM7NYRD6il5ZGFFUG0NDt8knHe1nv",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$global.variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6.global.variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6$",
+                "operator": "eq",
+                "right_operand": 500
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MQ4WZ5PP3AN2aLXgfqAi45elY5EXthDK4",
+                "name": "While Loop",
+                "title": "While Loop",
+                "type": "logic.while",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "While Loop",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01MQ4WZI02LD93noTDsV5VDpYM9eqe8WMZZ",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01MQ4V1BGQ3DW0s15vJkZQZAe81HYSfYGz3.local.variable_workflow_01MQ4XHQN3UCN3idwwA2GEm4tamcvRp31kv$",
+                        "operator": "eq",
+                        "right_operand": 1
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MQ4VZMZP8T10F95Ygv1Rxc4JQhM8twWtJ",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$global.variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6.global.variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6$",
+                "operator": "ne",
+                "right_operand": 500
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MQ4WKSX76D56OMkLWuGdzcSxsKigWSbD3",
+                "name": "Sleep",
+                "title": "Sleep",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep",
+                  "skip_execution": false,
+                  "sleep_interval": 10
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "triggers": {
+    "triggerschedule_01MQ54DGUQ7WT3ch4qwsqbffMTuukiXj6Ss": {
+      "workflow_id": "definition_workflow_01MQ4V1BGQ3DW0s15vJkZQZAe81HYSfYGz3",
+      "name": "Every 5 minutes",
+      "title": "",
+      "lowercase_name": "schedule.every_5_minutes",
+      "type": "schedule",
+      "base_type": "trigger",
+      "ref_id": "schedule_01MQ53LKY3QC645Dio19nBWhABFmgcq3ZdV",
+      "version": "",
+      "disabled": true,
+      "unique_name": "triggerschedule_01MQ54DGUQ7WT3ch4qwsqbffMTuukiXj6Ss",
+      "object_type": "triggerschedule"
+    }
+  },
+  "schedules": {
+    "schedule_01MQ53LKY3QC645Dio19nBWhABFmgcq3ZdV": {
+      "unique_name": "schedule_01MQ53LKY3QC645Dio19nBWhABFmgcq3ZdV",
+      "name": "Every 5 minutes",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "Etc/GMT+0",
+        "starttime": "00:01",
+        "interval_hours": 0,
+        "interval_minutes": 5,
+        "number_of_times": 287,
+        "display_name": "Every 5 minutes",
+        "description": ""
+      },
+      "version": "1.0.0",
+      "object_type": "schedule"
+    }
+  },
+  "variables": {
+    "variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6": {
+      "unique_name": "variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6",
+      "properties": {
+        "value": 500,
+        "scope": "global",
+        "name": "Template permante workflow  counter",
+        "type": "datatype.integer",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  }
+}
