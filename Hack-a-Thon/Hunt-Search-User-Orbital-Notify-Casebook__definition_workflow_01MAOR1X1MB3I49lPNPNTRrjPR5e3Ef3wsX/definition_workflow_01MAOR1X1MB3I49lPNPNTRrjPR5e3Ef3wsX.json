@@ -7,6 +7,31 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
+        "properties": {
+          "scope": "local",
+          "name": "GUID",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MCERDH1KP9V0JRv9PPB2Yx9DnanLEqAFU",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MAOSADRIJR73T7fkW7YDHcirtIGHNIFsi",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
         "properties": {
           "scope": "local",
@@ -16,6 +41,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MHBMAWYF9VG4S0kfpUXOor4NJqoF1qgK5",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "guid",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MHBKNPX3ILG2oqQQe965ZSKjgv4PMFLGO",
         "object_type": "variable_workflow"
       },
       {
@@ -42,44 +80,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "observable_type",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MAOSADRIJR73T7fkW7YDHcirtIGHNIFsi",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
-        "properties": {
-          "scope": "local",
-          "name": "GUID",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MCERDH1KP9V0JRv9PPB2Yx9DnanLEqAFU",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "guid",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MHBKNPX3ILG2oqQQe965ZSKjgv4PMFLGO",
         "object_type": "variable_workflow"
       }
     ],
@@ -837,11 +837,11 @@
     }
   },
   "atomic_workflows": [
+    "definition_workflow_01JGM8XOOZ5J64EWGHln955eAJFIOwmjbZr",
+    "definition_workflow_01EO48TO48SL35JnXGSvBIqptIfbsjt65eR",
+    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
     "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
     "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
-    "definition_workflow_01FGYY44YU521254ygN3Le0In0kEHpiPNpf",
-    "definition_workflow_01JGM8XOOZ5J64EWGHln955eAJFIOwmjbZr",
-    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
-    "definition_workflow_01EO48TO48SL35JnXGSvBIqptIfbsjt65eR"
+    "definition_workflow_01FGYY44YU521254ygN3Le0In0kEHpiPNpf"
   ]
 }
