@@ -57,7 +57,7 @@
           {
             "unique_name": "definition_activity_01MQ4VZM7NYRD6il5ZGFFUG0NDt8knHe1nv",
             "name": "Condition Branch",
-            "title": "Condition Branch",
+            "title": "Condition Previous Loop reachs 500 iterations",
             "type": "logic.condition_block",
             "base_type": "activity",
             "properties": {
@@ -67,11 +67,30 @@
                 "right_operand": 500
               },
               "continue_on_failure": false,
-              "display_name": "Condition Branch",
+              "display_name": "Condition Previous Loop reachs 500 iterations",
               "skip_execution": false
             },
             "object_type": "definition_activity",
             "actions": [
+              {
+                "unique_name": "definition_activity_01MQLYDBNM49X7GTzsaexWrXwH4Jn5iprsJ",
+                "name": "Set Variables",
+                "title": "reset counter",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "reset counter",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$global.variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6.global.variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6$",
+                      "variable_value_new": 0
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
               {
                 "unique_name": "definition_activity_01MQ4WZ5PP3AN2aLXgfqAi45elY5EXthDK4",
                 "name": "While Loop",
@@ -88,7 +107,7 @@
                   {
                     "unique_name": "definition_activity_01MQ4WZI02LD93noTDsV5VDpYM9eqe8WMZZ",
                     "name": "Condition Branch",
-                    "title": "Condition Branch",
+                    "title": "Condition Always true",
                     "type": "logic.condition_block",
                     "base_type": "activity",
                     "properties": {
@@ -98,46 +117,47 @@
                         "right_operand": 1
                       },
                       "continue_on_failure": false,
-                      "display_name": "Condition Branch",
+                      "display_name": "Condition Always true",
                       "skip_execution": false
                     },
-                    "object_type": "definition_activity"
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01MQLZ1YMHOYF4EBs1f5gMMrscu9to5CIKq",
+                        "name": "Set Variables",
+                        "title": "counter +1",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "counter +1",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$global.variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6.global.variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6$",
+                              "variable_value_new": "$global.variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6.global.variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6$+1"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01MQLZT7FH9Z01mq2GiSh4xgkJ4H3NFuQ0R",
+                        "name": "Sleep",
+                        "title": "Sleep",
+                        "type": "core.sleep",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Sleep",
+                          "skip_execution": false,
+                          "sleep_interval": 5
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "unique_name": "definition_activity_01MQ4VZMZP8T10F95Ygv1Rxc4JQhM8twWtJ",
-            "name": "Condition Branch",
-            "title": "Condition Branch",
-            "type": "logic.condition_block",
-            "base_type": "activity",
-            "properties": {
-              "condition": {
-                "left_operand": "$global.variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6.global.variable_01MQ4VPRP0P2A5shTHy3c8EvTsX6PeL52c6$",
-                "operator": "ne",
-                "right_operand": 500
-              },
-              "continue_on_failure": false,
-              "display_name": "Condition Branch",
-              "skip_execution": false
-            },
-            "object_type": "definition_activity",
-            "actions": [
-              {
-                "unique_name": "definition_activity_01MQ4WKSX76D56OMkLWuGdzcSxsKigWSbD3",
-                "name": "Sleep",
-                "title": "Sleep",
-                "type": "core.sleep",
-                "base_type": "activity",
-                "properties": {
-                  "continue_on_failure": false,
-                  "display_name": "Sleep",
-                  "skip_execution": false,
-                  "sleep_interval": 10
-                },
-                "object_type": "definition_activity"
               }
             ]
           }
