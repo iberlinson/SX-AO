@@ -10,13 +10,64 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "local",
-          "name": "idicateur_temp_descripttion",
+          "scope": "input",
+          "name": "CTRenrich_json",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MPVP5ITN9U03EkuDKoezfkDkC4REAEJhO",
+        "unique_name": "variable_workflow_01MPVP5ITNAZW5OyzbRRARz6rfteNfo4jGd",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
+        "properties": {
+          "scope": "local",
+          "name": "Indicator_temp_table",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MPVP5ITN8DB0JFDbejZrjoyTkGGpin6rm",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
+        "properties": {
+          "scope": "output",
+          "name": "Report_Table_full",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MPVP5ITN74M7aesCdf964EoM3wu5Y9qGc",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Indicator_temp",
+          "type": "datatype.string",
+          "description": "temp variable for indicator parsing",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MPVP5ITND9F00gn2CJYzqw0pAhbOLfbbA",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MPVP5ITNEE43ikhREuKbHJHTPrICltzG6",
         "object_type": "variable_workflow"
       },
       {
@@ -36,13 +87,13 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "input",
-          "name": "CTRenrich_json",
+          "scope": "local",
+          "name": "idicateur_temp_descripttion",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MPVP5ITNAZW5OyzbRRARz6rfteNfo4jGd",
+        "unique_name": "variable_workflow_01MPVP5ITN9U03EkuDKoezfkDkC4REAEJhO",
         "object_type": "variable_workflow"
       },
       {
@@ -55,57 +106,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MPVP5ITN38B1GpEh7DeXKkfJjzY0Xch9U",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
-        "properties": {
-          "scope": "local",
-          "name": "Indicator_temp_table",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MPVP5ITN8DB0JFDbejZrjoyTkGGpin6rm",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Indicator_temp",
-          "type": "datatype.string",
-          "description": "temp variable for indicator parsing",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MPVP5ITND9F00gn2CJYzqw0pAhbOLfbbA",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
-        "properties": {
-          "scope": "output",
-          "name": "Report_Table_full",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MPVP5ITN74M7aesCdf964EoM3wu5Y9qGc",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "observable_value",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MPVP5ITNEE43ikhREuKbHJHTPrICltzG6",
         "object_type": "variable_workflow"
       }
     ],
@@ -523,23 +523,6 @@
       "display_name": "Ivan-ObservableEnrichment",
       "columns": [
         {
-          "is_required": true,
-          "name": "Producer",
-          "title": "Producer",
-          "type": "string"
-        },
-        {
-          "name": "Target",
-          "title": "Target",
-          "type": "string"
-        },
-        {
-          "is_required": true,
-          "name": "Value",
-          "title": "Value",
-          "type": "string"
-        },
-        {
           "name": "Actioin",
           "title": "Action",
           "type": "string"
@@ -559,6 +542,23 @@
           "is_required": true,
           "name": "Observable",
           "title": "Observable",
+          "type": "string"
+        },
+        {
+          "is_required": true,
+          "name": "Producer",
+          "title": "Producer",
+          "type": "string"
+        },
+        {
+          "name": "Target",
+          "title": "Target",
+          "type": "string"
+        },
+        {
+          "is_required": true,
+          "name": "Value",
+          "title": "Value",
           "type": "string"
         }
       ],
