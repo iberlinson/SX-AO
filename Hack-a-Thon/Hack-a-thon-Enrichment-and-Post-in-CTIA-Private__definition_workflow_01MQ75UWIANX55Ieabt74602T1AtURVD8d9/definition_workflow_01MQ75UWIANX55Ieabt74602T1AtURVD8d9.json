@@ -1,0 +1,1162 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01MQ75UWIANX55Ieabt74602T1AtURVD8d9",
+    "name": "Hack-a-Thon - Enrichment and Post in CTIA Private",
+    "title": "Hack-a-Thon - Enrichment and Post in CTIA Private",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 1,
+          "scope": "local",
+          "name": "Always True",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MQ75UWAJ8Y809XibhwfmWbBKvvmCh3K1b",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01MQ6C0YXGAIN3ZAKAmaOw9vrB9Uytdtqwg",
+        "properties": {
+          "scope": "output",
+          "name": "Enrichment_Output",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MQ75UWAJDGN5TR0mnsVf6ggyAv3Hcz4Iz",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "Output a table for each new detectiion in AO-Observable_detected wotj threat intel enrichment from SX-TR and Investigate (domain only) and Post it in Private CTIA as Judgements",
+      "display_name": "Hack-a-Thon - Enrichment and Post in CTIA Private",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01MQ75VW8E93M0fjFevjrYx2OInIFOZ7Id7",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Condition Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01MQ75W8U6RU52jLYb7OaNI6RAx7NyxT61I",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$global.variable_01MQM0IOPKRZN7EY50zy87tfFoYfFhOYy2F.global.variable_01MQM0IOPKRZN7EY50zy87tfFoYfFhOYy2F$",
+                "operator": "eq",
+                "right_operand": 500
+              },
+              "continue_on_failure": true,
+              "display_name": "Condition Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MQLWVKX7IAA6Q6wStAijwfAm9BV7cZdoW",
+                "name": "Set Variables",
+                "title": "reset counter",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "reset counter",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$global.variable_01MQM0IOPKRZN7EY50zy87tfFoYfFhOYy2F.global.variable_01MQM0IOPKRZN7EY50zy87tfFoYfFhOYy2F$",
+                      "variable_value_new": 0
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01MQ75WBJ7X3T5mlehVi44nDehp10xZQ1Mh",
+                "name": "While Loop",
+                "title": "While Loop",
+                "type": "logic.while",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "While Loop",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01MQ75WOZ9QDT6htMUz9RkjEvBMNEUjxU28",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01MQ75UWIANX55Ieabt74602T1AtURVD8d9.local.variable_workflow_01MQ75UWAJ8Y809XibhwfmWbBKvvmCh3K1b$",
+                        "operator": "eq",
+                        "right_operand": 1
+                      },
+                      "continue_on_failure": true,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01MQ75WS0ADDW5USK89nCFfR3BrEtOqcxLT",
+                        "name": "Select from Table",
+                        "title": "Select from Table",
+                        "type": "core.selectfromtable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "columns": [
+                            {
+                              "column_name": "Type",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "Observable",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "enriched",
+                              "column_type": "integer"
+                            }
+                          ],
+                          "continue_on_failure": true,
+                          "display_name": "Select from Table",
+                          "input_table": "$global.variable_01MQ5KEFSRJ271pd2CBE7R0A7blsNggjUCh.global.variable_01MQ5KEFSRJ271pd2CBE7R0A7blsNggjUCh$",
+                          "number_of_rows": {
+                            "all_rows": true,
+                            "at_most": false
+                          },
+                          "persist_output": true,
+                          "skip_execution": false,
+                          "sorting": {
+                            "no_sort": true,
+                            "sort_by": false
+                          },
+                          "where_clause": "enriched LIKE '0'"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01MQ75X7ACY0Y7VAfRDs4tRn41mZ02aWNm4",
+                        "name": "Condition Block",
+                        "title": "Condition Block",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Condition Block",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_01MQ75XK1100I3SxcKkUX1REK2a1HqAKUbL",
+                            "name": "Condition Branch",
+                            "title": "Condition Branch",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_01MQ75WS0ADDW5USK89nCFfR3BrEtOqcxLT.output.row_count$",
+                                "operator": "gt",
+                                "right_operand": 0
+                              },
+                              "continue_on_failure": true,
+                              "display_name": "Condition Branch",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_01MQ75XXH1PZR0Q7QjJervCX0XOmkd80S4K",
+                                "name": "Parallel Block",
+                                "title": "Get Tokens",
+                                "type": "logic.parallel",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": true,
+                                  "display_name": "Get Tokens",
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity",
+                                "blocks": [
+                                  {
+                                    "unique_name": "definition_activity_01MQ75YABO9M67gHRc7Zvxp6wqrd2cERUar",
+                                    "name": "Parallel Branch",
+                                    "title": "Parallel Branch - SX-TR",
+                                    "type": "logic.parallel_block",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "continue_on_failure": false,
+                                      "display_name": "Parallel Branch - SX-TR",
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity",
+                                    "actions": [
+                                      {
+                                        "unique_name": "definition_activity_01MQ75YDDZ07J0IiF0tiSWRYX3eETXSHlo9",
+                                        "name": "Threat Response v2 - Generate Access Token",
+                                        "title": "Threat Response v2 - Generate Access Token",
+                                        "type": "workflow.atomic_workflow",
+                                        "base_type": "subworkflow",
+                                        "properties": {
+                                          "continue_on_failure": false,
+                                          "display_name": "Threat Response v2 - Generate Access Token",
+                                          "runtime_user": {
+                                            "target_default": true
+                                          },
+                                          "skip_execution": false,
+                                          "target": {
+                                            "override_workflow_target": true,
+                                            "target_id": "definition_target_01M8822QE1ASK0LBDYTzl3OKw4v2xiLFH4l",
+                                            "target_type": "web-service.endpoint"
+                                          },
+                                          "workflow_id": "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss"
+                                        },
+                                        "object_type": "definition_activity"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "unique_name": "definition_activity_01MQ75Z0XL9C22FubqfUxH3VCsWSYXypVPQ",
+                                "name": "For Each",
+                                "title": "For Each Observable",
+                                "type": "logic.for_each",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": true,
+                                  "display_name": "For Each Observable",
+                                  "skip_execution": false,
+                                  "source_array": "$activity.definition_activity_01MQ75WS0ADDW5USK89nCFfR3BrEtOqcxLT.output.output_table$"
+                                },
+                                "object_type": "definition_activity",
+                                "actions": [
+                                  {
+                                    "unique_name": "definition_activity_01MQ75ZFITKST1KPR6qotnHkEPk5GxJBG5U",
+                                    "name": "Parallel Block",
+                                    "title": "Parallel Block - enrich",
+                                    "type": "logic.parallel",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "continue_on_failure": true,
+                                      "display_name": "Parallel Block - enrich",
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity",
+                                    "blocks": [
+                                      {
+                                        "unique_name": "definition_activity_01MQ75ZS958GH6hFdciGTZhNWDsotbptgXe",
+                                        "name": "Parallel Branch",
+                                        "title": "Parallel Branch - SX-TR enrich",
+                                        "type": "logic.parallel_block",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "continue_on_failure": false,
+                                          "display_name": "Parallel Branch - SX-TR enrich",
+                                          "skip_execution": false
+                                        },
+                                        "object_type": "definition_activity",
+                                        "actions": [
+                                          {
+                                            "unique_name": "definition_activity_01MQ75ZV4LEI12SM8ozhGilyh9eGT8Jjj4J",
+                                            "name": "Threat Response v2 - Enrich Observable",
+                                            "title": "Threat Response v2 - Enrich Observable",
+                                            "type": "workflow.atomic_workflow",
+                                            "base_type": "subworkflow",
+                                            "properties": {
+                                              "continue_on_failure": false,
+                                              "display_name": "Threat Response v2 - Enrich Observable",
+                                              "input": {
+                                                "variable_workflow_01LFCW7BK9JWU2I0o0vdWjBcKeGI9cTXwLT": "$activity.definition_activity_01MQ75Z0XL9C22FubqfUxH3VCsWSYXypVPQ.input.source_array[@].Type$",
+                                                "variable_workflow_01LFCW7BK9RRM61vI2vN9AXklLnXrOFOSdu": "$activity.definition_activity_01MQ75Z0XL9C22FubqfUxH3VCsWSYXypVPQ.input.source_array[@].Observable$",
+                                                "variable_workflow_01LFCW7BK9SW92Ai5bUZzG2IKUi6lVxRR2Z": "$activity.definition_activity_01MQ75YDDZ07J0IiF0tiSWRYX3eETXSHlo9.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                                              },
+                                              "runtime_user": {
+                                                "target_default": true
+                                              },
+                                              "skip_execution": false,
+                                              "target": {
+                                                "override_workflow_target": true,
+                                                "target_id": "definition_target_01M8822GXMSX91tiv83gbLmYF1TBH65ZP8l",
+                                                "target_type": "web-service.endpoint"
+                                              },
+                                              "workflow_id": "definition_workflow_01LFCW7C2Q1BU6Szjo7JqBWHWPmevmW7uIn"
+                                            },
+                                            "object_type": "definition_activity"
+                                          },
+                                          {
+                                            "unique_name": "definition_activity_01MQ760LRW0GX0PW03j34v9uPVNnOhgM4vt",
+                                            "name": "Get CTR Indicators Table ",
+                                            "title": "Get CTR Indicators Table ",
+                                            "type": "workflow.atomic_workflow",
+                                            "base_type": "subworkflow",
+                                            "properties": {
+                                              "continue_on_failure": false,
+                                              "display_name": "Get CTR Indicators Table ",
+                                              "input": {
+                                                "variable_workflow_01MPVP5ITNAZW5OyzbRRARz6rfteNfo4jGd": "$activity.definition_activity_01MQ75ZV4LEI12SM8ozhGilyh9eGT8Jjj4J.output.variable_workflow_01LFCW7BK9PHR4US5QvFoxwf05w5gnBzrNU$",
+                                                "variable_workflow_01MPVP5ITNC5E7lKs86ndBaDNdpnP20FUtH": "$activity.definition_activity_01MQ75Z0XL9C22FubqfUxH3VCsWSYXypVPQ.input.source_array[@].Type$",
+                                                "variable_workflow_01MPVP5ITNEE43ikhREuKbHJHTPrICltzG6": "$activity.definition_activity_01MQ75Z0XL9C22FubqfUxH3VCsWSYXypVPQ.input.source_array[@].Observable$"
+                                              },
+                                              "runtime_user": {
+                                                "target_default": true
+                                              },
+                                              "skip_execution": false,
+                                              "target": {
+                                                "no_target": true
+                                              },
+                                              "workflow_id": "definition_workflow_01MPVP5J16K335u8w59FE6SjnNOgBxK2v5Y"
+                                            },
+                                            "object_type": "definition_activity"
+                                          },
+                                          {
+                                            "unique_name": "definition_activity_01MQ761BCJVXB39W7DCu2cDbBZDwDKPBlDQ",
+                                            "name": "For Each",
+                                            "title": "For Each",
+                                            "type": "logic.for_each",
+                                            "base_type": "activity",
+                                            "properties": {
+                                              "continue_on_failure": false,
+                                              "display_name": "For Each",
+                                              "skip_execution": false,
+                                              "source_array": "$activity.definition_activity_01MQ760LRW0GX0PW03j34v9uPVNnOhgM4vt.output.variable_workflow_01MPVP5ITN38B1GpEh7DeXKkfJjzY0Xch9U$"
+                                            },
+                                            "object_type": "definition_activity",
+                                            "actions": [
+                                              {
+                                                "unique_name": "definition_activity_01MQ761R0NWIV1BFtSJyDltUSQFRPVoXXI0",
+                                                "name": "Add Row to Table",
+                                                "title": "Add Row to Table",
+                                                "type": "core.addrowtotable",
+                                                "base_type": "activity",
+                                                "properties": {
+                                                  "action_timeout": 180,
+                                                  "continue_on_failure": false,
+                                                  "display_name": "Add Row to Table",
+                                                  "input_table": "$workflow.definition_workflow_01MQ75UWIANX55Ieabt74602T1AtURVD8d9.output.variable_workflow_01MQ75UWAJDGN5TR0mnsVf6ggyAv3Hcz4Iz$",
+                                                  "row": [
+                                                    {
+                                                      "key": "Observable_type",
+                                                      "type": "string",
+                                                      "value": "$activity.definition_activity_01MQ75Z0XL9C22FubqfUxH3VCsWSYXypVPQ.input.source_array[@].Type$"
+                                                    },
+                                                    {
+                                                      "key": "Observable_value",
+                                                      "type": "string",
+                                                      "value": "$activity.definition_activity_01MQ75Z0XL9C22FubqfUxH3VCsWSYXypVPQ.input.source_array[@].Observable$"
+                                                    },
+                                                    {
+                                                      "key": "enrichment_type",
+                                                      "type": "string",
+                                                      "value": "$activity.definition_activity_01MQ761BCJVXB39W7DCu2cDbBZDwDKPBlDQ.input.source_array[@].Information_Type$"
+                                                    },
+                                                    {
+                                                      "key": "enrichment_value",
+                                                      "type": "string",
+                                                      "value": "$activity.definition_activity_01MQ761BCJVXB39W7DCu2cDbBZDwDKPBlDQ.input.source_array[@].Value$"
+                                                    },
+                                                    {
+                                                      "key": "producer",
+                                                      "type": "string",
+                                                      "value": "$activity.definition_activity_01MQ761BCJVXB39W7DCu2cDbBZDwDKPBlDQ.input.source_array[@].Producer$"
+                                                    }
+                                                  ],
+                                                  "skip_execution": false
+                                                },
+                                                "object_type": "definition_activity"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "unique_name": "definition_activity_01MQ762GQJOUZ7ls8bDw3JCBesQ9PXz7RiK",
+                                        "name": "Parallel Branch",
+                                        "title": "Parallel Branch - Investigate",
+                                        "type": "logic.parallel_block",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "continue_on_failure": false,
+                                          "display_name": "Parallel Branch - Investigate",
+                                          "skip_execution": false
+                                        },
+                                        "object_type": "definition_activity",
+                                        "actions": [
+                                          {
+                                            "unique_name": "definition_activity_01MQ762IMFRK26hP1eMoNgMxZrje73ENz4V",
+                                            "name": "Condition Block",
+                                            "title": "Condition Block",
+                                            "type": "logic.if_else",
+                                            "base_type": "activity",
+                                            "properties": {
+                                              "continue_on_failure": false,
+                                              "display_name": "Condition Block",
+                                              "skip_execution": false
+                                            },
+                                            "object_type": "definition_activity",
+                                            "blocks": [
+                                              {
+                                                "unique_name": "definition_activity_01MQ762VOXYZA1q4m1czM0MQBnQ06bvCrNx",
+                                                "name": "Condition Branch",
+                                                "title": "Condition If Domain",
+                                                "type": "logic.condition_block",
+                                                "base_type": "activity",
+                                                "properties": {
+                                                  "condition": {
+                                                    "left_operand": "$activity.definition_activity_01MQ75Z0XL9C22FubqfUxH3VCsWSYXypVPQ.input.source_array[@].Type$",
+                                                    "operator": "eq",
+                                                    "right_operand": "domain"
+                                                  },
+                                                  "continue_on_failure": false,
+                                                  "display_name": "Condition If Domain",
+                                                  "skip_execution": false
+                                                },
+                                                "object_type": "definition_activity",
+                                                "actions": [
+                                                  {
+                                                    "unique_name": "definition_activity_01MQ7630IG9N02jRHn1FnDlgYlIFWiRwvQ6",
+                                                    "name": "Investigate_Enrichment",
+                                                    "title": "Investigate_Enrichment",
+                                                    "type": "workflow.atomic_workflow",
+                                                    "base_type": "subworkflow",
+                                                    "properties": {
+                                                      "continue_on_failure": false,
+                                                      "display_name": "Investigate_Enrichment",
+                                                      "input": {
+                                                        "variable_workflow_01KGGGNGTQOJU3ZUBXV6CNhbsvLB8HsNd88": "$global.variable_01MET7PX13X2762mqJPLYBVQCFn31jFhjkk.global.variable_01MET7PX13X2762mqJPLYBVQCFn31jFhjkk$",
+                                                        "variable_workflow_01KGGH1TAU9HQ4ZCjJ05xYFodtIZjO9o0K2": "$activity.definition_activity_01MQ75Z0XL9C22FubqfUxH3VCsWSYXypVPQ.input.source_array[@].Observable$",
+                                                        "variable_workflow_01KGGH7TRFPS56yJl1rKcPo0TdSoIGOlBGf": "domain"
+                                                      },
+                                                      "runtime_user": {
+                                                        "target_default": true
+                                                      },
+                                                      "skip_execution": false,
+                                                      "target": {
+                                                        "execute_on_this_target": true,
+                                                        "target_id": "definition_target_01KGG0KMS7DCO4c1U9dH2btJevVFhn73eaX",
+                                                        "target_type": "web-service.endpoint"
+                                                      },
+                                                      "workflow_id": "definition_workflow_01KGGEY4ZKDEV4QRry4LmBMFV8HjjkdKUQY"
+                                                    },
+                                                    "object_type": "definition_activity"
+                                                  },
+                                                  {
+                                                    "unique_name": "definition_activity_01MQ763QB4EO87dVBkBQBlFeEstOtsnXa4J",
+                                                    "name": "For Each",
+                                                    "title": "For Each",
+                                                    "type": "logic.for_each",
+                                                    "base_type": "activity",
+                                                    "properties": {
+                                                      "continue_on_failure": false,
+                                                      "display_name": "For Each",
+                                                      "skip_execution": false,
+                                                      "source_array": "$activity.definition_activity_01MQ7630IG9N02jRHn1FnDlgYlIFWiRwvQ6.output.variable_workflow_01KGJNU5GCI9D1xsasfHtJXto2DnNjcHxUO$"
+                                                    },
+                                                    "object_type": "definition_activity",
+                                                    "actions": [
+                                                      {
+                                                        "unique_name": "definition_activity_01MQ7645WKVUQ44P5DrQ7BikOcBUCtrF67j",
+                                                        "name": "Add Row to Table",
+                                                        "title": "Add Row to Table",
+                                                        "type": "core.addrowtotable",
+                                                        "base_type": "activity",
+                                                        "properties": {
+                                                          "action_timeout": 180,
+                                                          "continue_on_failure": false,
+                                                          "display_name": "Add Row to Table",
+                                                          "input_table": "$workflow.definition_workflow_01MQ75UWIANX55Ieabt74602T1AtURVD8d9.output.variable_workflow_01MQ75UWAJDGN5TR0mnsVf6ggyAv3Hcz4Iz$",
+                                                          "row": [
+                                                            {
+                                                              "key": "Observable_type",
+                                                              "type": "string",
+                                                              "value": "$activity.definition_activity_01MQ75Z0XL9C22FubqfUxH3VCsWSYXypVPQ.input.source_array[@].Type$"
+                                                            },
+                                                            {
+                                                              "key": "Observable_value",
+                                                              "type": "string",
+                                                              "value": "$activity.definition_activity_01MQ75Z0XL9C22FubqfUxH3VCsWSYXypVPQ.input.source_array[@].Observable$"
+                                                            },
+                                                            {
+                                                              "key": "enrichment_type",
+                                                              "type": "string",
+                                                              "value": "$activity.definition_activity_01MQ763QB4EO87dVBkBQBlFeEstOtsnXa4J.input.source_array[@].type$"
+                                                            },
+                                                            {
+                                                              "key": "enrichment_value",
+                                                              "type": "string",
+                                                              "value": "$activity.definition_activity_01MQ763QB4EO87dVBkBQBlFeEstOtsnXa4J.input.source_array[@].value$"
+                                                            },
+                                                            {
+                                                              "key": "producer",
+                                                              "type": "string",
+                                                              "value": "Umbrella Investigate"
+                                                            }
+                                                          ],
+                                                          "skip_execution": false
+                                                        },
+                                                        "object_type": "definition_activity"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "unique_name": "definition_activity_01MQ7HYXPPIRV5G955nn5YfYUUyXx3RJNsk",
+                                    "name": "Update Row in Table",
+                                    "title": "Update Row in Table",
+                                    "type": "core.updaterowintable",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "action_timeout": 180,
+                                      "columns": [
+                                        {
+                                          "column_name": "enriched",
+                                          "column_type": "integer"
+                                        }
+                                      ],
+                                      "continue_on_failure": true,
+                                      "display_name": "Update Row in Table",
+                                      "input_table": "$global.variable_01MQ5KEFSRJ271pd2CBE7R0A7blsNggjUCh.global.variable_01MQ5KEFSRJ271pd2CBE7R0A7blsNggjUCh$",
+                                      "row": [
+                                        {
+                                          "key": "enriched",
+                                          "type": "integer",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "rows": {
+                                        "rows_matching_criteria": true,
+                                        "where_clause": "Observable LIKE '$activity.definition_activity_01MQ75Z0XL9C22FubqfUxH3VCsWSYXypVPQ.input.source_array[@].Observable$'"
+                                      },
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity"
+                                  }
+                                ]
+                              },
+                              {
+                                "unique_name": "definition_activity_01MQ7CAD11SR028NYVTgsaXYE0qAXLXVuEd",
+                                "name": "Select from Table",
+                                "title": "Select from Table",
+                                "type": "core.selectfromtable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "columns": [
+                                    {
+                                      "column_name": "Observable_type",
+                                      "column_type": "string"
+                                    },
+                                    {
+                                      "column_name": "Observable_value",
+                                      "column_type": "string"
+                                    },
+                                    {
+                                      "column_name": "enrichment_type",
+                                      "column_type": "string"
+                                    },
+                                    {
+                                      "column_name": "enrichment_value",
+                                      "column_type": "string"
+                                    },
+                                    {
+                                      "column_name": "producer",
+                                      "column_type": "string"
+                                    }
+                                  ],
+                                  "continue_on_failure": true,
+                                  "display_name": "Select from Table",
+                                  "input_table": "$workflow.definition_workflow_01MQ75UWIANX55Ieabt74602T1AtURVD8d9.output.variable_workflow_01MQ75UWAJDGN5TR0mnsVf6ggyAv3Hcz4Iz$",
+                                  "number_of_rows": {
+                                    "all_rows": true,
+                                    "at_most": false
+                                  },
+                                  "persist_output": false,
+                                  "skip_execution": false,
+                                  "sorting": {
+                                    "no_sort": true,
+                                    "sort_by": false
+                                  }
+                                },
+                                "object_type": "definition_activity"
+                              },
+                              {
+                                "unique_name": "definition_activity_01MQ7CW6E4M690c6yyFlKlVFQMhB4A2ktwQ",
+                                "name": "For Each",
+                                "title": "For Each Enrichment Post in CTIA",
+                                "type": "logic.for_each",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": true,
+                                  "display_name": "For Each Enrichment Post in CTIA",
+                                  "skip_execution": false,
+                                  "source_array": "$activity.definition_activity_01MQ7CAD11SR028NYVTgsaXYE0qAXLXVuEd.output.output_table$"
+                                },
+                                "object_type": "definition_activity",
+                                "actions": [
+                                  {
+                                    "unique_name": "definition_activity_01MQ7DJ8GD8AI4bK2iA9oSVSf0WOa7nGZP7",
+                                    "name": "SX-TR - Post Judgement to private CTIA",
+                                    "title": "SX-TR - Post Judgement to private CTIA",
+                                    "type": "workflow.atomic_workflow",
+                                    "base_type": "subworkflow",
+                                    "properties": {
+                                      "continue_on_failure": false,
+                                      "display_name": "SX-TR - Post Judgement to private CTIA",
+                                      "input": {
+                                        "variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4": "$activity.definition_activity_01MQ7CW6E4M690c6yyFlKlVFQMhB4A2ktwQ.input.source_array[@].enrichment_value$",
+                                        "variable_workflow_01JRKRJS0SOK253bM4kvHLwgbmlqTP89IJN": "$activity.definition_activity_01MQ7CW6E4M690c6yyFlKlVFQMhB4A2ktwQ.input.source_array[@].Observable_type$",
+                                        "variable_workflow_01JRKRO6TUD7R7bVNdMpyZhQ7LrN4zLXWID": "$activity.definition_activity_01MQ7CW6E4M690c6yyFlKlVFQMhB4A2ktwQ.input.source_array[@].Observable_value$",
+                                        "variable_workflow_01JV2A7W9IYGZ2HVzCA6IldHqxvcMDNwidQ": "Malicious",
+                                        "variable_workflow_01JWZONSNQ1MQ42KqsDEEbu7SJt5EuxxqHf": "2",
+                                        "variable_workflow_01MOHXBBOB8UK5vr1K9XpxoMxte94npMQXt": "$activity.definition_activity_01MQ75YDDZ07J0IiF0tiSWRYX3eETXSHlo9.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
+                                        "variable_workflow_01MOI03EP4DIL6c4eOJwVJWJmw9bIHvOpJP": "",
+                                        "variable_workflow_01MOI0GREA0KH4TYKyhqsmgy86OuYAq9Pmi": ""
+                                      },
+                                      "runtime_user": {
+                                        "target_default": true
+                                      },
+                                      "skip_execution": true,
+                                      "target": {
+                                        "override_workflow_target": true,
+                                        "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
+                                        "target_type": "web-service.endpoint"
+                                      },
+                                      "workflow_id": "definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI"
+                                    },
+                                    "object_type": "definition_activity"
+                                  },
+                                  {
+                                    "unique_name": "definition_activity_01MQ8PLV59Z1Z3Bl35aQQmEhR5m8BetdgtH",
+                                    "name": "Copy-Sub - Post Indicators to private CTIA",
+                                    "title": "Copy-Sub - Post Indicators to private CTIA",
+                                    "type": "workflow.sub_workflow",
+                                    "base_type": "subworkflow",
+                                    "properties": {
+                                      "continue_on_failure": true,
+                                      "display_name": "Copy-Sub - Post Indicators to private CTIA",
+                                      "input": {
+                                        "variable_workflow_01MQ8N3QBAVW47Fb0ErYZlKIbWrzsxxR4Su": "$activity.definition_activity_01MQ7CW6E4M690c6yyFlKlVFQMhB4A2ktwQ.input.source_array[@].enrichment_value$",
+                                        "variable_workflow_01MQ8N3QBAYIH2kq4JX0gtP4d8oKyVh5Z4r": "$activity.definition_activity_01MQ7CW6E4M690c6yyFlKlVFQMhB4A2ktwQ.input.source_array[@].Observable_value$",
+                                        "variable_workflow_01MQ8N3QBAZRF0JAcOwalLLzGUMULWxMHPH": "2",
+                                        "variable_workflow_01MQ8N3QBB11C6q4yvSf5feoFYuF6u0xDHj": "$activity.definition_activity_01MQ7CW6E4M690c6yyFlKlVFQMhB4A2ktwQ.input.source_array[@].Observable_type$",
+                                        "variable_workflow_01MQ8N3QBB3AO3iCWV8UYjvbgmyJgwdc1Sx": "Malicious"
+                                      },
+                                      "runtime_user": {
+                                        "target_default": true
+                                      },
+                                      "skip_execution": false,
+                                      "target": {
+                                        "override_workflow_target": true,
+                                        "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
+                                        "target_type": "web-service.endpoint"
+                                      },
+                                      "workflow_id": "definition_workflow_01MQ8N3QIAMJ159Q0n63XhxI5a6xYjPlK8s"
+                                    },
+                                    "object_type": "definition_activity"
+                                  }
+                                ]
+                              },
+                              {
+                                "unique_name": "definition_activity_01MQMLMRJ1E5Y4MdwZQeb50CnZV5pVGDMO1",
+                                "name": "Delete from Table",
+                                "title": "Delete from Table",
+                                "type": "core.deleterowfromtable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Delete from Table",
+                                  "input_table": "$workflow.definition_workflow_01MQ75UWIANX55Ieabt74602T1AtURVD8d9.output.variable_workflow_01MQ75UWAJDGN5TR0mnsVf6ggyAv3Hcz4Iz$",
+                                  "rows": {
+                                    "all_rows": true,
+                                    "rows_matching_criteria": false
+                                  },
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_01MQM1O7H60UC0i6EHkQFLobYY7WiAUi7za",
+                        "name": "Set Variables",
+                        "title": "Counter +1",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Counter +1",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$global.variable_01MQM0IOPKRZN7EY50zy87tfFoYfFhOYy2F.global.variable_01MQM0IOPKRZN7EY50zy87tfFoYfFhOYy2F$",
+                              "variable_value_new": "$global.variable_01MQM0IOPKRZN7EY50zy87tfFoYfFhOYy2F.global.variable_01MQM0IOPKRZN7EY50zy87tfFoYfFhOYy2F$+1"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01MQ76521PSWA5y7swPwaAx4yMxCxrUTmkG",
+                        "name": "Sleep",
+                        "title": "Sleep",
+                        "type": "core.sleep",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Sleep",
+                          "skip_execution": false,
+                          "sleep_interval": 10
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "triggers": {
+    "triggerschedule_01MQ75VUOQA5U2sAZJtVAfK8dOpjkAT0Qm2": {
+      "workflow_id": "definition_workflow_01MQ75UWIANX55Ieabt74602T1AtURVD8d9",
+      "name": "Every 5 minutes",
+      "title": "",
+      "lowercase_name": "schedule.every_5_minutes",
+      "type": "schedule",
+      "base_type": "trigger",
+      "ref_id": "schedule_01MQ53LKY3QC645Dio19nBWhABFmgcq3ZdV",
+      "version": "",
+      "disabled": false,
+      "unique_name": "triggerschedule_01MQ75VUOQA5U2sAZJtVAfK8dOpjkAT0Qm2",
+      "object_type": "triggerschedule"
+    }
+  },
+  "schedules": {
+    "schedule_01MQ53LKY3QC645Dio19nBWhABFmgcq3ZdV": {
+      "unique_name": "schedule_01MQ53LKY3QC645Dio19nBWhABFmgcq3ZdV",
+      "name": "Every 5 minutes",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "Etc/GMT+0",
+        "starttime": "00:01",
+        "interval_hours": 0,
+        "interval_minutes": 5,
+        "number_of_times": 287,
+        "display_name": "Every 5 minutes",
+        "description": ""
+      },
+      "version": "1.0.0",
+      "object_type": "schedule"
+    }
+  },
+  "targets": {
+    "definition_target_01M8822QE1ASK0LBDYTzl3OKw4v2xiLFH4l": {
+      "unique_name": "definition_target_01M8822QE1ASK0LBDYTzl3OKw4v2xiLFH4l",
+      "name": "CTR_For_Access_Token",
+      "title": "CTR Target for access token",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01M88220SSN361RUkFGgMusUPYqsnpzfS5j",
+        "description": "CTR_For_Access_Token",
+        "disable_certificate_validation": false,
+        "display_name": "CTR_For_Access_Token",
+        "host": "visibility.amp.cisco.com",
+        "no_runtime_user": false,
+        "path": "/iroh",
+        "protocol": "https"
+      }
+    },
+    "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk": {
+      "unique_name": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
+      "name": "Private_CTIA_Target",
+      "title": "Private_CTIA_Target",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "Private_CTIA_Target",
+        "disable_certificate_validation": false,
+        "display_name": "Private_CTIA_Target",
+        "host": "private.intel.amp.cisco.com",
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01M88220SSN361RUkFGgMusUPYqsnpzfS5j": {
+      "unique_name": "definition_runtime_user_01M88220SSN361RUkFGgMusUPYqsnpzfS5j",
+      "name": "CTR_Credentials",
+      "title": "CTR_Credentials",
+      "description": "Account Key for CTR",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "*****",
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "CTR_Credentials"
+      }
+    }
+  },
+  "variables": {
+    "variable_01MET7PX13X2762mqJPLYBVQCFn31jFhjkk": {
+      "unique_name": "variable_01MET7PX13X2762mqJPLYBVQCFn31jFhjkk",
+      "properties": {
+        "value": "*****",
+        "scope": "global",
+        "name": "Investigate Token",
+        "type": "datatype.secure_string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01MQ5KEFSRJ271pd2CBE7R0A7blsNggjUCh": {
+      "unique_name": "variable_01MQ5KEFSRJ271pd2CBE7R0A7blsNggjUCh",
+      "schema_id": "tabletype_01MQ5JRJ68A9B6xAOkf8qvXIX18PdxMcxn1",
+      "properties": {
+        "value": [
+          {
+            "column_data": {
+              "Observable": "Detection",
+              "Type": "Type",
+              "enriched": 1
+            }
+          },
+          {
+            "column_data": {
+              "Observable": "ciuj.ir",
+              "Type": "domain",
+              "enriched": 1
+            }
+          },
+          {
+            "column_data": {
+              "Observable": "retdemos.com",
+              "Type": "domain",
+              "enriched": 1
+            }
+          }
+        ],
+        "scope": "global",
+        "name": "AO - Observables",
+        "type": "datatype.table",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01MQM0IOPKRZN7EY50zy87tfFoYfFhOYy2F": {
+      "unique_name": "variable_01MQM0IOPKRZN7EY50zy87tfFoYfFhOYy2F",
+      "properties": {
+        "value": 32,
+        "scope": "global",
+        "name": "Loop_counter_enrichment",
+        "type": "datatype.integer",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "table_types": {
+    "tabletype_01MQ5JRJ68A9B6xAOkf8qvXIX18PdxMcxn1": {
+      "unique_name": "tabletype_01MQ5JRJ68A9B6xAOkf8qvXIX18PdxMcxn1",
+      "data_type": "datatype.tabletype",
+      "display_name": "AO - Observable",
+      "columns": [
+        {
+          "name": "Observable",
+          "title": "Observable",
+          "type": "string"
+        },
+        {
+          "name": "Type",
+          "title": "Type",
+          "type": "string"
+        },
+        {
+          "maximum": 1,
+          "minimum": 0,
+          "name": "enriched",
+          "title": "enriched",
+          "type": "integer"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
+    "tabletype_01MQ6C0YXGAIN3ZAKAmaOw9vrB9Uytdtqwg": {
+      "unique_name": "tabletype_01MQ6C0YXGAIN3ZAKAmaOw9vrB9Uytdtqwg",
+      "data_type": "datatype.tabletype",
+      "display_name": "AO - enrichment result",
+      "columns": [
+        {
+          "name": "enrichment_value",
+          "title": "enrichment_value",
+          "type": "string"
+        },
+        {
+          "name": "producer",
+          "title": "producer",
+          "type": "string"
+        },
+        {
+          "name": "Observable_type",
+          "title": "Observable_type",
+          "type": "string"
+        },
+        {
+          "name": "Observable_value",
+          "title": "Observable_value",
+          "type": "string"
+        },
+        {
+          "name": "enrichment_type",
+          "title": "enrichment_type",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_01MQ8N3QIAMJ159Q0n63XhxI5a6xYjPlK8s",
+        "name": "Hack-a-thon - Post Indicators to private CTIA",
+        "title": "Hack-a-thon - Post Indicators to private CTIA",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "obbs_value",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01MQ8N3QBAYIH2kq4JX0gtP4d8oKyVh5Z4r",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "local",
+              "name": "TR",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01MQ8N3QBB26N1kBurZuW6q8e2PVQwCg1eF",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "disposition_number",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01MQ8N3QBAZRF0JAcOwalLLzGUMULWxMHPH",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "value",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01MQ8N3QBAVW47Fb0ErYZlKIbWrzsxxR4Su",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Obs_type",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01MQ8N3QBB11C6q4yvSf5feoFYuF6u0xDHj",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "disposition",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01MQ8N3QBB3AO3iCWV8UYjvbgmyJgwdc1Sx",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "Hack-a-thon - Post Indicators to private CTIA",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "specify_on_workflow_start": false,
+            "target_default": true
+          },
+          "target": {
+            "target_type": "web-service.endpoint",
+            "specify_on_workflow_start": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01MQ8N4IV981U4k41UqwLts5B0RzM2gtR8n",
+            "name": "CTR Generate Access Token",
+            "title": "CTR Generate Access Token",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "CTR Generate Access Token",
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01M8822QE1ASK0LBDYTzl3OKw4v2xiLFH4l",
+                "target_type": "web-service.endpoint"
+              },
+              "workflow_id": "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01MQ8N5I8V07F4j5ltxZG0kM09p6Ujq1fI2",
+            "name": "HTTP Request",
+            "title": "HTTP Request",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "body": "{\n  \"valid_time\": {\n    \"start_time\": \"2020-10-28T11:47:25.622Z\",\n    \"end_time\": \"2020-10-28T11:47:25.622Z\"\n  },\n  \"observable\": {\n    \"value\": \"$workflow.definition_workflow_01MQ8N3QIAMJ159Q0n63XhxI5a6xYjPlK8s.input.variable_workflow_01MQ8N3QBAYIH2kq4JX0gtP4d8oKyVh5Z4r$\",\n    \"type\": \"$workflow.definition_workflow_01MQ8N3QIAMJ159Q0n63XhxI5a6xYjPlK8s.input.variable_workflow_01MQ8N3QBB11C6q4yvSf5feoFYuF6u0xDHj$\"\n  },\n  \"type\": \"judgement\",\n  \"source\": \"SecureX AO\",\n  \"disposition\": $workflow.definition_workflow_01MQ8N3QIAMJ159Q0n63XhxI5a6xYjPlK8s.input.variable_workflow_01MQ8N3QBAZRF0JAcOwalLLzGUMULWxMHPH$,\n  \n  \"reason\": \"$workflow.definition_workflow_01MQ8N3QIAMJ159Q0n63XhxI5a6xYjPlK8s.input.variable_workflow_01MQ8N3QBAVW47Fb0ErYZlKIbWrzsxxR4Su$\",\n  \"disposition_name\": \"$workflow.definition_workflow_01MQ8N3QIAMJ159Q0n63XhxI5a6xYjPlK8s.input.variable_workflow_01MQ8N3QBB3AO3iCWV8UYjvbgmyJgwdc1Sx$\",\n  \"priority\": 0,\n  \"severity\": \"Medium\",\n  \"tlp\": \"white\",\n  \"timestamp\": \"2020-10-28T11:47:25.622Z\",\n  \"confidence\": \"Medium\"\n}",
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "custom_headers": [
+                {
+                  "name": "Authorization",
+                  "value": "Bearer $activity.definition_activity_01MQ8N4IV981U4k41UqwLts5B0RzM2gtR8n.output.variable_workflow_01BNOOXA3G6MV1PGAvsfZOKDdMYcE6XS726$"
+                }
+              ],
+              "display_name": "HTTP Request",
+              "method": "POST",
+              "relative_url": "/ctia/judgement?wait_for=false",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk"
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ],
+  "atomic_workflows": [
+    "definition_workflow_01KGGEY4ZKDEV4QRry4LmBMFV8HjjkdKUQY",
+    "definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI",
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
+    "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4",
+    "definition_workflow_01LFCW7C2Q1BU6Szjo7JqBWHWPmevmW7uIn",
+    "definition_workflow_01MPVP5J16K335u8w59FE6SjnNOgBxK2v5Y"
+  ]
+}
