@@ -7,19 +7,6 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 1,
-          "scope": "local",
-          "name": "Always True Condition",
-          "type": "datatype.integer",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MKXO0JFW4RL6c1yrLLf9pSdPHbYzPqZ0C",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.boolean",
         "properties": {
           "value": true,
@@ -30,6 +17,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MKXO0JFWG3G2BUFafca2xUVKkAdIRYTnr",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "local",
+          "name": "Service-Now",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MKXO0JFWEVH2aGoCo17MBHsPPE7rdH6rL",
         "object_type": "variable_workflow"
       },
       {
@@ -47,14 +47,40 @@
       {
         "schema_id": "datatype.boolean",
         "properties": {
-          "value": false,
+          "value": true,
           "scope": "local",
-          "name": "Service-Now",
+          "name": "TheHive",
           "type": "datatype.boolean",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MKXO0JFWEVH2aGoCo17MBHsPPE7rdH6rL",
+        "unique_name": "variable_workflow_01MKXO0JFWAAM1l8bCIxatSBfZefp7baY6Z",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "local",
+          "name": "MSTeams",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MKXO0JFW8SH35QBCWKlA4QBLvaeKfTfPL",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Incident Description",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MKXO0JFWCMB1HkZYAlY9UDD3OIfWKEHPQ",
         "object_type": "variable_workflow"
       },
       {
@@ -72,55 +98,16 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "datatype.integer",
         "properties": {
-          "value": "",
+          "value": 1,
           "scope": "local",
-          "name": "Incident Title",
-          "type": "datatype.string",
+          "name": "Always True Condition",
+          "type": "datatype.integer",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MKXO0JFWBI42RzVLdcB2kLYpaEVFapuf6",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.boolean",
-        "properties": {
-          "value": false,
-          "scope": "local",
-          "name": "MSTeams",
-          "type": "datatype.boolean",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MKXO0JFW8SH35QBCWKlA4QBLvaeKfTfPL",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.boolean",
-        "properties": {
-          "value": true,
-          "scope": "local",
-          "name": "TheHive",
-          "type": "datatype.boolean",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MKXO0JFWAAM1l8bCIxatSBfZefp7baY6Z",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Incident Description",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MKXO0JFWCMB1HkZYAlY9UDD3OIfWKEHPQ",
+        "unique_name": "variable_workflow_01MKXO0JFW4RL6c1yrLLf9pSdPHbYzPqZ0C",
         "object_type": "variable_workflow"
       },
       {
@@ -134,6 +121,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MKXO0JFWH9G5eAaCkzG9A7Ie4p4THeADU",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Incident Title",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MKXO0JFWBI42RzVLdcB2kLYpaEVFapuf6",
         "object_type": "variable_workflow"
       }
     ],
@@ -797,613 +797,6 @@
                                             ]
                                           },
                                           {
-                                            "unique_name": "definition_activity_01MKXOTWR1WCA0HXugn5fj6App7Lpx1N0Fq",
-                                            "name": "Parallel Block",
-                                            "title": "Parallel Block - enrich",
-                                            "type": "logic.parallel",
-                                            "base_type": "activity",
-                                            "properties": {
-                                              "continue_on_failure": false,
-                                              "display_name": "Parallel Block - enrich",
-                                              "skip_execution": true
-                                            },
-                                            "object_type": "definition_activity",
-                                            "blocks": [
-                                              {
-                                                "unique_name": "definition_activity_01MKXOUJQ3GU92SMkK3FtfG2WGxXG5jgR4h",
-                                                "name": "Parallel Branch",
-                                                "title": "Parallel Branch SecureX Threat Response",
-                                                "type": "logic.parallel_block",
-                                                "base_type": "activity",
-                                                "properties": {
-                                                  "continue_on_failure": false,
-                                                  "display_name": "Parallel Branch SecureX Threat Response",
-                                                  "skip_execution": false
-                                                },
-                                                "object_type": "definition_activity",
-                                                "actions": [
-                                                  {
-                                                    "unique_name": "definition_activity_01MKXOULLRA525NysDc5FBJBw4BZhhAZm13",
-                                                    "name": "Group",
-                                                    "title": "SecureX Threat Response",
-                                                    "type": "logic.group",
-                                                    "base_type": "activity",
-                                                    "properties": {
-                                                      "continue_on_failure": false,
-                                                      "display_name": "SecureX Threat Response",
-                                                      "skip_execution": false
-                                                    },
-                                                    "object_type": "definition_activity",
-                                                    "actions": [
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXOV9ZS64Y6tQAfz46JACZQgGi37JvrT",
-                                                        "name": "Threat Response v2 - Enrich Observable",
-                                                        "title": "Threat Response v2 - Enrich Observable",
-                                                        "type": "workflow.atomic_workflow",
-                                                        "base_type": "subworkflow",
-                                                        "properties": {
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Threat Response v2 - Enrich Observable",
-                                                          "input": {
-                                                            "variable_workflow_01LFCW7BK9JWU2I0o0vdWjBcKeGI9cTXwLT": "domain",
-                                                            "variable_workflow_01LFCW7BK9RRM61vI2vN9AXklLnXrOFOSdu": "$activity.definition_activity_01MKXOITWZWUH49FT8rI0cTmRM5sfh7BRnU.input.source_array[@].distinctvalue$",
-                                                            "variable_workflow_01LFCW7BK9SW92Ai5bUZzG2IKUi6lVxRR2Z": "$activity.definition_activity_01MKXORM2NGI90c5vnWcwludr42FHb5SbNz.output.variable_workflow_01BNOOXA3G6MV1PGAvsfZOKDdMYcE6XS726$"
-                                                          },
-                                                          "runtime_user": {
-                                                            "target_default": true
-                                                          },
-                                                          "skip_execution": false,
-                                                          "target": {
-                                                            "override_workflow_target": true,
-                                                            "target_id": "definition_target_01M8822GXMSX91tiv83gbLmYF1TBH65ZP8l",
-                                                            "target_type": "web-service.endpoint"
-                                                          },
-                                                          "workflow_id": "definition_workflow_01LFCW7C2Q1BU6Szjo7JqBWHWPmevmW7uIn"
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXOWU80VWI4F8uYKPJkx7npvyc5J44hp",
-                                                        "name": "GET CTR Targets Table",
-                                                        "title": "GET CTR Targets Table",
-                                                        "type": "workflow.atomic_workflow",
-                                                        "base_type": "subworkflow",
-                                                        "properties": {
-                                                          "continue_on_failure": false,
-                                                          "display_name": "GET CTR Targets Table",
-                                                          "input": {
-                                                            "variable_workflow_01JQVN9S6HT9R0GfzNaXucHZlKLjI92yMdD": "$activity.definition_activity_01MKXOITWZWUH49FT8rI0cTmRM5sfh7BRnU.input.source_array[@].distinctvalue$",
-                                                            "variable_workflow_01JQVROPRFMMC2eDT0cGRe9A8HW03GZ1XZg": "$activity.definition_activity_01MKXOV9ZS64Y6tQAfz46JACZQgGi37JvrT.output.variable_workflow_01LFCW7BK9PHR4US5QvFoxwf05w5gnBzrNU$"
-                                                          },
-                                                          "runtime_user": {
-                                                            "target_default": true
-                                                          },
-                                                          "skip_execution": false,
-                                                          "target": {
-                                                            "no_target": true
-                                                          },
-                                                          "workflow_id": "definition_workflow_01JQVN9SHDS7U0aI6ARfYbDceWnEXWS9ExB"
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXOXU8WXV03L7OOmhyKwAw5xuHeNGIjn",
-                                                        "name": "Select from Table",
-                                                        "title": "Select from Table",
-                                                        "type": "core.selectfromtable",
-                                                        "base_type": "activity",
-                                                        "properties": {
-                                                          "action_timeout": 180,
-                                                          "columns": [
-                                                            {
-                                                              "column_name": "Target",
-                                                              "column_type": "string"
-                                                            },
-                                                            {
-                                                              "column_name": "Value",
-                                                              "column_type": "string"
-                                                            },
-                                                            {
-                                                              "column_name": "Details",
-                                                              "column_type": "string"
-                                                            }
-                                                          ],
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Select from Table",
-                                                          "input_table": "$activity.definition_activity_01MKXOWU80VWI4F8uYKPJkx7npvyc5J44hp.output.variable_workflow_01JQVN9S6HOME07a9WEGbweBoz7lILpZqD7$",
-                                                          "number_of_rows": {
-                                                            "all_rows": true,
-                                                            "at_most": false
-                                                          },
-                                                          "persist_output": false,
-                                                          "skip_execution": false,
-                                                          "sorting": {
-                                                            "no_sort": true,
-                                                            "sort_by": false
-                                                          },
-                                                          "where_clause": "Details LIKE 'odns_identity_label' OR Details LIKE 'hostname'"
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXOYAZOIQA6d0OUPUrdwYbFM4pQHkpgs",
-                                                        "name": "Get Unique Table Values",
-                                                        "title": "Get Unique Table Values",
-                                                        "type": "workflow.atomic_workflow",
-                                                        "base_type": "subworkflow",
-                                                        "properties": {
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Get Unique Table Values",
-                                                          "input": {
-                                                            "variable_workflow_01MD80H8IOAT645oIaeVqFjFMSorHd8NNlF": true,
-                                                            "variable_workflow_01MD80H8IODQE7BfMDLWJY2iakmLcHqxYKq": "Target",
-                                                            "variable_workflow_01MD80H8IOG2K1mdGIaPmoy1mHQBDvlwscy": "$activity.definition_activity_01MKXOXU8WXV03L7OOmhyKwAw5xuHeNGIjn.output.response_body$"
-                                                          },
-                                                          "runtime_user": {
-                                                            "target_default": true
-                                                          },
-                                                          "skip_execution": false,
-                                                          "target": {
-                                                            "no_target": true
-                                                          },
-                                                          "workflow_id": "definition_workflow_01MD80H8PYWKP3F28UqWl0nlZ02R0hFCsrX"
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MPVRMTNEN0K41iUzFqBrQ6zupkyohfb2Z",
-                                                        "name": "Get CTR Indicators Table ",
-                                                        "title": "Get CTR Indicators Table ",
-                                                        "type": "workflow.atomic_workflow",
-                                                        "base_type": "subworkflow",
-                                                        "properties": {
-                                                          "display_name": "Get CTR Indicators Table ",
-                                                          "input": {
-                                                            "variable_workflow_01MPVP5ITNAZW5OyzbRRARz6rfteNfo4jGd": "",
-                                                            "variable_workflow_01MPVP5ITNC5E7lKs86ndBaDNdpnP20FUtH": "",
-                                                            "variable_workflow_01MPVP5ITNEE43ikhREuKbHJHTPrICltzG6": ""
-                                                          },
-                                                          "runtime_user": {
-                                                            "target_default": true
-                                                          },
-                                                          "target": {
-                                                            "no_target": true
-                                                          },
-                                                          "workflow_id": "definition_workflow_01MPVP5J16K335u8w59FE6SjnNOgBxK2v5Y"
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXOZR3852L1N2RdWRDhPRiq0jQTlYGCr",
-                                                        "name": "Get CTR Judgement",
-                                                        "title": "Get CTR Judgement",
-                                                        "type": "workflow.atomic_workflow",
-                                                        "base_type": "subworkflow",
-                                                        "properties": {
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Get CTR Judgement",
-                                                          "input": {
-                                                            "variable_workflow_01JQV4CN4V9ES77MFOkZah7Dv8FPdyjh3zW": "$activity.definition_activity_01MKXOITWZWUH49FT8rI0cTmRM5sfh7BRnU.input.source_array[@].distinctvalue$",
-                                                            "variable_workflow_01JQV4CN4VFYG6Pr23MVyp1VbpElFxtuBUJ": "domain",
-                                                            "variable_workflow_01JQVC42UHVV33KiV76Io4lTgAV1T8wyHfr": "$activity.definition_activity_01MKXOV9ZS64Y6tQAfz46JACZQgGi37JvrT.output.variable_workflow_01LFCW7BK9PHR4US5QvFoxwf05w5gnBzrNU$"
-                                                          },
-                                                          "runtime_user": {
-                                                            "target_default": true
-                                                          },
-                                                          "skip_execution": false,
-                                                          "target": {
-                                                            "no_target": true
-                                                          },
-                                                          "workflow_id": "definition_workflow_01JQV4CNFF20759mppNEVKw4P4bSRKDXhuC"
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      }
-                                                    ]
-                                                  }
-                                                ]
-                                              },
-                                              {
-                                                "unique_name": "definition_activity_01MKXP0G86N4F0TzsskuqTmSMrO378I8D2c",
-                                                "name": "Parallel Branch",
-                                                "title": "Parallel Branch Umbrella",
-                                                "type": "logic.parallel_block",
-                                                "base_type": "activity",
-                                                "properties": {
-                                                  "continue_on_failure": false,
-                                                  "display_name": "Parallel Branch Umbrella",
-                                                  "skip_execution": false
-                                                },
-                                                "object_type": "definition_activity",
-                                                "actions": [
-                                                  {
-                                                    "unique_name": "definition_activity_01MKXP0I4BMOY6cD9kGEQflyB6MooPJsGTr",
-                                                    "name": "Group",
-                                                    "title": "Cisco Umbrella",
-                                                    "type": "logic.group",
-                                                    "base_type": "activity",
-                                                    "properties": {
-                                                      "continue_on_failure": false,
-                                                      "display_name": "Cisco Umbrella",
-                                                      "skip_execution": false
-                                                    },
-                                                    "object_type": "definition_activity",
-                                                    "actions": [
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXP0WFPPCA1MGTPyf3SsRlCgILXLytHe",
-                                                        "name": "Umbrella - Investigate - Categorize Single Domain",
-                                                        "title": "Umbrella - Investigate - Categorize Single Domain",
-                                                        "type": "workflow.atomic_workflow",
-                                                        "base_type": "subworkflow",
-                                                        "properties": {
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Umbrella - Investigate - Categorize Single Domain",
-                                                          "input": {
-                                                            "variable_workflow_01G5O1SJSIRV61zZs5s3wKG548soQ4obTpU": "$activity.definition_activity_01MKXOITWZWUH49FT8rI0cTmRM5sfh7BRnU.input.source_array[@].distinctvalue$",
-                                                            "variable_workflow_01J3TWVRNF19I7ljPN95AHAtNt9v945FoYV": "$global.01MET7PWRX1WF58tEQVDyxClsTDF2CJZo9K.global.01MET7PWRX1WF58tEQVDyxClsTDF2CJZo9K$"
-                                                          },
-                                                          "runtime_user": {
-                                                            "target_default": true
-                                                          },
-                                                          "skip_execution": false,
-                                                          "target": {
-                                                            "override_workflow_target": true,
-                                                            "target_id": "definition_target_01MET9C3C0W320lrxwOCzcG7Yw1Rg3zMBSj",
-                                                            "target_type": "web-service.endpoint"
-                                                          },
-                                                          "workflow_id": "definition_workflow_01G5O02N3T9NE0uN8IfRFUh7UzLG7IdEWlq"
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXP1NTDH5Z6DDoPWSsvqCJiXZzmLgRGL",
-                                                        "name": "Investigate_Enrichment",
-                                                        "title": "Investigate_Enrichment",
-                                                        "type": "workflow.atomic_workflow",
-                                                        "base_type": "subworkflow",
-                                                        "properties": {
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Investigate_Enrichment",
-                                                          "input": {
-                                                            "variable_workflow_01KGGGNGTQOJU3ZUBXV6CNhbsvLB8HsNd88": "$global.01MET7PWRX1WF58tEQVDyxClsTDF2CJZo9K.global.01MET7PWRX1WF58tEQVDyxClsTDF2CJZo9K$",
-                                                            "variable_workflow_01KGGH1TAU9HQ4ZCjJ05xYFodtIZjO9o0K2": "$activity.definition_activity_01MKXOITWZWUH49FT8rI0cTmRM5sfh7BRnU.input.source_array[@].distinctvalue$",
-                                                            "variable_workflow_01KGGH7TRFPS56yJl1rKcPo0TdSoIGOlBGf": "domain"
-                                                          },
-                                                          "runtime_user": {
-                                                            "target_default": true
-                                                          },
-                                                          "skip_execution": false,
-                                                          "target": {
-                                                            "override_workflow_target": true,
-                                                            "target_id": "definition_target_01KGG0KMS7DCO4c1U9dH2btJevVFhn73eaX",
-                                                            "target_type": "web-service.endpoint"
-                                                          },
-                                                          "workflow_id": "definition_workflow_01KGGEY4ZKDEV4QRry4LmBMFV8HjjkdKUQY"
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXP2CBIKYC49WGTMBA3ewdBkF57bCQke",
-                                                        "name": "Select from Table",
-                                                        "title": "Select from Table Classifier",
-                                                        "type": "core.selectfromtable",
-                                                        "base_type": "activity",
-                                                        "properties": {
-                                                          "action_timeout": 180,
-                                                          "columns": [
-                                                            {
-                                                              "column_name": "type",
-                                                              "column_type": "string"
-                                                            },
-                                                            {
-                                                              "column_name": "value",
-                                                              "column_type": "string"
-                                                            }
-                                                          ],
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Select from Table Classifier",
-                                                          "input_table": "$activity.definition_activity_01MKXP1NTDH5Z6DDoPWSsvqCJiXZzmLgRGL.output.variable_workflow_01KGJNU5GCI9D1xsasfHtJXto2DnNjcHxUO$",
-                                                          "number_of_rows": {
-                                                            "all_rows": true,
-                                                            "at_most": false
-                                                          },
-                                                          "persist_output": false,
-                                                          "skip_execution": false,
-                                                          "sorting": {
-                                                            "no_sort": true,
-                                                            "sort_by": false
-                                                          }
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXP2RNPGV66oTsJbPXzHWLvfxl6l0qjj",
-                                                        "name": "Replace String",
-                                                        "title": "Replace String Classifier",
-                                                        "type": "core.replacestring",
-                                                        "base_type": "activity",
-                                                        "properties": {
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Replace String Classifier",
-                                                          "input_string": "$activity.definition_activity_01MKXP2CBIKYC49WGTMBA3ewdBkF57bCQke.output.response_body$",
-                                                          "replace_list": [
-                                                            {
-                                                              "replaced_string": "{\"type\":\"",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "\",\"value\":\"",
-                                                              "replacement_string": ":"
-                                                            },
-                                                            {
-                                                              "replaced_string": "\"}",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "[",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "]",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": ",",
-                                                              "replacement_string": "\\n"
-                                                            },
-                                                            {
-                                                              "replaced_string": "\\\"",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "securityCategories",
-                                                              "replacement_string": "Categories:\\n"
-                                                            }
-                                                          ],
-                                                          "skip_execution": false
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXP35PYM925OClpkrVA0IB7qjXBAEtOM",
-                                                        "name": "Select from Table",
-                                                        "title": "Select from Table Whois",
-                                                        "type": "core.selectfromtable",
-                                                        "base_type": "activity",
-                                                        "properties": {
-                                                          "action_timeout": 180,
-                                                          "columns": [
-                                                            {
-                                                              "column_name": "type",
-                                                              "column_type": "string"
-                                                            },
-                                                            {
-                                                              "column_name": "value",
-                                                              "column_type": "string"
-                                                            }
-                                                          ],
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Select from Table Whois",
-                                                          "input_table": "$activity.definition_activity_01MKXP1NTDH5Z6DDoPWSsvqCJiXZzmLgRGL.output.variable_workflow_01KGKFA29H3IR2kE13QUaH7LqogijhsLRQf$",
-                                                          "number_of_rows": {
-                                                            "all_rows": true,
-                                                            "at_most": false
-                                                          },
-                                                          "persist_output": false,
-                                                          "skip_execution": false,
-                                                          "sorting": {
-                                                            "no_sort": true,
-                                                            "sort_by": false
-                                                          }
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXP3M54YG51LKZZP3DVp47WuyiiMHILx",
-                                                        "name": "Replace String",
-                                                        "title": "Replace String whois",
-                                                        "type": "core.replacestring",
-                                                        "base_type": "activity",
-                                                        "properties": {
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Replace String whois",
-                                                          "input_string": "$activity.definition_activity_01MKXP35PYM925OClpkrVA0IB7qjXBAEtOM.output.response_body$",
-                                                          "replace_list": [
-                                                            {
-                                                              "replaced_string": "{\"type\":\"",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "\",\"value\":\"",
-                                                              "replacement_string": ":"
-                                                            },
-                                                            {
-                                                              "replaced_string": "\"}",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "[",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "]",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": ",",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "\\\"",
-                                                              "replacement_string": ""
-                                                            }
-                                                          ],
-                                                          "skip_execution": false
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXP3ZXUZG65EnbbqfdQRqihHaLfEp36z",
-                                                        "name": "Select from Table",
-                                                        "title": "Select from Table PDNS",
-                                                        "type": "core.selectfromtable",
-                                                        "base_type": "activity",
-                                                        "properties": {
-                                                          "action_timeout": 180,
-                                                          "columns": [
-                                                            {
-                                                              "column_name": "type",
-                                                              "column_type": "string"
-                                                            },
-                                                            {
-                                                              "column_name": "value",
-                                                              "column_type": "string"
-                                                            }
-                                                          ],
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Select from Table PDNS",
-                                                          "input_table": "$activity.definition_activity_01MKXP1NTDH5Z6DDoPWSsvqCJiXZzmLgRGL.output.variable_workflow_01KGJOF3CFMJL3cwoINu8vvFut5cjb6cj0g$",
-                                                          "number_of_rows": {
-                                                            "all_rows": true,
-                                                            "at_most": false
-                                                          },
-                                                          "persist_output": false,
-                                                          "skip_execution": false,
-                                                          "sorting": {
-                                                            "no_sort": true,
-                                                            "sort_by": false
-                                                          }
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXP4FJ0G766zmzrZwLTHvxdJuviTN3LL",
-                                                        "name": "Replace String",
-                                                        "title": "Replace String PDNS",
-                                                        "type": "core.replacestring",
-                                                        "base_type": "activity",
-                                                        "properties": {
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Replace String PDNS",
-                                                          "input_string": "$activity.definition_activity_01MKXP3ZXUZG65EnbbqfdQRqihHaLfEp36z.output.response_body$",
-                                                          "replace_list": [
-                                                            {
-                                                              "replaced_string": "{\"type\":\"",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "\",\"value\":\"",
-                                                              "replacement_string": ":"
-                                                            },
-                                                            {
-                                                              "replaced_string": "\"}",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "[",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "]",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": ",",
-                                                              "replacement_string": "\\n"
-                                                            },
-                                                            {
-                                                              "replaced_string": "\\\"",
-                                                              "replacement_string": ""
-                                                            }
-                                                          ],
-                                                          "skip_execution": false
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXP4T6ZG251uC9LJwIjvfsMhTdJQ78AF",
-                                                        "name": "Select from Table",
-                                                        "title": "Select from Table Security",
-                                                        "type": "core.selectfromtable",
-                                                        "base_type": "activity",
-                                                        "properties": {
-                                                          "action_timeout": 180,
-                                                          "columns": [
-                                                            {
-                                                              "column_name": "type",
-                                                              "column_type": "string"
-                                                            },
-                                                            {
-                                                              "column_name": "value",
-                                                              "column_type": "string"
-                                                            }
-                                                          ],
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Select from Table Security",
-                                                          "input_table": "$activity.definition_activity_01MKXP1NTDH5Z6DDoPWSsvqCJiXZzmLgRGL.output.variable_workflow_01KGJNZK08AQI2NiidSc5FxXrAWXcvssCE6$",
-                                                          "number_of_rows": {
-                                                            "all_rows": true,
-                                                            "at_most": false
-                                                          },
-                                                          "persist_output": false,
-                                                          "skip_execution": false,
-                                                          "sorting": {
-                                                            "no_sort": true,
-                                                            "sort_by": false
-                                                          }
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MKXP5IFLS285y6gwMHCz2OHGPTpA8HXjT",
-                                                        "name": "Replace String",
-                                                        "title": "Replace String Security",
-                                                        "type": "core.replacestring",
-                                                        "base_type": "activity",
-                                                        "properties": {
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Replace String Security",
-                                                          "input_string": "$activity.definition_activity_01MKXP4T6ZG251uC9LJwIjvfsMhTdJQ78AF.output.response_body$",
-                                                          "replace_list": [
-                                                            {
-                                                              "replaced_string": "{\"type\":\"",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "\",\"value\":\"",
-                                                              "replacement_string": ":"
-                                                            },
-                                                            {
-                                                              "replaced_string": "\"}",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "[",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": "]",
-                                                              "replacement_string": ""
-                                                            },
-                                                            {
-                                                              "replaced_string": ",",
-                                                              "replacement_string": "\\n"
-                                                            },
-                                                            {
-                                                              "replaced_string": "\\\"",
-                                                              "replacement_string": ""
-                                                            }
-                                                          ],
-                                                          "skip_execution": false
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      }
-                                                    ]
-                                                  }
-                                                ]
-                                              }
-                                            ]
-                                          },
-                                          {
                                             "unique_name": "definition_activity_01MKXP5WFR7WL0YSvfUYeT5bL8iDYALCIkG",
                                             "name": "Group",
                                             "title": "Variables",
@@ -1715,7 +1108,7 @@
                                                     "properties": {
                                                       "action_timeout": 180,
                                                       "allow_auto_redirect": true,
-                                                      "body": "{\n  \"roomId\": \"$activity.definition_activity_01MKXO26EI5TJ7JLiWo934ws1108NtYLkWF.output.variable_workflow_01FHSVE2R6ZTQ6L92WEi0kWgR5T8zhMAUzO$\",\n  \"markdown\": \"Details about Domain $activity.01MKXOP7OKNTJ50otuloWHopnnWHKhz2YUd.output.result_string$ ].\",\n  \"attachments\": [\n    {\n      \"contentType\": \"application/vnd.microsoft.card.adaptive\",\n      \"content\": {\n        \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n        \"type\": \"AdaptiveCard\",\n        \"version\": \"1.0\",\n        \"body\": [\n        {\n            \"type\": \"ColumnSet\",\n            \"columns\": [\n                {\n                    \"type\": \"Column\",\n                    \"items\": [\n                        {\n                            \"type\": \"Image\",\n                            \"style\": \"Person\",\n                            \"url\": \"https://www.ingramflyhigher.com/campaigns/cisco-umbrella/images/umbrella-small.png\",\n                            \"size\": \"Medium\",\n                            \"height\": \"50px\"\n                        }\n                    ],\n                    \"width\": \"auto\"\n                },\n                {\n                    \"type\": \"Column\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"Umbrella - SecureX Notification\",\n                            \"weight\": \"Lighter\",\n                            \"color\": \"Accent\"\n                        },\n                        {\n                            \"type\": \"TextBlock\",\n                            \"weight\": \"Bolder\",\n                            \"text\": \"Domain $activity.01MKXOP7OKNTJ50otuloWHopnnWHKhz2YUd.output.result_string$- Details\",\n                            \"horizontalAlignment\": \"Left\",\n                            \"wrap\": true,\n                            \"color\": \"Light\",\n                            \"size\": \"Large\",\n                            \"spacing\": \"Small\"\n                        }\n                    ],\n                    \"width\": \"stretch\"\n                }\n            ]\n        },\n        {\n            \"type\": \"ColumnSet\",\n            \"columns\": [\n                {\n                    \"type\": \"Column\",\n                    \"width\": 35,\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"Whois\",\n                            \"color\": \"Light\"\n                        },\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"Judgements\",\n                            \"color\": \"Light\"\n                        },\n                        {\n                            \"type\": \"TextBlock\",\n                            \"color\": \"Light\",\n                            \"text\": \"Targets\"\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": 65,\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"weight\": \"Bolder\",\n                            \"text\": \"$activity.definition_activity_01MKXP3M54YG51LKZZP3DVp47WuyiiMHILx.output.result_string$ \"\n                        },\n                        {\n                            \"type\": \"TextBlock\",\n                            \"weight\": \"Bolder\",\n                            \"text\": \"a\"\n                        },\n                        {\n                            \"type\": \"TextBlock\",\n                            \"weight\": \"Bolder\",\n                            \"text\": \"$activity.definition_activity_01MKXOYAZOIQA6d0OUPUrdwYbFM4pQHkpgs.output.variable_workflow_01MD80H8IOH795VaLYdymH1rvCEVy2hGqYc$\"\n                        }\n                    ]\n                }\n            ],\n            \"spacing\": \"Padding\",\n            \"horizontalAlignment\": \"Center\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"An incident has been raised in SOC tools\",\n            \"wrap\": true\n        }\n    ]\n      }\n    }\n  ]\n}",
+                                                      "body": "{\n  \"roomId\": \"$activity.definition_activity_01MKXO26EI5TJ7JLiWo934ws1108NtYLkWF.output.variable_workflow_01FHSVE2R6ZTQ6L92WEi0kWgR5T8zhMAUzO$\",\n  \"markdown\": \"Details about Domain $activity.01MKXOP7OKNTJ50otuloWHopnnWHKhz2YUd.output.result_string$ ].\",\n  \"attachments\": [\n    {\n      \"contentType\": \"application/vnd.microsoft.card.adaptive\",\n      \"content\": {\n        \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n        \"type\": \"AdaptiveCard\",\n        \"version\": \"1.0\",\n        \"body\": [\n        {\n            \"type\": \"ColumnSet\",\n            \"columns\": [\n                {\n                    \"type\": \"Column\",\n                    \"items\": [\n                        {\n                            \"type\": \"Image\",\n                            \"style\": \"Person\",\n                            \"url\": \"https://www.ingramflyhigher.com/campaigns/cisco-umbrella/images/umbrella-small.png\",\n                            \"size\": \"Medium\",\n                            \"height\": \"50px\"\n                        }\n                    ],\n                    \"width\": \"auto\"\n                },\n                {\n                    \"type\": \"Column\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"Umbrella - SecureX Notification\",\n                            \"weight\": \"Lighter\",\n                            \"color\": \"Accent\"\n                        },\n                        {\n                            \"type\": \"TextBlock\",\n                            \"weight\": \"Bolder\",\n                            \"text\": \"Domain $activity.01MKXOP7OKNTJ50otuloWHopnnWHKhz2YUd.output.result_string$- Details\",\n                            \"horizontalAlignment\": \"Left\",\n                            \"wrap\": true,\n                            \"color\": \"Light\",\n                            \"size\": \"Large\",\n                            \"spacing\": \"Small\"\n                        }\n                    ],\n                    \"width\": \"stretch\"\n                }\n            ]\n        },\n        {\n            \"type\": \"ColumnSet\",\n            \"columns\": [\n                {\n                    \"type\": \"Column\",\n                    \"width\": 35,\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"Whois\",\n                            \"color\": \"Light\"\n                        },\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"Judgements\",\n                            \"color\": \"Light\"\n                        },\n                        {\n                            \"type\": \"TextBlock\",\n                            \"color\": \"Light\",\n                            \"text\": \"Targets\"\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": 65,\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"weight\": \"Bolder\",\n                            \"text\": \"$activity.01MKXP3LQSL9W745PFk9yL4neggEydIlo1R.output.result_string$ \"\n                        },\n                        {\n                            \"type\": \"TextBlock\",\n                            \"weight\": \"Bolder\",\n                            \"text\": \"a\"\n                        },\n                        {\n                            \"type\": \"TextBlock\",\n                            \"weight\": \"Bolder\",\n                            \"text\": \"$activity.01MKXOYAJUM6M6MRE2Pr5P4t9ks9xo1D1Le.output.01MD80H82GOAK5ugBIvEHuSZW6hESnQmteQ$\"\n                        }\n                    ]\n                }\n            ],\n            \"spacing\": \"Padding\",\n            \"horizontalAlignment\": \"Center\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"An incident has been raised in SOC tools\",\n            \"wrap\": true\n        }\n    ]\n      }\n    }\n  ]\n}",
                                                       "content_type": "application/json",
                                                       "continue_on_error_status_code": false,
                                                       "continue_on_failure": false,
@@ -1753,7 +1146,7 @@
                                                         "variable_workflow_01FGYY44G3MZ55amJu9YqgUeKS8GT49bZx3": "$global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8.global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8$",
                                                         "variable_workflow_01FGYY44G3TK951Crpnd8g2izonyM4bFtpW": "$activity.definition_activity_01MKXO26EI5TJ7JLiWo934ws1108NtYLkWF.output.variable_workflow_01FHSVE2R6ZTQ6L92WEi0kWgR5T8zhMAUzO$",
                                                         "variable_workflow_01FGYY44G3UPV3heGGc3vXCV47YL5WoI2X6": "",
-                                                        "variable_workflow_01FGYZ9BV4QTP19CuMwcW8QywvCP9ymx2BZ": "Domain $activity.01MKXOP7OKNTJ50otuloWHopnnWHKhz2YUd.output.result_string$\\n\n$activity.definition_activity_01MKXP2RNPGV66oTsJbPXzHWLvfxl6l0qjj.output.result_string$\\n\nWhoIs : \\n$activity.definition_activity_01MKXP3M54YG51LKZZP3DVp47WuyiiMHILx.output.result_string$\\n\nSecurity : \\n$activity.definition_activity_01MKXP5IFLS285y6gwMHCz2OHGPTpA8HXjT.output.result_string$\\n\n\nAn incident has been created"
+                                                        "variable_workflow_01FGYZ9BV4QTP19CuMwcW8QywvCP9ymx2BZ": "Domain $activity.01MKXOP7OKNTJ50otuloWHopnnWHKhz2YUd.output.result_string$\\n\n$activity.01MKXP2R9J14S36H2cU8W3RfF657PmUle15.output.result_string$\\n\nWhoIs : \\n$activity.01MKXP3LQSL9W745PFk9yL4neggEydIlo1R.output.result_string$\\n\nSecurity : \\n$activity.01MKXP5I29F3E3KqmD0eYm5tmiVNtd7xKuF.output.result_string$\\n\n\nAn incident has been created"
                                                       },
                                                       "runtime_user": {
                                                         "target_default": true
@@ -2053,7 +1446,7 @@
     "variable_01MMKHSEW0NZX7jABstKKVWU4iIw8Lnax3P": {
       "unique_name": "variable_01MMKHSEW0NZX7jABstKKVWU4iIw8Lnax3P",
       "properties": {
-        "value": 379,
+        "value": 84,
         "scope": "global",
         "name": "Loop_counter_amp_alerting",
         "type": "datatype.integer",
@@ -2102,22 +1495,15 @@
     }
   },
   "atomic_workflows": [
-    "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4",
-    "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x",
-    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
-    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
-    "definition_workflow_01KVVWMB2UTRF5uVHVH9DtiT6vgIfnzTdRS",
     "definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck",
-    "definition_workflow_01KGGEY4ZKDEV4QRry4LmBMFV8HjjkdKUQY",
-    "definition_workflow_01MPVP5J16K335u8w59FE6SjnNOgBxK2v5Y",
-    "definition_workflow_01JQV4CNFF20759mppNEVKw4P4bSRKDXhuC",
-    "definition_workflow_01G5O02N3T9NE0uN8IfRFUh7UzLG7IdEWlq",
+    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
     "definition_workflow_01FGYY44YU521254ygN3Le0In0kEHpiPNpf",
-    "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q",
-    "definition_workflow_01JQVN9SHDS7U0aI6ARfYbDceWnEXWS9ExB",
+    "definition_workflow_01KVVWMB2UTRF5uVHVH9DtiT6vgIfnzTdRS",
+    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
     "definition_workflow_01C0BYD0GI1KZ0mxScCSxVrfX70zrUdqLlW",
-    "definition_workflow_01MD80H8PYWKP3F28UqWl0nlZ02R0hFCsrX",
     "definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL",
-    "definition_workflow_01LFCW7C2Q1BU6Szjo7JqBWHWPmevmW7uIn"
+    "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x",
+    "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q",
+    "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4"
   ]
 }
