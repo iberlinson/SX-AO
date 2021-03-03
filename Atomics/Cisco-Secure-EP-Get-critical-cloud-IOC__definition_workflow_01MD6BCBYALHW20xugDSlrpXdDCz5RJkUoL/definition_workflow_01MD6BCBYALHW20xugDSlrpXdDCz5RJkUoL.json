@@ -7,19 +7,6 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 0,
-          "scope": "input",
-          "name": "DELAY",
-          "type": "datatype.integer",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MD6BCBRODK10SY3MYnohyROMyj7imut5V",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
         "properties": {
           "scope": "output",
@@ -35,19 +22,6 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "output",
-          "name": "json",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MD6BCBRO85A1P64EyWc2LmKf7kjEMc65e",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
           "scope": "local",
           "name": "TEMP",
           "type": "datatype.string",
@@ -55,6 +29,32 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MD6BCBRO9AK61U7ChVwyPdb33nc7BBtXY",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "input",
+          "name": "DELAY",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MD6BCBRODK10SY3MYnohyROMyj7imut5V",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "json",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MD6BCBRO85A1P64EyWc2LmKf7kjEMc65e",
         "object_type": "variable_workflow"
       }
     ],
@@ -226,7 +226,7 @@
                   "continue_on_failure": false,
                   "display_name": "Get security activity ",
                   "method": "GET",
-                  "relative_url": "/events?start_date=$activity.definition_activity_01MD6BLKMMKEZ3i3TLVzEjzVtUomlhQdpEm.output.response_body$\u0026event_type[]=1107296274\u0026event_type[]=1107296272\u0026event_type[]=1107296284\u0026event_type[]=1090519105\u0026event_type[]=1107296344\u0026event_type[]=1090519105",
+                  "relative_url": "/events?start_date=$activity.definition_activity_01MD6BLKMMKEZ3i3TLVzEjzVtUomlhQdpEm.output.response_body$\u0026event_type[]=1107296274\u0026event_type[]=1107296272\u0026event_type[]=1107296284\u0026event_type[]=1090519105\u0026event_type[]=1107296344",
                   "runtime_user": {
                     "override_target_runtime_user": false,
                     "target_default": true
@@ -300,7 +300,7 @@
       {
         "unique_name": "definition_activity_01MMIPBHNA3MN1PoqbCrp2tt0XRinXn0oup",
         "name": "Select from Table",
-        "title": "Select from Table",
+        "title": "Select from Table critical IOC",
         "type": "core.selectfromtable",
         "base_type": "activity",
         "properties": {
@@ -324,7 +324,7 @@
             }
           ],
           "continue_on_failure": false,
-          "display_name": "Select from Table",
+          "display_name": "Select from Table critical IOC",
           "input_table": "$activity.definition_activity_01MD6BMLU8YQQ4eDOShnc6e8fcO2vpnuvHR.output.read_table_from_json$",
           "number_of_rows": {
             "all_rows": true,
@@ -343,12 +343,12 @@
       {
         "unique_name": "definition_activity_01MD6BNZXHC1E3jMalOjlcNbTz3l2hydEgo",
         "name": "For Each",
-        "title": "For Each CloudIOC",
+        "title": "For Each Critical CloudIOC",
         "type": "logic.for_each",
         "base_type": "activity",
         "properties": {
           "continue_on_failure": false,
-          "display_name": "For Each CloudIOC",
+          "display_name": "For Each Critical CloudIOC",
           "skip_execution": false,
           "source_array": "$activity.definition_activity_01MMIPBHNA3MN1PoqbCrp2tt0XRinXn0oup.output.output_table$"
         },
@@ -384,9 +384,9 @@
         ]
       },
       {
-        "unique_name": "definition_activity_01MMTE8T8M96R6XgzEo4iKGl5RlmqPGYJsM",
+        "unique_name": "definition_activity_01MMX2XLDF3KH3J5Ll7CpafHwMXr4xSHBF1",
         "name": "Select from Table",
-        "title": "Select from Table",
+        "title": "Select from Table High IOC",
         "type": "core.selectfromtable",
         "base_type": "activity",
         "properties": {
@@ -410,7 +410,7 @@
             }
           ],
           "continue_on_failure": false,
-          "display_name": "Select from Table",
+          "display_name": "Select from Table High IOC",
           "input_table": "$activity.definition_activity_01MD6BMLU8YQQ4eDOShnc6e8fcO2vpnuvHR.output.read_table_from_json$",
           "number_of_rows": {
             "all_rows": true,
@@ -422,19 +422,105 @@
             "no_sort": true,
             "sort_by": false
           },
-          "where_clause": "event_type NOT LIKE 'Cloud IOC'"
+          "where_clause": "severity LIKE 'High' AND event_type LIKE 'Cloud IOC'"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MMX37PVMYV72wgZzlwBRpOEf7JiE5X3Lp",
+        "name": "For Each",
+        "title": "For Each High CloudIOC",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "For Each High CloudIOC",
+          "skip_execution": false,
+          "source_array": "$activity.definition_activity_01MMX2XLDF3KH3J5Ll7CpafHwMXr4xSHBF1.output.output_table$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01MMX38DYR9CW2TUB1txCkYU46ooJouwBnW",
+            "name": "Add Row to Table",
+            "title": "Add Row to Table",
+            "type": "core.addrowtotable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Add Row to Table",
+              "input_table": "$workflow.definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL.output.variable_workflow_01MD6BCBRO2UA7RbqmtDtfNMSxe5srQU0kW$",
+              "row": [
+                {
+                  "key": "type",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01MMX37PVMYV72wgZzlwBRpOEf7JiE5X3Lp.input.source_array[@].cloud_ioc$"
+                },
+                {
+                  "key": "value",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01MMX37PVMYV72wgZzlwBRpOEf7JiE5X3Lp.input.source_array[@].computer$"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01MMTE8T8M96R6XgzEo4iKGl5RlmqPGYJsM",
+        "name": "Select from Table",
+        "title": "Select from Table critical others",
+        "type": "core.selectfromtable",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "columns": [
+            {
+              "column_name": "cloud_ioc",
+              "column_type": "string"
+            },
+            {
+              "column_name": "severity",
+              "column_type": "string"
+            },
+            {
+              "column_name": "computer",
+              "column_type": "string"
+            },
+            {
+              "column_name": "event_type",
+              "column_type": "string"
+            }
+          ],
+          "continue_on_failure": false,
+          "display_name": "Select from Table critical others",
+          "input_table": "$activity.definition_activity_01MD6BMLU8YQQ4eDOShnc6e8fcO2vpnuvHR.output.read_table_from_json$",
+          "number_of_rows": {
+            "all_rows": true,
+            "at_most": false
+          },
+          "persist_output": true,
+          "skip_execution": false,
+          "sorting": {
+            "no_sort": true,
+            "sort_by": false
+          },
+          "where_clause": "event_type NOT LIKE 'Cloud IOC' AND severity LIKE \"Critical'"
         },
         "object_type": "definition_activity"
       },
       {
         "unique_name": "definition_activity_01MMTF8DNQ9912M7Ns6ODFdRXiNiVR4XRmC",
         "name": "For Each",
-        "title": "For Each others",
+        "title": "For Each otherscritical",
         "type": "logic.for_each",
         "base_type": "activity",
         "properties": {
           "continue_on_failure": true,
-          "display_name": "For Each others",
+          "display_name": "For Each otherscritical",
           "skip_execution": false,
           "source_array": "$activity.definition_activity_01MMTE8T8M96R6XgzEo4iKGl5RlmqPGYJsM.output.output_table$"
         },
@@ -461,6 +547,92 @@
                   "key": "value",
                   "type": "string",
                   "value": "$activity.definition_activity_01MMTF8DNQ9912M7Ns6ODFdRXiNiVR4XRmC.input.source_array[@].computer$"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01MMXZJIH4YR40bs4zvGNRjDh7Qure9Hqxh",
+        "name": "Select from Table",
+        "title": "Select from Table high others",
+        "type": "core.selectfromtable",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "columns": [
+            {
+              "column_name": "cloud_ioc",
+              "column_type": "string"
+            },
+            {
+              "column_name": "severity",
+              "column_type": "string"
+            },
+            {
+              "column_name": "computer",
+              "column_type": "string"
+            },
+            {
+              "column_name": "event_type",
+              "column_type": "string"
+            }
+          ],
+          "continue_on_failure": false,
+          "display_name": "Select from Table high others",
+          "input_table": "$activity.definition_activity_01MD6BMLU8YQQ4eDOShnc6e8fcO2vpnuvHR.output.read_table_from_json$",
+          "number_of_rows": {
+            "all_rows": true,
+            "at_most": false
+          },
+          "persist_output": true,
+          "skip_execution": false,
+          "sorting": {
+            "no_sort": true,
+            "sort_by": false
+          },
+          "where_clause": "event_type NOT LIKE 'Cloud IOC' AND severity LIKE \"High'"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MMXZZL79DTQ1OkrRvpb9pw2bhEn7Ix2xU",
+        "name": "For Each",
+        "title": "For Each others high",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "For Each others high",
+          "skip_execution": false,
+          "source_array": "$activity.definition_activity_01MMXZJIH4YR40bs4zvGNRjDh7Qure9Hqxh.output.output_table$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01MMY0082EEHH5RfUq8gI93ZbdSMG3BXpPa",
+            "name": "Add Row to Table",
+            "title": "Add Row to Table",
+            "type": "core.addrowtotable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Add Row to Table",
+              "input_table": "$workflow.definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL.output.variable_workflow_01MD6BCBRO2UA7RbqmtDtfNMSxe5srQU0kW$",
+              "row": [
+                {
+                  "key": "type",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01MMXZZL79DTQ1OkrRvpb9pw2bhEn7Ix2xU.input.source_array[@].event_type$"
+                },
+                {
+                  "key": "value",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01MMXZZL79DTQ1OkrRvpb9pw2bhEn7Ix2xU.input.source_array[@].computer$"
                 }
               ],
               "skip_execution": false
