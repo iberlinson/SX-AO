@@ -640,38 +640,6 @@
                                 "object_type": "definition_activity",
                                 "actions": [
                                   {
-                                    "unique_name": "definition_activity_01MQ7DJ8GD8AI4bK2iA9oSVSf0WOa7nGZP7",
-                                    "name": "SX-TR - Post Judgement to private CTIA",
-                                    "title": "SX-TR - Post Judgement to private CTIA",
-                                    "type": "workflow.atomic_workflow",
-                                    "base_type": "subworkflow",
-                                    "properties": {
-                                      "continue_on_failure": false,
-                                      "display_name": "SX-TR - Post Judgement to private CTIA",
-                                      "input": {
-                                        "variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4": "$activity.definition_activity_01MQ7CW6E4M690c6yyFlKlVFQMhB4A2ktwQ.input.source_array[@].enrichment_value$",
-                                        "variable_workflow_01JRKRJS0SOK253bM4kvHLwgbmlqTP89IJN": "$activity.definition_activity_01MQ7CW6E4M690c6yyFlKlVFQMhB4A2ktwQ.input.source_array[@].Observable_type$",
-                                        "variable_workflow_01JRKRO6TUD7R7bVNdMpyZhQ7LrN4zLXWID": "$activity.definition_activity_01MQ7CW6E4M690c6yyFlKlVFQMhB4A2ktwQ.input.source_array[@].Observable_value$",
-                                        "variable_workflow_01JV2A7W9IYGZ2HVzCA6IldHqxvcMDNwidQ": "Malicious",
-                                        "variable_workflow_01JWZONSNQ1MQ42KqsDEEbu7SJt5EuxxqHf": "2",
-                                        "variable_workflow_01MOHXBBOB8UK5vr1K9XpxoMxte94npMQXt": "$activity.definition_activity_01MQ75YDDZ07J0IiF0tiSWRYX3eETXSHlo9.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
-                                        "variable_workflow_01MOI03EP4DIL6c4eOJwVJWJmw9bIHvOpJP": "",
-                                        "variable_workflow_01MOI0GREA0KH4TYKyhqsmgy86OuYAq9Pmi": ""
-                                      },
-                                      "runtime_user": {
-                                        "target_default": true
-                                      },
-                                      "skip_execution": true,
-                                      "target": {
-                                        "override_workflow_target": true,
-                                        "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
-                                        "target_type": "web-service.endpoint"
-                                      },
-                                      "workflow_id": "definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI"
-                                    },
-                                    "object_type": "definition_activity"
-                                  },
-                                  {
                                     "unique_name": "definition_activity_01MQ8PLV59Z1Z3Bl35aQQmEhR5m8BetdgtH",
                                     "name": "Copy-Sub - Post Indicators to private CTIA",
                                     "title": "Copy-Sub - Post Indicators to private CTIA",
@@ -910,7 +878,7 @@
     "variable_01MQM0IOPKRZN7EY50zy87tfFoYfFhOYy2F": {
       "unique_name": "variable_01MQM0IOPKRZN7EY50zy87tfFoYfFhOYy2F",
       "properties": {
-        "value": 32,
+        "value": 192,
         "scope": "global",
         "name": "Loop_counter_enrichment",
         "type": "datatype.integer",
@@ -927,11 +895,6 @@
       "display_name": "AO - Observable",
       "columns": [
         {
-          "name": "Observable",
-          "title": "Observable",
-          "type": "string"
-        },
-        {
           "name": "Type",
           "title": "Type",
           "type": "string"
@@ -942,6 +905,11 @@
           "name": "enriched",
           "title": "enriched",
           "type": "integer"
+        },
+        {
+          "name": "Observable",
+          "title": "Observable",
+          "type": "string"
         }
       ],
       "base_type": "datatype",
@@ -996,12 +964,12 @@
             "properties": {
               "value": "",
               "scope": "input",
-              "name": "obbs_value",
+              "name": "disposition",
               "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01MQ8N3QBAYIH2kq4JX0gtP4d8oKyVh5Z4r",
+            "unique_name": "variable_workflow_01MQ8N3QBB3AO3iCWV8UYjvbgmyJgwdc1Sx",
             "object_type": "variable_workflow"
           },
           {
@@ -1035,12 +1003,12 @@
             "properties": {
               "value": "",
               "scope": "input",
-              "name": "value",
+              "name": "obbs_value",
               "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01MQ8N3QBAVW47Fb0ErYZlKIbWrzsxxR4Su",
+            "unique_name": "variable_workflow_01MQ8N3QBAYIH2kq4JX0gtP4d8oKyVh5Z4r",
             "object_type": "variable_workflow"
           },
           {
@@ -1061,12 +1029,12 @@
             "properties": {
               "value": "",
               "scope": "input",
-              "name": "disposition",
+              "name": "value",
               "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01MQ8N3QBB3AO3iCWV8UYjvbgmyJgwdc1Sx",
+            "unique_name": "variable_workflow_01MQ8N3QBAVW47Fb0ErYZlKIbWrzsxxR4Su",
             "object_type": "variable_workflow"
           }
         ],
@@ -1074,7 +1042,7 @@
           "atomic": {
             "is_atomic": false
           },
-          "delete_workflow_instance": false,
+          "delete_workflow_instance": true,
           "display_name": "Hack-a-thon - Post Indicators to private CTIA",
           "runtime_user": {
             "override_target_runtime_user": false,
@@ -1152,11 +1120,10 @@
     }
   ],
   "atomic_workflows": [
-    "definition_workflow_01KGGEY4ZKDEV4QRry4LmBMFV8HjjkdKUQY",
-    "definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI",
-    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
-    "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4",
     "definition_workflow_01LFCW7C2Q1BU6Szjo7JqBWHWPmevmW7uIn",
-    "definition_workflow_01MPVP5J16K335u8w59FE6SjnNOgBxK2v5Y"
+    "definition_workflow_01MPVP5J16K335u8w59FE6SjnNOgBxK2v5Y",
+    "definition_workflow_01KGGEY4ZKDEV4QRry4LmBMFV8HjjkdKUQY",
+    "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4",
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss"
   ]
 }
