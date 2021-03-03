@@ -19,30 +19,6 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
-        "properties": {
-          "scope": "output",
-          "name": "Result",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01KGH2VACUUPD6GRY4nPEMOKvljXmX14gzz",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
-        "properties": {
-          "scope": "output",
-          "name": "Security",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01KGJNZK08AQI2NiidSc5FxXrAWXcvssCE6",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.integer",
         "properties": {
           "value": 0,
@@ -56,16 +32,15 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
         "properties": {
-          "value": "domain",
-          "scope": "input",
-          "name": "observable_type",
-          "type": "datatype.string",
+          "scope": "output",
+          "name": "classifier",
+          "type": "datatype.table",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01KGGH7TRFPS56yJl1rKcPo0TdSoIGOlBGf",
+        "unique_name": "variable_workflow_01KGJNU5GCI9D1xsasfHtJXto2DnNjcHxUO",
         "object_type": "variable_workflow"
       },
       {
@@ -85,12 +60,49 @@
         "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
         "properties": {
           "scope": "output",
-          "name": "classifier",
+          "name": "whois",
           "type": "datatype.table",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01KGJNU5GCI9D1xsasfHtJXto2DnNjcHxUO",
+        "unique_name": "variable_workflow_01KGKFA29H3IR2kE13QUaH7LqogijhsLRQf",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+        "properties": {
+          "scope": "output",
+          "name": "Security",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01KGJNZK08AQI2NiidSc5FxXrAWXcvssCE6",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01JO95MYWEDJM4CnExA5gmZqwmqe6CEJFp5",
+        "properties": {
+          "scope": "output",
+          "name": "Result",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01KGH2VACUUPD6GRY4nPEMOKvljXmX14gzz",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "domain",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01KGGH7TRFPS56yJl1rKcPo0TdSoIGOlBGf",
         "object_type": "variable_workflow"
       },
       {
@@ -104,18 +116,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01KGGH1TAU9HQ4ZCjJ05xYFodtIZjO9o0K2",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
-        "properties": {
-          "scope": "output",
-          "name": "whois",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01KGKFA29H3IR2kE13QUaH7LqogijhsLRQf",
         "object_type": "variable_workflow"
       }
     ],
@@ -230,26 +230,215 @@
             "object_type": "definition_activity",
             "actions": [
               {
-                "unique_name": "definition_activity_01KGH5WC5M15P1B9dlQbPumGstqlXOIqObC",
-                "name": "Add Row to Table",
-                "title": "Add Category to Table",
-                "type": "core.addrowtotable",
+                "unique_name": "definition_activity_01MQ6PBYLW2ES6xVqoX6ufyULsm5igIoqRg",
+                "name": "Replace String",
+                "title": "Replace String",
+                "type": "core.replacestring",
                 "base_type": "activity",
                 "properties": {
-                  "action_timeout": 180,
-                  "continue_on_failure": true,
-                  "display_name": "Add Category to Table",
-                  "input_table": "$workflow.definition_workflow_01KGGEY4ZKDEV4QRry4LmBMFV8HjjkdKUQY.output.variable_workflow_01KGJNU5GCI9D1xsasfHtJXto2DnNjcHxUO$",
-                  "row": [
+                  "continue_on_failure": false,
+                  "display_name": "Replace String",
+                  "input_string": "$activity.definition_activity_01KGJICKIBZEX7ij7XxdNaM6HxgSFvE5mZs.input.source_array[@].securityCategories$",
+                  "replace_list": [
                     {
-                      "key": "type",
-                      "type": "string",
-                      "value": "securityCategories"
+                      "replaced_string": "{",
+                      "replacement_string": ""
                     },
                     {
-                      "key": "value",
-                      "type": "string",
-                      "value": "$activity.definition_activity_01KGJICKIBZEX7ij7XxdNaM6HxgSFvE5mZs.input.source_array[@].securityCategories$"
+                      "replaced_string": "}",
+                      "replacement_string": ""
+                    },
+                    {
+                      "replaced_string": "\"",
+                      "replacement_string": ""
+                    },
+                    {
+                      "replaced_string": "[",
+                      "replacement_string": ""
+                    },
+                    {
+                      "replaced_string": "]",
+                      "replacement_string": ""
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01MQ6PHFPLQPT3li8WLaf3Dt6boRlAIBAZt",
+                "name": "Split String",
+                "title": "Split String",
+                "type": "core.splitstring",
+                "base_type": "activity",
+                "properties": {
+                  "boundaries": [
+                    {
+                      "boundary": ","
+                    }
+                  ],
+                  "continue_on_failure": true,
+                  "display_name": "Split String",
+                  "input_string": "$activity.definition_activity_01MQ6PBYLW2ES6xVqoX6ufyULsm5igIoqRg.output.result_string$",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01MQ6QWXCCGBV0JCZZmdeaQMyvVo4kAAzQd",
+                "name": "Condition Block",
+                "title": "Condition Block",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Condition Block",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01MQ6QXK5BHMK0NULITGpPzzDqCIDxEXvQP",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01MQ6PHFPLQPT3li8WLaf3Dt6boRlAIBAZt.output.succeeded$",
+                        "operator": "eq",
+                        "right_operand": true
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01MQ6S21UOMUJ3wCJ673YrR9UwP2Y6m8L4y",
+                        "name": "For Each",
+                        "title": "For Each",
+                        "type": "logic.for_each",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "For Each",
+                          "skip_execution": false,
+                          "source_array": "$activity.definition_activity_01MQ6PHFPLQPT3li8WLaf3Dt6boRlAIBAZt.output.parts$"
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01MQ6S8N7ZBGN2rC9kbAUW0fcEkb5WEJlmr",
+                            "name": "Add Row to Table",
+                            "title": "Add Category to Table",
+                            "type": "core.addrowtotable",
+                            "base_type": "activity",
+                            "properties": {
+                              "action_timeout": 180,
+                              "continue_on_failure": true,
+                              "display_name": "Add Category to Table",
+                              "input_table": "$workflow.definition_workflow_01KGGEY4ZKDEV4QRry4LmBMFV8HjjkdKUQY.output.variable_workflow_01KGJNU5GCI9D1xsasfHtJXto2DnNjcHxUO$",
+                              "row": [
+                                {
+                                  "key": "type",
+                                  "type": "string",
+                                  "value": "Security Categories"
+                                },
+                                {
+                                  "key": "value",
+                                  "type": "string",
+                                  "value": "$activity.definition_activity_01MQ6S21UOMUJ3wCJ673YrR9UwP2Y6m8L4y.input.source_array[@]$"
+                                }
+                              ],
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01MQ6QXKTRDGO3NWUrHa4YPFbegrDX4qovD",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01MQ6PHFPLQPT3li8WLaf3Dt6boRlAIBAZt.output.succeeded$",
+                        "operator": "eq",
+                        "right_operand": false
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01KGH5WC5M15P1B9dlQbPumGstqlXOIqObC",
+                        "name": "Add Row to Table",
+                        "title": "Add Category to Table",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": true,
+                          "display_name": "Add Category to Table",
+                          "input_table": "$workflow.definition_workflow_01KGGEY4ZKDEV4QRry4LmBMFV8HjjkdKUQY.output.variable_workflow_01KGJNU5GCI9D1xsasfHtJXto2DnNjcHxUO$",
+                          "row": [
+                            {
+                              "key": "type",
+                              "type": "string",
+                              "value": "Security Categories"
+                            },
+                            {
+                              "key": "value",
+                              "type": "string",
+                              "value": "$activity.definition_activity_01MQ6PBYLW2ES6xVqoX6ufyULsm5igIoqRg.output.result_string$"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01MQ6VLS806470yeGIpmuJ8PG0Z6dj7EAyV",
+                "name": "Replace String",
+                "title": "Replace String",
+                "type": "core.replacestring",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Replace String",
+                  "input_string": "$activity.definition_activity_01KGJICKIBZEX7ij7XxdNaM6HxgSFvE5mZs.input.source_array[@].attacks$",
+                  "replace_list": [
+                    {
+                      "replaced_string": "{",
+                      "replacement_string": ""
+                    },
+                    {
+                      "replaced_string": "}",
+                      "replacement_string": ""
+                    },
+                    {
+                      "replaced_string": "\"",
+                      "replacement_string": ""
+                    },
+                    {
+                      "replaced_string": "[",
+                      "replacement_string": ""
+                    },
+                    {
+                      "replaced_string": "]",
+                      "replacement_string": ""
                     }
                   ],
                   "skip_execution": false
@@ -276,7 +465,43 @@
                     {
                       "key": "value",
                       "type": "string",
-                      "value": "$activity.definition_activity_01KGJICKIBZEX7ij7XxdNaM6HxgSFvE5mZs.input.source_array[@].attacks$"
+                      "value": "$activity.definition_activity_01MQ6VLS806470yeGIpmuJ8PG0Z6dj7EAyV.output.result_string$"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01MQ6W7A4SPOR01XkkY0ynIeEeJzaJmUh7D",
+                "name": "Replace String",
+                "title": "Replace String",
+                "type": "core.replacestring",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Replace String",
+                  "input_string": "$activity.definition_activity_01KGJICKIBZEX7ij7XxdNaM6HxgSFvE5mZs.input.source_array[@].threatTypes$",
+                  "replace_list": [
+                    {
+                      "replaced_string": "{",
+                      "replacement_string": ""
+                    },
+                    {
+                      "replaced_string": "}",
+                      "replacement_string": ""
+                    },
+                    {
+                      "replaced_string": "\"",
+                      "replacement_string": ""
+                    },
+                    {
+                      "replaced_string": "[",
+                      "replacement_string": ""
+                    },
+                    {
+                      "replaced_string": "]",
+                      "replacement_string": ""
                     }
                   ],
                   "skip_execution": false
@@ -303,7 +528,7 @@
                     {
                       "key": "value",
                       "type": "string",
-                      "value": "$activity.definition_activity_01KGJICKIBZEX7ij7XxdNaM6HxgSFvE5mZs.input.source_array[@].threatTypes$"
+                      "value": "$activity.definition_activity_01MQ6W7A4SPOR01XkkY0ynIeEeJzaJmUh7D.output.result_string$"
                     }
                   ],
                   "skip_execution": false
