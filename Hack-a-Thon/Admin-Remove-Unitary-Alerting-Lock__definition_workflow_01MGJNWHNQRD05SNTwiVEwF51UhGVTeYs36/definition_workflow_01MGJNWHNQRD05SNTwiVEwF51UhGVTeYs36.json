@@ -180,7 +180,7 @@
         "value": [
           {
             "column_data": {
-              "distinctvalue": "domain"
+              "distinctvalue": "retdemos.com"
             }
           }
         ],
@@ -196,18 +196,6 @@
       "unique_name": "variable_01MMJE2U2ME885U85mhfW61mbItbsbwWFn4",
       "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
       "properties": {
-        "value": [
-          {
-            "column_data": {
-              "distinctvalue": "Computer_FAKE"
-            }
-          },
-          {
-            "column_data": {
-              "distinctvalue": "IE10WIN7"
-            }
-          }
-        ],
         "scope": "global",
         "name": "AMP - Alerting - Computer lock",
         "type": "datatype.table",
