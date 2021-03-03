@@ -11,25 +11,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "disposition_number",
+          "name": "obbs_value",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MQ8N3QBAZRF0JAcOwalLLzGUMULWxMHPH",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "disposition",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MQ8N3QBB3AO3iCWV8UYjvbgmyJgwdc1Sx",
+        "unique_name": "variable_workflow_01MQ8N3QBAYIH2kq4JX0gtP4d8oKyVh5Z4r",
         "object_type": "variable_workflow"
       },
       {
@@ -43,6 +30,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MQ8N3QBB26N1kBurZuW6q8e2PVQwCg1eF",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "disposition",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MQ8N3QBB3AO3iCWV8UYjvbgmyJgwdc1Sx",
         "object_type": "variable_workflow"
       },
       {
@@ -76,12 +76,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "obbs_value",
+          "name": "disposition_number",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MQ8N3QBAYIH2kq4JX0gtP4d8oKyVh5Z4r",
+        "unique_name": "variable_workflow_01MQ8N3QBAZRF0JAcOwalLLzGUMULWxMHPH",
         "object_type": "variable_workflow"
       }
     ],
@@ -89,7 +89,7 @@
       "atomic": {
         "is_atomic": false
       },
-      "delete_workflow_instance": false,
+      "delete_workflow_instance": true,
       "display_name": "Hack-a-thon - Post Indicators to private CTIA",
       "runtime_user": {
         "override_target_runtime_user": false,
