@@ -11,12 +11,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "Room ID",
+          "name": "Image",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MMHH8IS8PTR32u92oD1XMDKNIi2fjyTgE",
+        "unique_name": "variable_workflow_01MMHHLIYYM704tyL7uFsP417pcVBWo4lEm",
         "object_type": "variable_workflow"
       },
       {
@@ -24,38 +24,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "Notification Type",
+          "name": "Link-URL",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MMHOHW16I2J6Cmf3xCUPyIGFdeedwTyO1",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Text",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MMHHW30X10J1cMC46WuPsjt8q0hQYE9yW",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Title",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MMHHEDVCSOW3zhhNRuTxv1gkDC1zkTcWK",
+        "unique_name": "variable_workflow_01MTLUD79ESCO2EzokiInl8hLGIbDde7IaL",
         "object_type": "variable_workflow"
       },
       {
@@ -76,12 +50,64 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "Image",
+          "name": "Text",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MMHHLIYYM704tyL7uFsP417pcVBWo4lEm",
+        "unique_name": "variable_workflow_01MMHHW30X10J1cMC46WuPsjt8q0hQYE9yW",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Incident Tiile",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MTLVLJ331R02Ng3MMzluPCOdsCqdRp3qc",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Title",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MMHHEDVCSOW3zhhNRuTxv1gkDC1zkTcWK",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Notification Type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MMHOHW16I2J6Cmf3xCUPyIGFdeedwTyO1",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Room ID",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MMHH8IS8PTR32u92oD1XMDKNIi2fjyTgE",
         "object_type": "variable_workflow"
       }
     ],
@@ -113,7 +139,7 @@
         "properties": {
           "action_timeout": 180,
           "allow_auto_redirect": true,
-          "body": "{\n  \"roomId\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHH8IS8PTR32u92oD1XMDKNIi2fjyTgE$\",\n  \"markdown\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHHW30X10J1cMC46WuPsjt8q0hQYE9yW$\",\n  \"attachments\": [\n{\n    \"contentType\": \"application/vnd.microsoft.card.adaptive\",\n      \"content\": {\n        \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n        \"type\": \"AdaptiveCard\",\n        \"version\": \"1.0\",\n    \"body\": [\n        {\n            \"type\": \"ColumnSet\",\n            \"columns\": [\n                {\n                    \"type\": \"Column\",\n                    \"items\": [\n                        {\n                            \"type\": \"Image\",\n                            \"style\": \"Person\",\n                            \"url\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHHLIYYM704tyL7uFsP417pcVBWo4lEm$\",\n                            \"size\": \"Medium\",\n                            \"height\": \"50px\"\n                        }\n                    ],\n                    \"width\": \"auto\"\n                },\n                {\n                    \"type\": \"Column\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHOHW16I2J6Cmf3xCUPyIGFdeedwTyO1$\",\n                            \"weight\": \"Lighter\",\n                            \"color\": \"Accent\"\n                        },\n                        {\n                            \"type\": \"TextBlock\",\n                            \"weight\": \"Bolder\",\n                            \"text\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHHEDVCSOW3zhhNRuTxv1gkDC1zkTcWK$\",\n                            \"horizontalAlignment\": \"Left\",\n                            \"wrap\": true,\n                            \"color\": \"Light\",\n                            \"size\": \"Large\",\n                            \"spacing\": \"Small\"\n                        }\n                    ],\n                    \"width\": \"stretch\"\n                }\n            ]\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHHW30X10J1cMC46WuPsjt8q0hQYE9yW$\",\n            \"wrap\": true\n        }\n       ]\n      }\n    }\n  ]\n}",
+          "body": "{\n  \"roomId\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHH8IS8PTR32u92oD1XMDKNIi2fjyTgE$\",\n  \"markdown\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHHW30X10J1cMC46WuPsjt8q0hQYE9yW$\",\n  \"attachments\": [\n{\n    \"contentType\": \"application/vnd.microsoft.card.adaptive\",\n      \"content\": {\n        \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n        \"type\": \"AdaptiveCard\",\n        \"version\": \"1.0\",\n    \"body\": [\n        {\n            \"type\": \"ColumnSet\",\n            \"columns\": [\n                {\n                    \"type\": \"Column\",\n                    \"items\": [\n                        {\n                            \"type\": \"Image\",\n                            \"style\": \"Person\",\n                            \"url\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHHLIYYM704tyL7uFsP417pcVBWo4lEm$\",\n                            \"size\": \"Medium\",\n                            \"height\": \"50px\"\n                        }\n                    ],\n                    \"width\": \"auto\"\n                },\n                {\n                    \"type\": \"Column\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHOHW16I2J6Cmf3xCUPyIGFdeedwTyO1$\",\n                            \"weight\": \"Lighter\",\n                            \"color\": \"Accent\"\n                        },\n                        {\n                            \"type\": \"TextBlock\",\n                            \"weight\": \"Bolder\",\n                            \"text\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHHEDVCSOW3zhhNRuTxv1gkDC1zkTcWK$\",\n                            \"horizontalAlignment\": \"Left\",\n                            \"wrap\": true,\n                            \"color\": \"Light\",\n                            \"size\": \"Large\",\n                            \"spacing\": \"Small\"\n                        }\n                    ],\n                    \"width\": \"stretch\"\n                }\n            ]\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MMHHW30X10J1cMC46WuPsjt8q0hQYE9yW$\",\n            \"wrap\": true\n        },\n{\n            \"type\": \"TextBlock\",\n            \"text\": \"$workflow.definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q.input.variable_workflow_01MTLVLJ331R02Ng3MMzluPCOdsCqdRp3qc$\",\n            \"wrap\": true\n        }\n       ]\n      }\n    }\n  ]\n}",
           "content_type": "application/json",
           "continue_on_error_status_code": false,
           "continue_on_failure": false,
