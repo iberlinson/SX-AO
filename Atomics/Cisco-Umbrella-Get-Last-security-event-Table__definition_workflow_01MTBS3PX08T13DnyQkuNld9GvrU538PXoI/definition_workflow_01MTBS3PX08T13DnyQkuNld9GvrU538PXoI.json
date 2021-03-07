@@ -24,6 +24,19 @@
         "properties": {
           "value": "",
           "scope": "output",
+          "name": "Last event date",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MTBS3PQ9I8P0zA91VRALrWQoKTpaBlL4p",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
           "name": "json",
           "type": "datatype.string",
           "is_required": false,
@@ -68,19 +81,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MTBS3PQ9KLN5QzrH9JK1Pxu1U58zRjn7u",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Last event date",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MTBS3PQ9I8P0zA91VRALrWQoKTpaBlL4p",
         "object_type": "variable_workflow"
       }
     ],
@@ -136,6 +136,21 @@
             "object_type": "definition_activity",
             "actions": [
               {
+                "unique_name": "definition_activity_01MU8TAKWJ5C83Uxstw5pbbVoggZaxnM3nD",
+                "name": "Execute Python Script",
+                "title": "Execute Python Script",
+                "type": "python3.script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Execute Python Script",
+                  "script": "import time\nimport datetime\ns = \"$workflow.definition_workflow_01MTBS3PX08T13DnyQkuNld9GvrU538PXoI.input.variable_workflow_01MTBS3PQ9JHH25dD1IayjTLl0yioX86Jyz$\"\nts = time.mktime(datetime.datetime.strptime(s, \"%Y-%m-%dT%H:%M:%S\").timetuple())\nprint(ts)",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
                 "unique_name": "definition_activity_01MTBS4XH8DHA20RA1lXWNNI9ss3FBqn7h0",
                 "name": "HTTP Request",
                 "title": "Get security activity ",
@@ -148,7 +163,7 @@
                   "continue_on_failure": false,
                   "display_name": "Get security activity ",
                   "method": "GET",
-                  "relative_url": "/v1/organizations/$global.variable_01LL3TQGT3RD9584LsDd2gEmZ7qGBN1OoYt.global.variable_01LL3TQGT3RD9584LsDd2gEmZ7qGBN1OoYt$/security-activity?limit=500\u0026start=$global.variable_01MTBQJIOVS2F74Kkt4ryazpiyKj9pXEO45.global.variable_01MTBQJIOVS2F74Kkt4ryazpiyKj9pXEO45$",
+                  "relative_url": "/v1/organizations/$global.variable_01LL3TQGT3RD9584LsDd2gEmZ7qGBN1OoYt.global.variable_01LL3TQGT3RD9584LsDd2gEmZ7qGBN1OoYt$/security-activity?limit=500\u0026start=$activity.definition_activity_01MU8TAKWJ5C83Uxstw5pbbVoggZaxnM3nD.output.response_body$\u0026categories=\"Command and Control\"",
                   "runtime_user": {
                     "override_target_runtime_user": false,
                     "target_default": true
@@ -345,9 +360,45 @@
               "persist_output": true,
               "skip_execution": false,
               "sorting": {
-                "no_sort": true,
-                "sort_by": false
+                "column_name": "datetime",
+                "order": "desc",
+                "sort_by": true
               }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01MU4D2A754841uioDXBxVBGTX4fC0ppp2o",
+            "name": "Replace String",
+            "title": "Replace String",
+            "type": "core.replacestring",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Replace String",
+              "input_string": "$activity.definition_activity_01MTBS7HBEVN63RiMbCLUeD2WNTKxmwBTtG.output.output_table[0].datetime$",
+              "replace_list": [
+                {
+                  "replaced_string": ".000Z",
+                  "replacement_string": ""
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01MU49FA238J94bbMVIazAtIQaobCaKZl31",
+            "name": "Execute Python Script",
+            "title": "Execute Python Script",
+            "type": "python3.script",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Execute Python Script",
+              "script": "import time\nimport datetime\ns = \"$activity.definition_activity_01MU4D2A754841uioDXBxVBGTX4fC0ppp2o.output.result_string$\"\ntime.mktime(datetime.datetime.strptime(s, \"%Y-%m-%dT%H:%M:%S\").timetuple())\n",
+              "skip_execution": true
             },
             "object_type": "definition_activity"
           },
@@ -364,7 +415,7 @@
               "variables_to_update": [
                 {
                   "variable_to_update": "$workflow.definition_workflow_01MTBS3PX08T13DnyQkuNld9GvrU538PXoI.output.variable_workflow_01MTBS3PQ9I8P0zA91VRALrWQoKTpaBlL4p$",
-                  "variable_value_new": "$activity.definition_activity_01MTBS7HBEVN63RiMbCLUeD2WNTKxmwBTtG.output.output_table[0].datetime$"
+                  "variable_value_new": "$activity.definition_activity_01MU4D2A754841uioDXBxVBGTX4fC0ppp2o.output.result_string$"
                 }
               ]
             },
@@ -1229,18 +1280,6 @@
         "is_invisible": false
       },
       "object_type": "variable"
-    },
-    "variable_01MTBQJIOVS2F74Kkt4ryazpiyKj9pXEO45": {
-      "unique_name": "variable_01MTBQJIOVS2F74Kkt4ryazpiyKj9pXEO45",
-      "properties": {
-        "value": "",
-        "scope": "global",
-        "name": "AO-Umbrella_Last_detection_date",
-        "type": "datatype.string",
-        "is_required": false,
-        "is_invisible": false
-      },
-      "object_type": "variable"
     }
   },
   "table_types": {
@@ -1250,11 +1289,6 @@
       "display_name": "IOC_TARGET_OBSERVABLE",
       "columns": [
         {
-          "name": "IOC",
-          "title": "IOC",
-          "type": "string"
-        },
-        {
           "name": "OBSERVABLE",
           "title": "OBSERVABLE",
           "type": "string"
@@ -1262,6 +1296,11 @@
         {
           "name": "TARGET",
           "title": "TARGET",
+          "type": "string"
+        },
+        {
+          "name": "IOC",
+          "title": "IOC",
           "type": "string"
         }
       ],
