@@ -7,55 +7,16 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Incident Description",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MTBM663ZJ0U2W2g3EVQ44TFZaIkT6Mlln",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.boolean",
-        "properties": {
-          "value": false,
-          "scope": "local",
-          "name": "Service-Now",
-          "type": "datatype.boolean",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MTBM663ZP2E15gvftV3X75Zky8fsKlEGn",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "TS_Now_Temp",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MTBM663ZMTN4HYjt9nsRdKluBCRCUSiaE",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.integer",
         "properties": {
-          "value": 0,
+          "value": 1,
           "scope": "local",
-          "name": "Hits_Temps",
+          "name": "Always True Condition",
           "type": "datatype.integer",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MTBM663ZR9P1fLGCGvT5dMDV8VPMJWBaN",
+        "unique_name": "variable_workflow_01MTBM663ZQ7H1pEf5dAh92KS8tbbGslic0",
         "object_type": "variable_workflow"
       },
       {
@@ -85,19 +46,6 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.boolean",
-        "properties": {
-          "value": true,
-          "scope": "local",
-          "name": "TheHive",
-          "type": "datatype.boolean",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MTBM663ZLMX6q0ukBAfOyHRXprFwyLhgn",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
@@ -108,6 +56,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MTBM663ZSBL1SzFGk2UvdTpjkGPdhzqKr",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": true,
+          "scope": "local",
+          "name": "Webex",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MTBM663ZG7L6dBM4HiW8IP23vouFmCpzR",
         "object_type": "variable_workflow"
       },
       {
@@ -124,16 +85,55 @@
         "object_type": "variable_workflow"
       },
       {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Incident Description",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MTBM663ZJ0U2W2g3EVQ44TFZaIkT6Mlln",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "local",
+          "name": "Service-Now",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MTBM663ZP2E15gvftV3X75Zky8fsKlEGn",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.integer",
         "properties": {
-          "value": 1,
+          "value": 0,
           "scope": "local",
-          "name": "Always True Condition",
+          "name": "Hits_Temps",
           "type": "datatype.integer",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MTBM663ZQ7H1pEf5dAh92KS8tbbGslic0",
+        "unique_name": "variable_workflow_01MTBM663ZR9P1fLGCGvT5dMDV8VPMJWBaN",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "TS_Now_Temp",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MTBM663ZMTN4HYjt9nsRdKluBCRCUSiaE",
         "object_type": "variable_workflow"
       },
       {
@@ -141,12 +141,12 @@
         "properties": {
           "value": true,
           "scope": "local",
-          "name": "Webex",
+          "name": "TheHive",
           "type": "datatype.boolean",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MTBM663ZG7L6dBM4HiW8IP23vouFmCpzR",
+        "unique_name": "variable_workflow_01MTBM663ZLMX6q0ukBAfOyHRXprFwyLhgn",
         "object_type": "variable_workflow"
       }
     ],
@@ -490,6 +490,59 @@
                                     "object_type": "definition_activity",
                                     "actions": [
                                       {
+                                        "unique_name": "definition_activity_01MTBMI47AIH06L9nnfa0AUSdaG9oHat7UV",
+                                        "name": "Group",
+                                        "title": "Set Incident Details",
+                                        "type": "logic.group",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "continue_on_failure": false,
+                                          "display_name": "Set Incident Details",
+                                          "skip_execution": false
+                                        },
+                                        "object_type": "definition_activity",
+                                        "actions": [
+                                          {
+                                            "unique_name": "definition_activity_01MTBMIHK3IAN5XYWrMq1ISkIE4sBnm9BX8",
+                                            "name": "Set Variables",
+                                            "title": "incident Title",
+                                            "type": "core.set_multiple_variables",
+                                            "base_type": "activity",
+                                            "properties": {
+                                              "continue_on_failure": false,
+                                              "display_name": "incident Title",
+                                              "skip_execution": false,
+                                              "variables_to_update": [
+                                                {
+                                                  "variable_to_update": "$workflow.definition_workflow_01MTBM66BFZSP6aYhPq4waqYgmKerogbpkK.local.variable_workflow_01MTBM663ZSBL1SzFGk2UvdTpjkGPdhzqKr$",
+                                                  "variable_value_new": "Potentially Compromised Endpoint : $activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].TARGET$"
+                                                }
+                                              ]
+                                            },
+                                            "object_type": "definition_activity"
+                                          },
+                                          {
+                                            "unique_name": "definition_activity_01MTBMIV0PJEV3YwZN5KkUuNKdBVKyVw1xR",
+                                            "name": "Set Variables",
+                                            "title": "Incident Description",
+                                            "type": "core.set_multiple_variables",
+                                            "base_type": "activity",
+                                            "properties": {
+                                              "continue_on_failure": false,
+                                              "display_name": "Incident Description",
+                                              "skip_execution": false,
+                                              "variables_to_update": [
+                                                {
+                                                  "variable_to_update": "$workflow.definition_workflow_01MTBM66BFZSP6aYhPq4waqYgmKerogbpkK.local.variable_workflow_01MTBM663ZJ0U2W2g3EVQ44TFZaIkT6Mlln$",
+                                                  "variable_value_new": "Communication to domain $activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].OBSERVABLE$ has been blocked for critical security reason"
+                                                }
+                                              ]
+                                            },
+                                            "object_type": "definition_activity"
+                                          }
+                                        ]
+                                      },
+                                      {
                                         "unique_name": "definition_activity_01MTBMD02NP2R0Om9MZl1H92EY8L5PpQHqq",
                                         "name": "Group",
                                         "title": "Check if Umbrella Incident exists for this Target",
@@ -677,59 +730,6 @@
                                                         "sort_by": false
                                                       },
                                                       "where_clause": "Observable LIKE '$activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].TARGET$'  AND Type LIKE 'hostname'"
-                                                    },
-                                                    "object_type": "definition_activity"
-                                                  }
-                                                ]
-                                              },
-                                              {
-                                                "unique_name": "definition_activity_01MTBMI47AIH06L9nnfa0AUSdaG9oHat7UV",
-                                                "name": "Group",
-                                                "title": "Set Incident Details",
-                                                "type": "logic.group",
-                                                "base_type": "activity",
-                                                "properties": {
-                                                  "continue_on_failure": false,
-                                                  "display_name": "Set Incident Details",
-                                                  "skip_execution": false
-                                                },
-                                                "object_type": "definition_activity",
-                                                "actions": [
-                                                  {
-                                                    "unique_name": "definition_activity_01MTBMIHK3IAN5XYWrMq1ISkIE4sBnm9BX8",
-                                                    "name": "Set Variables",
-                                                    "title": "incident Title",
-                                                    "type": "core.set_multiple_variables",
-                                                    "base_type": "activity",
-                                                    "properties": {
-                                                      "continue_on_failure": false,
-                                                      "display_name": "incident Title",
-                                                      "skip_execution": false,
-                                                      "variables_to_update": [
-                                                        {
-                                                          "variable_to_update": "$workflow.definition_workflow_01MTBM66BFZSP6aYhPq4waqYgmKerogbpkK.local.variable_workflow_01MTBM663ZSBL1SzFGk2UvdTpjkGPdhzqKr$",
-                                                          "variable_value_new": "Potentially Compromised Endpoint : $activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].TARGET$"
-                                                        }
-                                                      ]
-                                                    },
-                                                    "object_type": "definition_activity"
-                                                  },
-                                                  {
-                                                    "unique_name": "definition_activity_01MTBMIV0PJEV3YwZN5KkUuNKdBVKyVw1xR",
-                                                    "name": "Set Variables",
-                                                    "title": "Incident Description",
-                                                    "type": "core.set_multiple_variables",
-                                                    "base_type": "activity",
-                                                    "properties": {
-                                                      "continue_on_failure": false,
-                                                      "display_name": "Incident Description",
-                                                      "skip_execution": false,
-                                                      "variables_to_update": [
-                                                        {
-                                                          "variable_to_update": "$workflow.definition_workflow_01MTBM66BFZSP6aYhPq4waqYgmKerogbpkK.local.variable_workflow_01MTBM663ZJ0U2W2g3EVQ44TFZaIkT6Mlln$",
-                                                          "variable_value_new": "Communication to domain $activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].OBSERVABLE$ has been blocked for critical security reason"
-                                                        }
-                                                      ]
                                                     },
                                                     "object_type": "definition_activity"
                                                   }
@@ -1892,45 +1892,151 @@
                                                                     ]
                                                                   },
                                                                   {
-                                                                    "unique_name": "definition_activity_01MTBMWS8UZYX3g0D43D7Wi5BWDSvPscFT0",
-                                                                    "name": "Update Row in Table",
-                                                                    "title": "Update host Row in Table",
-                                                                    "type": "core.updaterowintable",
+                                                                    "unique_name": "definition_activity_01MVQRZLEUX1T20GmTWpEflaI8798KTbapq",
+                                                                    "name": "Group",
+                                                                    "title": "Update Incident",
+                                                                    "type": "logic.group",
                                                                     "base_type": "activity",
                                                                     "properties": {
-                                                                      "action_timeout": 180,
-                                                                      "columns": [
-                                                                        {
-                                                                          "column_name": "Umbrella",
-                                                                          "column_type": "integer"
-                                                                        },
-                                                                        {
-                                                                          "column_name": "Hits",
-                                                                          "column_type": "integer"
-                                                                        }
-                                                                      ],
                                                                       "continue_on_failure": false,
-                                                                      "display_name": "Update host Row in Table",
-                                                                      "input_table": "$global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v.global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v$",
-                                                                      "row": [
-                                                                        {
-                                                                          "key": "Umbrella",
-                                                                          "type": "integer",
-                                                                          "value": 1
-                                                                        },
-                                                                        {
-                                                                          "key": "Hits",
-                                                                          "type": "integer",
-                                                                          "value": "$activity.definition_activity_01MTBMGTK2AKO4QmziDH8k59W1t7yaXSc87.output.output_table[0].Hits$+1"
-                                                                        }
-                                                                      ],
-                                                                      "rows": {
-                                                                        "rows_matching_criteria": true,
-                                                                        "where_clause": "Observable LIKE '$activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].TARGET$' AND Type LIKE 'hostname'"
-                                                                      },
+                                                                      "display_name": "Update Incident",
                                                                       "skip_execution": false
                                                                     },
-                                                                    "object_type": "definition_activity"
+                                                                    "object_type": "definition_activity",
+                                                                    "actions": [
+                                                                      {
+                                                                        "unique_name": "definition_activity_01MU9EKJH8BFU27mDJQMlw2idGAb1DjNfT0",
+                                                                        "name": "Match Regex",
+                                                                        "title": "Get incident short id",
+                                                                        "type": "core.matchregex",
+                                                                        "base_type": "activity",
+                                                                        "properties": {
+                                                                          "continue_on_failure": false,
+                                                                          "display_name": "Get incident short id",
+                                                                          "input_regex": "incident-.*",
+                                                                          "input_string": "$activity.definition_activity_01MTBMGTK2AKO4QmziDH8k59W1t7yaXSc87.output.output_table[0].Incident$",
+                                                                          "skip_execution": false
+                                                                        },
+                                                                        "object_type": "definition_activity"
+                                                                      },
+                                                                      {
+                                                                        "unique_name": "definition_activity_01MV00A5YQMNL6iFJhKw1std4t2eA3bK4g3",
+                                                                        "name": "CTR - Get Incident Details",
+                                                                        "title": "CTR - Get Incident Details",
+                                                                        "type": "workflow.atomic_workflow",
+                                                                        "base_type": "subworkflow",
+                                                                        "properties": {
+                                                                          "continue_on_failure": false,
+                                                                          "display_name": "CTR - Get Incident Details",
+                                                                          "input": {
+                                                                            "variable_workflow_01MUZOAKFGQHH1Rmv7zeqzswuPvxIbyT9Gt": "$activity.definition_activity_01MTBMG5RBQUF4b0LnPAPfWW7YkpOe29pi2.output.variable_workflow_01BNOOXA3G6MV1PGAvsfZOKDdMYcE6XS726$",
+                                                                            "variable_workflow_01MUZOLFXQZ524N9Fu1IBYfkX6i85hEgCfb": "$activity.definition_activity_01MU9EKJH8BFU27mDJQMlw2idGAb1DjNfT0.output.matching_strings[-1]$"
+                                                                          },
+                                                                          "runtime_user": {
+                                                                            "target_default": true
+                                                                          },
+                                                                          "skip_execution": false,
+                                                                          "target": {
+                                                                            "no_target": true
+                                                                          },
+                                                                          "workflow_id": "definition_workflow_01MUZKOII7TH77AMxE0a7QyA5SPUR670m5z"
+                                                                        },
+                                                                        "object_type": "definition_activity"
+                                                                      },
+                                                                      {
+                                                                        "unique_name": "definition_activity_01MV00SW79JGJ7h1ha6WtoUQJMI0xC4bKlv",
+                                                                        "name": "Read Table from JSON",
+                                                                        "title": "Read Table from JSON",
+                                                                        "type": "corejava.read_table_from_json",
+                                                                        "base_type": "activity",
+                                                                        "properties": {
+                                                                          "action_timeout": 180,
+                                                                          "continue_on_failure": false,
+                                                                          "display_name": "Read Table from JSON",
+                                                                          "input_json": "$activity.definition_activity_01MV00A5YQMNL6iFJhKw1std4t2eA3bK4g3.output.variable_workflow_01MUZVVYOBWMR66tvrW3C3p9s0AZUH2UOyP$",
+                                                                          "jsonpath_query": "$.",
+                                                                          "persist_output": false,
+                                                                          "populate_columns": false,
+                                                                          "skip_execution": false,
+                                                                          "table_columns": [
+                                                                            {
+                                                                              "column_name": "description",
+                                                                              "column_type": "string"
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        "object_type": "definition_activity"
+                                                                      },
+                                                                      {
+                                                                        "unique_name": "definition_activity_01MV00G0BBTHC5cganQf7z9IE3xEqHsyXs6",
+                                                                        "name": "CTR - Update Incident",
+                                                                        "title": "CTR - Update Incident",
+                                                                        "type": "workflow.atomic_workflow",
+                                                                        "base_type": "subworkflow",
+                                                                        "properties": {
+                                                                          "continue_on_failure": false,
+                                                                          "display_name": "CTR - Update Incident",
+                                                                          "input": {
+                                                                            "variable_workflow_01MUZ2XU19VND6k12GbeYG8hmnOyWJU4ucK": "$activity.definition_activity_01MTBMG5RBQUF4b0LnPAPfWW7YkpOe29pi2.output.variable_workflow_01BNOOXA3G6MV1PGAvsfZOKDdMYcE6XS726$",
+                                                                            "variable_workflow_01MUZ3D8T9F576iNq7xhjqBHnLlPBZuBWwp": "description",
+                                                                            "variable_workflow_01MUZ3X8YBCQM7j9nY3Ci9MiNyhugYFEA38": "$activity.definition_activity_01MV00SW79JGJ7h1ha6WtoUQJMI0xC4bKlv.output.read_table_from_json[0].description$.\\n\\nCisco Umbrella : $workflow.definition_workflow_01MTBM66BFZSP6aYhPq4waqYgmKerogbpkK.local.variable_workflow_01MTBM663ZJ0U2W2g3EVQ44TFZaIkT6Mlln$\n",
+                                                                            "variable_workflow_01MV8TDAB148T1LZnD9ScnpesVMbZgUkh4R": "$activity.definition_activity_01MU9EKJH8BFU27mDJQMlw2idGAb1DjNfT0.output.matching_strings[-1]$"
+                                                                          },
+                                                                          "runtime_user": {
+                                                                            "target_default": true
+                                                                          },
+                                                                          "skip_execution": false,
+                                                                          "target": {
+                                                                            "override_workflow_target": true,
+                                                                            "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
+                                                                            "target_type": "web-service.endpoint"
+                                                                          },
+                                                                          "workflow_id": "definition_workflow_01MU6L38WDI011Gi239oxMLUnIwKdExKqGl"
+                                                                        },
+                                                                        "object_type": "definition_activity"
+                                                                      },
+                                                                      {
+                                                                        "unique_name": "definition_activity_01MTBMWS8UZYX3g0D43D7Wi5BWDSvPscFT0",
+                                                                        "name": "Update Row in Table",
+                                                                        "title": "Update host Row in Table",
+                                                                        "type": "core.updaterowintable",
+                                                                        "base_type": "activity",
+                                                                        "properties": {
+                                                                          "action_timeout": 180,
+                                                                          "columns": [
+                                                                            {
+                                                                              "column_name": "Umbrella",
+                                                                              "column_type": "integer"
+                                                                            },
+                                                                            {
+                                                                              "column_name": "Hits",
+                                                                              "column_type": "integer"
+                                                                            }
+                                                                          ],
+                                                                          "continue_on_failure": false,
+                                                                          "display_name": "Update host Row in Table",
+                                                                          "input_table": "$global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v.global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v$",
+                                                                          "row": [
+                                                                            {
+                                                                              "key": "Umbrella",
+                                                                              "type": "integer",
+                                                                              "value": 1
+                                                                            },
+                                                                            {
+                                                                              "key": "Hits",
+                                                                              "type": "integer",
+                                                                              "value": "$activity.definition_activity_01MTBMGTK2AKO4QmziDH8k59W1t7yaXSc87.output.output_table[0].Hits$+1"
+                                                                            }
+                                                                          ],
+                                                                          "rows": {
+                                                                            "rows_matching_criteria": true,
+                                                                            "where_clause": "Observable LIKE '$activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].TARGET$' AND Type LIKE 'hostname'"
+                                                                          },
+                                                                          "skip_execution": false
+                                                                        },
+                                                                        "object_type": "definition_activity"
+                                                                      }
+                                                                    ]
                                                                   }
                                                                 ]
                                                               }
@@ -2065,97 +2171,6 @@
                                                                 },
                                                                 "object_type": "definition_activity",
                                                                 "actions": [
-                                                                  {
-                                                                    "unique_name": "definition_activity_01MU9EKJH8BFU27mDJQMlw2idGAb1DjNfT0",
-                                                                    "name": "Match Regex",
-                                                                    "title": "Get incident short id",
-                                                                    "type": "core.matchregex",
-                                                                    "base_type": "activity",
-                                                                    "properties": {
-                                                                      "continue_on_failure": false,
-                                                                      "display_name": "Get incident short id",
-                                                                      "input_regex": "incident-.*",
-                                                                      "input_string": "$activity.definition_activity_01MTBMGTK2AKO4QmziDH8k59W1t7yaXSc87.output.output_table[0].Incident$",
-                                                                      "skip_execution": false
-                                                                    },
-                                                                    "object_type": "definition_activity"
-                                                                  },
-                                                                  {
-                                                                    "unique_name": "definition_activity_01MV00A5YQMNL6iFJhKw1std4t2eA3bK4g3",
-                                                                    "name": "CTR - Get Incident Details",
-                                                                    "title": "CTR - Get Incident Details",
-                                                                    "type": "workflow.atomic_workflow",
-                                                                    "base_type": "subworkflow",
-                                                                    "properties": {
-                                                                      "continue_on_failure": false,
-                                                                      "display_name": "CTR - Get Incident Details",
-                                                                      "input": {
-                                                                        "variable_workflow_01MUZOAKFGQHH1Rmv7zeqzswuPvxIbyT9Gt": "$activity.definition_activity_01MTBMG5RBQUF4b0LnPAPfWW7YkpOe29pi2.output.variable_workflow_01BNOOXA3G6MV1PGAvsfZOKDdMYcE6XS726$",
-                                                                        "variable_workflow_01MUZOLFXQZ524N9Fu1IBYfkX6i85hEgCfb": "$activity.definition_activity_01MU9EKJH8BFU27mDJQMlw2idGAb1DjNfT0.output.matching_strings[-1]$"
-                                                                      },
-                                                                      "runtime_user": {
-                                                                        "target_default": true
-                                                                      },
-                                                                      "skip_execution": false,
-                                                                      "target": {
-                                                                        "no_target": true
-                                                                      },
-                                                                      "workflow_id": "definition_workflow_01MUZKOII7TH77AMxE0a7QyA5SPUR670m5z"
-                                                                    },
-                                                                    "object_type": "definition_activity"
-                                                                  },
-                                                                  {
-                                                                    "unique_name": "definition_activity_01MV00SW79JGJ7h1ha6WtoUQJMI0xC4bKlv",
-                                                                    "name": "Read Table from JSON",
-                                                                    "title": "Read Table from JSON",
-                                                                    "type": "corejava.read_table_from_json",
-                                                                    "base_type": "activity",
-                                                                    "properties": {
-                                                                      "action_timeout": 180,
-                                                                      "continue_on_failure": false,
-                                                                      "display_name": "Read Table from JSON",
-                                                                      "input_json": "$activity.definition_activity_01MV00A5YQMNL6iFJhKw1std4t2eA3bK4g3.output.variable_workflow_01MUZVVYOBWMR66tvrW3C3p9s0AZUH2UOyP$",
-                                                                      "jsonpath_query": "$.",
-                                                                      "persist_output": false,
-                                                                      "populate_columns": false,
-                                                                      "skip_execution": false,
-                                                                      "table_columns": [
-                                                                        {
-                                                                          "column_name": "description",
-                                                                          "column_type": "string"
-                                                                        }
-                                                                      ]
-                                                                    },
-                                                                    "object_type": "definition_activity"
-                                                                  },
-                                                                  {
-                                                                    "unique_name": "definition_activity_01MV00G0BBTHC5cganQf7z9IE3xEqHsyXs6",
-                                                                    "name": "CTR - Update Incident",
-                                                                    "title": "CTR - Update Incident",
-                                                                    "type": "workflow.atomic_workflow",
-                                                                    "base_type": "subworkflow",
-                                                                    "properties": {
-                                                                      "continue_on_failure": false,
-                                                                      "display_name": "CTR - Update Incident",
-                                                                      "input": {
-                                                                        "variable_workflow_01MUZ2XU19VND6k12GbeYG8hmnOyWJU4ucK": "$activity.definition_activity_01MTBMG5RBQUF4b0LnPAPfWW7YkpOe29pi2.output.variable_workflow_01BNOOXA3G6MV1PGAvsfZOKDdMYcE6XS726$",
-                                                                        "variable_workflow_01MUZ3D8T9F576iNq7xhjqBHnLlPBZuBWwp": "description",
-                                                                        "variable_workflow_01MUZ3X8YBCQM7j9nY3Ci9MiNyhugYFEA38": "$activity.definition_activity_01MV00SW79JGJ7h1ha6WtoUQJMI0xC4bKlv.output.read_table_from_json[0].description$.\\n\\nCisco Umbrella : $workflow.definition_workflow_01MTBM66BFZSP6aYhPq4waqYgmKerogbpkK.local.variable_workflow_01MTBM663ZJ0U2W2g3EVQ44TFZaIkT6Mlln$\n",
-                                                                        "variable_workflow_01MV8TDAB148T1LZnD9ScnpesVMbZgUkh4R": "$activity.definition_activity_01MU9EKJH8BFU27mDJQMlw2idGAb1DjNfT0.output.matching_strings[-1]$"
-                                                                      },
-                                                                      "runtime_user": {
-                                                                        "target_default": true
-                                                                      },
-                                                                      "skip_execution": false,
-                                                                      "target": {
-                                                                        "override_workflow_target": true,
-                                                                        "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
-                                                                        "target_type": "web-service.endpoint"
-                                                                      },
-                                                                      "workflow_id": "definition_workflow_01MU6L38WDI011Gi239oxMLUnIwKdExKqGl"
-                                                                    },
-                                                                    "object_type": "definition_activity"
-                                                                  },
                                                                   {
                                                                     "unique_name": "definition_activity_01MTN0RMSRVJ033h4LJZoK02L1t6nnSi2uj",
                                                                     "name": "Webex - Simple adaptive card",
@@ -2448,10 +2463,10 @@
                                                 ]
                                               },
                                               {
-                                                "unique_name": "definition_activity_01MTBN3UCINAY4mDatE3kJbL0m012ojR3Jx",
-                                                "name": "Condition Block",
+                                                "unique_name": "definition_activity_01MVQXJYSKU122GUc2e0XCv8WgNLU5B4rkx",
+                                                "name": "Group",
                                                 "title": "Update incident with observable",
-                                                "type": "logic.if_else",
+                                                "type": "logic.group",
                                                 "base_type": "activity",
                                                 "properties": {
                                                   "continue_on_failure": false,
@@ -2459,246 +2474,531 @@
                                                   "skip_execution": false
                                                 },
                                                 "object_type": "definition_activity",
-                                                "blocks": [
+                                                "actions": [
                                                   {
-                                                    "unique_name": "definition_activity_01MTBN47IE41L7Y5QSS129s9CRizpWSqWcl",
-                                                    "name": "Condition Branch",
-                                                    "title": "Condition Branch - No casbook",
-                                                    "type": "logic.condition_block",
+                                                    "unique_name": "definition_activity_01MTBN3UCINAY4mDatE3kJbL0m012ojR3Jx",
+                                                    "name": "Condition Block",
+                                                    "title": "check if casebook exist for observable",
+                                                    "type": "logic.if_else",
                                                     "base_type": "activity",
                                                     "properties": {
-                                                      "condition": {
-                                                        "left_operand": "$activity.definition_activity_01MTBN3FHHKH10Bzf4dlbuZ5m9Av9C0a980.output.row_count$",
-                                                        "operator": "eq",
-                                                        "right_operand": 0
-                                                      },
                                                       "continue_on_failure": false,
-                                                      "display_name": "Condition Branch - No casbook",
+                                                      "display_name": "check if casebook exist for observable",
                                                       "skip_execution": false
                                                     },
                                                     "object_type": "definition_activity",
-                                                    "actions": [
+                                                    "blocks": [
                                                       {
-                                                        "unique_name": "definition_activity_01MTBN4BN6FVN0yCvpPCNvaMKAfnHJc7y2P",
-                                                        "name": "Threat Response v2 - Create Casebook",
-                                                        "title": "Threat Response v2 - Create Casebook",
-                                                        "type": "workflow.atomic_workflow",
-                                                        "base_type": "subworkflow",
-                                                        "properties": {
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Threat Response v2 - Create Casebook",
-                                                          "input": {
-                                                            "variable_workflow_01KVOGF4J481T6SCd7uh5fW7n47Q712nleJ": "[{\"type\":\"domain\",\"value\":\"$activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].OBSERVABLE$\"}]",
-                                                            "variable_workflow_01KVOGF4J4FZC0jmaR42b1FbIzVZA19KbYL": "",
-                                                            "variable_workflow_01KVOGF4J4IG81TQKFjqzLlnFJwiiNwXwSq": "$activity.definition_activity_01MTBN2S6X7JE7OXhdFJTwMCaDyeJTLgmtn.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
-                                                            "variable_workflow_01KVOGF4J4JL52xC9ZXdjYwHt2SvRYkArli": "$activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].TARGET$ : $activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].OBSERVABLE$",
-                                                            "variable_workflow_01KVOMXV9ERSV0M9j1WarflgSG8r5SpZ8b5": "AMP Critical event",
-                                                            "variable_workflow_01LFBYQJV9FZA2THdEQrMftLyGiiHP65nUq": "amber"
-                                                          },
-                                                          "runtime_user": {
-                                                            "target_default": true
-                                                          },
-                                                          "skip_execution": false,
-                                                          "target": {
-                                                            "override_workflow_target": true,
-                                                            "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
-                                                            "target_type": "web-service.endpoint"
-                                                          },
-                                                          "workflow_id": "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O"
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MTBN51R08KO6kEwvOTVb0OnNF5EL0TMps",
-                                                        "name": "Threat Response v2 - Create Relationship",
-                                                        "title": "Threat Response v2 - Create Relationship",
-                                                        "type": "workflow.atomic_workflow",
-                                                        "base_type": "subworkflow",
-                                                        "properties": {
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Threat Response v2 - Create Relationship",
-                                                          "input": {
-                                                            "variable_workflow_01KWID476NLS63mQo7De2Wk9Q1WAJb0dJXe": "$activity.definition_activity_01MTBN2S6X7JE7OXhdFJTwMCaDyeJTLgmtn.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
-                                                            "variable_workflow_01KWID476NNBL4xUNZ1ze05KmIr6MTOd2tf": "related-to",
-                                                            "variable_workflow_01KWID476NOW27YCzfBvT6jlpfoo4jDNQoS": "relation",
-                                                            "variable_workflow_01KWID476NRV53BPxHqiyGzSy3hiS50IIYt": "",
-                                                            "variable_workflow_01KWIOPHDZHRM2nxENJ5E3iBUjDizSHzujd": "$activity.definition_activity_01MTBN4BN6FVN0yCvpPCNvaMKAfnHJc7y2P.output.variable_workflow_01KVOGF4J4HBH1AEO1b5YnhSpqUnFihUeXS$",
-                                                            "variable_workflow_01KWIP24K2A5P6ag8merXYIrzb5KHnOSzU3": "$activity.definition_activity_01MTBN1WN09I04uvBZ4YwqIk5TpkLuUcdWN.output.output_table[0].Incident$",
-                                                            "variable_workflow_01LFBZWJ98ZH426APtwKiW7OM9nNQMfT7IA": "amber"
-                                                          },
-                                                          "runtime_user": {
-                                                            "target_default": true
-                                                          },
-                                                          "skip_execution": false,
-                                                          "target": {
-                                                            "override_workflow_target": true,
-                                                            "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
-                                                            "target_type": "web-service.endpoint"
-                                                          },
-                                                          "workflow_id": "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x"
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MTBN5QM8A053l66HwKcxuLBlo7GTKzLgK",
-                                                        "name": "Add Row to Table",
-                                                        "title": "Add Row Observable to Table detection stat",
-                                                        "type": "core.addrowtotable",
+                                                        "unique_name": "definition_activity_01MTBN47IE41L7Y5QSS129s9CRizpWSqWcl",
+                                                        "name": "Condition Branch",
+                                                        "title": "Condition Branch - No casbook",
+                                                        "type": "logic.condition_block",
                                                         "base_type": "activity",
                                                         "properties": {
-                                                          "action_timeout": 180,
+                                                          "condition": {
+                                                            "left_operand": "$activity.definition_activity_01MTBN3FHHKH10Bzf4dlbuZ5m9Av9C0a980.output.row_count$",
+                                                            "operator": "eq",
+                                                            "right_operand": 0
+                                                          },
                                                           "continue_on_failure": false,
-                                                          "display_name": "Add Row Observable to Table detection stat",
-                                                          "input_table": "$global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v.global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v$",
-                                                          "row": [
-                                                            {
-                                                              "key": "Observable",
-                                                              "type": "string",
-                                                              "value": "$activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].OBSERVABLE$"
-                                                            },
-                                                            {
-                                                              "key": "Type",
-                                                              "type": "string",
-                                                              "value": "domain"
-                                                            },
-                                                            {
-                                                              "key": "Umbrella",
-                                                              "type": "integer",
-                                                              "value": 1
-                                                            },
-                                                            {
-                                                              "key": "SecureEP",
-                                                              "type": "integer",
-                                                              "value": 0
-                                                            },
-                                                            {
-                                                              "key": "Hits",
-                                                              "type": "integer",
-                                                              "value": 1
-                                                            },
-                                                            {
-                                                              "key": "Enriched",
-                                                              "type": "integer",
-                                                              "value": 0
-                                                            },
-                                                            {
-                                                              "key": "Incident",
-                                                              "type": "string",
-                                                              "value": "$activity.definition_activity_01MTBN4BN6FVN0yCvpPCNvaMKAfnHJc7y2P.output.variable_workflow_01KVOGF4J4HBH1AEO1b5YnhSpqUnFihUeXS$"
-                                                            },
-                                                            {
-                                                              "key": "Firepower",
-                                                              "type": "integer"
-                                                            },
-                                                            {
-                                                              "key": "SW",
-                                                              "type": "integer"
-                                                            },
-                                                            {
-                                                              "key": "Alerted",
-                                                              "type": "integer",
-                                                              "value": 1
-                                                            },
-                                                            {
-                                                              "key": "EmailGW",
-                                                              "type": "integer"
-                                                            }
-                                                          ],
+                                                          "display_name": "Condition Branch - No casbook",
                                                           "skip_execution": false
                                                         },
-                                                        "object_type": "definition_activity"
+                                                        "object_type": "definition_activity",
+                                                        "actions": [
+                                                          {
+                                                            "unique_name": "definition_activity_01MTBN4BN6FVN0yCvpPCNvaMKAfnHJc7y2P",
+                                                            "name": "Threat Response v2 - Create Casebook",
+                                                            "title": "Threat Response v2 - Create Casebook",
+                                                            "type": "workflow.atomic_workflow",
+                                                            "base_type": "subworkflow",
+                                                            "properties": {
+                                                              "continue_on_failure": false,
+                                                              "display_name": "Threat Response v2 - Create Casebook",
+                                                              "input": {
+                                                                "variable_workflow_01KVOGF4J481T6SCd7uh5fW7n47Q712nleJ": "[{\"type\":\"domain\",\"value\":\"$activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].OBSERVABLE$\"}]",
+                                                                "variable_workflow_01KVOGF4J4FZC0jmaR42b1FbIzVZA19KbYL": "",
+                                                                "variable_workflow_01KVOGF4J4IG81TQKFjqzLlnFJwiiNwXwSq": "$activity.definition_activity_01MTBN2S6X7JE7OXhdFJTwMCaDyeJTLgmtn.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
+                                                                "variable_workflow_01KVOGF4J4JL52xC9ZXdjYwHt2SvRYkArli": "$activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].TARGET$ : $activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].OBSERVABLE$",
+                                                                "variable_workflow_01KVOMXV9ERSV0M9j1WarflgSG8r5SpZ8b5": "AMP Critical event",
+                                                                "variable_workflow_01LFBYQJV9FZA2THdEQrMftLyGiiHP65nUq": "amber"
+                                                              },
+                                                              "runtime_user": {
+                                                                "target_default": true
+                                                              },
+                                                              "skip_execution": false,
+                                                              "target": {
+                                                                "override_workflow_target": true,
+                                                                "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
+                                                                "target_type": "web-service.endpoint"
+                                                              },
+                                                              "workflow_id": "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O"
+                                                            },
+                                                            "object_type": "definition_activity"
+                                                          },
+                                                          {
+                                                            "unique_name": "definition_activity_01MTBN51R08KO6kEwvOTVb0OnNF5EL0TMps",
+                                                            "name": "Threat Response v2 - Create Relationship",
+                                                            "title": "Threat Response v2 - Create Relationship",
+                                                            "type": "workflow.atomic_workflow",
+                                                            "base_type": "subworkflow",
+                                                            "properties": {
+                                                              "continue_on_failure": false,
+                                                              "display_name": "Threat Response v2 - Create Relationship",
+                                                              "input": {
+                                                                "variable_workflow_01KWID476NLS63mQo7De2Wk9Q1WAJb0dJXe": "$activity.definition_activity_01MTBN2S6X7JE7OXhdFJTwMCaDyeJTLgmtn.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
+                                                                "variable_workflow_01KWID476NNBL4xUNZ1ze05KmIr6MTOd2tf": "related-to",
+                                                                "variable_workflow_01KWID476NOW27YCzfBvT6jlpfoo4jDNQoS": "relation",
+                                                                "variable_workflow_01KWID476NRV53BPxHqiyGzSy3hiS50IIYt": "",
+                                                                "variable_workflow_01KWIOPHDZHRM2nxENJ5E3iBUjDizSHzujd": "$activity.definition_activity_01MTBN4BN6FVN0yCvpPCNvaMKAfnHJc7y2P.output.variable_workflow_01KVOGF4J4HBH1AEO1b5YnhSpqUnFihUeXS$",
+                                                                "variable_workflow_01KWIP24K2A5P6ag8merXYIrzb5KHnOSzU3": "$activity.definition_activity_01MTBN1WN09I04uvBZ4YwqIk5TpkLuUcdWN.output.output_table[0].Incident$",
+                                                                "variable_workflow_01LFBZWJ98ZH426APtwKiW7OM9nNQMfT7IA": "amber"
+                                                              },
+                                                              "runtime_user": {
+                                                                "target_default": true
+                                                              },
+                                                              "skip_execution": false,
+                                                              "target": {
+                                                                "override_workflow_target": true,
+                                                                "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
+                                                                "target_type": "web-service.endpoint"
+                                                              },
+                                                              "workflow_id": "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x"
+                                                            },
+                                                            "object_type": "definition_activity"
+                                                          },
+                                                          {
+                                                            "unique_name": "definition_activity_01MTBN5QM8A053l66HwKcxuLBlo7GTKzLgK",
+                                                            "name": "Add Row to Table",
+                                                            "title": "Add Row Observable to Table detection stat",
+                                                            "type": "core.addrowtotable",
+                                                            "base_type": "activity",
+                                                            "properties": {
+                                                              "action_timeout": 180,
+                                                              "continue_on_failure": false,
+                                                              "display_name": "Add Row Observable to Table detection stat",
+                                                              "input_table": "$global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v.global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v$",
+                                                              "row": [
+                                                                {
+                                                                  "key": "Observable",
+                                                                  "type": "string",
+                                                                  "value": "$activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].OBSERVABLE$"
+                                                                },
+                                                                {
+                                                                  "key": "Type",
+                                                                  "type": "string",
+                                                                  "value": "domain"
+                                                                },
+                                                                {
+                                                                  "key": "Umbrella",
+                                                                  "type": "integer",
+                                                                  "value": 1
+                                                                },
+                                                                {
+                                                                  "key": "SecureEP",
+                                                                  "type": "integer",
+                                                                  "value": 0
+                                                                },
+                                                                {
+                                                                  "key": "Hits",
+                                                                  "type": "integer",
+                                                                  "value": 1
+                                                                },
+                                                                {
+                                                                  "key": "Enriched",
+                                                                  "type": "integer",
+                                                                  "value": 0
+                                                                },
+                                                                {
+                                                                  "key": "Incident",
+                                                                  "type": "string",
+                                                                  "value": "$activity.definition_activity_01MTBN4BN6FVN0yCvpPCNvaMKAfnHJc7y2P.output.variable_workflow_01KVOGF4J4HBH1AEO1b5YnhSpqUnFihUeXS$"
+                                                                },
+                                                                {
+                                                                  "key": "Firepower",
+                                                                  "type": "integer"
+                                                                },
+                                                                {
+                                                                  "key": "SW",
+                                                                  "type": "integer"
+                                                                },
+                                                                {
+                                                                  "key": "Alerted",
+                                                                  "type": "integer",
+                                                                  "value": 1
+                                                                },
+                                                                {
+                                                                  "key": "EmailGW",
+                                                                  "type": "integer"
+                                                                }
+                                                              ],
+                                                              "skip_execution": false
+                                                            },
+                                                            "object_type": "definition_activity"
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "unique_name": "definition_activity_01MTBN64QRZ6N6pwtF1DM6YmUTXcnyTprwP",
+                                                        "name": "Condition Branch",
+                                                        "title": "Condition Branch - casebook exists",
+                                                        "type": "logic.condition_block",
+                                                        "base_type": "activity",
+                                                        "properties": {
+                                                          "condition": {
+                                                            "left_operand": "$activity.definition_activity_01MTBN3FHHKH10Bzf4dlbuZ5m9Av9C0a980.output.row_count$",
+                                                            "operator": "gt",
+                                                            "right_operand": 0
+                                                          },
+                                                          "continue_on_failure": false,
+                                                          "display_name": "Condition Branch - casebook exists",
+                                                          "skip_execution": false
+                                                        },
+                                                        "object_type": "definition_activity",
+                                                        "actions": [
+                                                          {
+                                                            "unique_name": "definition_activity_01MTBN68TBO7N5J3IoM0QxCKotakh4Socw4",
+                                                            "name": "Threat Response v2 - Create Relationship",
+                                                            "title": "Threat Response v2 - Create Relationship",
+                                                            "type": "workflow.atomic_workflow",
+                                                            "base_type": "subworkflow",
+                                                            "properties": {
+                                                              "continue_on_failure": false,
+                                                              "display_name": "Threat Response v2 - Create Relationship",
+                                                              "input": {
+                                                                "variable_workflow_01KWID476NLS63mQo7De2Wk9Q1WAJb0dJXe": "$activity.definition_activity_01MTBN2S6X7JE7OXhdFJTwMCaDyeJTLgmtn.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
+                                                                "variable_workflow_01KWID476NNBL4xUNZ1ze05KmIr6MTOd2tf": "related-to",
+                                                                "variable_workflow_01KWID476NOW27YCzfBvT6jlpfoo4jDNQoS": "relation",
+                                                                "variable_workflow_01KWID476NRV53BPxHqiyGzSy3hiS50IIYt": "",
+                                                                "variable_workflow_01KWIOPHDZHRM2nxENJ5E3iBUjDizSHzujd": "$activity.definition_activity_01MTBN3FHHKH10Bzf4dlbuZ5m9Av9C0a980.output.output_table[0].Incident$",
+                                                                "variable_workflow_01KWIP24K2A5P6ag8merXYIrzb5KHnOSzU3": "$activity.definition_activity_01MTBN1WN09I04uvBZ4YwqIk5TpkLuUcdWN.output.output_table[0].Incident$",
+                                                                "variable_workflow_01LFBZWJ98ZH426APtwKiW7OM9nNQMfT7IA": "amber"
+                                                              },
+                                                              "runtime_user": {
+                                                                "target_default": true
+                                                              },
+                                                              "skip_execution": false,
+                                                              "target": {
+                                                                "override_workflow_target": true,
+                                                                "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
+                                                                "target_type": "web-service.endpoint"
+                                                              },
+                                                              "workflow_id": "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x"
+                                                            },
+                                                            "object_type": "definition_activity"
+                                                          },
+                                                          {
+                                                            "unique_name": "definition_activity_01MTBN77ORZ1M3BCOhOzkD16dG8pAegB9bi",
+                                                            "name": "Update Row in Table",
+                                                            "title": "Update Observable Row in Table",
+                                                            "type": "core.updaterowintable",
+                                                            "base_type": "activity",
+                                                            "properties": {
+                                                              "action_timeout": 180,
+                                                              "columns": [
+                                                                {
+                                                                  "column_name": "Umbrella",
+                                                                  "column_type": "integer"
+                                                                },
+                                                                {
+                                                                  "column_name": "Hits",
+                                                                  "column_type": "integer"
+                                                                }
+                                                              ],
+                                                              "continue_on_failure": false,
+                                                              "display_name": "Update Observable Row in Table",
+                                                              "input_table": "$global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v.global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v$",
+                                                              "row": [
+                                                                {
+                                                                  "key": "Umbrella",
+                                                                  "type": "integer",
+                                                                  "value": 1
+                                                                },
+                                                                {
+                                                                  "key": "Hits",
+                                                                  "type": "integer",
+                                                                  "value": "$activity.definition_activity_01MTBN3FHHKH10Bzf4dlbuZ5m9Av9C0a980.output.output_table[0].Hits$+1"
+                                                                }
+                                                              ],
+                                                              "rows": {
+                                                                "rows_matching_criteria": true,
+                                                                "where_clause": "Observable LIKE '$activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].OBSERVABLE$' "
+                                                              },
+                                                              "skip_execution": false
+                                                            },
+                                                            "object_type": "definition_activity"
+                                                          }
+                                                        ]
                                                       }
                                                     ]
-                                                  },
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "unique_name": "definition_activity_01MVQYEQRSNU40byHZ42QZBUZw6t8GjSetj",
+                                                "name": "Group",
+                                                "title": "Update Incident",
+                                                "type": "logic.group",
+                                                "base_type": "activity",
+                                                "properties": {
+                                                  "continue_on_failure": false,
+                                                  "display_name": "Update Incident",
+                                                  "skip_execution": false
+                                                },
+                                                "object_type": "definition_activity",
+                                                "actions": [
                                                   {
-                                                    "unique_name": "definition_activity_01MTBN64QRZ6N6pwtF1DM6YmUTXcnyTprwP",
-                                                    "name": "Condition Branch",
-                                                    "title": "Condition Branch - casebook exists",
-                                                    "type": "logic.condition_block",
+                                                    "unique_name": "definition_activity_01MVQYF3L791Z04mdOlfFyDz6VuUAlH8mci",
+                                                    "name": "Match Regex",
+                                                    "title": "Get incident short id",
+                                                    "type": "core.matchregex",
                                                     "base_type": "activity",
                                                     "properties": {
-                                                      "condition": {
-                                                        "left_operand": "$activity.definition_activity_01MTBN3FHHKH10Bzf4dlbuZ5m9Av9C0a980.output.row_count$",
-                                                        "operator": "gt",
-                                                        "right_operand": 0
+                                                      "continue_on_failure": true,
+                                                      "display_name": "Get incident short id",
+                                                      "input_regex": "incident-.*",
+                                                      "input_string": "$activity.definition_activity_01MTBMDD4Y5182UyVCE3AG7MN7oodtHE1VV.output.output_table[0].Incident$",
+                                                      "skip_execution": false
+                                                    },
+                                                    "object_type": "definition_activity"
+                                                  },
+                                                  {
+                                                    "unique_name": "definition_activity_01MVQYFENQMF52nP7bCFWf28OwR91y2IVkF",
+                                                    "name": "CTR - Get Incident Details",
+                                                    "title": "CTR - Get Incident Details",
+                                                    "type": "workflow.atomic_workflow",
+                                                    "base_type": "subworkflow",
+                                                    "properties": {
+                                                      "continue_on_failure": true,
+                                                      "display_name": "CTR - Get Incident Details",
+                                                      "input": {
+                                                        "variable_workflow_01MUZOAKFGQHH1Rmv7zeqzswuPvxIbyT9Gt": "$activity.definition_activity_01MTBN2S6X7JE7OXhdFJTwMCaDyeJTLgmtn.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
+                                                        "variable_workflow_01MUZOLFXQZ524N9Fu1IBYfkX6i85hEgCfb": "$activity.definition_activity_01MVQYF3L791Z04mdOlfFyDz6VuUAlH8mci.output.matching_strings[-1]$"
                                                       },
+                                                      "runtime_user": {
+                                                        "target_default": true
+                                                      },
+                                                      "skip_execution": false,
+                                                      "target": {
+                                                        "no_target": true
+                                                      },
+                                                      "workflow_id": "definition_workflow_01MUZKOII7TH77AMxE0a7QyA5SPUR670m5z"
+                                                    },
+                                                    "object_type": "definition_activity"
+                                                  },
+                                                  {
+                                                    "unique_name": "definition_activity_01MVQYG0L2GTU3pF0WmshWKt2qD6f6wxPzi",
+                                                    "name": "Read Table from JSON",
+                                                    "title": "Read Table from JSON",
+                                                    "type": "corejava.read_table_from_json",
+                                                    "base_type": "activity",
+                                                    "properties": {
+                                                      "action_timeout": 180,
+                                                      "continue_on_failure": true,
+                                                      "display_name": "Read Table from JSON",
+                                                      "input_json": "$activity.definition_activity_01MVQYFENQMF52nP7bCFWf28OwR91y2IVkF.output.variable_workflow_01MUZVVYOBWMR66tvrW3C3p9s0AZUH2UOyP$",
+                                                      "jsonpath_query": "$.",
+                                                      "persist_output": false,
+                                                      "populate_columns": false,
+                                                      "skip_execution": false,
+                                                      "table_columns": [
+                                                        {
+                                                          "column_name": "description",
+                                                          "column_type": "string"
+                                                        }
+                                                      ]
+                                                    },
+                                                    "object_type": "definition_activity"
+                                                  },
+                                                  {
+                                                    "unique_name": "definition_activity_01MVR1ZQUPMIC3ifIJzD3CO6Qae6XT8leSt",
+                                                    "name": "Replace String",
+                                                    "title": "Replace String",
+                                                    "type": "core.replacestring",
+                                                    "base_type": "activity",
+                                                    "properties": {
+                                                      "continue_on_failure": true,
+                                                      "display_name": "Replace String",
+                                                      "input_string": "$workflow.definition_workflow_01MTBM66BFZSP6aYhPq4waqYgmKerogbpkK.local.variable_workflow_01MTBM663ZJ0U2W2g3EVQ44TFZaIkT6Mlln$",
+                                                      "replace_list": [
+                                                        {
+                                                          "replaced_string": "(",
+                                                          "replacement_string": "\\("
+                                                        },
+                                                        {
+                                                          "replaced_string": ")",
+                                                          "replacement_string": "\\)"
+                                                        }
+                                                      ],
+                                                      "skip_execution": false
+                                                    },
+                                                    "object_type": "definition_activity"
+                                                  },
+                                                  {
+                                                    "unique_name": "definition_activity_01MVR3G33R1KP73scNqMnrIct5jyf4oEkdh",
+                                                    "name": "Match Regex",
+                                                    "title": "Match Regex",
+                                                    "type": "core.matchregex",
+                                                    "base_type": "activity",
+                                                    "properties": {
+                                                      "continue_on_failure": true,
+                                                      "display_name": "Match Regex",
+                                                      "input_regex": "$activity.definition_activity_01MVR1ZQUPMIC3ifIJzD3CO6Qae6XT8leSt.output.result_string$",
+                                                      "input_string": "$activity.definition_activity_01MVQYG0L2GTU3pF0WmshWKt2qD6f6wxPzi.output.read_table_from_json[0].description$",
+                                                      "skip_execution": false
+                                                    },
+                                                    "object_type": "definition_activity"
+                                                  },
+                                                  {
+                                                    "unique_name": "definition_activity_01MVR2WKIOF551OF0cy5GDduF7uLVcgWmaK",
+                                                    "name": "Condition Block",
+                                                    "title": "check if same ioC+target+observable",
+                                                    "type": "logic.if_else",
+                                                    "base_type": "activity",
+                                                    "properties": {
                                                       "continue_on_failure": false,
-                                                      "display_name": "Condition Branch - casebook exists",
+                                                      "display_name": "check if same ioC+target+observable",
                                                       "skip_execution": false
                                                     },
                                                     "object_type": "definition_activity",
-                                                    "actions": [
+                                                    "blocks": [
                                                       {
-                                                        "unique_name": "definition_activity_01MTBN68TBO7N5J3IoM0QxCKotakh4Socw4",
-                                                        "name": "Threat Response v2 - Create Relationship",
-                                                        "title": "Threat Response v2 - Create Relationship",
-                                                        "type": "workflow.atomic_workflow",
-                                                        "base_type": "subworkflow",
-                                                        "properties": {
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Threat Response v2 - Create Relationship",
-                                                          "input": {
-                                                            "variable_workflow_01KWID476NLS63mQo7De2Wk9Q1WAJb0dJXe": "$activity.definition_activity_01MTBN2S6X7JE7OXhdFJTwMCaDyeJTLgmtn.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
-                                                            "variable_workflow_01KWID476NNBL4xUNZ1ze05KmIr6MTOd2tf": "related-to",
-                                                            "variable_workflow_01KWID476NOW27YCzfBvT6jlpfoo4jDNQoS": "relation",
-                                                            "variable_workflow_01KWID476NRV53BPxHqiyGzSy3hiS50IIYt": "",
-                                                            "variable_workflow_01KWIOPHDZHRM2nxENJ5E3iBUjDizSHzujd": "$activity.definition_activity_01MTBN3FHHKH10Bzf4dlbuZ5m9Av9C0a980.output.output_table[0].Incident$",
-                                                            "variable_workflow_01KWIP24K2A5P6ag8merXYIrzb5KHnOSzU3": "$activity.definition_activity_01MTBN1WN09I04uvBZ4YwqIk5TpkLuUcdWN.output.output_table[0].Incident$",
-                                                            "variable_workflow_01LFBZWJ98ZH426APtwKiW7OM9nNQMfT7IA": "amber"
-                                                          },
-                                                          "runtime_user": {
-                                                            "target_default": true
-                                                          },
-                                                          "skip_execution": false,
-                                                          "target": {
-                                                            "override_workflow_target": true,
-                                                            "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
-                                                            "target_type": "web-service.endpoint"
-                                                          },
-                                                          "workflow_id": "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x"
-                                                        },
-                                                        "object_type": "definition_activity"
-                                                      },
-                                                      {
-                                                        "unique_name": "definition_activity_01MTBN77ORZ1M3BCOhOzkD16dG8pAegB9bi",
-                                                        "name": "Update Row in Table",
-                                                        "title": "Update Observable Row in Table",
-                                                        "type": "core.updaterowintable",
+                                                        "unique_name": "definition_activity_01MVR2X8P075Q00Hgeb1gAnxAww8Db5FnPy",
+                                                        "name": "Condition Branch",
+                                                        "title": "If no",
+                                                        "type": "logic.condition_block",
                                                         "base_type": "activity",
                                                         "properties": {
-                                                          "action_timeout": 180,
-                                                          "columns": [
-                                                            {
-                                                              "column_name": "Umbrella",
-                                                              "column_type": "integer"
-                                                            },
-                                                            {
-                                                              "column_name": "Hits",
-                                                              "column_type": "integer"
-                                                            }
-                                                          ],
-                                                          "continue_on_failure": false,
-                                                          "display_name": "Update Observable Row in Table",
-                                                          "input_table": "$global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v.global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v$",
-                                                          "row": [
-                                                            {
-                                                              "key": "Umbrella",
-                                                              "type": "integer",
-                                                              "value": 1
-                                                            },
-                                                            {
-                                                              "key": "Hits",
-                                                              "type": "integer",
-                                                              "value": "$activity.definition_activity_01MTBN3FHHKH10Bzf4dlbuZ5m9Av9C0a980.output.output_table[0].Hits$+1"
-                                                            }
-                                                          ],
-                                                          "rows": {
-                                                            "rows_matching_criteria": true,
-                                                            "where_clause": "Observable LIKE '$activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].OBSERVABLE$' "
+                                                          "condition": {
+                                                            "left_operand": "$activity.definition_activity_01MVR3G33R1KP73scNqMnrIct5jyf4oEkdh.output.has_match$",
+                                                            "operator": "eq",
+                                                            "right_operand": false
                                                           },
+                                                          "continue_on_failure": false,
+                                                          "display_name": "If no",
                                                           "skip_execution": false
                                                         },
-                                                        "object_type": "definition_activity"
+                                                        "object_type": "definition_activity",
+                                                        "actions": [
+                                                          {
+                                                            "unique_name": "definition_activity_01MVQYGBNJ0B54X51MOf0yNXFw65NiViSIA",
+                                                            "name": "CTR - Update Incident",
+                                                            "title": "CTR - Update Incident",
+                                                            "type": "workflow.atomic_workflow",
+                                                            "base_type": "subworkflow",
+                                                            "properties": {
+                                                              "continue_on_failure": false,
+                                                              "display_name": "CTR - Update Incident",
+                                                              "input": {
+                                                                "variable_workflow_01MUZ2XU19VND6k12GbeYG8hmnOyWJU4ucK": "$activity.definition_activity_01MTBN2S6X7JE7OXhdFJTwMCaDyeJTLgmtn.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
+                                                                "variable_workflow_01MUZ3D8T9F576iNq7xhjqBHnLlPBZuBWwp": "description",
+                                                                "variable_workflow_01MUZ3X8YBCQM7j9nY3Ci9MiNyhugYFEA38": "$activity.definition_activity_01MVQYG0L2GTU3pF0WmshWKt2qD6f6wxPzi.output.read_table_from_json[0].description$.\\n\\nCisco Umbrella : $workflow.definition_workflow_01MTBM66BFZSP6aYhPq4waqYgmKerogbpkK.local.variable_workflow_01MTBM663ZJ0U2W2g3EVQ44TFZaIkT6Mlln$\n",
+                                                                "variable_workflow_01MV8TDAB148T1LZnD9ScnpesVMbZgUkh4R": "$activity.definition_activity_01MVQYF3L791Z04mdOlfFyDz6VuUAlH8mci.output.matching_strings[-1]$"
+                                                              },
+                                                              "runtime_user": {
+                                                                "target_default": true
+                                                              },
+                                                              "skip_execution": false,
+                                                              "target": {
+                                                                "override_workflow_target": true,
+                                                                "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
+                                                                "target_type": "web-service.endpoint"
+                                                              },
+                                                              "workflow_id": "definition_workflow_01MU6L38WDI011Gi239oxMLUnIwKdExKqGl"
+                                                            },
+                                                            "object_type": "definition_activity"
+                                                          },
+                                                          {
+                                                            "unique_name": "definition_activity_01MVRAB1V1VDD2YW8JHUurMf7NAK1YCTqVw",
+                                                            "name": "Group",
+                                                            "title": "Notify",
+                                                            "type": "logic.group",
+                                                            "base_type": "activity",
+                                                            "properties": {
+                                                              "continue_on_failure": false,
+                                                              "display_name": "Notify",
+                                                              "skip_execution": false
+                                                            },
+                                                            "object_type": "definition_activity",
+                                                            "actions": [
+                                                              {
+                                                                "unique_name": "definition_activity_01MVRABE3LLTA40xv4OjyXkP1TlLyn3NCWF",
+                                                                "name": "Parallel Block",
+                                                                "title": "Parallel Block - Notify",
+                                                                "type": "logic.parallel",
+                                                                "base_type": "activity",
+                                                                "properties": {
+                                                                  "continue_on_failure": false,
+                                                                  "display_name": "Parallel Block - Notify",
+                                                                  "skip_execution": false
+                                                                },
+                                                                "object_type": "definition_activity",
+                                                                "blocks": [
+                                                                  {
+                                                                    "unique_name": "definition_activity_01MVRABP5E7ZX15hGPXLd58rAdGLrBZ9c8C",
+                                                                    "name": "Parallel Branch",
+                                                                    "title": "Parallel Branch Cisco Webex",
+                                                                    "type": "logic.parallel_block",
+                                                                    "base_type": "activity",
+                                                                    "properties": {
+                                                                      "continue_on_failure": false,
+                                                                      "display_name": "Parallel Branch Cisco Webex",
+                                                                      "skip_execution": false
+                                                                    },
+                                                                    "object_type": "definition_activity",
+                                                                    "actions": [
+                                                                      {
+                                                                        "unique_name": "definition_activity_01MVRABPVWYGX2S5CVTZ58LgRq5iPjSm4zA",
+                                                                        "name": "Webex - Simple adaptive card",
+                                                                        "title": "Webex - Simple adaptive card",
+                                                                        "type": "workflow.atomic_workflow",
+                                                                        "base_type": "subworkflow",
+                                                                        "properties": {
+                                                                          "continue_on_failure": false,
+                                                                          "display_name": "Webex - Simple adaptive card",
+                                                                          "input": {
+                                                                            "variable_workflow_01MMHH8IS8PTR32u92oD1XMDKNIi2fjyTgE": "$activity.definition_activity_01MTBM7TR7R4L2UcfNO1Ks5dhnzZAyVTOer.output.variable_workflow_01FHSVE2R6ZTQ6L92WEi0kWgR5T8zhMAUzO$",
+                                                                            "variable_workflow_01MMHHEDVCSOW3zhhNRuTxv1gkDC1zkTcWK": "Potentially Compromised Endpoint - $activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].TARGET$ - INCIDENT UPDATE",
+                                                                            "variable_workflow_01MMHHLIYYM704tyL7uFsP417pcVBWo4lEm": "https://www.ingramflyhigher.com/campaigns/cisco-umbrella/images/umbrella-small.png",
+                                                                            "variable_workflow_01MMHHW30X10J1cMC46WuPsjt8q0hQYE9yW": "Communication to domain $activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].OBSERVABLE$ has been blocked for critical security reason. No other alerts from Umbrella will be sent for this endpoint today",
+                                                                            "variable_workflow_01MMHOHW16I2J6Cmf3xCUPyIGFdeedwTyO1": "Cisco Umbrella - Critical  Event",
+                                                                            "variable_workflow_01MMHSK7D5GN05jG3AcBdoX8EaSkgyQQ0R5": "$global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8.global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8$",
+                                                                            "variable_workflow_01MTLUD79ESCO2EzokiInl8hLGIbDde7IaL": "https://visibility.amp.cisco.com/incidents?q=id:$activity.definition_activity_01MVQYF3L791Z04mdOlfFyDz6VuUAlH8mci.output.matching_strings[-1]$",
+                                                                            "variable_workflow_01MTLVLJ331R02Ng3MMzluPCOdsCqdRp3qc": "INCIDENT UPDATED - Host $activity.definition_activity_01MTBMCL6MRDQ1l0F68W3zPDzscOLuOwG2E.input.source_array[@].TARGET$"
+                                                                          },
+                                                                          "runtime_user": {
+                                                                            "target_default": true
+                                                                          },
+                                                                          "skip_execution": false,
+                                                                          "target": {
+                                                                            "override_workflow_target": true,
+                                                                            "target_id": "definition_target_01KJANNE7TR2C6ahGVhbhP3X5JvEtPoSLKV",
+                                                                            "target_type": "web-service.endpoint"
+                                                                          },
+                                                                          "workflow_id": "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q"
+                                                                        },
+                                                                        "object_type": "definition_activity"
+                                                                      }
+                                                                    ]
+                                                                  },
+                                                                  {
+                                                                    "unique_name": "definition_activity_01MVRACBQMOI84gTA3ZhiVbj61kM8amDi1P",
+                                                                    "name": "Parallel Branch",
+                                                                    "title": "Parallel Branch Microsoft Teams",
+                                                                    "type": "logic.parallel_block",
+                                                                    "base_type": "activity",
+                                                                    "properties": {
+                                                                      "continue_on_failure": false,
+                                                                      "display_name": "Parallel Branch Microsoft Teams",
+                                                                      "skip_execution": false
+                                                                    },
+                                                                    "object_type": "definition_activity"
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
                                                       }
                                                     ]
                                                   }
@@ -3009,7 +3309,7 @@
     "variable_01LGYFHE8DD8A7767SRhj0daGxv5R67jPTk": {
       "unique_name": "variable_01LGYFHE8DD8A7767SRhj0daGxv5R67jPTk",
       "properties": {
-        "value": 5,
+        "value": 19,
         "scope": "global",
         "name": "Loop Counter  Umbrella Alerting AO",
         "type": "datatype.integer",
@@ -3022,7 +3322,7 @@
     "variable_01MMKHSEW0NZX7jABstKKVWU4iIw8Lnax3P": {
       "unique_name": "variable_01MMKHSEW0NZX7jABstKKVWU4iIw8Lnax3P",
       "properties": {
-        "value": 4,
+        "value": 11,
         "scope": "global",
         "name": "Loop_counter_amp_alerting",
         "type": "datatype.integer",
@@ -3040,8 +3340,8 @@
             "column_data": {
               "Alerted": 1,
               "Enriched": 0,
-              "Hits": 4,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-29757dd4-ad8c-4689-9df4-a4b1a6a3858a",
+              "Hits": 8,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-c690d54a-ae74-4cbc-8738-4d6369cc4cd7",
               "Observable": "ciuj.ir",
               "SecureEP": 0,
               "Type": "domain",
@@ -3052,8 +3352,8 @@
             "column_data": {
               "Alerted": 1,
               "Enriched": 0,
-              "Hits": 5,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-fd29da40-38cc-4d42-93cf-a772c410a3f4",
+              "Hits": 11,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-2dc6d9c0-036d-4bc4-ba6a-b1134c9cc9d0",
               "Observable": "MSEDGEWIN10",
               "SecureEP": 1,
               "Type": "hostname",
@@ -3064,8 +3364,236 @@
             "column_data": {
               "Alerted": 1,
               "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-4e2771cb-e33f-4156-bcfd-517448fb903c",
+              "Observable": "b1380fd95bc5c0729738dcda2696aa0a7c6ee97a93d992931ce717a0df523967",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 2,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-8b917ec9-ecbb-4ddc-b21f-c5249880479f",
+              "Observable": "Demo_AMP_Threat_Audit",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
               "Hits": 3,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-5dc5da41-588d-4f79-be41-a7f62958daf8",
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-8c904b25-5f2a-452d-a32d-0dc061b2669b",
+              "Observable": "5ad3c37e6f2b9db3ee8b5aeedc474645de90c66e3d95f8620c48102f1eba4124",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-7469c6a4-a516-40ee-ad55-f91a8ddb8488",
+              "Observable": "No Direct Observable",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-e326a600-eedc-49a9-a4db-3defa1b5e21f",
+              "Observable": "Demo_Threat_Hunting_2",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-9bf7711e-3e17-40bd-a2ef-5001312ec6d0",
+              "Observable": "3372c1edab46837f1e973164fa2d726c5c5e17bcb888828ccd7c4dfcc234a370",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-edec8354-684c-45a9-afe4-638dee9f548f",
+              "Observable": "Demo_TeslaCrypt",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-a3ae02ca-5117-4001-b9de-19747f50166d",
+              "Observable": "6b7d5fdf4b9d42a985cf861c5ef28f5fa914b418c22e4bf5b56bac12251bcd6c",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 2,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-3aef5431-5274-45a7-9e79-53dc067c7272",
+              "Observable": "Demo_Qakbot_1",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-77eac905-54c2-4b40-9c75-7288dd8cf723",
+              "Observable": "No Direct Observable",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-d614acda-3342-4832-8995-7deb21db9d5c",
+              "Observable": "Demo_Threat_Hunting",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-c6ad4345-562b-4054-ae70-e331675a46d2",
+              "Observable": "b75fd580c29736abd11327eef949e449f6d466a05fb6fd343d3957684c8036e5",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-cbc90147-591f-4e01-bd4a-2f35d62b044b",
+              "Observable": "Demo_TDSS",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-92578e2b-2bb8-44c6-b425-5425f8056dc4",
+              "Observable": "078a122a9401dd47a61369ac769d9e707d9e86bdf7ad91708510b9a4584e8d49",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-e26472a4-b5ee-44cd-ba41-ab31726a8406",
+              "Observable": "Demo_Tinba",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 2,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-d7588404-ff8d-469b-8310-adb68d61103e",
+              "Observable": "17f746d82695fa9b35493b41859d39d786d32b23a9d2e00f4011dec7a02402ae",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 2,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-78f89c21-b039-4892-b519-3ed79e1e47db",
+              "Observable": "Demo_Qakbot_3",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-92bf2923-c4b4-48f7-bac3-171924afea7f",
+              "Observable": "7e54dceecd3d3a23a896e971ae4bb9e71a64a5c1c3b77ac1c64241c55c1b95bb",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-9995384d-0a0d-4a09-b495-da17e4786252",
+              "Observable": "Demo_Dyre",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-f822f1e2-1fc0-44e4-84b0-3c46f7ab8f77",
               "Observable": "6c05e11399b7e3c8ed31bae72014cf249c144a8f4a2c54a758eb2e6fad47aec7",
               "SecureEP": 1,
               "Type": "sha256",
@@ -3077,7 +3605,7 @@
               "Alerted": 1,
               "Enriched": 0,
               "Hits": 2,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-4c8f35e4-a36a-42f0-b0d1-7fe10ff9d667",
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-0defc8ab-f000-4635-a26c-9f8e66ac2951",
               "Observable": "IE10WIN7",
               "SecureEP": 1,
               "Type": "hostname",
@@ -3088,8 +3616,68 @@
             "column_data": {
               "Alerted": 1,
               "Enriched": 0,
+              "Hits": 2,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-4f3f58dd-2421-4c75-bb31-c0aee1d3c946",
+              "Observable": "begadi.ga",
+              "SecureEP": 0,
+              "Type": "domain",
+              "Umbrella": 1
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
               "Hits": 1,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-d9867281-5556-45af-9bea-82518088c8ae",
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-9d95eb37-fe8a-4c50-a33e-14880cf4d6df",
+              "Observable": "1eb15091d4605809a0a78e9c150e764c9253f9249a7babe4484c27d822d59900",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-9bf76518-cadc-480a-916f-c805300441f1",
+              "Observable": "Demo_SFEicar",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-ca96acd1-6eb1-4be2-a7f7-1410033f0863",
+              "Observable": "8db0d7f3a27291f197173a1e3a3a7242fc49deb2d06f90598475c919417a1c7a",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-6b83699b-a722-4f58-a3d0-0b3bd3bada88",
+              "Observable": "Demo_Zbot",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-4d1714b4-f6ae-49ce-8f32-541b70e2a56f",
               "Observable": "c4e90dfe76ae17c190adcf9f9431109bc134a0a966788f9cea2b433e8cf50c7e",
               "SecureEP": 1,
               "Type": "sha256",
@@ -3101,8 +3689,164 @@
               "Alerted": 1,
               "Enriched": 0,
               "Hits": 1,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-90e43f9a-642a-4afb-97d5-de9980e1cfc0",
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-686e2a9e-4e88-443e-a564-ddfc9e8236e4",
               "Observable": "IVBERLIN-M-N1JH",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-8b17849c-5219-4009-a66f-91cc290b83fa",
+              "Observable": "7fd72a36f7e0e6e0a8bc777fc9ed41e0a6d5526c98bc95a09e189531cf7e70d5",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-af2bad77-300e-4ff4-afed-9a6313b01d5b",
+              "Observable": "Demo_CozyDuke",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-4cb89483-67a3-4503-89a1-35220c88068f",
+              "Observable": "f52bfac9637aea189ec918d05113c36f5bcf580f3c0de8a934fe3438107d3f0c",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-03f4eaaf-824c-46f7-8175-dd366c87fb82",
+              "Observable": "Demo_Ramnit",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-539176ab-7198-4255-9433-7759048d7276",
+              "Observable": "fa1789236d05d88dd10365660defd6ddc8a09fcddb3691812379438874390ddc",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-174851b5-a2e6-4b86-87ed-091d47d9f956",
+              "Observable": "Demo_Upatre",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-a792a936-d6d1-4013-8293-a6bf62600aa6",
+              "Observable": "7c9d5724064693dfeef76fd4da8d6f159ef0e6707e67c4a692a03e94f4a6e27a",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-34bf49d8-5064-4559-893b-b73e2ec15747",
+              "Observable": "Demo_Dridex",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-820780ec-d9fd-45ce-b44f-d0f08a486745",
+              "Observable": "5a0d64cc41bb8455f38b4b31c6e69af9e7fd022b0ea9ea0c32c371def24d67fb",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-e7567bec-7292-465e-a467-327a609a1e47",
+              "Observable": "Demo_Stabuniq",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-f77f7b6f-52a8-4e2b-bc51-ec5b518c8606",
+              "Observable": "e4fccbfa69222c71130a307956df1dd3013ecb1b523e145fab7abf1602330014",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-a7c1cd21-dcce-41d1-97d1-001a4a9494d6",
+              "Observable": "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-da6f5876-3eaf-4f0f-9108-e69d46b5313a",
+              "Observable": "Demo_WannaCry_Ransomware",
               "SecureEP": 1,
               "Type": "hostname",
               "Umbrella": 0
@@ -3151,44 +3895,9 @@
       "display_name": "Detections-Stats",
       "columns": [
         {
-          "name": "Alerted",
-          "title": "Alerted",
-          "type": "integer"
-        },
-        {
-          "name": "EmailGW",
-          "title": "EmailGW",
-          "type": "integer"
-        },
-        {
-          "name": "Enriched",
-          "title": "Enriched",
-          "type": "integer"
-        },
-        {
-          "name": "Incident",
-          "title": "Incident",
-          "type": "string"
-        },
-        {
           "name": "Observable",
           "title": "Observable",
           "type": "string"
-        },
-        {
-          "name": "SW",
-          "title": "SW",
-          "type": "integer"
-        },
-        {
-          "name": "Firepower",
-          "title": "Firepower",
-          "type": "integer"
-        },
-        {
-          "name": "Hits",
-          "title": "Hits",
-          "type": "integer"
         },
         {
           "name": "SecureEP",
@@ -3204,6 +3913,41 @@
           "name": "Umbrella",
           "title": "Umbrella",
           "type": "integer"
+        },
+        {
+          "name": "Alerted",
+          "title": "Alerted",
+          "type": "integer"
+        },
+        {
+          "name": "Enriched",
+          "title": "Enriched",
+          "type": "integer"
+        },
+        {
+          "name": "Hits",
+          "title": "Hits",
+          "type": "integer"
+        },
+        {
+          "name": "Incident",
+          "title": "Incident",
+          "type": "string"
+        },
+        {
+          "name": "SW",
+          "title": "SW",
+          "type": "integer"
+        },
+        {
+          "name": "EmailGW",
+          "title": "EmailGW",
+          "type": "integer"
+        },
+        {
+          "name": "Firepower",
+          "title": "Firepower",
+          "type": "integer"
         }
       ],
       "base_type": "datatype",
@@ -3211,18 +3955,18 @@
     }
   },
   "atomic_workflows": [
-    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
-    "definition_workflow_01MTBS3PX08T13DnyQkuNld9GvrU538PXoI",
-    "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x",
-    "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q",
     "definition_workflow_01FGYY44YU521254ygN3Le0In0kEHpiPNpf",
-    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
-    "definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck",
-    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
-    "definition_workflow_01KVVWMB2UTRF5uVHVH9DtiT6vgIfnzTdRS",
-    "definition_workflow_01MU6L38WDI011Gi239oxMLUnIwKdExKqGl",
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
+    "definition_workflow_01C0BYD0GI1KZ0mxScCSxVrfX70zrUdqLlW",
+    "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x",
     "definition_workflow_01MUZKOII7TH77AMxE0a7QyA5SPUR670m5z",
+    "definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck",
+    "definition_workflow_01MU6L38WDI011Gi239oxMLUnIwKdExKqGl",
     "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4",
-    "definition_workflow_01C0BYD0GI1KZ0mxScCSxVrfX70zrUdqLlW"
+    "definition_workflow_01MTBS3PX08T13DnyQkuNld9GvrU538PXoI",
+    "definition_workflow_01KVVWMB2UTRF5uVHVH9DtiT6vgIfnzTdRS",
+    "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q",
+    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
+    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O"
   ]
 }
