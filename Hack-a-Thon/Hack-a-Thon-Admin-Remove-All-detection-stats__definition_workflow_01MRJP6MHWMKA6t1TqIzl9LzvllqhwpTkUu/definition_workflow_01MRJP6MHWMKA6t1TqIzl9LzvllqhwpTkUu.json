@@ -1,0 +1,661 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01MRJP6MHWMKA6t1TqIzl9LzvllqhwpTkUu",
+    "name": "Hack-a-Thon - Admin - Remove All detection stat",
+    "title": "Hack-a-Thon - Admin - Remove All detection stat",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Hack-a-Thon - Admin - Remove All detection stat",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01MRJP7ECL0C13fjvMHUgHGhgNlbHlBATVM",
+        "name": "Delete from Table",
+        "title": "Delete from Table Detection stat",
+        "type": "core.deleterowfromtable",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Delete from Table Detection stat",
+          "input_table": "$global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v.global.variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v$",
+          "rows": {
+            "all_rows": true
+          },
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01APQ1SF3EVRH4WYM1c0JtOZbGDtxU0sJQd"
+    ]
+  },
+  "categories": {
+    "category_01APQ1SF3EVRH4WYM1c0JtOZbGDtxU0sJQd": {
+      "unique_name": "category_01APQ1SF3EVRH4WYM1c0JtOZbGDtxU0sJQd",
+      "name": "AO.General.Utilities",
+      "title": "AO.General.Utilities",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "variables": {
+    "variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v": {
+      "unique_name": "variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v",
+      "schema_id": "tabletype_01MQVFBURCM0M7SKU9KAqWucmItsRuDjEIK",
+      "properties": {
+        "value": [
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 8,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-c690d54a-ae74-4cbc-8738-4d6369cc4cd7",
+              "Observable": "ciuj.ir",
+              "SecureEP": 0,
+              "Type": "domain",
+              "Umbrella": 1
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 11,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-2dc6d9c0-036d-4bc4-ba6a-b1134c9cc9d0",
+              "Observable": "MSEDGEWIN10",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 1
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-4e2771cb-e33f-4156-bcfd-517448fb903c",
+              "Observable": "b1380fd95bc5c0729738dcda2696aa0a7c6ee97a93d992931ce717a0df523967",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 2,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-8b917ec9-ecbb-4ddc-b21f-c5249880479f",
+              "Observable": "Demo_AMP_Threat_Audit",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 3,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-8c904b25-5f2a-452d-a32d-0dc061b2669b",
+              "Observable": "5ad3c37e6f2b9db3ee8b5aeedc474645de90c66e3d95f8620c48102f1eba4124",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-7469c6a4-a516-40ee-ad55-f91a8ddb8488",
+              "Observable": "No Direct Observable",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-e326a600-eedc-49a9-a4db-3defa1b5e21f",
+              "Observable": "Demo_Threat_Hunting_2",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-9bf7711e-3e17-40bd-a2ef-5001312ec6d0",
+              "Observable": "3372c1edab46837f1e973164fa2d726c5c5e17bcb888828ccd7c4dfcc234a370",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-edec8354-684c-45a9-afe4-638dee9f548f",
+              "Observable": "Demo_TeslaCrypt",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-a3ae02ca-5117-4001-b9de-19747f50166d",
+              "Observable": "6b7d5fdf4b9d42a985cf861c5ef28f5fa914b418c22e4bf5b56bac12251bcd6c",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 2,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-3aef5431-5274-45a7-9e79-53dc067c7272",
+              "Observable": "Demo_Qakbot_1",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-77eac905-54c2-4b40-9c75-7288dd8cf723",
+              "Observable": "No Direct Observable",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-d614acda-3342-4832-8995-7deb21db9d5c",
+              "Observable": "Demo_Threat_Hunting",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-c6ad4345-562b-4054-ae70-e331675a46d2",
+              "Observable": "b75fd580c29736abd11327eef949e449f6d466a05fb6fd343d3957684c8036e5",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-cbc90147-591f-4e01-bd4a-2f35d62b044b",
+              "Observable": "Demo_TDSS",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-92578e2b-2bb8-44c6-b425-5425f8056dc4",
+              "Observable": "078a122a9401dd47a61369ac769d9e707d9e86bdf7ad91708510b9a4584e8d49",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-e26472a4-b5ee-44cd-ba41-ab31726a8406",
+              "Observable": "Demo_Tinba",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 2,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-d7588404-ff8d-469b-8310-adb68d61103e",
+              "Observable": "17f746d82695fa9b35493b41859d39d786d32b23a9d2e00f4011dec7a02402ae",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 2,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-78f89c21-b039-4892-b519-3ed79e1e47db",
+              "Observable": "Demo_Qakbot_3",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-92bf2923-c4b4-48f7-bac3-171924afea7f",
+              "Observable": "7e54dceecd3d3a23a896e971ae4bb9e71a64a5c1c3b77ac1c64241c55c1b95bb",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-9995384d-0a0d-4a09-b495-da17e4786252",
+              "Observable": "Demo_Dyre",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-f822f1e2-1fc0-44e4-84b0-3c46f7ab8f77",
+              "Observable": "6c05e11399b7e3c8ed31bae72014cf249c144a8f4a2c54a758eb2e6fad47aec7",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 2,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-0defc8ab-f000-4635-a26c-9f8e66ac2951",
+              "Observable": "IE10WIN7",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 2,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-4f3f58dd-2421-4c75-bb31-c0aee1d3c946",
+              "Observable": "begadi.ga",
+              "SecureEP": 0,
+              "Type": "domain",
+              "Umbrella": 1
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-9d95eb37-fe8a-4c50-a33e-14880cf4d6df",
+              "Observable": "1eb15091d4605809a0a78e9c150e764c9253f9249a7babe4484c27d822d59900",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-9bf76518-cadc-480a-916f-c805300441f1",
+              "Observable": "Demo_SFEicar",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-ca96acd1-6eb1-4be2-a7f7-1410033f0863",
+              "Observable": "8db0d7f3a27291f197173a1e3a3a7242fc49deb2d06f90598475c919417a1c7a",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-6b83699b-a722-4f58-a3d0-0b3bd3bada88",
+              "Observable": "Demo_Zbot",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-4d1714b4-f6ae-49ce-8f32-541b70e2a56f",
+              "Observable": "c4e90dfe76ae17c190adcf9f9431109bc134a0a966788f9cea2b433e8cf50c7e",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-686e2a9e-4e88-443e-a564-ddfc9e8236e4",
+              "Observable": "IVBERLIN-M-N1JH",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-8b17849c-5219-4009-a66f-91cc290b83fa",
+              "Observable": "7fd72a36f7e0e6e0a8bc777fc9ed41e0a6d5526c98bc95a09e189531cf7e70d5",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-af2bad77-300e-4ff4-afed-9a6313b01d5b",
+              "Observable": "Demo_CozyDuke",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-4cb89483-67a3-4503-89a1-35220c88068f",
+              "Observable": "f52bfac9637aea189ec918d05113c36f5bcf580f3c0de8a934fe3438107d3f0c",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-03f4eaaf-824c-46f7-8175-dd366c87fb82",
+              "Observable": "Demo_Ramnit",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-539176ab-7198-4255-9433-7759048d7276",
+              "Observable": "fa1789236d05d88dd10365660defd6ddc8a09fcddb3691812379438874390ddc",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-174851b5-a2e6-4b86-87ed-091d47d9f956",
+              "Observable": "Demo_Upatre",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-a792a936-d6d1-4013-8293-a6bf62600aa6",
+              "Observable": "7c9d5724064693dfeef76fd4da8d6f159ef0e6707e67c4a692a03e94f4a6e27a",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-34bf49d8-5064-4559-893b-b73e2ec15747",
+              "Observable": "Demo_Dridex",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-820780ec-d9fd-45ce-b44f-d0f08a486745",
+              "Observable": "5a0d64cc41bb8455f38b4b31c6e69af9e7fd022b0ea9ea0c32c371def24d67fb",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-e7567bec-7292-465e-a467-327a609a1e47",
+              "Observable": "Demo_Stabuniq",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-f77f7b6f-52a8-4e2b-bc51-ec5b518c8606",
+              "Observable": "e4fccbfa69222c71130a307956df1dd3013ecb1b523e145fab7abf1602330014",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 1,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-a7c1cd21-dcce-41d1-97d1-001a4a9494d6",
+              "Observable": "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa",
+              "SecureEP": 1,
+              "Type": "sha256",
+              "Umbrella": 0
+            }
+          },
+          {
+            "column_data": {
+              "Alerted": 1,
+              "Enriched": 0,
+              "Hits": 1,
+              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-da6f5876-3eaf-4f0f-9108-e69d46b5313a",
+              "Observable": "Demo_WannaCry_Ransomware",
+              "SecureEP": 1,
+              "Type": "hostname",
+              "Umbrella": 0
+            }
+          }
+        ],
+        "scope": "global",
+        "name": "AO-Detectio-Stats",
+        "type": "datatype.table",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "table_types": {
+    "tabletype_01MQVFBURCM0M7SKU9KAqWucmItsRuDjEIK": {
+      "unique_name": "tabletype_01MQVFBURCM0M7SKU9KAqWucmItsRuDjEIK",
+      "data_type": "datatype.tabletype",
+      "display_name": "Detections-Stats",
+      "columns": [
+        {
+          "name": "Incident",
+          "title": "Incident",
+          "type": "string"
+        },
+        {
+          "name": "Observable",
+          "title": "Observable",
+          "type": "string"
+        },
+        {
+          "name": "SW",
+          "title": "SW",
+          "type": "integer"
+        },
+        {
+          "name": "Type",
+          "title": "Type",
+          "type": "string"
+        },
+        {
+          "name": "Umbrella",
+          "title": "Umbrella",
+          "type": "integer"
+        },
+        {
+          "name": "Alerted",
+          "title": "Alerted",
+          "type": "integer"
+        },
+        {
+          "name": "Enriched",
+          "title": "Enriched",
+          "type": "integer"
+        },
+        {
+          "name": "Firepower",
+          "title": "Firepower",
+          "type": "integer"
+        },
+        {
+          "name": "EmailGW",
+          "title": "EmailGW",
+          "type": "integer"
+        },
+        {
+          "name": "Hits",
+          "title": "Hits",
+          "type": "integer"
+        },
+        {
+          "name": "SecureEP",
+          "title": "SecureEP",
+          "type": "integer"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
