@@ -10,3 +10,15 @@
 Add GitHub Repo to your SXO instance to import the SXO Workflows.
 
 1. Go to Admin in the left-hand menu
+  ![git_1_Menu](/Images/Install___SXO_MenuAdmin.jpg)
+2. Go to Git Repositories and a **New Git Repository** 
+  ![git_2_NewRep](/Images/Install___SXO_MenuGit.jpg)
+3. Use the following **DISPLAY NAME**: **CiscoSecureX-UnifiedAlerting** and the following details:
+  * **DEFAULT ACCOUNT KEYS**: **Git_Credentials**
+  * **PROTOCOL** set to **HTTPS**
+  * **REST API REPOSITORY**: **api.github.com/repos/iberlinson/SX-AO**
+  * **BRANCH**: **main**
+  * **Code Path**: **Hack-a-Thon**
+  * Leave all other fields on default/empty and click **SUBMIT**.
+  * ![git_2_RepData](/Images/Install___SXO_GitRepo.jpg)
+  
