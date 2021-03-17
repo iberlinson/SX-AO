@@ -20,5 +20,10 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
   * **BRANCH**: **main**
   * **Code Path**: **Hack-a-Thon**
   * Leave all other fields on default/empty and click **SUBMIT**.
-  * ![git_2_RepData](/Images/Install___SXO_GitRepo.jpg| width=75)
+  * ![git_2_RepData](/Images/Install___SXO_GitRepo.jpg)
   
+## Import SXO Workflow from Github
+1. Go to Workflows and **IMPORT** the Workflows
+  * Hack-a-Thon-Umbrella-AlertingV2-Incident-Aggregation
+  * Hack-a-Thon-SecureEP-AlertingV2-Incident-Aggregation
+  * Hack-a-Thon-Admin-Remove-All-detection-stats
