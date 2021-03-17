@@ -35,19 +35,20 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
 
 ## Import SXO Atomic Actions from Github
 1. Go to Workflows select "Atomic Actions" and **IMPORT** the Workflows
+
 **This step is a pre-requirement to successful import the workflow in the next step!**
   ![Install___SXO_ImportAtomic](/Images/Install___SXO_ImportAtomic.jpg)
 2. Import the following 
-  *	Cisco Secure EP - Get critical event
-  *	Webex - Simple adaptive card
-  *	Create TheHive case
-  *	CTR - Get Incident Details
-  *	CTR - Update Incident
-  *	Cisco Umbrella- Get Last security event Table
+  *	**Cisco Secure EP - Get critical event**
+  *	**Webex - Simple adaptive card**
+  *	**Create TheHive case**
+  *	**CTR - Get Incident Details**
+  *	**CTR - Update Incident**
+  *	**Cisco Umbrella- Get Last security event Table**
   ![Install___SXO_ImportAtomicAction](/Images/Install___SXO_ImportAtomicAction.jpg)
 
 ## Import SXO Workflow from Github
 1. Go to Workflows and **IMPORT** the Workflows
-  * Hack-a-Thon-Umbrella-AlertingV2-Incident-Aggregation
-  * Hack-a-Thon-SecureEP-AlertingV2-Incident-Aggregation
-  * Hack-a-Thon-Admin-Remove-All-detection-stats
+  * **Hack-a-Thon-Umbrella-AlertingV2-Incident-Aggregation**
+  * **Hack-a-Thon-SecureEP-AlertingV2-Incident-Aggregation**
+  * **Hack-a-Thon-Admin-Remove-All-detection-stats**
