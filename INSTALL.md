@@ -20,5 +20,5 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
   * **BRANCH**: **main**
   * **Code Path**: **Hack-a-Thon**
   * Leave all other fields on default/empty and click **SUBMIT**.
-  * ![git_2_RepData](/Images/Install___SXO_GitRepo.jpg)
+  * ![git_2_RepData](/Images/Install___SXO_GitRepo.jpg| width=75)
   
