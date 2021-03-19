@@ -6,7 +6,7 @@ Go to https://developer.webex.com/docs/bots
 
 Add infromations about name, icon, description, ...
 
-![image](https://user-images.githubusercontent.com/41740851/111794550-9fc01580-88c6-11eb-926e-9973dc830537.png)
+![image](https://user-images.githubusercontent.com/41740851/111802077-e402e400-88cd-11eb-9001-c45554f4dfd6.png)
 
 Use persistent Token in your workflow (Update the Variable for Webex Teams!)
 
