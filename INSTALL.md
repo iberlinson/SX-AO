@@ -54,4 +54,10 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
   * **Hack-a-Thon-SecureEP-AlertingV2-Incident-Aggregation**
   * **Hack-a-Thon-Admin-Remove-All-detection-stats**
   ![image](https://user-images.githubusercontent.com/41740851/111790428-78674980-88c2-11eb-8ccc-e5ce3c1a116f.png)
-
+2. Update the missing informations, like 
+  * AMP Credentials
+  * CTR Credentials
+  * Webex Access Token - click here to see how you can create a presistent Access Token
+  * ...
+  
+  
