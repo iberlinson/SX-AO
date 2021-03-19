@@ -45,7 +45,8 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
   *	**CTR - Get Incident Details**
   *	**CTR - Update Incident**
   *	**Cisco Umbrella- Get Last security event Table**
-  ![Install___SXO_ImportAtomicAction](/Images/Install___SXO_ImportAtomicAction.jpg)
+  ![image](https://user-images.githubusercontent.com/41740851/111790249-4bb33200-88c2-11eb-981c-2ab6a4cc10b0.png)
+
 
 ## Import SXO Workflow from Github
 1. Go to Workflows and **IMPORT** the Workflows
