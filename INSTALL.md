@@ -39,9 +39,9 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
 **This step is a pre-requirement to successful import the workflow in the next step!**
   ![Install___SXO_ImportAtomic](/Images/Install___SXO_ImportAtomic.jpg)
 2. Import the following 
-  *	**Cisco Secure EP - Get critical event** (which one?)
+  *	**Cisco-Secure-EP-Get-critical-cloud-IOC*
   *	**Webex - Simple adaptive card**
-  *	**Create TheHive case** (Bearer Token -> )
+  *	**Create TheHive case** ( if you are not planing to integrate TheHive, just add a random value as Bearer Token )
   *	**CTR - Get Incident Details**
   *	**CTR - Update Incident**
   *	**Cisco Umbrella- Get Last security event Table**
