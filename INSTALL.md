@@ -39,7 +39,7 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
 **This step is a pre-requirement to successful import the workflow in the next step!**
   ![Install___SXO_ImportAtomic](/Images/Install___SXO_ImportAtomic.jpg)
 2. Import the following 
-  *	**Cisco-Secure-EP-Get-critical-cloud-IOC*
+  *	**Cisco-Secure-EP-Get-critical-cloud-IOC**
   *	**Webex - Simple adaptive card**
   *	**Create TheHive case** ( if you are not planing to integrate TheHive, just add a random value as Bearer Token )
   *	**CTR - Get Incident Details**
@@ -53,3 +53,5 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
   * **Hack-a-Thon-Umbrella-AlertingV2-Incident-Aggregation**
   * **Hack-a-Thon-SecureEP-AlertingV2-Incident-Aggregation**
   * **Hack-a-Thon-Admin-Remove-All-detection-stats**
+  ![image](https://user-images.githubusercontent.com/41740851/111790428-78674980-88c2-11eb-8ccc-e5ce3c1a116f.png)
+
