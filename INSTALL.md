@@ -57,7 +57,7 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
 2. Update the missing informations, like 
   * AMP Credentials
   * CTR Credentials
-  * Webex Access Token - click here to see how you can create a presistent Access Token
+  * Webex Access Token - [click here to see how you can create a presistent Access Token](https://github.com/iberlinson/SX-AO/blob/main/WebexAccessToken.md)
   * ...
   
   
