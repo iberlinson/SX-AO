@@ -1,4 +1,4 @@
-Create a Bot and save its API token and email
+# Create a Bot and save its API token and email
 
 Go to https://developer.webex.com/docs/bots
 
