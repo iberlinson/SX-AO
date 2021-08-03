@@ -7,6 +7,19 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Last event date",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MSN9ACGZYLG4W3LOwVlCWCDUB6gldCMCn",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.integer",
         "properties": {
           "value": 0,
@@ -20,15 +33,28 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+        "schema_id": "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L",
         "properties": {
           "scope": "output",
-          "name": "IOC_Table",
+          "name": "Output_Table",
           "type": "datatype.table",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MD6BCBRO2UA7RbqmtDtfNMSxe5srQU0kW",
+        "unique_name": "variable_workflow_01MSGKO7WKQE66PMznkuMpHHvW1TwVC8A63",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "TEMP",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MD6BCBRO9AK61U7ChVwyPdb33nc7BBtXY",
         "object_type": "variable_workflow"
       },
       {
@@ -47,31 +73,6 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "TEMP",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MD6BCBRO9AK61U7ChVwyPdb33nc7BBtXY",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L",
-        "properties": {
-          "scope": "output",
-          "name": "Output_Table",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MSGKO7WKQE66PMznkuMpHHvW1TwVC8A63",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
           "value": "0",
           "scope": "input",
           "name": "Start-Timestamp",
@@ -83,16 +84,15 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
         "properties": {
-          "value": "",
           "scope": "output",
-          "name": "Last event date",
-          "type": "datatype.string",
+          "name": "IOC_Table",
+          "type": "datatype.table",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MSN9ACGZYLG4W3LOwVlCWCDUB6gldCMCn",
+        "unique_name": "variable_workflow_01MD6BCBRO2UA7RbqmtDtfNMSxe5srQU0kW",
         "object_type": "variable_workflow"
       }
     ],
@@ -160,7 +160,7 @@
                   "continue_on_failure": false,
                   "display_name": "Get security activity ",
                   "method": "GET",
-                  "relative_url": "/events?start_date=$workflow.definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL.input.variable_workflow_01MSMNU3RI4M236VsTUtV4xNem2D16jKCGd$\u0026event_type[]=1107296274\u0026event_type[]=1107296272\u0026event_type[]=1107296284\u0026event_type[]=1090519105\u0026event_type[]=1107296344",
+                  "relative_url": "/events?start_date=$workflow.definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL.input.variable_workflow_01MSMNU3RI4M236VsTUtV4xNem2D16jKCGd$",
                   "runtime_user": {
                     "override_target_runtime_user": false,
                     "target_default": true
@@ -249,7 +249,7 @@
                   "continue_on_failure": false,
                   "display_name": "Get security activity ",
                   "method": "GET",
-                  "relative_url": "/events?start_date=$activity.definition_activity_01MD6BLKMMKEZ3i3TLVzEjzVtUomlhQdpEm.output.response_body$\u0026event_type[]=1107296274\u0026event_type[]=1107296272\u0026event_type[]=1107296284\u0026event_type[]=1090519105\u0026event_type[]=1107296344",
+                  "relative_url": "/events?start_date=$activity.definition_activity_01MD6BLKMMKEZ3i3TLVzEjzVtUomlhQdpEm.output.response_body$",
                   "runtime_user": {
                     "override_target_runtime_user": false,
                     "target_default": true
@@ -705,6 +705,10 @@
                     {
                       "column_name": "file",
                       "column_type": "string"
+                    },
+                    {
+                      "column_name": "date",
+                      "column_type": "string"
                     }
                   ],
                   "continue_on_failure": false,
@@ -759,7 +763,7 @@
                         "base_type": "activity",
                         "properties": {
                           "condition": {
-                            "left_operand": "$activity.definition_activity_01MD6BNZXHC1E3jMalOjlcNbTz3l2hydEgo.input.source_array[@].date$",
+                            "left_operand": "$activity.definition_activity_01MMX37PVMYV72wgZzlwBRpOEf7JiE5X3Lp.input.source_array[@].date$",
                             "operator": "ne",
                             "right_operand": "$workflow.definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL.input.variable_workflow_01MSMNU3RI4M236VsTUtV4xNem2D16jKCGd$+00:00"
                           },
@@ -866,7 +870,7 @@
                             "type": "core.replacestring",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Format File Hash",
                               "input_string": "$activity.definition_activity_01MSL2CFJTGXR41qf05DzoWEkGYDMf0QriK.output.matching_strings[-1]$",
                               "replace_list": [
@@ -880,36 +884,469 @@
                             "object_type": "definition_activity"
                           },
                           {
-                            "unique_name": "definition_activity_01MMX38DYR9CW2TUB1txCkYU46ooJouwBnW",
-                            "name": "Add Row to Table",
-                            "title": "Add Row to Table",
-                            "type": "core.addrowtotable",
+                            "unique_name": "definition_activity_01NS3QSTYKZI15az1w9MUI8Y08KmZWQhLYw",
+                            "name": "Condition Block",
+                            "title": "Condition Block",
+                            "type": "logic.if_else",
                             "base_type": "activity",
                             "properties": {
-                              "action_timeout": 180,
                               "continue_on_failure": false,
-                              "display_name": "Add Row to Table",
-                              "input_table": "$workflow.definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL.output.variable_workflow_01MSGKO7WKQE66PMznkuMpHHvW1TwVC8A63$",
-                              "row": [
+                              "display_name": "Condition Block",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "blocks": [
+                              {
+                                "unique_name": "definition_activity_01NS3QT7NOKKD5pWpUXnPciq0ZeobvVNCiX",
+                                "name": "Condition Branch",
+                                "title": "Condition Branch No File",
+                                "type": "logic.condition_block",
+                                "base_type": "activity",
+                                "properties": {
+                                  "condition": {
+                                    "left_operand": "$activity.definition_activity_01MSL2L2PNG6G7IvyF37qyzWrCvqK7vRKsf.output.succeeded$",
+                                    "operator": "eq",
+                                    "right_operand": false
+                                  },
+                                  "continue_on_failure": false,
+                                  "display_name": "Condition Branch No File",
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity",
+                                "actions": [
+                                  {
+                                    "unique_name": "definition_activity_01NS3QT8D5NCS7aXZdwRV2oT8DcY999qLHn",
+                                    "name": "Add Row to Table",
+                                    "title": "Add Row to Table",
+                                    "type": "core.addrowtotable",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "action_timeout": 180,
+                                      "continue_on_failure": false,
+                                      "display_name": "Add Row to Table",
+                                      "input_table": "$workflow.definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL.output.variable_workflow_01MSGKO7WKQE66PMznkuMpHHvW1TwVC8A63$",
+                                      "row": [
+                                        {
+                                          "key": "IOC",
+                                          "type": "string",
+                                          "value": "$activity.definition_activity_01MSKS11J4E9G0yH8ZPzFymD3EWMHvRmhUN.output.result_string$"
+                                        },
+                                        {
+                                          "key": "TARGET",
+                                          "type": "string",
+                                          "value": "$activity.definition_activity_01MSH4761MEX27TQuU7REcLLIgjVxqhzEVj.output.result_string$"
+                                        },
+                                        {
+                                          "key": "OBSERVABLE",
+                                          "type": "string",
+                                          "value": "No Direct Observable"
+                                        }
+                                      ],
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity"
+                                  }
+                                ]
+                              },
+                              {
+                                "unique_name": "definition_activity_01NS3QTLNEKUT4CeNF5Lleyu0oRe49Cu9bM",
+                                "name": "Condition Branch",
+                                "title": "Condition Branch File exists",
+                                "type": "logic.condition_block",
+                                "base_type": "activity",
+                                "properties": {
+                                  "condition": {
+                                    "left_operand": "$activity.definition_activity_01MSL2L2PNG6G7IvyF37qyzWrCvqK7vRKsf.output.succeeded$",
+                                    "operator": "eq",
+                                    "right_operand": true
+                                  },
+                                  "continue_on_failure": false,
+                                  "display_name": "Condition Branch File exists",
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity",
+                                "actions": [
+                                  {
+                                    "unique_name": "definition_activity_01NS3QTMCT88X0bng7Hy2v3533jUaMulsed",
+                                    "name": "Add Row to Table",
+                                    "title": "Add Row to Table",
+                                    "type": "core.addrowtotable",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "action_timeout": 180,
+                                      "continue_on_failure": false,
+                                      "display_name": "Add Row to Table",
+                                      "input_table": "$workflow.definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL.output.variable_workflow_01MSGKO7WKQE66PMznkuMpHHvW1TwVC8A63$",
+                                      "row": [
+                                        {
+                                          "key": "IOC",
+                                          "type": "string",
+                                          "value": "$activity.definition_activity_01MSKS11J4E9G0yH8ZPzFymD3EWMHvRmhUN.output.result_string$"
+                                        },
+                                        {
+                                          "key": "TARGET",
+                                          "type": "string",
+                                          "value": "$activity.definition_activity_01MSH4761MEX27TQuU7REcLLIgjVxqhzEVj.output.result_string$"
+                                        },
+                                        {
+                                          "key": "OBSERVABLE",
+                                          "type": "string",
+                                          "value": "$activity.definition_activity_01MSL2L2PNG6G7IvyF37qyzWrCvqK7vRKsf.output.result_string$"
+                                        }
+                                      ],
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01NS46WCVCHSA65jtDbX8Y64n2HdnjlbqTH",
+            "name": "Parallel Branch",
+            "title": "High IOCs",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "High IOCs",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NS46WDV3OWK5UjBQucV2ceow5gOJgvWZR",
+                "name": "Select from Table",
+                "title": "Select from Table High IOC",
+                "type": "core.selectfromtable",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "columns": [
+                    {
+                      "column_name": "cloud_ioc",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "severity",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "computer",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "event_type",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "file",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "date",
+                      "column_type": "string"
+                    }
+                  ],
+                  "continue_on_failure": false,
+                  "display_name": "Select from Table High IOC",
+                  "input_table": "$activity.definition_activity_01MD6BMLU8YQQ4eDOShnc6e8fcO2vpnuvHR.output.read_table_from_json$",
+                  "number_of_rows": {
+                    "all_rows": true,
+                    "at_most": false
+                  },
+                  "persist_output": true,
+                  "skip_execution": false,
+                  "sorting": {
+                    "no_sort": true,
+                    "sort_by": false
+                  },
+                  "where_clause": "severity LIKE 'Medium' AND event_type LIKE 'Cloud IOC'"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NS46WR4BLEX4sgfzvBfOpa1MMLCfsOG91",
+                "name": "For Each",
+                "title": "For Each High CloudIOC",
+                "type": "logic.for_each",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "For Each High CloudIOC",
+                  "skip_execution": false,
+                  "source_array": "$activity.definition_activity_01NS46WDV3OWK5UjBQucV2ceow5gOJgvWZR.output.output_table$"
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NS46X4QY9W21Y6xVhwRDdcdtgYG4KDsnC",
+                    "name": "Condition Block",
+                    "title": "Condition Block",
+                    "type": "logic.if_else",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Condition Block",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "blocks": [
+                      {
+                        "unique_name": "definition_activity_01NS46XI3BEU34tx1UTTYEOMVA7dXwLMyXX",
+                        "name": "Condition Branch",
+                        "title": "If Not same detection date than last loop",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": "$activity.definition_activity_01NS46WR4BLEX4sgfzvBfOpa1MMLCfsOG91.input.source_array[@].date$",
+                            "operator": "ne",
+                            "right_operand": "$workflow.definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL.input.variable_workflow_01MSMNU3RI4M236VsTUtV4xNem2D16jKCGd$+00:00"
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "If Not same detection date than last loop",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01NS46XITQMIM1106nlVECwCFMJJ2olIXP7",
+                            "name": "Match Regex",
+                            "title": "Extract Target",
+                            "type": "core.matchregex",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Extract Target",
+                              "input_regex": "hostname\":\"([a-zA-Z0-9\\.\\-\\_]+)\",\"network",
+                              "input_string": "$activity.definition_activity_01NS46WR4BLEX4sgfzvBfOpa1MMLCfsOG91.input.source_array[@].computer$",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_01NS46XVX9JJQ3wGCM5wQ5AQinO9N7yjNFh",
+                            "name": "Replace String",
+                            "title": "Format Target",
+                            "type": "core.replacestring",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Format Target",
+                              "input_string": "$activity.definition_activity_01NS46XITQMIM1106nlVECwCFMJJ2olIXP7.output.matching_strings[0]$",
+                              "replace_list": [
                                 {
-                                  "key": "IOC",
-                                  "type": "string",
-                                  "value": "$activity.definition_activity_01MSKS11J4E9G0yH8ZPzFymD3EWMHvRmhUN.output.result_string$"
+                                  "replaced_string": "hostname\":\"",
+                                  "replacement_string": ""
                                 },
                                 {
-                                  "key": "TARGET",
-                                  "type": "string",
-                                  "value": "$activity.definition_activity_01MSH4761MEX27TQuU7REcLLIgjVxqhzEVj.output.result_string$"
-                                },
-                                {
-                                  "key": "OBSERVABLE",
-                                  "type": "string",
-                                  "value": "$activity.definition_activity_01MSL2L2PNG6G7IvyF37qyzWrCvqK7vRKsf.output.result_string$"
+                                  "replaced_string": "\",\"network",
+                                  "replacement_string": ""
                                 }
                               ],
                               "skip_execution": false
                             },
                             "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_01NS46Y8U1F7W1mRG0rwZdl9zltfn9rqlWH",
+                            "name": "Replace String",
+                            "title": "Forrmat CloudIOC",
+                            "type": "core.replacestring",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Forrmat CloudIOC",
+                              "input_string": "$activity.definition_activity_01NS46WR4BLEX4sgfzvBfOpa1MMLCfsOG91.input.source_array[@].cloud_ioc$",
+                              "replace_list": [
+                                {
+                                  "replaced_string": "{",
+                                  "replacement_string": ""
+                                },
+                                {
+                                  "replaced_string": "}",
+                                  "replacement_string": ""
+                                },
+                                {
+                                  "replaced_string": "\"",
+                                  "replacement_string": ""
+                                },
+                                {
+                                  "replaced_string": "short_description:",
+                                  "replacement_string": "_"
+                                },
+                                {
+                                  "replaced_string": "description",
+                                  "replacement_string": "_"
+                                }
+                              ],
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_01NS46YLXMMIO2sOlS0Qqts4aYfeEXqYiEQ",
+                            "name": "Match Regex",
+                            "title": "extract file hash",
+                            "type": "core.matchregex",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "extract file hash",
+                              "input_regex": "sha256\":\"[a-z0-9]*",
+                              "input_string": "$activity.definition_activity_01NS46WR4BLEX4sgfzvBfOpa1MMLCfsOG91.input.source_array[@].file$",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_01NS46YYWZT5V381rSaW36vy2kRnpLbvqyV",
+                            "name": "Replace String",
+                            "title": "Format File Hash",
+                            "type": "core.replacestring",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": true,
+                              "display_name": "Format File Hash",
+                              "input_string": "$activity.definition_activity_01NS46YLXMMIO2sOlS0Qqts4aYfeEXqYiEQ.output.matching_strings[0]$",
+                              "replace_list": [
+                                {
+                                  "replaced_string": "sha256\":\"",
+                                  "replacement_string": ""
+                                }
+                              ],
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_01NS46ZBXWY727m0QL4oIkvOjlqnTcWYMDJ",
+                            "name": "Condition Block",
+                            "title": "Condition Block",
+                            "type": "logic.if_else",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Condition Block",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "blocks": [
+                              {
+                                "unique_name": "definition_activity_01NS46ZOQ90R87VO70NjNUWtoLmU9ZsgCFG",
+                                "name": "Condition Branch",
+                                "title": "Condition Branch No File",
+                                "type": "logic.condition_block",
+                                "base_type": "activity",
+                                "properties": {
+                                  "condition": {
+                                    "left_operand": "$activity.definition_activity_01NS46YYWZT5V381rSaW36vy2kRnpLbvqyV.output.succeeded$",
+                                    "operator": "eq",
+                                    "right_operand": false
+                                  },
+                                  "continue_on_failure": false,
+                                  "display_name": "Condition Branch No File",
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity",
+                                "actions": [
+                                  {
+                                    "unique_name": "definition_activity_01NS46ZPI86GX0cSz7zFift2vnGnaSZsz8F",
+                                    "name": "Add Row to Table",
+                                    "title": "Add Row to Table",
+                                    "type": "core.addrowtotable",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "action_timeout": 180,
+                                      "continue_on_failure": false,
+                                      "display_name": "Add Row to Table",
+                                      "input_table": "$workflow.definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL.output.variable_workflow_01MSGKO7WKQE66PMznkuMpHHvW1TwVC8A63$",
+                                      "row": [
+                                        {
+                                          "key": "IOC",
+                                          "type": "string",
+                                          "value": "$activity.definition_activity_01NS46Y8U1F7W1mRG0rwZdl9zltfn9rqlWH.output.result_string$"
+                                        },
+                                        {
+                                          "key": "TARGET",
+                                          "type": "string",
+                                          "value": "$activity.definition_activity_01NS46XVX9JJQ3wGCM5wQ5AQinO9N7yjNFh.output.result_string$"
+                                        },
+                                        {
+                                          "key": "OBSERVABLE",
+                                          "type": "string",
+                                          "value": "No Direct Observable"
+                                        }
+                                      ],
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity"
+                                  }
+                                ]
+                              },
+                              {
+                                "unique_name": "definition_activity_01NS4703UDGGP1HWanAVpLTS02HU4r8qjjn",
+                                "name": "Condition Branch",
+                                "title": "Condition Branch File exists",
+                                "type": "logic.condition_block",
+                                "base_type": "activity",
+                                "properties": {
+                                  "condition": {
+                                    "left_operand": "$activity.definition_activity_01NS46YYWZT5V381rSaW36vy2kRnpLbvqyV.output.succeeded$",
+                                    "operator": "eq",
+                                    "right_operand": true
+                                  },
+                                  "continue_on_failure": false,
+                                  "display_name": "Condition Branch File exists",
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity",
+                                "actions": [
+                                  {
+                                    "unique_name": "definition_activity_01NS4704O8U1V1WFl4zmngS4aC9Rura6Kny",
+                                    "name": "Add Row to Table",
+                                    "title": "Add Row to Table",
+                                    "type": "core.addrowtotable",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "action_timeout": 180,
+                                      "continue_on_failure": false,
+                                      "display_name": "Add Row to Table",
+                                      "input_table": "$workflow.definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL.output.variable_workflow_01MSGKO7WKQE66PMznkuMpHHvW1TwVC8A63$",
+                                      "row": [
+                                        {
+                                          "key": "IOC",
+                                          "type": "string",
+                                          "value": "$activity.definition_activity_01NS46Y8U1F7W1mRG0rwZdl9zltfn9rqlWH.output.result_string$"
+                                        },
+                                        {
+                                          "key": "TARGET",
+                                          "type": "string",
+                                          "value": "$activity.definition_activity_01NS46XVX9JJQ3wGCM5wQ5AQinO9N7yjNFh.output.result_string$"
+                                        },
+                                        {
+                                          "key": "OBSERVABLE",
+                                          "type": "string",
+                                          "value": "$activity.definition_activity_01NS46YYWZT5V381rSaW36vy2kRnpLbvqyV.output.result_string$"
+                                        }
+                                      ],
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity"
+                                  }
+                                ]
+                              }
+                            ]
                           }
                         ]
                       }
@@ -1289,7 +1726,7 @@
                     "no_sort": true,
                     "sort_by": false
                   },
-                  "where_clause": "severity LIKE 'High' AND event_type NOT LIKE 'Cloud IOC'"
+                  "where_clause": "event_type NOT LIKE 'Cloud IOC'"
                 },
                 "object_type": "definition_activity"
               },
