@@ -7,6 +7,44 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L",
+        "properties": {
+          "scope": "output",
+          "name": "Output_Table",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MTBS3PQ9EME7EbnNyQwuB9oWt2oOWkND5",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Last event date",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MTBS3PQ9I8P0zA91VRALrWQoKTpaBlL4p",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Umbrella_OrgID",
+          "type": "datatype.secure_string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QDURJ8OVQ9466wfcm3krlicGiKU0FjvtK",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
@@ -44,31 +82,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MTBS3PQ9KLN5QzrH9JK1Pxu1U58zRjn7u",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L",
-        "properties": {
-          "scope": "output",
-          "name": "Output_Table",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MTBS3PQ9EME7EbnNyQwuB9oWt2oOWkND5",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Last event date",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MTBS3PQ9I8P0zA91VRALrWQoKTpaBlL4p",
         "object_type": "variable_workflow"
       }
     ],
@@ -151,7 +164,7 @@
                   "continue_on_failure": false,
                   "display_name": "Get security activity ",
                   "method": "GET",
-                  "relative_url": "/v1/organizations/$global.variable_01LL3TQGT3RD9584LsDd2gEmZ7qGBN1OoYt.global.variable_01LL3TQGT3RD9584LsDd2gEmZ7qGBN1OoYt$/security-activity?limit=500\u0026start=$activity.definition_activity_01MU8TAKWJ5C83Uxstw5pbbVoggZaxnM3nD.output.response_body$\u0026categories=\"Command and Control\"",
+                  "relative_url": "/v1/organizations/$workflow.definition_workflow_01MTBS3PX08T13DnyQkuNld9GvrU538PXoI.input.variable_workflow_01QDURJ8OVQ9466wfcm3krlicGiKU0FjvtK$/security-activity?limit=500\u0026start=$activity.definition_activity_01MU8TAKWJ5C83Uxstw5pbbVoggZaxnM3nD.output.response_body$",
                   "runtime_user": {
                     "override_target_runtime_user": false,
                     "target_default": true
@@ -521,21 +534,6 @@
     "categories": [
       "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
-  },
-  "variables": {
-    "variable_01LL3TQGT3RD9584LsDd2gEmZ7qGBN1OoYt": {
-      "unique_name": "variable_01LL3TQGT3RD9584LsDd2gEmZ7qGBN1OoYt",
-      "properties": {
-        "value": "*****",
-        "scope": "global",
-        "name": "Umbrella_Org_ID",
-        "type": "datatype.secure_string",
-        "description": "Enter here your Umbrella Org ID",
-        "is_required": false,
-        "is_invisible": false
-      },
-      "object_type": "variable"
-    }
   },
   "table_types": {
     "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L": {
