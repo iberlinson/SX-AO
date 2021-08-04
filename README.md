@@ -11,8 +11,8 @@ Repository for workflows and AtomicActions
 * Near real time notification on new or updated incident (**no duplicate notification for same event occurring multiple times**)
 * Statistic tables
 
-* [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/Install___RT_Webex.png)
-* [Screenshot - Incident](https://github.com/iberlinson/SX-AO/blob/main/Images/Install___RT_Incident.png)
+* [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme___RT_Webex.png)
+* [Screenshot - Incident](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme___RT_Incident.png)
 
 #### Installation
 * Detailed installation instructions can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/INSTALL.md)
