@@ -7,7 +7,7 @@ Repository for workflows and AtomicActions
 ### 1. RT-Monitoring-SecureEP-Umbrella-Notification-Incident
 
 * Continuous monitoring of Umbrella and/or Secure EP Security events (loop)
-* Near real time Incident creation and update (grouped by endpont, **no duplicate event**)
+* Near real time Incident creation and update (grouped by endpoint hostname, **no duplicate event**)
 * Near real time notification on new or updated incident (**no duplicate notification for same event occurring multiple times**)
 * Statistic tables
 
@@ -16,3 +16,7 @@ Repository for workflows and AtomicActions
 
 #### Installation
 * Detailed installation instructions can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/INSTALL.md)
+
+### 2. 🔦 Hunt - Search User - Orbital
+ * Search for a given user via Orbital (Account (Monitoring and Logged_In)
+ * Notify in Cisco Webex about result
