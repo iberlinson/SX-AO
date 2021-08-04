@@ -13,6 +13,7 @@
           "scope": "output",
           "name": "Output",
           "type": "datatype.string",
+          "description": "Incident details raw output",
           "is_required": false,
           "is_invisible": false
         },
@@ -26,6 +27,7 @@
           "scope": "input",
           "name": "CTR Token",
           "type": "datatype.secure_string",
+          "description": "SecureX Threat Resonse Token (input)",
           "is_required": true,
           "is_invisible": false
         },
@@ -39,6 +41,7 @@
           "scope": "input",
           "name": "Incident ID",
           "type": "datatype.string",
+          "description": "Short ID of the incident to query (input)",
           "is_required": true,
           "is_invisible": false
         },
@@ -52,6 +55,7 @@
         "is_atomic": true
       },
       "delete_workflow_instance": false,
+      "description": "Get Details of a SecureX incident (raw output)",
       "display_name": "CTR - Get Incident Details",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -59,10 +63,8 @@
         "target_default": true
       },
       "target": {
-        "execute_on_target_group": false,
-        "execute_on_workflow_target": false,
-        "no_target": true,
-        "specify_on_workflow_start": false
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
       }
     },
     "object_type": "definition_workflow",
@@ -77,7 +79,7 @@
           "action_timeout": 180,
           "allow_auto_redirect": true,
           "content_type": "application/json",
-          "continue_on_error_status_code": false,
+          "continue_on_error_status_code": true,
           "continue_on_failure": false,
           "custom_headers": [
             {
@@ -94,8 +96,7 @@
           },
           "skip_execution": false,
           "target": {
-            "override_workflow_target": true,
-            "target_id": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk"
+            "use_workflow_target": true
           }
         },
         "object_type": "definition_activity"
@@ -123,23 +124,5 @@
     "categories": [
       "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
-  },
-  "targets": {
-    "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk": {
-      "unique_name": "definition_target_01M8823MMO4QO73ETHXSQUfobrgRuuHHERk",
-      "name": "Private_CTIA_Target",
-      "title": "Private_CTIA_Target",
-      "type": "web-service.endpoint",
-      "base_type": "target",
-      "object_type": "definition_target",
-      "properties": {
-        "description": "Private_CTIA_Target",
-        "disable_certificate_validation": false,
-        "display_name": "Private_CTIA_Target",
-        "host": "private.intel.amp.cisco.com",
-        "no_runtime_user": true,
-        "protocol": "https"
-      }
-    }
   }
 }
