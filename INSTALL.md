@@ -66,17 +66,17 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
   ![Install___SXO_MenuAdmin](/Images/Install___SXO_MenuAdmin.jpg)
 2. Go to Git Repositories and a **New Git Repository** 
   ![Install___SXO_MenuGit](/Images/Install___SXO_MenuGit.jpg)
-3. Use the following **DISPLAY NAME**: **CiscoSecureX-UnifiedAlerting** and the following details:
+3. Use the following **DISPLAY NAME**: **SX-AO** and the following details:
   * **DEFAULT ACCOUNT KEYS**: **Git_Credentials**
   * **PROTOCOL** set to **HTTPS**
   * **REST API REPOSITORY**: **api.github.com/repos/iberlinson/SX-AO**
   * **BRANCH**: **main**
-  * **Code Path**: **Hack-a-Thon**
+  * **Code Path**: **Workflows**
   * Leave all other fields on default/empty and click **SUBMIT**.
   * ![Install___SXO_GitRepo](/Images/Install___SXO_GitRepo.jpg)
 
 4. Repeat the step and add an additional Repository for the required Atomic Actions
-  Use the following **DISPLAY NAME**: **CiscoSecureX-UnifiedAlerting_AtomicActions** and the following details:
+  Use the following **DISPLAY NAME**: **SX-AO-AtomicActions** and the following details:
   * **DEFAULT ACCOUNT KEYS**: **Git_Credentials**
   * **PROTOCOL** set to **HTTPS**
   * **REST API REPOSITORY**: **api.github.com/repos/iberlinson/SX-AO**
@@ -91,7 +91,7 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
 
 **This step is a pre-requirement to successful import the workflow in the next step!**
   ![Install___SXO_ImportAtomic](/Images/Install___SXO_ImportAtomic.jpg)
-2. Import the following from Git **CiscoSecureX-UnifiedAlerting_AtomicActions**
+2. Import the following from Git **SX-AO-AtomicActions**
   *	**Cisco-Secure-EP-Get-critical-cloud-IOC**
   *	**Webex - Simple adaptive card**
   *	**Create TheHive case** ( if you are not planing to integrate TheHive, just add a random value as Bearer Token )
@@ -109,7 +109,7 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
   *	**Threat Response v2 - Create Incident**
  
 ## Import SXO Workflows from Github
-1. Import the Workflow from Git **CiscoSecureX-UnifiedAlerting**
+1. Import the Workflow from Git **SX-A0**
   * **RT-Monitoring-SecureEP-Umbrella-Notification-Incident**
 
 2. Update the missing informations
