@@ -109,13 +109,15 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
   *	**Threat Response v2 - Create Incident**
  
 ## Import SXO Workflow from Github
-1. Go to Workflows and **IMPORT** the Workflows from Git **CiscoSecureX-UnifiedAlerting**
+1. Import the Workflow from Git **CiscoSecureX-UnifiedAlerting**
   * **RT-Monitoring-SecureEP-Umbrella-Notification-Incident**
-  * **Hack-a-Thon-Admin-Remove-All-detection-stats**
 
 2. Update the missing informations
   * **Webex Bots** : fill your **BOT bearer token** - [click here to see how you can create a presistent Access Token](https://github.com/iberlinson/SX-AO/blob/main/WebexAccessToken.md)
   * **Umbrella Org ID** : fill your umbreall org id or none if net use
+  
+3. Import the Workflow from Git **CiscoSecureX-UnifiedAlerting**
+  * **Hack-a-Thon-Admin-Remove-All-detection-stats**
 
   
   
