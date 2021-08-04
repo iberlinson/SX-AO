@@ -7,41 +7,17 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 0,
-          "scope": "input",
-          "name": "DELAY",
-          "type": "datatype.integer",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MD6BCBRODK10SY3MYnohyROMyj7imut5V",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "output",
-          "name": "json",
+          "scope": "local",
+          "name": "Temp",
           "type": "datatype.string",
+          "description": "Temp variable (internal use)",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MD6BCBRO85A1P64EyWc2LmKf7kjEMc65e",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L",
-        "properties": {
-          "scope": "output",
-          "name": "Output_Table",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MSGKO7WKQE66PMznkuMpHHvW1TwVC8A63",
+        "unique_name": "variable_workflow_01MD6BCBRO9AK61U7ChVwyPdb33nc7BBtXY",
         "object_type": "variable_workflow"
       },
       {
@@ -51,6 +27,7 @@
           "scope": "output",
           "name": "Last event date",
           "type": "datatype.string",
+          "description": "Last event date for next query",
           "is_required": false,
           "is_invisible": false
         },
@@ -62,8 +39,9 @@
         "properties": {
           "value": "0",
           "scope": "input",
-          "name": "Start-date",
+          "name": "Date",
           "type": "datatype.string",
+          "description": "Calculate start time for last activity HTTP query based on date - Either delay or date must be specified - \n\nSet value to \"No\" to use delay",
           "is_required": false,
           "is_invisible": false
         },
@@ -71,28 +49,43 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+        "schema_id": "datatype.integer",
         "properties": {
-          "scope": "output",
-          "name": "IOC_Table",
-          "type": "datatype.table",
+          "value": 0,
+          "scope": "input",
+          "name": "Delay",
+          "type": "datatype.integer",
+          "description": "Calculate start time for last activity HTTP query based on delay in minutes - Either delay or date must be specified - Set Date variable value to \"No\" to use delay",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MD6BCBRO2UA7RbqmtDtfNMSxe5srQU0kW",
+        "unique_name": "variable_workflow_01MD6BCBRODK10SY3MYnohyROMyj7imut5V",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L",
+        "properties": {
+          "scope": "output",
+          "name": "Output_Table",
+          "type": "datatype.table",
+          "description": "Output Table with : \nIOC./ Event name and description\nObservable\nTarget endpoint",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MSGKO7WKQE66PMznkuMpHHvW1TwVC8A63",
         "object_type": "variable_workflow"
       },
       {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "local",
-          "name": "TEMP",
+          "scope": "output",
+          "name": "JSON Output",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MD6BCBRO9AK61U7ChVwyPdb33nc7BBtXY",
+        "unique_name": "variable_workflow_01MD6BCBRO85A1P64EyWc2LmKf7kjEMc65e",
         "object_type": "variable_workflow"
       }
     ],
@@ -102,7 +95,7 @@
         "is_atomic": true
       },
       "delete_workflow_instance": false,
-      "description": "Get IOC description and computer fields for Critical Cloud IOC (optional delay (minutes) or all)",
+      "description": "Get IOC description and computer fields for Critical Cloud IOC (optional delay (minutes) or all)\n\nEventID :\n1107296274\n1107296272\n1107296284\n1090519105\n1107296344\n1090519054\n553648143\n2164260880\n553648155",
       "display_name": "Cisco Secure EP - Get critical event",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -132,7 +125,7 @@
           {
             "unique_name": "definition_activity_01MSMNAKY7W7T6Uk7u2lWXHWLmjDCGHdGPB",
             "name": "Condition Branch",
-            "title": "If Start dateinput",
+            "title": "If Start date input",
             "type": "logic.condition_block",
             "base_type": "activity",
             "properties": {
@@ -142,7 +135,7 @@
                 "right_operand": "No"
               },
               "continue_on_failure": false,
-              "display_name": "If Start dateinput",
+              "display_name": "If Start date input",
               "skip_execution": false
             },
             "object_type": "definition_activity",
@@ -156,7 +149,7 @@
                 "properties": {
                   "action_timeout": 180,
                   "allow_auto_redirect": true,
-                  "continue_on_error_status_code": false,
+                  "continue_on_error_status_code": true,
                   "continue_on_failure": false,
                   "display_name": "Get security activity ",
                   "method": "GET",
@@ -175,12 +168,12 @@
               {
                 "unique_name": "definition_activity_01MSMNB8ZG4D3665nB9k5p299pHn1JY7K4l",
                 "name": "Set Variables",
-                "title": "Set Variables",
+                "title": "Set Variables - Json output",
                 "type": "core.set_multiple_variables",
                 "base_type": "activity",
                 "properties": {
                   "continue_on_failure": false,
-                  "display_name": "Set Variables",
+                  "display_name": "Set Variables - Json output",
                   "skip_execution": false,
                   "variables_to_update": [
                     {
@@ -214,13 +207,13 @@
               {
                 "unique_name": "definition_activity_01MD6BLKMMKEZ3i3TLVzEjzVtUomlhQdpEm",
                 "name": "Execute Python Script",
-                "title": "Execute Python Script",
+                "title": "Convert delay to date",
                 "type": "python3.script",
                 "base_type": "activity",
                 "properties": {
                   "action_timeout": 180,
                   "continue_on_failure": false,
-                  "display_name": "Execute Python Script",
+                  "display_name": "Convert delay to date",
                   "script": "from datetime import datetime, timedelta\nimport sys\n\nif sys.version_info[0] \u003c 3 or sys.version_info[1] \u003c 4:\n    # python version \u003c 3.3\n    import time\n    def timestamp(date):\n        return time.mktime(date.timetuple())\nelse:\n    def timestamp(date):\n        return date.timestamp()\n\ndelay = int(sys.argv[1])\ndate1 = datetime.now() - timedelta(minutes=delay)\ndate1 = date1.strftime(\"%Y-%m-%dT%H:%M:%S\")\nprint(date1)\n\n",
                   "script_arguments": [
                     "$workflow.definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL.input.variable_workflow_01MD6BCBRODK10SY3MYnohyROMyj7imut5V$"
@@ -245,7 +238,7 @@
                 "properties": {
                   "action_timeout": 180,
                   "allow_auto_redirect": true,
-                  "continue_on_error_status_code": false,
+                  "continue_on_error_status_code": true,
                   "continue_on_failure": false,
                   "display_name": "Get security activity ",
                   "method": "GET",
@@ -264,12 +257,12 @@
               {
                 "unique_name": "definition_activity_01MD6BM9KPQL05ckmlX7vCkmGT6AgsOx3EB",
                 "name": "Set Variables",
-                "title": "Set Variables",
+                "title": "Set Variables -Json output",
                 "type": "core.set_multiple_variables",
                 "base_type": "activity",
                 "properties": {
                   "continue_on_failure": false,
-                  "display_name": "Set Variables",
+                  "display_name": "Set Variables -Json output",
                   "skip_execution": false,
                   "variables_to_update": [
                     {
@@ -990,12 +983,12 @@
               {
                 "unique_name": "definition_activity_01MMTF8DNQ9912M7Ns6ODFdRXiNiVR4XRmC",
                 "name": "For Each",
-                "title": "For Each otherscritical",
+                "title": "For Each others",
                 "type": "logic.for_each",
                 "base_type": "activity",
                 "properties": {
-                  "continue_on_failure": true,
-                  "display_name": "For Each otherscritical",
+                  "continue_on_failure": false,
+                  "display_name": "For Each others",
                   "skip_execution": false,
                   "source_array": "$activity.definition_activity_01MMTE8T8M96R6XgzEo4iKGl5RlmqPGYJsM.output.output_table$"
                 },
@@ -1253,28 +1246,6 @@
     }
   },
   "table_types": {
-    "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6": {
-      "unique_name": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
-      "data_type": "datatype.tabletype",
-      "display_name": "Observable",
-      "description": "Observable Type and Value",
-      "columns": [
-        {
-          "is_required": true,
-          "name": "type",
-          "title": "type",
-          "type": "string"
-        },
-        {
-          "is_required": true,
-          "name": "value",
-          "title": "value",
-          "type": "string"
-        }
-      ],
-      "base_type": "datatype",
-      "object_type": "tabletype"
-    },
     "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L": {
       "unique_name": "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L",
       "data_type": "datatype.tabletype",
