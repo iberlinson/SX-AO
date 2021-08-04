@@ -87,7 +87,7 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
 
 
 ## Import SXO Atomic Actions from Github
-1. Go to Workflows select "Atomic Actions" and **IMPORT** the Workflows
+1. Go to Workflows select "Atomic Actions" and **IMPORT** Atomoc Actions
 
 **This step is a pre-requirement to successful import the workflow in the next step!**
   ![Install___SXO_ImportAtomic](/Images/Install___SXO_ImportAtomic.jpg)
@@ -108,7 +108,7 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
   *	**Threat Response v2 - Create Casebook**
   *	**Threat Response v2 - Create Incident**
  
-## Import SXO Workflow from Github
+## Import SXO Workflows from Github
 1. Import the Workflow from Git **CiscoSecureX-UnifiedAlerting**
   * **RT-Monitoring-SecureEP-Umbrella-Notification-Incident**
 
