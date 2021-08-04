@@ -11,5 +11,5 @@ Repository for workflows and AtomicActions
 * Near real time notification on new or updated incident (**no duplicate notification for same event occurring multiple times**)
 * Statistic tables
 
-** Installation
+#### Installation
 * Detailed installation instructions can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/INSTALL.md)
