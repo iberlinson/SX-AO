@@ -7,6 +7,32 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Last event date",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MTBS3PQ9I8P0zA91VRALrWQoKTpaBlL4p",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "json",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MTBS3PQ9FUM1spGYfViwCJwsgi1v5yEyg",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L",
         "properties": {
           "scope": "output",
@@ -22,13 +48,13 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "output",
-          "name": "Last event date",
+          "scope": "local",
+          "name": "TEMP",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MTBS3PQ9I8P0zA91VRALrWQoKTpaBlL4p",
+        "unique_name": "variable_workflow_01MTBS3PQ9KLN5QzrH9JK1Pxu1U58zRjn7u",
         "object_type": "variable_workflow"
       },
       {
@@ -47,41 +73,15 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "json",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MTBS3PQ9FUM1spGYfViwCJwsgi1v5yEyg",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
           "value": "0",
           "scope": "input",
-          "name": "Start-Timestamp",
+          "name": "Start-Date",
           "type": "datatype.string",
           "description": "Start Time for Umbrella http query",
           "is_required": false,
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MTBS3PQ9JHH25dD1IayjTLl0yioX86Jyz",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "TEMP",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MTBS3PQ9KLN5QzrH9JK1Pxu1U58zRjn7u",
         "object_type": "variable_workflow"
       }
     ],
@@ -113,6 +113,7 @@
         "base_type": "activity",
         "properties": {
           "continue_on_failure": false,
+          "description": "Delay in future version",
           "display_name": "Condition Block - Start time or delay input",
           "skip_execution": false
         },
@@ -139,13 +140,13 @@
               {
                 "unique_name": "definition_activity_01MU8TAKWJ5C83Uxstw5pbbVoggZaxnM3nD",
                 "name": "Execute Python Script",
-                "title": "Execute Python Script",
+                "title": "Convert date to timestamp",
                 "type": "python3.script",
                 "base_type": "activity",
                 "properties": {
                   "action_timeout": 180,
                   "continue_on_failure": false,
-                  "display_name": "Execute Python Script",
+                  "display_name": "Convert date to timestamp",
                   "script": "import time\nimport datetime\ns = \"$workflow.definition_workflow_01MTBS3PX08T13DnyQkuNld9GvrU538PXoI.input.variable_workflow_01MTBS3PQ9JHH25dD1IayjTLl0yioX86Jyz$\"\nts = time.mktime(datetime.datetime.strptime(s, \"%Y-%m-%dT%H:%M:%S\").timetuple())\nprint(ts)",
                   "skip_execution": false
                 },
@@ -179,12 +180,12 @@
               {
                 "unique_name": "definition_activity_01MTBS59U9I3I072npzs3cM3faF12dyudHB",
                 "name": "Set Variables",
-                "title": "Set Variables",
+                "title": "Store raw json output",
                 "type": "core.set_multiple_variables",
                 "base_type": "activity",
                 "properties": {
                   "continue_on_failure": false,
-                  "display_name": "Set Variables",
+                  "display_name": "Store raw json output",
                   "skip_execution": false,
                   "variables_to_update": [
                     {
@@ -542,6 +543,11 @@
       "display_name": "IOC_TARGET_OBSERVABLE",
       "columns": [
         {
+          "name": "TARGET",
+          "title": "TARGET",
+          "type": "string"
+        },
+        {
           "name": "IOC",
           "title": "IOC",
           "type": "string"
@@ -549,11 +555,6 @@
         {
           "name": "OBSERVABLE",
           "title": "OBSERVABLE",
-          "type": "string"
-        },
-        {
-          "name": "TARGET",
-          "title": "TARGET",
           "type": "string"
         }
       ],
