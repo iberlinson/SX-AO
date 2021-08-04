@@ -7,44 +7,45 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Umbrella_OrgID",
+          "type": "datatype.secure_string",
+          "description": "Umbrella Org ID from global variable (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QDUZYGQWCGB6aCjErPRDB53XTwWjPBYK1",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
           "scope": "local",
-          "name": "Webex Room ID_Temp",
+          "name": "Incident Title",
           "type": "datatype.string",
-          "description": "Webex Room ID (internal use)",
+          "description": "Incident Title (internal use)",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01QD1GRO7XEGG3iFL4yBmBoCYM0io5Ynhuh",
+        "unique_name": "variable_workflow_01MSM3TYB8SGE6PePqa4LY9U3ctflgzfFpx",
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
+        "schema_id": "datatype.string",
         "properties": {
+          "value": "",
           "scope": "local",
-          "name": "Observables_Table_Temp",
-          "type": "datatype.table",
-          "description": "Temp Table for internal use",
+          "name": "Incident Description",
+          "type": "datatype.string",
+          "description": "Incident Description (internal use)",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MSM3TYB8R8A6QJ3pNm4Rn6qUNwiJd6Lwo",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.boolean",
-        "properties": {
-          "value": true,
-          "scope": "local",
-          "name": "Cisco SecureX Incident",
-          "type": "datatype.boolean",
-          "description": "Integration with Cisco Securex Incident Manager : true/false",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01QD1FBOHV4ZI5HQeX71o6G1u8oaQpuWZ4j",
+        "unique_name": "variable_workflow_01MSM3TYB8TL44pbWR6vtcrcEvAClJCE04Q",
         "object_type": "variable_workflow"
       },
       {
@@ -78,29 +79,42 @@
       {
         "schema_id": "datatype.boolean",
         "properties": {
-          "value": true,
+          "value": false,
           "scope": "local",
-          "name": "Cisco Secure EP",
+          "name": "TheHive",
           "type": "datatype.boolean",
-          "description": "Cisco Secure EP Enable : true/false",
+          "description": "Integration with The Hive : true/false\nCreation only (update not available)",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01QDMP3WAM6KZ3CpACwuLdaFdqhl7Z4egBJ",
+        "unique_name": "variable_workflow_01MSM3TYB8NBL6obQz4IacNY4A31HfcL7OK",
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
         "properties": {
-          "value": "",
           "scope": "local",
-          "name": "Incident Title",
-          "type": "datatype.string",
-          "description": "Incident Title (internal use)",
+          "name": "Observables_Table_Temp",
+          "type": "datatype.table",
+          "description": "Temp Table for internal use",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MSM3TYB8SGE6PePqa4LY9U3ctflgzfFpx",
+        "unique_name": "variable_workflow_01MSM3TYB8R8A6QJ3pNm4Rn6qUNwiJd6Lwo",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Webex Bot Token",
+          "type": "datatype.secure_string",
+          "description": "Webex Token from Global Variable (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QD8GGOOPRE40JcA6e0AatZOjySqYc7pq5",
         "object_type": "variable_workflow"
       },
       {
@@ -118,48 +132,6 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Umbrella_Last_detection_date_temp",
-          "type": "datatype.string",
-          "description": "Last detection date for Umbrella API query start date value (internal use)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01QDMAF95FL9Q6yortEN8ja3LyD6kjr8J5N",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Incident Description",
-          "type": "datatype.string",
-          "description": "Incident Description (internal use)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MSM3TYB8TL44pbWR6vtcrcEvAClJCE04Q",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "incident_id_temp",
-          "type": "datatype.string",
-          "description": "Incident ID for update (internal use)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MU757G4Y1D63dkFnmiMLR8mZXjZxcBpmz",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.boolean",
         "properties": {
           "value": false,
@@ -174,45 +146,31 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "SecureEP_Last_detection_date_temp",
-          "type": "datatype.string",
-          "description": "Last detection date for Cisco Secure Endpoint API query start date value (internal use)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01QD654GT9TAP4z3txVTjWCWaWpSYY8eW0b",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.boolean",
-        "properties": {
-          "value": false,
-          "scope": "local",
-          "name": "TheHive",
-          "type": "datatype.boolean",
-          "description": "Integration with The Hive : true/false\nCreation only (update not available)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MSM3TYB8NBL6obQz4IacNY4A31HfcL7OK",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.boolean",
         "properties": {
           "value": true,
           "scope": "local",
-          "name": "Cisco Webex",
+          "name": "Cisco Secure EP",
           "type": "datatype.boolean",
-          "description": "Integration with Cisco Webex for notification : true/false",
+          "description": "Cisco Secure EP Enable : true/false",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MSM3TYB8VXM7ZbjvGr1FaEgNrrXb3lIAp",
+        "unique_name": "variable_workflow_01QDMP3WAM6KZ3CpACwuLdaFdqhl7Z4egBJ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Umbrella_Last_detection_date_temp",
+          "type": "datatype.string",
+          "description": "Last detection date for Umbrella API query start date value (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QDMAF95FL9Q6yortEN8ja3LyD6kjr8J5N",
         "object_type": "variable_workflow"
       },
       {
@@ -230,17 +188,17 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "datatype.boolean",
         "properties": {
-          "value": "Alerting2",
+          "value": true,
           "scope": "local",
-          "name": "Webex Room Name",
-          "type": "datatype.string",
-          "description": "Webex Room Name - Default value : Alerting2",
+          "name": "Cisco SecureX Incident",
+          "type": "datatype.boolean",
+          "description": "Integration with Cisco Securex Incident Manager : true/false",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01QD1GNGBMJWY1GV2YT7Vyy1zvrrGN6WJMN",
+        "unique_name": "variable_workflow_01QD1FBOHV4ZI5HQeX71o6G1u8oaQpuWZ4j",
         "object_type": "variable_workflow"
       },
       {
@@ -257,17 +215,73 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.secure_string",
+        "schema_id": "datatype.string",
         "properties": {
           "value": "",
           "scope": "local",
-          "name": "Webex Bot Token",
-          "type": "datatype.secure_string",
-          "description": "Webex Token from Global Variable (internal use)",
+          "name": "Webex Room ID_Temp",
+          "type": "datatype.string",
+          "description": "Webex Room ID (internal use)",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01QD8GGOOPRE40JcA6e0AatZOjySqYc7pq5",
+        "unique_name": "variable_workflow_01QD1GRO7XEGG3iFL4yBmBoCYM0io5Ynhuh",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": true,
+          "scope": "local",
+          "name": "Cisco Webex",
+          "type": "datatype.boolean",
+          "description": "Integration with Cisco Webex for notification : true/false",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MSM3TYB8VXM7ZbjvGr1FaEgNrrXb3lIAp",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "SecureEP_Last_detection_date_temp",
+          "type": "datatype.string",
+          "description": "Last detection date for Cisco Secure Endpoint API query start date value (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QD654GT9TAP4z3txVTjWCWaWpSYY8eW0b",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "incident_id_temp",
+          "type": "datatype.string",
+          "description": "Incident ID for update (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MU757G4Y1D63dkFnmiMLR8mZXjZxcBpmz",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Alerting2",
+          "scope": "local",
+          "name": "Webex Room Name",
+          "type": "datatype.string",
+          "description": "Webex Room Name - Default value : Alerting2",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QD1GNGBMJWY1GV2YT7Vyy1zvrrGN6WJMN",
         "object_type": "variable_workflow"
       }
     ],
@@ -557,7 +571,9 @@
                         "type": "logic.parallel_block",
                         "base_type": "activity",
                         "properties": {
-                          "display_name": "Parallel Branch"
+                          "continue_on_failure": false,
+                          "display_name": "Parallel Branch",
+                          "skip_execution": false
                         },
                         "object_type": "definition_activity",
                         "actions": [
@@ -624,7 +640,9 @@
                         "type": "logic.parallel_block",
                         "base_type": "activity",
                         "properties": {
-                          "display_name": "Parallel Branch"
+                          "continue_on_failure": false,
+                          "display_name": "Parallel Branch",
+                          "skip_execution": false
                         },
                         "object_type": "definition_activity",
                         "actions": [
@@ -659,6 +677,25 @@
                                 },
                                 "object_type": "definition_activity",
                                 "actions": [
+                                  {
+                                    "unique_name": "definition_activity_01QDV05OJXH966rAlAywcENvbx96LdSKgED",
+                                    "name": "Set Variables",
+                                    "title": "Get OrgID",
+                                    "type": "core.set_multiple_variables",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "continue_on_failure": false,
+                                      "display_name": "Get OrgID",
+                                      "skip_execution": false,
+                                      "variables_to_update": [
+                                        {
+                                          "variable_to_update": "$workflow.definition_workflow_01MSM3TYJ01GD2ogx6kcuVBZora6KfrETx1.local.variable_workflow_01QDUZYGQWCGB6aCjErPRDB53XTwWjPBYK1$",
+                                          "variable_value_new": "$global.variable_01LL3TQGT3RD9584LsDd2gEmZ7qGBN1OoYt.global.variable_01LL3TQGT3RD9584LsDd2gEmZ7qGBN1OoYt$"
+                                        }
+                                      ]
+                                    },
+                                    "object_type": "definition_activity"
+                                  },
                                   {
                                     "unique_name": "definition_activity_01QDMBQCGVL8C1Q8t3jkEjnWvpu382Qp2CH",
                                     "name": "Set Variables",
@@ -974,7 +1011,8 @@
                                               "continue_on_failure": false,
                                               "display_name": "Cisco Umbrella- Get Last security event Table",
                                               "input": {
-                                                "variable_workflow_01MTBS3PQ9JHH25dD1IayjTLl0yioX86Jyz": "$workflow.definition_workflow_01MSM3TYJ01GD2ogx6kcuVBZora6KfrETx1.local.variable_workflow_01QDMAF95FL9Q6yortEN8ja3LyD6kjr8J5N$"
+                                                "variable_workflow_01MTBS3PQ9JHH25dD1IayjTLl0yioX86Jyz": "$workflow.definition_workflow_01MSM3TYJ01GD2ogx6kcuVBZora6KfrETx1.local.variable_workflow_01QDMAF95FL9Q6yortEN8ja3LyD6kjr8J5N$",
+                                                "variable_workflow_01QDURJ8OVQ9466wfcm3krlicGiKU0FjvtK": "$workflow.definition_workflow_01MSM3TYJ01GD2ogx6kcuVBZora6KfrETx1.local.variable_workflow_01QDUZYGQWCGB6aCjErPRDB53XTwWjPBYK1$"
                                               },
                                               "runtime_user": {
                                                 "target_default": true
@@ -5166,7 +5204,7 @@
       "type": "schedule",
       "base_type": "trigger",
       "ref_id": "schedule_01MQ53LKY3QC645Dio19nBWhABFmgcq3ZdV",
-      "version": "",
+      "version": "1.0.0",
       "disabled": true,
       "unique_name": "triggerschedule_01QCXEV1BJX3Y5foJ9kPeXfs21bj0QEQi9Q",
       "object_type": "triggerschedule"
@@ -5224,6 +5262,19 @@
         "name": "Cisco Teams BOT Token",
         "type": "datatype.secure_string",
         "description": "Enter here your Teams Bot token (https://developer.webex.com/docs/bots)- Remember to create a room named Alerting in Teams and add your bot as member",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01LL3TQGT3RD9584LsDd2gEmZ7qGBN1OoYt": {
+      "unique_name": "variable_01LL3TQGT3RD9584LsDd2gEmZ7qGBN1OoYt",
+      "properties": {
+        "value": "*****",
+        "scope": "global",
+        "name": "Umbrella_Org_ID",
+        "type": "datatype.secure_string",
+        "description": "Enter here your Umbrella Org ID",
         "is_required": false,
         "is_invisible": false
       },
@@ -5299,8 +5350,28 @@
       "display_name": "Detections-Stats",
       "columns": [
         {
+          "name": "EmailGW",
+          "title": "EmailGW",
+          "type": "integer"
+        },
+        {
+          "name": "Observable",
+          "title": "Observable",
+          "type": "string"
+        },
+        {
+          "name": "SW",
+          "title": "SW",
+          "type": "integer"
+        },
+        {
           "name": "SecureEP",
           "title": "SecureEP",
+          "type": "integer"
+        },
+        {
+          "name": "Umbrella",
+          "title": "Umbrella",
           "type": "integer"
         },
         {
@@ -5309,13 +5380,13 @@
           "type": "string"
         },
         {
-          "name": "Umbrella",
-          "title": "Umbrella",
+          "name": "Alerted",
+          "title": "Alerted",
           "type": "integer"
         },
         {
-          "name": "Alerted",
-          "title": "Alerted",
+          "name": "Enriched",
+          "title": "Enriched",
           "type": "integer"
         },
         {
@@ -5329,28 +5400,8 @@
           "type": "integer"
         },
         {
-          "name": "SW",
-          "title": "SW",
-          "type": "integer"
-        },
-        {
-          "name": "EmailGW",
-          "title": "EmailGW",
-          "type": "integer"
-        },
-        {
-          "name": "Enriched",
-          "title": "Enriched",
-          "type": "integer"
-        },
-        {
           "name": "Incident",
           "title": "Incident",
-          "type": "string"
-        },
-        {
-          "name": "Observable",
-          "title": "Observable",
           "type": "string"
         }
       ],
@@ -5383,16 +5434,16 @@
     }
   },
   "atomic_workflows": [
-    "definition_workflow_01MUZKOII7TH77AMxE0a7QyA5SPUR670m5z",
-    "definition_workflow_01MU6L38WDI011Gi239oxMLUnIwKdExKqGl",
-    "definition_workflow_01NKJPVTZ2E492W2ONA1T8pgoJdW3qmw1NU",
-    "definition_workflow_01KVVWMB2UTRF5uVHVH9DtiT6vgIfnzTdRS",
-    "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x",
-    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
-    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
-    "definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL",
     "definition_workflow_01MTBS3PX08T13DnyQkuNld9GvrU538PXoI",
+    "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q",
+    "definition_workflow_01KVVWMB2UTRF5uVHVH9DtiT6vgIfnzTdRS",
+    "definition_workflow_01MU6L38WDI011Gi239oxMLUnIwKdExKqGl",
+    "definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL",
     "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
-    "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q"
+    "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x",
+    "definition_workflow_01MUZKOII7TH77AMxE0a7QyA5SPUR670m5z",
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
+    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
+    "definition_workflow_01NKJPVTZ2E492W2ONA1T8pgoJdW3qmw1NU"
   ]
 }
