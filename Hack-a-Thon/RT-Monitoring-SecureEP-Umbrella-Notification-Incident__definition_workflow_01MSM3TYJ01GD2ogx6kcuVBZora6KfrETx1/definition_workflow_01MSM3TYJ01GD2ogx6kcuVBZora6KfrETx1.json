@@ -7,17 +7,30 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.boolean",
+        "schema_id": "datatype.string",
         "properties": {
-          "value": false,
+          "value": "",
           "scope": "local",
-          "name": "AO_Running_state_temp",
-          "type": "datatype.boolean",
-          "description": "Current state of the workflow from Global Variable (internal use)",
+          "name": "Webex Room ID_Temp",
+          "type": "datatype.string",
+          "description": "Webex Room ID (internal use)",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01QD5TIB6USC8219A5KhFXuL98JVhzXunih",
+        "unique_name": "variable_workflow_01QD1GRO7XEGG3iFL4yBmBoCYM0io5Ynhuh",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
+        "properties": {
+          "scope": "local",
+          "name": "Observables_Table_Temp",
+          "type": "datatype.table",
+          "description": "Temp Table for internal use",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MSM3TYB8R8A6QJ3pNm4Rn6qUNwiJd6Lwo",
         "object_type": "variable_workflow"
       },
       {
@@ -25,13 +38,13 @@
         "properties": {
           "value": true,
           "scope": "local",
-          "name": "Cisco Umbrella",
+          "name": "Cisco SecureX Incident",
           "type": "datatype.boolean",
-          "description": "Cisco Umbrella Enable : true/false",
+          "description": "Integration with Cisco Securex Incident Manager : true/false",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01QDMPFSPTS2F1k1EUepz1u08opgpFfrVMi",
+        "unique_name": "variable_workflow_01QD1FBOHV4ZI5HQeX71o6G1u8oaQpuWZ4j",
         "object_type": "variable_workflow"
       },
       {
@@ -39,13 +52,27 @@
         "properties": {
           "value": false,
           "scope": "local",
-          "name": "TheHive",
+          "name": "MSTeams",
           "type": "datatype.boolean",
-          "description": "Integration with The Hive : true/false\nCreation only (update not available)",
+          "description": "Integration with MS Teams for notitication : true/false \nNot Available",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MSM3TYB8NBL6obQz4IacNY4A31HfcL7OK",
+        "unique_name": "variable_workflow_01MSM3TYB8UO724M9kF1X6SHPapVVKXZbyM",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "local",
+          "name": "Loop_counter",
+          "type": "datatype.integer",
+          "description": "While loop counter (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MSM3TYB8X36554LM2jSefugpcB7NnFYni",
         "object_type": "variable_workflow"
       },
       {
@@ -65,20 +92,6 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "Alerting2",
-          "scope": "local",
-          "name": "Webex Room Name",
-          "type": "datatype.string",
-          "description": "Webex Room Name - Default value : Alerting2",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01QD1GNGBMJWY1GV2YT7Vyy1zvrrGN6WJMN",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
           "value": "",
           "scope": "local",
           "name": "Incident Title",
@@ -91,58 +104,17 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "SecureEP_Last_detection_date_temp",
-          "type": "datatype.string",
-          "description": "Last detection date for Cisco Secure Endpoint API query start date value (internal use)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01QD654GT9TAP4z3txVTjWCWaWpSYY8eW0b",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.boolean",
         "properties": {
-          "value": true,
+          "value": false,
           "scope": "local",
-          "name": "Cisco SecureX Incident",
+          "name": "AO_Running_state_temp",
           "type": "datatype.boolean",
-          "description": "Integration with Cisco Securex Incident Manager : true/false",
+          "description": "Current state of the workflow from Global Variable (internal use)",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01QD1FBOHV4ZI5HQeX71o6G1u8oaQpuWZ4j",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
-        "properties": {
-          "scope": "local",
-          "name": "Observables_Table_Temp",
-          "type": "datatype.table",
-          "description": "Temp Table for internal use",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MSM3TYB8R8A6QJ3pNm4Rn6qUNwiJd6Lwo",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 0,
-          "scope": "local",
-          "name": "Loop_counter",
-          "type": "datatype.integer",
-          "description": "While loop counter (internal use)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MSM3TYB8X36554LM2jSefugpcB7NnFYni",
+        "unique_name": "variable_workflow_01QD5TIB6USC8219A5KhFXuL98JVhzXunih",
         "object_type": "variable_workflow"
       },
       {
@@ -150,13 +122,41 @@
         "properties": {
           "value": "",
           "scope": "local",
-          "name": "Webex Room ID_Temp",
+          "name": "Umbrella_Last_detection_date_temp",
           "type": "datatype.string",
-          "description": "Webex Room ID (internal use)",
+          "description": "Last detection date for Umbrella API query start date value (internal use)",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01QD1GRO7XEGG3iFL4yBmBoCYM0io5Ynhuh",
+        "unique_name": "variable_workflow_01QDMAF95FL9Q6yortEN8ja3LyD6kjr8J5N",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Incident Description",
+          "type": "datatype.string",
+          "description": "Incident Description (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MSM3TYB8TL44pbWR6vtcrcEvAClJCE04Q",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "incident_id_temp",
+          "type": "datatype.string",
+          "description": "Incident ID for update (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MU757G4Y1D63dkFnmiMLR8mZXjZxcBpmz",
         "object_type": "variable_workflow"
       },
       {
@@ -178,40 +178,13 @@
         "properties": {
           "value": "",
           "scope": "local",
-          "name": "Incident Description",
+          "name": "SecureEP_Last_detection_date_temp",
           "type": "datatype.string",
-          "description": "Incident Description (internal use)",
+          "description": "Last detection date for Cisco Secure Endpoint API query start date value (internal use)",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MSM3TYB8TL44pbWR6vtcrcEvAClJCE04Q",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L",
-        "properties": {
-          "scope": "local",
-          "name": "Detection_temp",
-          "type": "datatype.table",
-          "description": "Detection Table (internal use)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01QDMH2RD9HYT523wK6tFLTxle2NVVX5f18",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Umbrella_Last_detection_date_temp",
-          "type": "datatype.string",
-          "description": "Last detection date for Umbrella API query start date value (internal use)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01QDMAF95FL9Q6yortEN8ja3LyD6kjr8J5N",
+        "unique_name": "variable_workflow_01QD654GT9TAP4z3txVTjWCWaWpSYY8eW0b",
         "object_type": "variable_workflow"
       },
       {
@@ -219,27 +192,13 @@
         "properties": {
           "value": false,
           "scope": "local",
-          "name": "MSTeams",
+          "name": "TheHive",
           "type": "datatype.boolean",
-          "description": "Integration with MS Teams for notitication : true/false \nNot Available",
+          "description": "Integration with The Hive : true/false\nCreation only (update not available)",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MSM3TYB8UO724M9kF1X6SHPapVVKXZbyM",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.secure_string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Webex Bot Token",
-          "type": "datatype.secure_string",
-          "description": "Webex Token from Global Variable (internal use)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01QD8GGOOPRE40JcA6e0AatZOjySqYc7pq5",
+        "unique_name": "variable_workflow_01MSM3TYB8NBL6obQz4IacNY4A31HfcL7OK",
         "object_type": "variable_workflow"
       },
       {
@@ -257,17 +216,58 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "datatype.boolean",
         "properties": {
-          "value": "",
+          "value": true,
           "scope": "local",
-          "name": "incident_id_temp",
-          "type": "datatype.string",
-          "description": "Incident ID for update (internal use)",
+          "name": "Cisco Umbrella",
+          "type": "datatype.boolean",
+          "description": "Cisco Umbrella Enable : true/false",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MU757G4Y1D63dkFnmiMLR8mZXjZxcBpmz",
+        "unique_name": "variable_workflow_01QDMPFSPTS2F1k1EUepz1u08opgpFfrVMi",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Alerting2",
+          "scope": "local",
+          "name": "Webex Room Name",
+          "type": "datatype.string",
+          "description": "Webex Room Name - Default value : Alerting2",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QD1GNGBMJWY1GV2YT7Vyy1zvrrGN6WJMN",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L",
+        "properties": {
+          "scope": "local",
+          "name": "Detection_temp",
+          "type": "datatype.table",
+          "description": "Detection Table (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QDMH2RD9HYT523wK6tFLTxle2NVVX5f18",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Webex Bot Token",
+          "type": "datatype.secure_string",
+          "description": "Webex Token from Global Variable (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QD8GGOOPRE40JcA6e0AatZOjySqYc7pq5",
         "object_type": "variable_workflow"
       }
     ],
@@ -276,7 +276,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "description": "Enable near real time notification for Umbrella Security events\n- Notify in Cisco Webex or others\n- Create Casebook and create or update  Incident in CTR\n- Create Case in The Hive\n- Create Case in ServiceNow\n- Notification update in Cisco Team\n- Feeds the stat table\n\nSet Global Variable Umbrella_loop_counter to 500 before to run\nEnable Triggers 5mn for permanent execution",
+      "description": "Enable near real time notification for Umbrella and/or Secure EP Security events\n- Notify in Cisco Webex or others\n- Create Casebook and create or update  Incident in CTR\n- Create Case in The Hive\n- Create Case in ServiceNow\n- Notification update in Cisco Team\n- Feeds the stat table\n\nSet Global Variable Umbrella_loop_counter to 500 before to run\nEnable Triggers 5mn for permanent execution",
       "display_name": "🛎 RT Monitoring - SecureEP/Umbrella - Notification and Incident",
       "runtime_user": {
         "target_default": true
@@ -485,7 +485,7 @@
                                       {
                                         "left_operand": "$targetgroup.target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH.common.display_name$",
                                         "operator": "eqi",
-                                        "right_operand": "Cisco Webex"
+                                        "right_operand": "Webex Teams"
                                       }
                                     ]
                                   }
@@ -817,7 +817,7 @@
                                                       {
                                                         "left_operand": "$targetgroup.target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH.common.display_name$",
                                                         "operator": "eqi",
-                                                        "right_operand": "Cisco Secure Endpoint"
+                                                        "right_operand": "AMP_Target"
                                                       }
                                                     ]
                                                   }
@@ -2739,7 +2739,7 @@
                                                                                   {
                                                                                     "left_operand": "$targetgroup.target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH.common.display_name$",
                                                                                     "operator": "eqi",
-                                                                                    "right_operand": "Cisco Webex"
+                                                                                    "right_operand": "Webex Teams"
                                                                                   }
                                                                                 ]
                                                                               }
@@ -2802,7 +2802,7 @@
                                                                                   {
                                                                                     "left_operand": "$targetgroup.target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH.common.display_name$",
                                                                                     "operator": "eqi",
-                                                                                    "right_operand": "Cisco Webex"
+                                                                                    "right_operand": "Webex Teams"
                                                                                   }
                                                                                 ]
                                                                               }
@@ -4518,7 +4518,7 @@
                                                                                                               {
                                                                                                                 "left_operand": "$targetgroup.target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH.common.display_name$",
                                                                                                                 "operator": "eqi",
-                                                                                                                "right_operand": "Cisco Webex"
+                                                                                                                "right_operand": "Webex Teams"
                                                                                                               }
                                                                                                             ]
                                                                                                           }
@@ -4581,7 +4581,7 @@
                                                                                                               {
                                                                                                                 "left_operand": "$targetgroup.target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH.common.display_name$",
                                                                                                                 "operator": "eqi",
-                                                                                                                "right_operand": "Cisco Webex"
+                                                                                                                "right_operand": "Webex Teams"
                                                                                                               }
                                                                                                             ]
                                                                                                           }
@@ -5271,224 +5271,6 @@
       "unique_name": "variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v",
       "schema_id": "tabletype_01MQVFBURCM0M7SKU9KAqWucmItsRuDjEIK",
       "properties": {
-        "value": [
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 12,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-bcdb5870-eb5f-4bcc-994d-b487350cb223",
-              "Observable": "ciuj.ir",
-              "SecureEP": 0,
-              "Type": "sha256",
-              "Umbrella": 1
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 108,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/incident/incident-ab08009f-5ba9-4189-a522-ed844ed0787c",
-              "Observable": "Lab1",
-              "SecureEP": 1,
-              "Type": "hostname",
-              "Umbrella": 1
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 2,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-bea1bc93-f073-4f5f-9111-b5515dfada96",
-              "Observable": "d7577fb88cca3169c7931dc0d8ec9a444227dc14f6c71d6d39d86a0c5cad1976",
-              "SecureEP": 1,
-              "Type": "sha256",
-              "Umbrella": 0
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 4,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-9860aa13-4fd3-498b-bc12-e2e78fe6c29a",
-              "Observable": "97303c178b5d439a15b0e6770eb63a24f3f7a7901c7de1941c6088a60b1dfd1b",
-              "SecureEP": 1,
-              "Type": "sha256",
-              "Umbrella": 0
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 48,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-733f02fb-37ef-4920-82b2-5db2f6efbb45",
-              "Observable": "414172704b128846822366b92ba7af32d931c0a4aafd7e5cd333b9c21893db68",
-              "SecureEP": 1,
-              "Type": "sha256",
-              "Umbrella": 0
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 6,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-a4910ba6-661a-4b54-b516-af71d76a8a19",
-              "Observable": "b463872abac32a47700b3103045f9c28b4ad8dc198b321232ea26bad6ae587d4",
-              "SecureEP": 1,
-              "Type": "sha256",
-              "Umbrella": 0
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 2,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-418031f9-9b88-416f-8955-2da7076c8af0",
-              "Observable": "b1380fd95bc5c0729738dcda2696aa0a7c6ee97a93d992931ce717a0df523967",
-              "SecureEP": 1,
-              "Type": "sha256",
-              "Umbrella": 0
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 10,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-17eceff7-6846-48f9-b76b-2759ed991a05",
-              "Observable": "93556f0c2f4690f367886d231937008ae5a1d6ea3a8c0c15b4d4bd37e972f7f1",
-              "SecureEP": 1,
-              "Type": "sha256",
-              "Umbrella": 0
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 4,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-037fa84f-0b95-4eb6-9b63-6b62acdc6188",
-              "Observable": "e0c34e14e0bb409a77fedbaf4f150e85cff74e7de5a9c7d44d134771ccff4d7b",
-              "SecureEP": 1,
-              "Type": "sha256",
-              "Umbrella": 0
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 6,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-fd84a46c-7170-4016-8147-017cb29af125",
-              "Observable": "9e4300fb884b88c6da2b6f05a5be67a6f87d3280dac58bd37f3004b93d5d5d0e",
-              "SecureEP": 1,
-              "Type": "sha256",
-              "Umbrella": 0
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 2,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-48540268-57aa-4666-a8dd-7177385e4b7b",
-              "Observable": "10d1937f4e09bd668263cb23cf01b3c9c0de3401c10ed9090cb0f2796b650804",
-              "SecureEP": 1,
-              "Type": "sha256",
-              "Umbrella": 0
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 3,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-eec815f9-e195-4a23-b498-a078591f9126",
-              "Observable": "begadi.ga",
-              "SecureEP": 0,
-              "Type": "sha256",
-              "Umbrella": 1
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 2,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-a4eefb8d-b31d-493d-bc54-8c6222485d3d",
-              "Observable": "0a439ae4b56ae3fa3d248d22b74fef5f92c874f9b499c1771857743f8da4314e",
-              "SecureEP": 1,
-              "Type": "sha256",
-              "Umbrella": 0
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 2,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-f6a4d1ae-3f23-474e-9e8e-7c282e0cacff",
-              "Observable": "b2c7a10bf8b15cd6c80b47b52ce6e853c108dd653fb932244d47d263a832e9a0",
-              "SecureEP": 1,
-              "Type": "sha256",
-              "Umbrella": 0
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 2,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-b8698dcb-2b15-4183-9d66-2457481f07d6",
-              "Observable": "retdemos.com",
-              "SecureEP": 0,
-              "Type": "sha256",
-              "Umbrella": 1
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 1,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-5d75402f-82b3-4ceb-8eb7-4af1a24b6bde",
-              "Observable": "getmalware.com",
-              "SecureEP": 0,
-              "Type": "sha256",
-              "Umbrella": 1
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 1,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-186c869c-fdb4-4a7f-ab96-97e3c80615a0",
-              "Observable": "manvim.co",
-              "SecureEP": 0,
-              "Type": "sha256",
-              "Umbrella": 1
-            }
-          },
-          {
-            "column_data": {
-              "Alerted": 1,
-              "Enriched": 0,
-              "Hits": 1,
-              "Incident": "https://private.intel.amp.cisco.com:443/ctia/casebook/casebook-6f3ac5a8-e510-4ad9-813a-0c9ba4d86912",
-              "Observable": "evakark.xyz",
-              "SecureEP": 0,
-              "Type": "sha256",
-              "Umbrella": 1
-            }
-          }
-        ],
         "scope": "global",
         "name": "AO-Detectio-Stats",
         "type": "datatype.table",
@@ -5500,7 +5282,7 @@
     "variable_01MSMKP26SELL12wfEbyQhNxIpBmyPYL7ng": {
       "unique_name": "variable_01MSMKP26SELL12wfEbyQhNxIpBmyPYL7ng",
       "properties": {
-        "value": "2021-08-01T17:54:26",
+        "value": "2021-08-04T11:18:53",
         "scope": "global",
         "name": "AO-AMP_Last_detection_date",
         "type": "datatype.string",
@@ -5512,7 +5294,7 @@
     "variable_01MTBQJIOVS2F74Kkt4ryazpiyKj9pXEO45": {
       "unique_name": "variable_01MTBQJIOVS2F74Kkt4ryazpiyKj9pXEO45",
       "properties": {
-        "value": "2021-08-01T01:29:43",
+        "value": "2021-08-04T11:27:28",
         "scope": "global",
         "name": "AO-Umbrella_Last_detection_date",
         "type": "datatype.string",
@@ -5524,7 +5306,7 @@
     "variable_01QD5RT0CLLV80wbZvQLRFqVHeNRjTEfFMi": {
       "unique_name": "variable_01QD5RT0CLLV80wbZvQLRFqVHeNRjTEfFMi",
       "properties": {
-        "value": true,
+        "value": false,
         "scope": "global",
         "name": "AO_RT_Monitoring_Running",
         "type": "datatype.boolean",
@@ -5555,6 +5337,26 @@
       "display_name": "Detections-Stats",
       "columns": [
         {
+          "name": "SecureEP",
+          "title": "SecureEP",
+          "type": "integer"
+        },
+        {
+          "name": "Type",
+          "title": "Type",
+          "type": "string"
+        },
+        {
+          "name": "Umbrella",
+          "title": "Umbrella",
+          "type": "integer"
+        },
+        {
+          "name": "Alerted",
+          "title": "Alerted",
+          "type": "integer"
+        },
+        {
           "name": "Firepower",
           "title": "Firepower",
           "type": "integer"
@@ -5565,23 +5367,8 @@
           "type": "integer"
         },
         {
-          "name": "Incident",
-          "title": "Incident",
-          "type": "string"
-        },
-        {
-          "name": "Observable",
-          "title": "Observable",
-          "type": "string"
-        },
-        {
-          "name": "Type",
-          "title": "Type",
-          "type": "string"
-        },
-        {
-          "name": "Alerted",
-          "title": "Alerted",
+          "name": "SW",
+          "title": "SW",
           "type": "integer"
         },
         {
@@ -5595,19 +5382,14 @@
           "type": "integer"
         },
         {
-          "name": "Umbrella",
-          "title": "Umbrella",
-          "type": "integer"
+          "name": "Incident",
+          "title": "Incident",
+          "type": "string"
         },
         {
-          "name": "SW",
-          "title": "SW",
-          "type": "integer"
-        },
-        {
-          "name": "SecureEP",
-          "title": "SecureEP",
-          "type": "integer"
+          "name": "Observable",
+          "title": "Observable",
+          "type": "string"
         }
       ],
       "base_type": "datatype",
@@ -5619,6 +5401,11 @@
       "display_name": "IOC_TARGET_OBSERVABLE",
       "columns": [
         {
+          "name": "IOC",
+          "title": "IOC",
+          "type": "string"
+        },
+        {
           "name": "OBSERVABLE",
           "title": "OBSERVABLE",
           "type": "string"
@@ -5627,11 +5414,6 @@
           "name": "TARGET",
           "title": "TARGET",
           "type": "string"
-        },
-        {
-          "name": "IOC",
-          "title": "IOC",
-          "type": "string"
         }
       ],
       "base_type": "datatype",
@@ -5639,16 +5421,16 @@
     }
   },
   "atomic_workflows": [
-    "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q",
-    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
-    "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x",
     "definition_workflow_01MUZKOII7TH77AMxE0a7QyA5SPUR670m5z",
+    "definition_workflow_01MU6L38WDI011Gi239oxMLUnIwKdExKqGl",
     "definition_workflow_01NKJPVTZ2E492W2ONA1T8pgoJdW3qmw1NU",
     "definition_workflow_01KVVWMB2UTRF5uVHVH9DtiT6vgIfnzTdRS",
-    "definition_workflow_01MTBS3PX08T13DnyQkuNld9GvrU538PXoI",
+    "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x",
+    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
     "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
     "definition_workflow_01MD6BCBYALHW20xugDSlrpXdDCz5RJkUoL",
-    "definition_workflow_01MU6L38WDI011Gi239oxMLUnIwKdExKqGl",
-    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O"
+    "definition_workflow_01MTBS3PX08T13DnyQkuNld9GvrU538PXoI",
+    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
+    "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q"
   ]
 }
