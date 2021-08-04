@@ -103,7 +103,7 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
 3. Import the following from Cisco Security/Atomics
   *	**Webex Teams - Search for Room**
   *	**Threat Response v2 - Create Relationship**
-  *	**Microsoft Teams - Post Adaptive Card via Webhook** ( if you are not planing to integrate TheHive, just add a random value as Bearer Token )
+  *	**Microsoft Teams - Post Adaptive Card via Webhook** 
   *	**Threat Response v2 - Generate Access Token**
   *	**Threat Response v2 - Create Casebook**
   *	**Threat Response v2 - Create Incident**
