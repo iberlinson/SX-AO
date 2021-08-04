@@ -5167,7 +5167,7 @@
       "base_type": "trigger",
       "ref_id": "schedule_01MQ53LKY3QC645Dio19nBWhABFmgcq3ZdV",
       "version": "",
-      "disabled": false,
+      "disabled": true,
       "unique_name": "triggerschedule_01QCXEV1BJX3Y5foJ9kPeXfs21bj0QEQi9Q",
       "object_type": "triggerschedule"
     }
@@ -5216,6 +5216,19 @@
     }
   },
   "variables": {
+    "variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8": {
+      "unique_name": "variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8",
+      "properties": {
+        "value": "*****",
+        "scope": "global",
+        "name": "Cisco Teams BOT Token",
+        "type": "datatype.secure_string",
+        "description": "Enter here your Teams Bot token (https://developer.webex.com/docs/bots)- Remember to create a room named Alerting in Teams and add your bot as member",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
     "variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v": {
       "unique_name": "variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v",
       "schema_id": "tabletype_01MQVFBURCM0M7SKU9KAqWucmItsRuDjEIK",
