@@ -5192,44 +5192,6 @@
       "object_type": "schedule"
     }
   },
-  "targets": {
-    "definition_target_01JSKJD20JMKV2bMS3euJLjHCrfKRweaN11": {
-      "unique_name": "definition_target_01JSKJD20JMKV2bMS3euJLjHCrfKRweaN11",
-      "name": "Cisco Secure EndPoint",
-      "title": "Cisco Secure EndPoint",
-      "type": "web-service.endpoint",
-      "base_type": "target",
-      "object_type": "definition_target",
-      "properties": {
-        "default_runtime_user_id": "definition_runtime_user_01M8821Q13PN42C25nvFOdRa0nA3JCDBEad",
-        "disable_certificate_validation": false,
-        "display_name": "Cisco Secure EndPoint",
-        "host": "api.amp.cisco.com",
-        "ignore_proxy": false,
-        "no_runtime_user": false,
-        "path": "/v1",
-        "port": 443,
-        "protocol": "https"
-      }
-    }
-  },
-  "runtime_users": {
-    "definition_runtime_user_01M8821Q13PN42C25nvFOdRa0nA3JCDBEad": {
-      "unique_name": "definition_runtime_user_01M8821Q13PN42C25nvFOdRa0nA3JCDBEad",
-      "name": "AMP_Credentials",
-      "title": "AMP_Credentials",
-      "description": "Account Key for AMP",
-      "type": "runtime_user.web-service_basic_credentials",
-      "base_type": "runtime_user",
-      "object_type": "definition_runtime_user",
-      "properties": {
-        "auth_option": "*****",
-        "basic_password": "*****",
-        "basic_username": "*****",
-        "display_name": "AMP_Credentials"
-      }
-    }
-  },
   "target_groups": {
     "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH": {
       "unique_name": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
@@ -5254,19 +5216,6 @@
     }
   },
   "variables": {
-    "variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8": {
-      "unique_name": "variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8",
-      "properties": {
-        "value": "*****",
-        "scope": "global",
-        "name": "Cisco Teams BOT Token",
-        "type": "datatype.secure_string",
-        "description": "Enter here your Teams Bot token (https://developer.webex.com/docs/bots)- Remember to create a room named Alerting in Teams and add your bot as member",
-        "is_required": false,
-        "is_invisible": false
-      },
-      "object_type": "variable"
-    },
     "variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v": {
       "unique_name": "variable_01MRG11XBW77I5ae3rb6JOLOkkG6yKN980v",
       "schema_id": "tabletype_01MQVFBURCM0M7SKU9KAqWucmItsRuDjEIK",
