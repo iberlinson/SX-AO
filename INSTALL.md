@@ -117,7 +117,7 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
   * **Umbrella Org ID** : fill your umbreall org id or none if net use
   
 3. Import the Workflow from Git **CiscoSecureX-UnifiedAlerting**
-  * **Hack-a-Thon-Admin-Remove-All-detection-stats**
+  * **RT-Monitoring-Clear-detection-stats-table**
 
   
   
