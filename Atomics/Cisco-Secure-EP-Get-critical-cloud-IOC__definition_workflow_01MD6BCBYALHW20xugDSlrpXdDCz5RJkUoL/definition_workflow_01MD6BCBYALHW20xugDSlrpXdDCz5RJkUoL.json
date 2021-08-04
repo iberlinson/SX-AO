@@ -39,32 +39,6 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "JSON Output",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MD6BCBRO85A1P64EyWc2LmKf7kjEMc65e",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L",
-        "properties": {
-          "scope": "output",
-          "name": "Output_Table",
-          "type": "datatype.table",
-          "description": "Output Table with : \nIOC./ Event name and description\nObservable\nTarget endpoint",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MSGKO7WKQE66PMznkuMpHHvW1TwVC8A63",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
           "name": "Last event date",
           "type": "datatype.string",
           "description": "Last event date for next query",
@@ -86,6 +60,32 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MD6BCBRODK10SY3MYnohyROMyj7imut5V",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01MSG7VFGWF774GfITNtSB3tqXmmT8KcY2L",
+        "properties": {
+          "scope": "output",
+          "name": "Output_Table",
+          "type": "datatype.table",
+          "description": "Output Table with : \nIOC./ Event name and description\nObservable\nTarget endpoint",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MSGKO7WKQE66PMznkuMpHHvW1TwVC8A63",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "JSON Output",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MD6BCBRO85A1P64EyWc2LmKf7kjEMc65e",
         "object_type": "variable_workflow"
       }
     ],
@@ -632,7 +632,7 @@
                                 {
                                   "key": "IOC",
                                   "type": "string",
-                                  "value": "$activity.definition_activity_01MD6BNZXHC1E3jMalOjlcNbTz3l2hydEgo.input.source_array[@].date$ : $activity.definition_activity_01MSKQATQ4Z0X6XOaLToYZIHGnaadjLYAQ9.output.result_string$"
+                                  "value": "$activity.definition_activity_01MSKQATQ4Z0X6XOaLToYZIHGnaadjLYAQ9.output.result_string$"
                                 },
                                 {
                                   "key": "TARGET",
@@ -891,7 +891,7 @@
                                 {
                                   "key": "IOC",
                                   "type": "string",
-                                  "value": "$activity.definition_activity_01MMX37PVMYV72wgZzlwBRpOEf7JiE5X3Lp.input.source_array[@].date$ : $activity.definition_activity_01MSKS11J4E9G0yH8ZPzFymD3EWMHvRmhUN.output.result_string$"
+                                  "value": "$activity.definition_activity_01MSKS11J4E9G0yH8ZPzFymD3EWMHvRmhUN.output.result_string$"
                                 },
                                 {
                                   "key": "TARGET",
@@ -1145,7 +1145,7 @@
                                         {
                                           "key": "IOC",
                                           "type": "string",
-                                          "value": "$activity.definition_activity_01MMTF8DNQ9912M7Ns6ODFdRXiNiVR4XRmC.input.source_array[@].date$ : $activity.definition_activity_01MMTF8DNQ9912M7Ns6ODFdRXiNiVR4XRmC.input.source_array[@].event_type$"
+                                          "value": "$activity.definition_activity_01MMTF8DNQ9912M7Ns6ODFdRXiNiVR4XRmC.input.source_array[@].event_type$"
                                         },
                                         {
                                           "key": "TARGET",
@@ -1197,7 +1197,7 @@
                                         {
                                           "key": "IOC",
                                           "type": "string",
-                                          "value": "$activity.definition_activity_01MMTF8DNQ9912M7Ns6ODFdRXiNiVR4XRmC.input.source_array[@].date$ : $activity.definition_activity_01MMTF8DNQ9912M7Ns6ODFdRXiNiVR4XRmC.input.source_array[@].event_type$"
+                                          "value": "$activity.definition_activity_01MMTF8DNQ9912M7Ns6ODFdRXiNiVR4XRmC.input.source_array[@].event_type$"
                                         },
                                         {
                                           "key": "TARGET",
@@ -1252,11 +1252,6 @@
       "display_name": "IOC_TARGET_OBSERVABLE",
       "columns": [
         {
-          "name": "IOC",
-          "title": "IOC",
-          "type": "string"
-        },
-        {
           "name": "OBSERVABLE",
           "title": "OBSERVABLE",
           "type": "string"
@@ -1264,6 +1259,11 @@
         {
           "name": "TARGET",
           "title": "TARGET",
+          "type": "string"
+        },
+        {
+          "name": "IOC",
+          "title": "IOC",
           "type": "string"
         }
       ],
