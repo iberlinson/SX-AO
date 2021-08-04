@@ -23,20 +23,6 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Last event date",
-          "type": "datatype.string",
-          "description": "Last event date for next query",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MSN9ACGZYLG4W3LOwVlCWCDUB6gldCMCn",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
           "value": "0",
           "scope": "input",
           "name": "Date",
@@ -46,6 +32,20 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MSMNU3RI4M236VsTUtV4xNem2D16jKCGd",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Last event date",
+          "type": "datatype.string",
+          "description": "Last event date for next query",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MSN9ACGZYLG4W3LOwVlCWCDUB6gldCMCn",
         "object_type": "variable_workflow"
       },
       {
@@ -1252,11 +1252,6 @@
       "display_name": "IOC_TARGET_OBSERVABLE",
       "columns": [
         {
-          "name": "IOC",
-          "title": "IOC",
-          "type": "string"
-        },
-        {
           "name": "OBSERVABLE",
           "title": "OBSERVABLE",
           "type": "string"
@@ -1264,6 +1259,11 @@
         {
           "name": "TARGET",
           "title": "TARGET",
+          "type": "string"
+        },
+        {
+          "name": "IOC",
+          "title": "IOC",
           "type": "string"
         }
       ],

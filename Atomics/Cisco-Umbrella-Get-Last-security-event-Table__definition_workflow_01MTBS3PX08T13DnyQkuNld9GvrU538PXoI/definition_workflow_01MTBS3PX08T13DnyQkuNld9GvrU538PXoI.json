@@ -10,13 +10,13 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "output",
-          "name": "Last event date",
+          "scope": "local",
+          "name": "TEMP",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MTBS3PQ9I8P0zA91VRALrWQoKTpaBlL4p",
+        "unique_name": "variable_workflow_01MTBS3PQ9KLN5QzrH9JK1Pxu1U58zRjn7u",
         "object_type": "variable_workflow"
       },
       {
@@ -24,12 +24,12 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "json",
+          "name": "Last event date",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MTBS3PQ9FUM1spGYfViwCJwsgi1v5yEyg",
+        "unique_name": "variable_workflow_01MTBS3PQ9I8P0zA91VRALrWQoKTpaBlL4p",
         "object_type": "variable_workflow"
       },
       {
@@ -48,13 +48,13 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "local",
-          "name": "TEMP",
+          "scope": "output",
+          "name": "json",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MTBS3PQ9KLN5QzrH9JK1Pxu1U58zRjn7u",
+        "unique_name": "variable_workflow_01MTBS3PQ9FUM1spGYfViwCJwsgi1v5yEyg",
         "object_type": "variable_workflow"
       },
       {
@@ -543,6 +543,11 @@
       "display_name": "IOC_TARGET_OBSERVABLE",
       "columns": [
         {
+          "name": "OBSERVABLE",
+          "title": "OBSERVABLE",
+          "type": "string"
+        },
+        {
           "name": "TARGET",
           "title": "TARGET",
           "type": "string"
@@ -550,11 +555,6 @@
         {
           "name": "IOC",
           "title": "IOC",
-          "type": "string"
-        },
-        {
-          "name": "OBSERVABLE",
-          "title": "OBSERVABLE",
           "type": "string"
         }
       ],
