@@ -91,7 +91,7 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
 
 **This step is a pre-requirement to successful import the workflow in the next step!**
   ![Install___SXO_ImportAtomic](/Images/Install___SXO_ImportAtomic.jpg)
-2. Import the following from SX-AO/Atomics
+2. Import the following from Git **CiscoSecureX-UnifiedAlerting_AtomicActions**
   *	**Cisco-Secure-EP-Get-critical-cloud-IOC**
   *	**Webex - Simple adaptive card**
   *	**Create TheHive case** ( if you are not planing to integrate TheHive, just add a random value as Bearer Token )
@@ -107,17 +107,15 @@ Add GitHub Repo to your SXO instance to import the SXO Workflows.
   *	**Threat Response v2 - Generate Access Token**
   *	**Threat Response v2 - Create Casebook**
   *	**Threat Response v2 - Create Incident**
-  ![image](https://user-images.githubusercontent.com/41740851/111790249-4bb33200-88c2-11eb-981c-2ab6a4cc10b0.png)
-
+ 
 ## Import SXO Workflow from Github
-1. Go to Workflows and **IMPORT** the Workflows
+1. Go to Workflows and **IMPORT** the Workflows from Git **CiscoSecureX-UnifiedAlerting**
   * **RT-Monitoring-SecureEP-Umbrella-Notification-Incident**
   * **Hack-a-Thon-Admin-Remove-All-detection-stats**
-  ![image](https://user-images.githubusercontent.com/41740851/111790428-78674980-88c2-11eb-8ccc-e5ce3c1a116f.png)
 
-2. Update the missing informations, like 
-  * Webex Bots : fill your BOT bearer token - [click here to see how you can create a presistent Access Token](https://github.com/iberlinson/SX-AO/blob/main/WebexAccessToken.md)
-  * Umbrella Org ID : fill your umbreall org id or none if net use
+2. Update the missing informations
+  * **Webex Bots** : fill your **BOT bearer token** - [click here to see how you can create a presistent Access Token](https://github.com/iberlinson/SX-AO/blob/main/WebexAccessToken.md)
+  * **Umbrella Org ID** : fill your umbreall org id or none if net use
 
   
   
