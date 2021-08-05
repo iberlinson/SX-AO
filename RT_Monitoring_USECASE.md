@@ -31,7 +31,15 @@
 
 ![usecase___RT_Monitoring_Continuous_WKF](/Images/usecase___RT_Monitoring_Continuous_WKF.png)
 
+* **Main Workflow**
 
+ * Collect
+ 
+![usecase___RT_Monitoring_Collect](/Images/usecase___RT_Monitoring_Collect.png)
+
+![usecase___RT_Monitoring_Collect_WKF](/Images/usecase___RT_Monitoring_Collect_WKF.png)
+
+ 
 ### Prerequisites
 
 * Umbrella reporting API Key. [Documentation](https://docs.umbrella.com/umbrella-api/docs/reporting-api-authentication)
