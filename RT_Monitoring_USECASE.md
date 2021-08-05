@@ -29,7 +29,7 @@
 
 ![usecase___RT_Monitoring_Continuous](/Images/usecase___RT_Monitoring_Continuous.png)
 
-![usecase___RT_Monitoring_Continuous](/Images/usecase___RT_Monitoring_Continuous_WKF_.png)
+![usecase___RT_Monitoring_Continuous_WKF](/Images/usecase___RT_Monitoring_Continuous_WKF.png)
 
 
 ### Prerequisites
