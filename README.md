@@ -20,3 +20,7 @@ Repository for workflows and AtomicActions
 ### 2. 🔦 Hunt - Search User - Orbital
  * Search for a given user via Orbital (Account (Monitoring and Logged_In)
  * Notify in Cisco Webex about result
+ 
+### 3. 🧽 Cisco Secure EP - Remove unseen Endpoints
+ * Cisco Seucre Endpoint
+ * Remove from computer list unseen endpoint since a given number of days (default : 45 days)
