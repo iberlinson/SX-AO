@@ -30,6 +30,3 @@
 [Screenshot - Approval](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___EP_Removal_Approval.png)
 
 * **Use Case and Installation** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/SecureEP_Remove_InactiveEP_readme.md)
-
-
-SecureEP_Remove_InactiveEP_readme.md
