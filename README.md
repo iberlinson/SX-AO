@@ -18,8 +18,14 @@
 * **Installation** : Detailed installation instructions can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_INSTALL.md)
 
 ### 2. 🔦 Hunt - Search User - Orbital
- * Search for a given user via Orbital (Account (Monitoring and Logged_In)
+ * Search for a given user via :
+   * Orbital (Account (Monitoring and Logged_In)
+   * Secure Endpoint - User Activity (telemetry)*
  * Notify in Cisco Webex about result
+
+[Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Hunt_User_Webex.png)
+[Screenshot - Casebook](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Hunt_User_Casebook.png)
+ 
  
 ### 3. 🧽 Cisco Secure EP - Remove Inactive Endpoints
  * Cisco Seucre Endpoint
