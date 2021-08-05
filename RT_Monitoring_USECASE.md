@@ -25,6 +25,11 @@
 
 ![usecase___RT_Monitoring_DesignOverview](/Images/usecase___RT_Monitoring_DesignOverview.png)
 
+* Continuous Monitoing 
+
+![usecase___RT_Monitoring_Continuous](/Images/usecase___RT_Monitoring_Continuous.png)
+
+
 ### Prerequisites
 
 * Umbrella reporting API Key. [Documentation](https://docs.umbrella.com/umbrella-api/docs/reporting-api-authentication)
