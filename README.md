@@ -23,4 +23,7 @@
  
 ### 3. 🧽 Cisco Secure EP - Remove unseen Endpoints
  * Cisco Seucre Endpoint
- * Remove from computer list unseen endpoint since a given number of days (default : 45 days)
+ * Identify and Remove from computers list endpoints with a last seen over a given number of days (default : 45 days)
+ * Include 2 Tiers approval and Notification in Cisco Webex
+ 
+ 
