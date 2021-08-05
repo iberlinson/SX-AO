@@ -21,13 +21,15 @@
   * Near real time notification on new or updated incident (**no duplicate notification for same event occurring multiple times**)
   * Statistic tables
   
-* Design Overview
+* **Design Overview**
 
 ![usecase___RT_Monitoring_DesignOverview](/Images/usecase___RT_Monitoring_DesignOverview.png)
 
-* Continuous Monitoing 
+* **Continuous Run** 
 
 ![usecase___RT_Monitoring_Continuous](/Images/usecase___RT_Monitoring_Continuous.png)
+
+![usecase___RT_Monitoring_Continuous](/Images/usecase___RT_Monitoring_Continuous_WKF_.png)
 
 
 ### Prerequisites
