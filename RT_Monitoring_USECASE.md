@@ -11,15 +11,15 @@
 
 * Use SecureX Orchestration to assess, deduplicate and notify multiple alerts
 * Organizations need to get timely notification of an attack campaign within a common messaging platform, regardless of:
-* * the number of alerts
-* * from which product they originate
+  * the number of alerts
+  * from which product they originate
 
 * This objective is achieved through :
 
-* * Continuous monitoring of Umbrella and/or Secure EP Security events (loop)
-* * Near real time Incident creation and update (grouped by endpoint hostname, **no duplicate event**)
-* * Near real time notification on new or updated incident (**no duplicate notification for same event occurring multiple times**)
-* * Statistic tables
+  * Continuous monitoring of Umbrella and/or Secure EP Security events (loop)
+  * Near real time Incident creation and update (grouped by endpoint hostname, **no duplicate event**)
+  * Near real time notification on new or updated incident (**no duplicate notification for same event occurring multiple times**)
+  * Statistic tables
 
 ### Prerequisites
 
