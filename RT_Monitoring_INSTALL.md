@@ -92,6 +92,5 @@
   * **RT-Monitoring-Clear-detection-stats-table**
 
 ## Notes
-* Please test this properly before implementing in a production environment. This is a sample workflow!
-
+* Please test this properly before implementing in a production environment. 
   

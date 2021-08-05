@@ -44,7 +44,8 @@
 
 
 ### 5. Notes
-* Please test this properly before implementing in a production environment. This is a sample workflow!
+* Please test this properly before implementing in a production environment. 
 
-* **Author(s)**
+
+**Author(s)**
 Ivan Berlinson (Cisco)

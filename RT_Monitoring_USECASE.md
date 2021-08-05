@@ -79,7 +79,7 @@ Other messaging and Incident platforms have “stub” placeholder code for futu
 * Detailed installation instructions can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_INSTALL.md)
 
 ### Notes
-* Please test this properly before implementing in a production environment. This is a sample workflow!
+* Please test this properly before implementing in a production environment. 
 
 ### Authors
 Moritz Wenz, Phil Wood, Sven Kutzer, Ivan Berlinson (Cisco)
