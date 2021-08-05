@@ -1,11 +1,24 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_01PQR5C3JYUAU20O6OId88VDKYnGqkWh0E3",
-    "name": "Cisco Secure EP - Remove unseen Endpoints",
-    "title": "Cisco Secure EP - Remove unseen Endpoints",
+    "name": "🧽 Cisco Secure EP - Remove unseen Endpoints",
+    "title": "🧽 Cisco Secure EP - Remove unseen Endpoints",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": [
+      {
+        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+        "properties": {
+          "scope": "local",
+          "name": "AMP_GUID-to-delete",
+          "type": "datatype.table",
+          "description": "temp table - internal use",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01PQRGZ5OOYSQ6HzaQrfYsVRX5gyKxLRIxF",
+        "object_type": "variable_workflow"
+      },
       {
         "schema_id": "datatype.date",
         "properties": {
@@ -47,19 +60,6 @@
         },
         "unique_name": "variable_workflow_01PQS73WQ4B9L4OEMhg3bdaT4fZKQ1IaBoK",
         "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
-        "properties": {
-          "scope": "local",
-          "name": "AMP_GUID-to-delete",
-          "type": "datatype.table",
-          "description": "temp table - internal use",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01PQRGZ5OOYSQ6HzaQrfYsVRX5gyKxLRIxF",
-        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -68,7 +68,7 @@
       },
       "delete_workflow_instance": false,
       "description": "Cisco Seucre Endpoint : Remove from computer list unseen endpoint since a given number of days (default : 45 days)",
-      "display_name": "Cisco Secure EP - Remove unseen Endpoints",
+      "display_name": "🧽 Cisco Secure EP - Remove unseen Endpoints",
       "runtime_user": {
         "target_default": true
       },
