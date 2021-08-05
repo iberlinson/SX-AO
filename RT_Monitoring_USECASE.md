@@ -33,17 +33,33 @@
 
 * **Main Workflow**
 
-  * ***Collect*****
+  * **Collect**
  
 ![usecase___RT_Monitoring_Collect](/Images/usecase___RT_Monitoring_Collect.png)
 
 ![usecase___RT_Monitoring_Collect_WKF](/Images/usecase___RT_Monitoring_Collect_WKF.png)
 
-  * ***Incident - Notification - Statistics****
+  * **Incident - Notification - Statistics**
   
  ![usecase___RT_Monitoring_Incident_Notify_stats](/Images/usecase___RT_Monitoring_Incident_Notify_stats.png)
 
 ![usecase___RT_Monitoring_Incident_Notify_stats_WKF](/Images/usecase___RT_Monitoring_Incident_Notify_stats_WKF.png) 
+
+
+### Currently Supported Solutions and roadmap
+
+* Cisco Secure Endpoint (Event)
+* Cisco Umbrella (Event)
+* Cisco SecureX (Incident)
+* Cisco Webex (Notification)
+
+Other messaging and Incident platforms have “stub” placeholder code for future integration :
+* TheHive
+* ServiceNow
+* MS Teams
+
+![usecase___RT_Monitoring_placeholder](/Images/usecase___RT_Monitoring_placeholder.png) 
+
 ### Prerequisites
 
 * Umbrella reporting API Key. [Documentation](https://docs.umbrella.com/umbrella-api/docs/reporting-api-authentication)
