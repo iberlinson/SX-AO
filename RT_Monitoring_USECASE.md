@@ -20,6 +20,10 @@
   * Near real time Incident creation and update (grouped by endpoint hostname, **no duplicate event**)
   * Near real time notification on new or updated incident (**no duplicate notification for same event occurring multiple times**)
   * Statistic tables
+  
+* Design Overview
+
+![usecase___RT_Monitoring_DesignOverview](/Images/usecase___RT_Monitoring_DesignOverview.png)
 
 ### Prerequisites
 
