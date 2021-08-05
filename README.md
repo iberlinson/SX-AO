@@ -1,15 +1,15 @@
 # SX-AO
 
-Repository for workflows and AtomicActions
+* Repository for workflows and Atomic Actions
 
-* Detailed instructions to add iberlinson/SX-A0 repositories to you Securex Instance can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/repositories.md)
+  * Detailed instructions to add iberlinson/SX-A0 repositories to you Securex Instance can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/repositories.md)
 
 ### 1. 🛎 RT-Monitoring-SecureEP-Umbrella-Notification-Incident
 
-* Continuous monitoring of Umbrella and/or Secure EP Security events (loop)
-* Near real time Incident creation and update (grouped by endpoint hostname, **no duplicate event**)
-* Near real time notification on new or updated incident (**no duplicate notification for same event occurring multiple times**)
-* Statistic tables
+  * Continuous monitoring of Umbrella and/or Secure EP Security events (loop)
+  * Near real time Incident creation and update (grouped by endpoint hostname, **no duplicate event**)
+  * Near real time notification on new or updated incident (**no duplicate notification for same event occurring multiple times**)
+  * Statistic tables
 
 * [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___RT_Webex.png)
 * [Screenshot - Incident](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___RT_Incident.png)
