@@ -21,7 +21,7 @@
  * Search for a given user via Orbital (Account (Monitoring and Logged_In)
  * Notify in Cisco Webex about result
  
-### 3. 🧽 Cisco Secure EP - Remove unseen Endpoints
+### 3. 🧽 Cisco Secure EP - Remove Inactive Endpoints
  * Cisco Seucre Endpoint
  * Identify and Remove from computers list endpoints with a last seen over a given number of days (default : 45 days)
  * Include 2 Tiers approval and Notification in Cisco Webex
@@ -29,3 +29,7 @@
 [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___EP_Removal_Webex.png)
 [Screenshot - Approval](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___EP_Removal_Approval.png)
 
+* **Use Case and Installation** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/SecureEP_Remove_InactiveEP_readme.md)
+
+
+SecureEP_Remove_InactiveEP_readme.md
