@@ -26,6 +26,7 @@
 [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Hunt_User_Webex.png)
 [Screenshot - Casebook](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Hunt_User_Casebook.png)
  
+ * **Use Case and Installation** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/SHunt_User_readme.md)
  
 ### 3. 🧽 Cisco Secure EP - Remove Inactive Endpoints
  * Cisco Seucre Endpoint
