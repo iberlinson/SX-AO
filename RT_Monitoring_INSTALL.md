@@ -91,5 +91,7 @@
 3. Import the Workflow from Git **CiscoSecureX-UnifiedAlerting**
   * **RT-Monitoring-Clear-detection-stats-table**
 
-  
+## Notes
+* Please test this properly before implementing in a production environment. This is a sample workflow!
+
   
