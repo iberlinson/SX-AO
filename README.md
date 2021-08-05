@@ -15,7 +15,7 @@ Repository for workflows and AtomicActions
 * [Screenshot - Incident](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___RT_Incident.png)
 
 #### Installation
-* Detailed installation instructions can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/INSTALL.md)
+* Detailed installation instructions can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_INSTALL.md)
 
 ### 2. 🔦 Hunt - Search User - Orbital
  * Search for a given user via Orbital (Account (Monitoring and Logged_In)
