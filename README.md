@@ -14,8 +14,8 @@
 [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___RT_Webex.png)
 [Screenshot - Incident](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___RT_Incident.png)
 
-**Use Case** : Detailed informations about the Use Case can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_USECASE.md)
-**Installation** : Detailed installation instructions can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_INSTALL.md)
+* ***Use Case** : Detailed informations about the Use Case can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_USECASE.md)
+* ***Installation** : Detailed installation instructions can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_INSTALL.md)
 
 ### 2. 🔦 Hunt - Search User - Orbital
  * Search for a given user via Orbital (Account (Monitoring and Logged_In)
