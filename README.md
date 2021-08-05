@@ -26,4 +26,6 @@
  * Identify and Remove from computers list endpoints with a last seen over a given number of days (default : 45 days)
  * Include 2 Tiers approval and Notification in Cisco Webex
  
- 
+[Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___EP_Removal_Webex.png)
+[Screenshot - Approval](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___EP_Removal_Approval.png)
+
