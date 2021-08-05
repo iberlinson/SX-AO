@@ -24,6 +24,9 @@
 ![readme___RT_Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___RT_Webex.png)
 
 ![readme___RT_Incident](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___RT_Incident.png)
+
+![readme___RT_Stat](https://github.com/iberlinson/SX-AO/blob/main/Images/usecase___RT_Monitoring_StatsTable.png)
+
   
 * **Design Overview**
 
