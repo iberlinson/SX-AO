@@ -7,6 +7,45 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+        "properties": {
+          "scope": "local",
+          "name": "hostname-table",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MHBMAWYF9VG4S0kfpUXOor4NJqoF1qgK5",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Webex Bot Token",
+          "type": "datatype.secure_string",
+          "description": "Webex Bot Token from Global Variable (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QE5BHNVKGB95mn4umFigNfvBFEKYUH34x",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "Alerting2",
@@ -31,45 +70,6 @@
         },
         "unique_name": "variable_workflow_01MAOSADRIJR73T7fkW7YDHcirtIGHNIFsi",
         "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.secure_string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Webex Bot Token",
-          "type": "datatype.secure_string",
-          "description": "Webex Bot Token from Global Variable (internal use)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01QE5BHNVKGB95mn4umFigNfvBFEKYUH34x",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
-        "properties": {
-          "scope": "local",
-          "name": "hostname-table",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MHBMAWYF9VG4S0kfpUXOor4NJqoF1qgK5",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "observable_value",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO",
-        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -88,7 +88,8 @@
           "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
           "run_on_all_targets": false,
           "selected_target_types": [
-            "web-service.endpoint"
+            "web-service.endpoint",
+            "email.smtp_endpoint"
           ],
           "use_criteria": {
             "choose_target_using_algorithm": "choose_first_with_matching_criteria",
@@ -154,17 +155,18 @@
           {
             "unique_name": "definition_activity_01QE5AGNAXB7L3bwg4wCI9j7LJ7RgGUTiYG",
             "name": "Set Variables",
-            "title": "get Webex Bot Token",
+            "title": "Set Webex Bot Token",
             "type": "core.set_multiple_variables",
             "base_type": "activity",
             "properties": {
               "continue_on_failure": false,
-              "display_name": "get Webex Bot Token",
-              "skip_execution": false,
+              "description": "Enable to use global variable",
+              "display_name": "Set Webex Bot Token",
+              "skip_execution": true,
               "variables_to_update": [
                 {
                   "variable_to_update": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01QE5BHNVKGB95mn4umFigNfvBFEKYUH34x$",
-                  "variable_value_new": "$global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8.global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8$"
+                  "variable_value_new": ""
                 }
               ]
             },
@@ -227,25 +229,25 @@
           {
             "unique_name": "definition_activity_01MBGW9MQXE065NRy9foOgrPki1ItHDmU5S",
             "name": "Parallel Branch",
-            "title": "Orbital - Account Monitoring",
+            "title": "Orbital - Users Account Monitoring",
             "type": "logic.parallel_block",
             "base_type": "activity",
             "properties": {
               "continue_on_failure": true,
-              "display_name": "Orbital - Account Monitoring",
+              "display_name": "Orbital - Users Account Monitoring",
               "skip_execution": false
             },
             "object_type": "definition_activity",
             "actions": [
               {
                 "unique_name": "definition_activity_01MAP35RYJE5O6xJwNvcHFcDe0NZrH2s54Q",
-                "name": "Orbital - Query All Endpoints",
-                "title": "Orbital - Query All Endpoints",
+                "name": "Orbital - Query Users Table",
+                "title": "Orbital - Query Users Table",
                 "type": "workflow.atomic_workflow",
                 "base_type": "subworkflow",
                 "properties": {
                   "continue_on_failure": true,
-                  "display_name": "Orbital - Query All Endpoints",
+                  "display_name": "Orbital - Query Users Table",
                   "input": {
                     "variable_workflow_01JGM8XOCL3992k7Wt6FuiBlIzEIMI6V8y5": "",
                     "variable_workflow_01JGM8XOCL8NJ2QcI1lUMksO4uAjPZAoglR": "SX-User Search",
@@ -268,13 +270,13 @@
               {
                 "unique_name": "definition_activity_01MBDOB4Q3KJ30RXFC2bEpwMugJ9Bgg75qe",
                 "name": "Read Table from JSON",
-                "title": "Get Hostname",
+                "title": "Get Hostname(s)",
                 "type": "corejava.read_table_from_json",
                 "base_type": "activity",
                 "properties": {
                   "action_timeout": 180,
                   "continue_on_failure": false,
-                  "display_name": "Get Hostname",
+                  "display_name": "Get Hostname(s)",
                   "input_json": "$activity.definition_activity_01MAP35RYJE5O6xJwNvcHFcDe0NZrH2s54Q.output.variable_workflow_01JGM8XOCLJR95aRiy0KBGi0AdBneH5tZ9g$",
                   "jsonpath_query": "$.[*].hostinfo",
                   "persist_output": false,
@@ -292,12 +294,12 @@
               {
                 "unique_name": "definition_activity_01QETSU3RL7M37cpJI9SdTH4uYHl9llXWdC",
                 "name": "Condition Block",
-                "title": "Condition Block",
+                "title": "Is there hostname(s) ?",
                 "type": "logic.if_else",
                 "base_type": "activity",
                 "properties": {
                   "continue_on_failure": false,
-                  "display_name": "Condition Block",
+                  "display_name": "Is there hostname(s) ?",
                   "skip_execution": false
                 },
                 "object_type": "definition_activity",
@@ -305,7 +307,7 @@
                   {
                     "unique_name": "definition_activity_01QETSU7G99NW2D9Mql1QcYVwGADdswpQM6",
                     "name": "Condition Branch",
-                    "title": "Condition Branch",
+                    "title": "Yes",
                     "type": "logic.condition_block",
                     "base_type": "activity",
                     "properties": {
@@ -315,7 +317,7 @@
                         "right_operand": 0
                       },
                       "continue_on_failure": false,
-                      "display_name": "Condition Branch",
+                      "display_name": "Yes",
                       "skip_execution": false
                     },
                     "object_type": "definition_activity",
@@ -337,13 +339,13 @@
                           {
                             "unique_name": "definition_activity_01MCEXAP7AK084hWFUzcx6XJagmMXMJKEwp",
                             "name": "Add Row to Table",
-                            "title": "Add Row to Table",
+                            "title": "Add Row to Table Hostname",
                             "type": "core.addrowtotable",
                             "base_type": "activity",
                             "properties": {
                               "action_timeout": 180,
                               "continue_on_failure": false,
-                              "display_name": "Add Row to Table",
+                              "display_name": "Add Row to Table Hostname",
                               "input_table": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01MHBMAWYF9VG4S0kfpUXOor4NJqoF1qgK5$",
                               "row": [
                                 {
@@ -372,25 +374,25 @@
           {
             "unique_name": "definition_activity_01MBGW9NF9GUL4de731uSfgFgqTYDIreHRN",
             "name": "Parallel Branch",
-            "title": "Orbital Logged In Users",
+            "title": "Orbital - Logged In Users",
             "type": "logic.parallel_block",
             "base_type": "activity",
             "properties": {
               "continue_on_failure": true,
-              "display_name": "Orbital Logged In Users",
+              "display_name": "Orbital - Logged In Users",
               "skip_execution": false
             },
             "object_type": "definition_activity",
             "actions": [
               {
                 "unique_name": "definition_activity_01MBGWGE24WP70eSojKlTdsUUk7o5dZp40Q",
-                "name": "Orbital - Query All Endpoints Logged_in",
-                "title": "Orbital - Query All Endpoints Logged_in",
+                "name": "Orbital - Query Logged_in -users Table",
+                "title": "Orbital - Query Logged_in -users Table",
                 "type": "workflow.atomic_workflow",
                 "base_type": "subworkflow",
                 "properties": {
                   "continue_on_failure": true,
-                  "display_name": "Orbital - Query All Endpoints Logged_in",
+                  "display_name": "Orbital - Query Logged_in -users Table",
                   "input": {
                     "variable_workflow_01JGM8XOCL3992k7Wt6FuiBlIzEIMI6V8y5": "",
                     "variable_workflow_01JGM8XOCL8NJ2QcI1lUMksO4uAjPZAoglR": "SX-User Search",
@@ -437,12 +439,12 @@
               {
                 "unique_name": "definition_activity_01QETT75MUZFW1XTPr67q9xPcXetRkaU8Xl",
                 "name": "Condition Block",
-                "title": "Condition Block",
+                "title": "Is there hostname(s) ?",
                 "type": "logic.if_else",
                 "base_type": "activity",
                 "properties": {
                   "continue_on_failure": false,
-                  "display_name": "Condition Block",
+                  "display_name": "Is there hostname(s) ?",
                   "skip_execution": false
                 },
                 "object_type": "definition_activity",
@@ -450,7 +452,7 @@
                   {
                     "unique_name": "definition_activity_01QETT797TQ2D2FZPw9M2IxvHc3v0xco8S0",
                     "name": "Condition Branch",
-                    "title": "Condition Branch",
+                    "title": "Yes",
                     "type": "logic.condition_block",
                     "base_type": "activity",
                     "properties": {
@@ -460,7 +462,7 @@
                         "right_operand": 0
                       },
                       "continue_on_failure": false,
-                      "display_name": "Condition Branch",
+                      "display_name": "Yes",
                       "skip_execution": false
                     },
                     "object_type": "definition_activity",
@@ -482,13 +484,13 @@
                           {
                             "unique_name": "definition_activity_01QETT7E6384Z6Ao75oJHmhMaCEXDy1965e",
                             "name": "Add Row to Table",
-                            "title": "Add Row to Table",
+                            "title": "Add Row to Table Hostname",
                             "type": "core.addrowtotable",
                             "base_type": "activity",
                             "properties": {
                               "action_timeout": 180,
                               "continue_on_failure": false,
-                              "display_name": "Add Row to Table",
+                              "display_name": "Add Row to Table Hostname",
                               "input_table": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01MHBMAWYF9VG4S0kfpUXOor4NJqoF1qgK5$",
                               "row": [
                                 {
@@ -517,12 +519,12 @@
           {
             "unique_name": "definition_activity_01QETD9GMUFRE2U4UcO2H8haIdpRbsfTrPr",
             "name": "Parallel Branch",
-            "title": "Secure EP - User Activity",
+            "title": "Secure EP - User Activity (Telemetry)",
             "type": "logic.parallel_block",
             "base_type": "activity",
             "properties": {
               "continue_on_failure": true,
-              "display_name": "Secure EP - User Activity",
+              "display_name": "Secure EP - User Activity (Telemetry)",
               "skip_execution": false
             },
             "object_type": "definition_activity",
@@ -530,7 +532,7 @@
               {
                 "unique_name": "definition_activity_01QETDWI90IO30bZp6HOP9tsTMw9Fmz7MhG",
                 "name": "HTTP Request",
-                "title": "HTTP Request",
+                "title": "Query EP User_Activity",
                 "type": "web-service.http_request",
                 "base_type": "activity",
                 "properties": {
@@ -538,7 +540,7 @@
                   "allow_auto_redirect": true,
                   "continue_on_error_status_code": false,
                   "continue_on_failure": false,
-                  "display_name": "HTTP Request",
+                  "display_name": "Query EP User_Activity",
                   "method": "GET",
                   "relative_url": "/computers/user_activity?q=$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$",
                   "runtime_user": {
@@ -590,12 +592,12 @@
               {
                 "unique_name": "definition_activity_01QETTPQBPF5T5SXvbfUEdCV8U95aUXciBy",
                 "name": "Condition Block",
-                "title": "Condition Block",
+                "title": "Is there hostname(s) ?",
                 "type": "logic.if_else",
                 "base_type": "activity",
                 "properties": {
                   "continue_on_failure": false,
-                  "display_name": "Condition Block",
+                  "display_name": "Is there hostname(s) ?",
                   "skip_execution": false
                 },
                 "object_type": "definition_activity",
@@ -603,7 +605,7 @@
                   {
                     "unique_name": "definition_activity_01QETTPTVJWZ84fit5IvQnpmBT2o8a7s8Wj",
                     "name": "Condition Branch",
-                    "title": "Condition Branch",
+                    "title": "Yes",
                     "type": "logic.condition_block",
                     "base_type": "activity",
                     "properties": {
@@ -613,7 +615,7 @@
                         "right_operand": 0
                       },
                       "continue_on_failure": false,
-                      "display_name": "Condition Branch",
+                      "display_name": "Yes",
                       "skip_execution": false
                     },
                     "object_type": "definition_activity",
@@ -635,13 +637,13 @@
                           {
                             "unique_name": "definition_activity_01QETTPYK81576NSWMX0CYKZJlLDnWMXqBf",
                             "name": "Add Row to Table",
-                            "title": "Add Row to Table",
+                            "title": "Add Row to Table Hostname",
                             "type": "core.addrowtotable",
                             "base_type": "activity",
                             "properties": {
                               "action_timeout": 180,
                               "continue_on_failure": false,
-                              "display_name": "Add Row to Table",
+                              "display_name": "Add Row to Table Hostname",
                               "input_table": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01MHBMAWYF9VG4S0kfpUXOor4NJqoF1qgK5$",
                               "row": [
                                 {
@@ -685,7 +687,7 @@
           {
             "unique_name": "definition_activity_01QETUPCOY4J93KpNlaw2ZbJ2AyHpU3CswR",
             "name": "Select from Table",
-            "title": "Select from Table Hostname",
+            "title": "Select All from Table Hostname",
             "type": "core.selectfromtable",
             "base_type": "activity",
             "properties": {
@@ -701,7 +703,7 @@
                 }
               ],
               "continue_on_failure": false,
-              "display_name": "Select from Table Hostname",
+              "display_name": "Select All from Table Hostname",
               "input_table": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01MHBMAWYF9VG4S0kfpUXOor4NJqoF1qgK5$",
               "number_of_rows": {
                 "all_rows": true
@@ -750,12 +752,12 @@
               {
                 "unique_name": "definition_activity_01QEUC7GJNVBS31j1zPlBa6Bh8bBpXPUWnq",
                 "name": "Group",
-                "title": "Casebook and Notification",
+                "title": "Create Casebook",
                 "type": "logic.group",
                 "base_type": "activity",
                 "properties": {
                   "continue_on_failure": false,
-                  "display_name": "Casebook and Notification",
+                  "display_name": "Create Casebook",
                   "skip_execution": false
                 },
                 "object_type": "definition_activity",
@@ -833,7 +835,22 @@
                       "workflow_id": "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O"
                     },
                     "object_type": "definition_activity"
-                  },
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01QEWIGQIWS6074carHrX2Y9bW2J3FiVI7N",
+                "name": "Group",
+                "title": "Notify \"User Found\"",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Notify \"User Found\"",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
                   {
                     "unique_name": "definition_activity_01MXH5N4NBF9A2JFA72QMOXZJ9C0vAwwUDt",
                     "name": "Webex - Simple adaptive card",
@@ -876,6 +893,42 @@
                       "workflow_id": "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q"
                     },
                     "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01QEWKCY00SM06fqfNYM53yldjTMnD6XWhB",
+                    "name": "Send Email",
+                    "title": "Send Email",
+                    "type": "email.smtp_send_email",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "body": "Threat Huning : User $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$ound\nThis user exists on $activity.definition_activity_01MBDOB4Q3KJ30RXFC2bEpwMugJ9Bgg75qe.output.row_count$ Endpoints (Orbital).\nThere is evidence of user activity on  $activity.definition_activity_01QETG4APIP6G6Q3BnZY6qr0SVz5zVZ7wC5.output.row_count$ endpoint (Cisco Secure EP telemetry)\nThis user is currently logged in $activity.definition_activity_01MBGY31OGK3I2vu0PwDjfvhrxFF6xxA95V.output.row_count$ endpoint\nA casebook has been created with hostname in securex\n",
+                      "continue_if_one_address_valid": false,
+                      "continue_on_failure": false,
+                      "display_name": "Send Email",
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": true,
+                      "subject": "Securex - User Hunt Results",
+                      "target": {
+                        "override_workflow_target_group_criteria": true,
+                        "target_group": {
+                          "use_criteria": {
+                            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                            "conditions": [
+                              {
+                                "left_operand": "$targetgroup.email smtp_endpoint.input.display_name$",
+                                "operator": "eqi",
+                                "right_operand": "Email Endpoint"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "to": "TBC"
+                    },
+                    "object_type": "definition_activity"
                   }
                 ]
               }
@@ -902,12 +955,12 @@
               {
                 "unique_name": "definition_activity_01QEUCKWMPP355aLy2jzJPJk4y2jJbHQc5R",
                 "name": "Group",
-                "title": "Notification",
+                "title": "Notify \"User Not Found\"",
                 "type": "logic.group",
                 "base_type": "activity",
                 "properties": {
                   "continue_on_failure": false,
-                  "display_name": "Notification",
+                  "display_name": "Notify \"User Not Found\"",
                   "skip_execution": false
                 },
                 "object_type": "definition_activity",
@@ -1010,21 +1063,6 @@
       "object_type": "target_group"
     }
   },
-  "variables": {
-    "variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8": {
-      "unique_name": "variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8",
-      "properties": {
-        "value": "*****",
-        "scope": "global",
-        "name": "Cisco Teams BOT Token",
-        "type": "datatype.secure_string",
-        "description": "Enter here your Teams Bot token (https://developer.webex.com/docs/bots)- Remember to create a room named Alerting in Teams and add your bot as member",
-        "is_required": false,
-        "is_invisible": false
-      },
-      "object_type": "variable"
-    }
-  },
   "table_types": {
     "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6": {
       "unique_name": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
@@ -1051,9 +1089,9 @@
   },
   "atomic_workflows": [
     "definition_workflow_01JGM8XOOZ5J64EWGHln955eAJFIOwmjbZr",
-    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
     "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q",
-    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
-    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss"
+    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
+    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU"
   ]
 }
