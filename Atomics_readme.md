@@ -36,6 +36,13 @@
       * Observable Type and value
       * SCD GUID
       * Description
+      
+* **Secure-EP-Remove-Hash-from-SCD** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Secure-EP-Remove-Hash-from-SCD__definition_workflow_01QFK9PNLF68U52dXXQCoOWmKvubDKLvCay)
+  * Remove a hash from a simple custom detection list
+    * Input :
+      * Observable Type and value
+      * SCD GUID
+      
     
 ### SecureX Threat Response
 * **CTR-Get Incident Details**[Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/CTR-Get-Incident-Details__definition_workflow_01MUZKOII7TH77AMxE0a7QyA5SPUR670m5z)
