@@ -71,8 +71,19 @@
       * Disposition Name and Number
       * Reasons
       + Expiration delay in days
-      
-### Cisco Webex
+    
+          
+### Cisco Secure Malware Analytics (Threat Grid) 
+* **Cisco-Malware-Analytics-TG-Collect-Feed** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Cisco-Malware-Analytics-TG-Collect-Feed__definition_workflow_01QFLDMMVX5L61VvlcUzlpg7Jp7vBMaDeFU)
+  * Collect Curated Hourly Feeds from Threat Grid Cloud 
+    * Input : 
+      * Feed Name and Format
+      * Output Table Enable : True/False
+    * Output : 
+      * Raw feed in selected format
+      * Table with parsed data if enable and format JSON
+
+### tCisco Webex
 * **Webex-Teams-Send-Simple-Adaptive-Card** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Webex-Teams-Send-Simple-Adaptive-Card__definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q) *     
   * **Deprecated version - incorrect field label** - maintain for compatibility with existing workflow*
   * Send a pre-formated adaptive Card in Cisco Webex
