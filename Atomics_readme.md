@@ -36,6 +36,14 @@
       * New value
       * Incident ID 
       
+* **SX-TR-Post-Judgement-to-private-Intelligence** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/SX-TR-Post-Judgement-to-private-Intelligence__definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI)
+  * Post a judgement about an observable in your SecureX Private Intelligence
+    Input :
+      * Observable Type and Value
+      * Disposition Name and Number
+      * Reasons
+      + Expiration delay in days
+      
 ### Cisco Webex
 * **Webex-Teams-Send-Simple-Adaptive-Card** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Webex-Teams-Send-Simple-Adaptive-Card__definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q) *     
   * **Deprecated version - incorrect field label** - maintain for compatibility with existing workflow*
