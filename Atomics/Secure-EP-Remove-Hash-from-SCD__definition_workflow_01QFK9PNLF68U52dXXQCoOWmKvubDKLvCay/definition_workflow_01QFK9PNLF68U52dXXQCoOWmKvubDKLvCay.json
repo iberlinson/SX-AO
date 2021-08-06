@@ -1,0 +1,113 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01QFK9PNLF68U52dXXQCoOWmKvubDKLvCay",
+    "name": "Secure EP - Remove Hash from SCD",
+    "title": "Secure EP - Remove Hash from SCD",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFK9PNDIFGU0YEvTbZFMQzhXzOTs2XOUU",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "SCD_GUID",
+          "type": "datatype.string",
+          "description": "SCD GUID",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFK9PNDII4V0ISUt9b6RVw7LLPTuPRLQN",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFK9PNDIAIW2R6kPkz5I2yO9OfGEAd16j",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco AMP for Endpoints",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "Remove  a hash from a Simple Custom Detections \n\nInput : Observable type and value, SCD GUID\n",
+      "display_name": "Secure EP - Remove Hash from SCD",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01QFK9PXDFJJF01vmt2rMYslllcD86BSvEf",
+        "name": "Group",
+        "title": "Add to SCD list",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Add to SCD list",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01QFK9Q2RLMF41XYuS2J4ZYTZaikUd1l4os",
+            "name": "HTTP Request",
+            "title": "HTTP Request",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "HTTP Request",
+              "method": "DELETE",
+              "relative_url": "/file_lists/$workflow.definition_workflow_01QFK9PNLF68U52dXXQCoOWmKvubDKLvCay.input.variable_workflow_01QFK9PNDII4V0ISUt9b6RVw7LLPTuPRLQN$/files/$workflow.definition_workflow_01QFK9PNLF68U52dXXQCoOWmKvubDKLvCay.input.variable_workflow_01QFK9PNDIFGU0YEvTbZFMQzhXzOTs2XOUU$",
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "use_workflow_target": true
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
