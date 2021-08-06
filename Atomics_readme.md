@@ -61,6 +61,17 @@
       * Room ID and Webex Token
   
       
+### Cisco Secure Email
+* **Cisco-Secure-Email-Get-Verdict-Update** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Cisco-Secure-Email-Get-Verdict-Update__definition_workflow_01NEP2RIWPFTT3wu6BIzDenNp97Polj1s1X)
+  * Query Cisco Secure Email (ESA/CES) for the last X hour(s) AMP File Verdict Update
+    * Input :
+      * Delay (in hour, min 1)
+      * Secure Email JWT Token
+      * Output Table enable : True/False
+    * Output :
+      * Full Json output
+      * Table with hash if enable
+
 ### TheHive (http://thehive-project.org/)
 * **Create Incident** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Create-TheHive-Case__definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck)
   * Create an incident in TheHive
