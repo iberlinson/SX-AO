@@ -6,7 +6,7 @@
   * Detailed instructions to add iberlinson/SX-A0 repositories to you Securex Instance can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/repositories.md)
   * How to import a workflow : [HERE](https://ciscosecurity.github.io/sxo-05-security-workflows/importing)
   * SecureX Orchestration Documentation : [HERE](https://ciscosecurity.github.io/sxo-05-security-workflows/)
-  * Atomics Readme [Here](https://github.com/iberlinson/SX-AO/blob/main/Atomics_readme.md)
+  * **Atomics Readme** [Here](https://github.com/iberlinson/SX-AO/blob/main/Atomics_readme.md)
   
 ### 1. 🛎 RT-Monitoring-SecureEP-Umbrella-Notification-Incident
 
