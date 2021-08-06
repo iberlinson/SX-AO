@@ -1,0 +1,458 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01NEP2RIWPFTT3wu6BIzDenNp97Polj1s1X",
+    "name": "Cisco Secure Email - Get Verdict Update",
+    "title": "Cisco Secure Email - Get Verdict Update",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "JSON_Output",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NEP2RIP8HW10pUUftK195E2aNVDZjALv1",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "Output table Enable",
+          "type": "datatype.boolean",
+          "description": "Produce an output table with hash in addition of the json output if true",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFGAXT4K2FT1evyU7NvFlx9XObqZvPfvw",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Current Date",
+          "type": "datatype.string",
+          "description": "internal use",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NEP2RIP8NYA27hgOzWokh4mONNproW9Cy",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Past_Date",
+          "type": "datatype.string",
+          "description": "internal use",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NEP2RIP8CGG5mLgppiYtCdhkFsSEmTb4g",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 1,
+          "scope": "input",
+          "name": "delay_in_hour",
+          "type": "datatype.integer",
+          "description": "min 1 ",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NEP2RIP8JBA5WqSxX3IJcSIxBiV7WCBPH",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+        "properties": {
+          "scope": "output",
+          "name": "Output_Table",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NEP2RIP8MTN3vn1NwQg1YHsA2C5TkwtpU",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Cisco Secure Email Token",
+          "type": "datatype.secure_string",
+          "description": "JWT",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NEP2RIP8KKC6bkNaSzBNYwbgdYMtzOJNM",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco Secure Email",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "Get last X hour(s) verdict update from Cisco Secure Email \nInput : delay, Table output true/false\nOutput :  json + Table with hash if set to true\n",
+      "display_name": "Cisco Secure Email - Get Verdict Update",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01QFG88L2QRGF6HzRvo2aFGx6lPUm8hxLVm",
+        "name": "Group",
+        "title": "Calculate dates",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Calculate dates",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01QFG8HU22WDJ0QXL438xdJYFBzxZ0sKKm3",
+            "name": "Parallel Block",
+            "title": "Parallel Block",
+            "type": "logic.parallel",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01QFG8I0J775N27M1Z4EPmAkOJN3nmeAR2b",
+                "name": "Parallel Branch",
+                "title": "Past Date",
+                "type": "logic.parallel_block",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Past Date",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NEP2UM65GQX4GjuRCzUp9g1pcJHTH5Zqq",
+                    "name": "Execute Python Script",
+                    "title": "Calculate Past date from delay",
+                    "type": "python3.script",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Calculate Past date from delay",
+                      "script": "from datetime import datetime, timedelta\nimport sys\n\nif sys.version_info[0] \u003c 3 or sys.version_info[1] \u003c 4:\n    # python version \u003c 3.3\n    import time\n    def timestamp(date):\n        return time.mktime(date.timetuple())\nelse:\n    def timestamp(date):\n        return date.timestamp()\n\ndelay = int(sys.argv[1])\ndate1 = datetime.now() - timedelta(hours=delay)\ndate1 = date1.strftime(\"%Y-%m-%dT%H\")\nprint(date1)",
+                      "script_arguments": [
+                        "$workflow.definition_workflow_01NEP2RIWPFTT3wu6BIzDenNp97Polj1s1X.input.variable_workflow_01NEP2RIP8JBA5WqSxX3IJcSIxBiV7WCBPH$"
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01NEP2VRUD5IH1G6hnrrOdqzIlXM1gE59A5",
+                    "name": "Set Variables",
+                    "title": "Store Variable Past date",
+                    "type": "core.set_multiple_variables",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Store Variable Past date",
+                      "skip_execution": false,
+                      "variables_to_update": [
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_01NEP2RIWPFTT3wu6BIzDenNp97Polj1s1X.local.variable_workflow_01NEP2RIP8CGG5mLgppiYtCdhkFsSEmTb4g$",
+                          "variable_value_new": "$activity.definition_activity_01NEP2UM65GQX4GjuRCzUp9g1pcJHTH5Zqq.output.response_body$"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01QFG8I19G7NY17hMB8kuBKI80acyrZSmp2",
+                "name": "Parallel Branch",
+                "title": "Current date",
+                "type": "logic.parallel_block",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Current date",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NEP2WJWGPVV689XNwODprNyPZPaoXBuK8",
+                    "name": "Execute Python Script",
+                    "title": "Calculate current date",
+                    "type": "python3.script",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Calculate current date",
+                      "script": "from datetime import datetime, timedelta\nimport sys\n\nif sys.version_info[0] \u003c 3 or sys.version_info[1] \u003c 4:\n    # python version \u003c 3.3\n    import time\n    def timestamp(date):\n        return time.mktime(date.timetuple())\nelse:\n    def timestamp(date):\n        return date.timestamp()\n\ndate = datetime.now()\ndate = date.strftime(\"%Y-%m-%dT%H\")\nprint(date)\n",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01NEP2WYPXSRT5bpdygV9jGjH6hxGSVCvyL",
+                    "name": "Set Variables",
+                    "title": "Store Variables current date",
+                    "type": "core.set_multiple_variables",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Store Variables current date",
+                      "skip_execution": false,
+                      "variables_to_update": [
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_01NEP2RIWPFTT3wu6BIzDenNp97Polj1s1X.local.variable_workflow_01NEP2RIP8NYA27hgOzWokh4mONNproW9Cy$",
+                          "variable_value_new": "$activity.definition_activity_01NEP2WJWGPVV689XNwODprNyPZPaoXBuK8.output.response_body$"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01QFG8YVC4R7T03diOOsT7XLo80Fq2B4nkt",
+        "name": "Group",
+        "title": "Get Verdict Update from Cisco Secure Email",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Verdict Update from Cisco Secure Email",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01NEP31D6KO5Y3CObQ78sY1zEx1v6SFiXN5",
+            "name": "HTTP Request",
+            "title": "HTTP Request - Query for Verdict Update",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "custom_headers": [
+                {
+                  "name": "Authorization",
+                  "value": "Basic $workflow.definition_workflow_01NEP2RIWPFTT3wu6BIzDenNp97Polj1s1X.input.variable_workflow_01NEP2RIP8KKC6bkNaSzBNYwbgdYMtzOJNM$"
+                }
+              ],
+              "display_name": "HTTP Request - Query for Verdict Update",
+              "method": "GET",
+              "relative_url": "reporting/mail_amp_reputation_update?startDate=$workflow.definition_workflow_01NEP2RIWPFTT3wu6BIzDenNp97Polj1s1X.local.variable_workflow_01NEP2RIP8CGG5mLgppiYtCdhkFsSEmTb4g$%3A00%3A00.000Z\u0026endDate=$workflow.definition_workflow_01NEP2RIWPFTT3wu6BIzDenNp97Polj1s1X.local.variable_workflow_01NEP2RIP8NYA27hgOzWokh4mONNproW9Cy$%3A00%3A00.000Z\u0026device_type=esa",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "use_workflow_target": true
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01QFG9GJ6CTAO0xaLwtvkcQRMEDSmc3qKv8",
+        "name": "Group",
+        "title": "Set Outputs",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Outputs",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01NEP325HEC8U1BzNGD2dGa6JtYndNDSFn5",
+            "name": "Set Variables",
+            "title": "Set Output Variable : Raw Json",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Output Variable : Raw Json",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01NEP2RIWPFTT3wu6BIzDenNp97Polj1s1X.output.variable_workflow_01NEP2RIP8HW10pUUftK195E2aNVDZjALv1$",
+                  "variable_value_new": "$activity.definition_activity_01NEP31D6KO5Y3CObQ78sY1zEx1v6SFiXN5.output.response_body$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01QFG9ZCSWFA91ueJKvKFe3G4VJ9vyQ6Zpo",
+            "name": "Condition Block",
+            "title": "Table Output = True ?",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Table Output = True ?",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01QFG9ZKZ80932AefNUWOvy6P7M5u2gGwhC",
+                "name": "Condition Branch",
+                "title": "Condition Branch",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$workflow.definition_workflow_01NEP2RIWPFTT3wu6BIzDenNp97Polj1s1X.input.variable_workflow_01QFGAXT4K2FT1evyU7NvFlx9XObqZvPfvw$",
+                    "operator": "eq",
+                    "right_operand": true
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "Condition Branch",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NEP32YGFYXV2puPbmd42TlrRsf1D4Mggu",
+                    "name": "Match Regex",
+                    "title": "Get Hash from Output",
+                    "type": "core.matchregex",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Get Hash from Output",
+                      "input_regex": "[a-z0-9]{64,}",
+                      "input_string": "$workflow.definition_workflow_01NEP2RIWPFTT3wu6BIzDenNp97Polj1s1X.output.variable_workflow_01NEP2RIP8HW10pUUftK195E2aNVDZjALv1$",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01NEP33DBM6IQ4dDnLtoem4QNyPlLkTNHTG",
+                    "name": "For Each",
+                    "title": "Add each Hash to Ouptut table",
+                    "type": "logic.for_each",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Add each Hash to Ouptut table",
+                      "skip_execution": false,
+                      "source_array": "$activity.definition_activity_01NEP32YGFYXV2puPbmd42TlrRsf1D4Mggu.output.matching_strings$"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NEP35D700PY3Sn9mEHWcs1IoHVogWnXYv",
+                        "name": "Add Row to Table",
+                        "title": "Add Row to Table",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Add Row to Table",
+                          "input_table": "$workflow.definition_workflow_01NEP2RIWPFTT3wu6BIzDenNp97Polj1s1X.output.variable_workflow_01NEP2RIP8MTN3vn1NwQg1YHsA2C5TkwtpU$",
+                          "row": [
+                            {
+                              "key": "type",
+                              "type": "string",
+                              "value": "sha256"
+                            },
+                            {
+                              "key": "value",
+                              "type": "string",
+                              "value": "$activity.definition_activity_01NEP33DBM6IQ4dDnLtoem4QNyPlLkTNHTG.input.source_array[@]$"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "table_types": {
+    "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6": {
+      "unique_name": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+      "data_type": "datatype.tabletype",
+      "display_name": "Observable",
+      "description": "Observable Type and Value",
+      "columns": [
+        {
+          "is_required": true,
+          "name": "type",
+          "title": "type",
+          "type": "string"
+        },
+        {
+          "is_required": true,
+          "name": "value",
+          "title": "value",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
