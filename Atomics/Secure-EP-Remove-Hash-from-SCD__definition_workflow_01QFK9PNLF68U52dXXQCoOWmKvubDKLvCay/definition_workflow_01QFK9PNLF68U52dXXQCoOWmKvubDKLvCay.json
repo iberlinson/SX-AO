@@ -11,19 +11,6 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "observable_value",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01QFK9PNDIFGU0YEvTbZFMQzhXzOTs2XOUU",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
           "name": "SCD_GUID",
           "type": "datatype.string",
           "description": "SCD GUID",
@@ -31,6 +18,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01QFK9PNDII4V0ISUt9b6RVw7LLPTuPRLQN",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFK9PNDIFGU0YEvTbZFMQzhXzOTs2XOUU",
         "object_type": "variable_workflow"
       },
       {
@@ -68,12 +68,12 @@
       {
         "unique_name": "definition_activity_01QFK9PXDFJJF01vmt2rMYslllcD86BSvEf",
         "name": "Group",
-        "title": "Add to SCD list",
+        "title": "Remove from SCD list",
         "type": "logic.group",
         "base_type": "activity",
         "properties": {
           "continue_on_failure": false,
-          "display_name": "Add to SCD list",
+          "display_name": "Remove from SCD list",
           "skip_execution": false
         },
         "object_type": "definition_activity",
