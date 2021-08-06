@@ -30,7 +30,7 @@
       * New value
       * Incident ID      
 
-###TheHive (http://thehive-project.org/)
+### TheHive (http://thehive-project.org/)
 * **Create Incident** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Create-TheHive-Case__definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck)
   * Create an incident in TheHive
     * Input : Title, description, observable type and value
