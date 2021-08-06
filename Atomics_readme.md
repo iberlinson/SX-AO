@@ -29,7 +29,13 @@
     * Output :
       * Json Output
       * Table with GUID and name if set to true
-    
+
+* **Secure-EP-Add-Hash-To-SCD** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Secure-EP-Add-Hash-to-SCD__definition_workflow_01QFJBF1JH8631ay3xjpMIsLUFOrFZ0Utf8)
+  * Add a hash to a simple custom detection list
+    * Input :
+      * Observable Type and value
+      * SCD GUID
+      * Description
     
 ### SecureX Threat Response
 * **CTR-Get Incident Details**[Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/CTR-Get-Incident-Details__definition_workflow_01MUZKOII7TH77AMxE0a7QyA5SPUR670m5z)
