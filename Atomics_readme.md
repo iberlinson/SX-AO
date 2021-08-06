@@ -35,14 +35,24 @@
   * **Deprecated version - incorrect field label** - maintain for compatibility with existing workflow*
   * Send a pre-formated adaptive Card in Cisco Webex
     * Input :
-      * Room ID : from action search room)
-      * Text 2 : Message title (large)
+      * Button Action Link 
       * Image URL : Url link for the Image/Logo
-      * Text 1 : Message Text - part 1
       * Notification Type
-      + Webex Token 
-      * Button Link : Action Button "Details" Url
+      * Text 2 : Message title
+      * Text 1 : Message Text - part 1
       * Title : Message Text - part 2
+      * Room ID and Webex Token 
+      
+* **Webex-Teams-Send-Simple-Adaptive-Card-V2** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Webex-Teams-Send-Simple-Adaptive-Card-V2__definition_workflow_01MXL3QX1CI992DKEA4Anda0qAiNhyIdcCm) *     
+  * Send a pre-formated adaptive Card in Cisco Webex
+    * Input :
+      * Button Text
+      * Button Action Link 
+      * Image/Logo URL
+      * Notification Type
+      * Message Title
+      * Message Text
+      * Room ID and Webex Token
   
       
 ### TheHive (http://thehive-project.org/)
