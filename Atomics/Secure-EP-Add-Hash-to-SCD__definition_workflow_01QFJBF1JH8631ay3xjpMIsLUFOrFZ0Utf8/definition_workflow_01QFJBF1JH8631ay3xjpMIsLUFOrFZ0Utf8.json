@@ -1,0 +1,127 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01QFJBF1JH8631ay3xjpMIsLUFOrFZ0Utf8",
+    "name": "Secure EP - Add Hash to SCD List",
+    "title": "Secure EP - Add Hash to SCD List",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "description",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFJEMRKA6TZ3IuHR2z9JxfpkXyJzyHVSE",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "SCD_GUID",
+          "type": "datatype.string",
+          "description": "SCD GUID",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFJDP6SLL2T4tOFGxkv2i4uVdmseCKgB6",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFJDGOBJFZE4RYMGAFNRhD3VD2MzsrCHI",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFJDBBHWLBW0yslAhv8YCyN3gCeUTMQSN",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco AMP for Endpoints",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "Get list of Simple Custom Detections list (guid and name)\nInput : Table Output Enable true/false\nOutput : Json and Table (if enable)",
+      "display_name": "Secure EP - Add Hash to SCD List",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01QFJBFDI5KZP7MfIvpMXBVpYuowrvi2otD",
+        "name": "Group",
+        "title": "Add to SCD list",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Add to SCD list",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01QFJBFINGDN80btsoAZPOEJuX1zobdB17G",
+            "name": "HTTP Request",
+            "title": "HTTP Request",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "body": "{\"description\":\"$workflow.definition_workflow_01QFJBF1JH8631ay3xjpMIsLUFOrFZ0Utf8.input.variable_workflow_01QFJEMRKA6TZ3IuHR2z9JxfpkXyJzyHVSE$\"}",
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "HTTP Request",
+              "method": "POST",
+              "relative_url": "/file_lists/$workflow.definition_workflow_01QFJBF1JH8631ay3xjpMIsLUFOrFZ0Utf8.input.variable_workflow_01QFJDP6SLL2T4tOFGxkv2i4uVdmseCKgB6$/files/$workflow.definition_workflow_01QFJBF1JH8631ay3xjpMIsLUFOrFZ0Utf8.input.variable_workflow_01QFJDBBHWLBW0yslAhv8YCyN3gCeUTMQSN$",
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "use_workflow_target": true
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
