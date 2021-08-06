@@ -1,0 +1,231 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01PJ80JRUGROQ6B1VahKDzfASBPS8ocG45x",
+    "name": "Secure EP - Get Cloud IOCs Full List",
+    "title": "Secure EP - Get Cloud IOCs Full List",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "tabletype_01MMVR58S7GEH5SlAYUWY8ZocY5Fs4lLYgi",
+        "properties": {
+          "scope": "output",
+          "name": "IOC Table",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFFJ7I0X3RB2E4BRuSrvJmK50tuKRgJ0X",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "IOC List Json ",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFFKOAR70NO4HSwsVMf5bsl9IpHQiE9uL",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco AMP for Endpoints",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "Query Cisco Secure Endpoint to get the full list of available Talos Cloud IOCs\nOutput : IOC List with name/id and description (Table And/Or Json format)",
+      "display_name": "Secure EP - Get Cloud IOCs Full List",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01PJ80RNPZUGB1X5W9YjLBA8MlmxjPXZxov",
+        "name": "HTTP Request",
+        "title": "HTTP Request",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "HTTP Request",
+          "method": "GET",
+          "relative_url": "/indicators",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01JSKJD20JMKV2bMS3euJLjHCrfKRweaN11"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01PJ82DE3D0O537MhYQeXUzL6weCSZ27JtT",
+        "name": "Read Table from JSON",
+        "title": "Read Table from JSON",
+        "type": "corejava.read_table_from_json",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Read Table from JSON",
+          "input_json": "$activity.definition_activity_01PJ80RNPZUGB1X5W9YjLBA8MlmxjPXZxov.output.response_body$",
+          "jsonpath_query": "$.data.[*]",
+          "persist_output": false,
+          "populate_columns": false,
+          "skip_execution": false,
+          "table_columns": [
+            {
+              "column_name": "name",
+              "column_type": "string"
+            },
+            {
+              "column_name": "description",
+              "column_type": "string"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01QFFKALJK1FX287tvz8EPKcEJswgwpRNgV",
+        "name": "Set Variables",
+        "title": "Set Output Variable IOC List Json",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Output Variable IOC List Json",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01PJ80JRUGROQ6B1VahKDzfASBPS8ocG45x.output.variable_workflow_01QFFKOAR70NO4HSwsVMf5bsl9IpHQiE9uL$",
+              "variable_value_new": "$activity.definition_activity_01PJ82DE3D0O537MhYQeXUzL6weCSZ27JtT.output.response_body$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01PJ84ZLB8SM746D2wTnJTO0Q4RSzFw6sXb",
+        "name": "For Each",
+        "title": "For Each",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "For Each",
+          "skip_execution": false,
+          "source_array": "$activity.definition_activity_01PJ82DE3D0O537MhYQeXUzL6weCSZ27JtT.output.read_table_from_json$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01PJ861R4VFQ13xZZ7iD1dzXmYSPlfO0vtm",
+            "name": "Add Row to Table",
+            "title": "Add Row to Output IOC Table",
+            "type": "core.addrowtotable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Add Row to Output IOC Table",
+              "input_table": "$workflow.definition_workflow_01PJ80JRUGROQ6B1VahKDzfASBPS8ocG45x.output.variable_workflow_01QFFJ7I0X3RB2E4BRuSrvJmK50tuKRgJ0X$",
+              "row": [
+                {
+                  "key": "ID",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01PJ84ZLB8SM746D2wTnJTO0Q4RSzFw6sXb.input.source_array[@].name$"
+                },
+                {
+                  "key": "Value",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01PJ84ZLB8SM746D2wTnJTO0Q4RSzFw6sXb.input.source_array[@].description$"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01JSKJD20JMKV2bMS3euJLjHCrfKRweaN11": {
+      "unique_name": "definition_target_01JSKJD20JMKV2bMS3euJLjHCrfKRweaN11",
+      "name": "AMP_Target",
+      "title": "AMP_Target",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01M8821Q13PN42C25nvFOdRa0nA3JCDBEad",
+        "disable_certificate_validation": false,
+        "display_name": "AMP_Target",
+        "host": "api.amp.cisco.com",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "path": "/v1",
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01M8821Q13PN42C25nvFOdRa0nA3JCDBEad": {
+      "unique_name": "definition_runtime_user_01M8821Q13PN42C25nvFOdRa0nA3JCDBEad",
+      "name": "AMP_Credentials",
+      "title": "AMP_Credentials",
+      "description": "Account Key for AMP",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "*****",
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "AMP_Credentials"
+      }
+    }
+  },
+  "table_types": {
+    "tabletype_01MMVR58S7GEH5SlAYUWY8ZocY5Fs4lLYgi": {
+      "unique_name": "tabletype_01MMVR58S7GEH5SlAYUWY8ZocY5Fs4lLYgi",
+      "data_type": "datatype.tabletype",
+      "display_name": "ID",
+      "columns": [
+        {
+          "name": "ID",
+          "title": "ID",
+          "type": "string"
+        },
+        {
+          "name": "Value",
+          "title": "Value",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
