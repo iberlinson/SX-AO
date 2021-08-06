@@ -1,0 +1,754 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01QFMWUZAEW9Z7O9qE3CoSTpLenZc3GTMb8",
+    "name": "TG Feeds to Umbrella Destination List - with 2-Tiers approval",
+    "title": "TG Feeds to Umbrella Destination List - with 2-Tiers approval",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Webex Token",
+          "type": "datatype.secure_string",
+          "description": "Your Webex Bot Token",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFNKDSI0FQE0hlkIXNSceLjgy2Nkj1Qfw",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Global Block List",
+          "scope": "local",
+          "name": "Detection_List Name",
+          "type": "datatype.string",
+          "description": "Name of the destination list",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFNUAYHQ71A1SZ3DLgs1afV7zuAbXOj47",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Alerting2",
+          "scope": "local",
+          "name": "Webex Room",
+          "type": "datatype.string",
+          "description": "Webex Room name for notrifcation",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFNK7R08BUI5DuOUdkQCLvYCAiGWipu3q",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "doc-net-com-dns",
+          "scope": "local",
+          "name": "TG Feed Name",
+          "type": "datatype.string",
+          "description": "Accepted Value :\nautorun-registry\n    banking-dns\n    dga-dns\n    dll-hijacking-dns\n    doc-net-com-dns\n    downloaded-pe-dns\n    dynamic-dns\n    irc-dns\n    modified-hosts-dns\n    parked-dns\n    public-ip-check-dns\n    ransomware-dns\n    rat-dns\n    scheduled-tasks\n    sinkholed-ip-dns\n    stolen-cert-dns",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFQF7VSWQAZ4XPGDZ1GgnhVxWxtHbFO8x",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Threat grid Token",
+          "type": "datatype.secure_string",
+          "description": "Your Threat Grid Token",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFMX4AMJ77W7YmodjsaaZZ48ZA6ULP5l8",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Umbrella Org ID",
+          "type": "datatype.string",
+          "description": "Your Umbrella Org Id",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFQ6HEBJ8VJ3fK9wH6iQRvla3ohUkmTs4",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "Push Domain in TG Hourly Curated Feed to Umbrella Destination List (block)\n\n- Collect last hour data  from the given threat feed name\n- Extract unique value\n- Request for approval and Notification\n- Add domain to provided destinations list ",
+      "display_name": "TG Feeds to Umbrella Destination List - with 2-Tiers approval",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+          "run_on_all_targets": false,
+          "selected_target_types": [
+            "web-service.endpoint",
+            "email.smtp_endpoint"
+          ],
+          "use_criteria": {
+            "choose_target_using_algorithm": "choose_all_with_matching_criteria",
+            "conditions": [
+              {
+                "operator": "eqi",
+                "left_operand": "$targetgroup.target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH.common.display_name$",
+                "right_operand": "ThreatGrid_Target"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01QFQDYLOGFGO2witMMuWLU7tLI9dJ9m0zp",
+        "name": "Group",
+        "title": "Set token from Glocal Variables",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set token from Glocal Variables",
+          "skip_execution": true
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01QFN56JSWQ7P5QWmiZEhqD1HPDPt4nsDFz",
+            "name": "Set Variables",
+            "title": "Set Variables Tokens",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables Tokens",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01QFMWUZAEW9Z7O9qE3CoSTpLenZc3GTMb8.local.variable_workflow_01QFMX4AMJ77W7YmodjsaaZZ48ZA6ULP5l8$",
+                  "variable_value_new": ""
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01QFMWUZAEW9Z7O9qE3CoSTpLenZc3GTMb8.local.variable_workflow_01QFNKDSI0FQE0hlkIXNSceLjgy2Nkj1Qfw$",
+                  "variable_value_new": ""
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01QFQEIXNF7JA1Eh7gfGd63JtjeQsaksTgZ",
+        "name": "Group",
+        "title": "Get unique domains from feed",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get unique domains from feed",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01QFMX7GWJ02E2u4P9GOvZfLIS4CsugkYFH",
+            "name": "Cisco Malware Analytics - Collect Feed",
+            "title": "Cisco Malware Analytics - Collect Feed",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Cisco Malware Analytics - Collect Feed",
+              "input": {
+                "variable_workflow_01QFLPDC2V1ZE33vmdxTg0hATLsCDoo01eT": "$workflow.definition_workflow_01QFMWUZAEW9Z7O9qE3CoSTpLenZc3GTMb8.local.variable_workflow_01QFQF7VSWQAZ4XPGDZ1GgnhVxWxtHbFO8x$",
+                "variable_workflow_01QFLPZB2FLTN3c43x1MjOK3LMxxuA3lcSI": "json",
+                "variable_workflow_01QFLTYBEI7GN5ij16i4UjO7iJ8Jky4aHl2": false,
+                "variable_workflow_01QFLX68T8AX54bSSvTZpamISDu4AfKltb8": "$workflow.definition_workflow_01QFMWUZAEW9Z7O9qE3CoSTpLenZc3GTMb8.local.variable_workflow_01QFMX4AMJ77W7YmodjsaaZZ48ZA6ULP5l8$"
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "use_workflow_target_group": true
+              },
+              "workflow_id": "definition_workflow_01QFLDMMVX5L61VvlcUzlpg7Jp7vBMaDeFU"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01QFNAWDH5GRW1uNROaalPnccWTVoNi0eR7",
+            "name": " Get_Unique_Values List and Table",
+            "title": " Get_Unique_Values List and Table",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": " Get_Unique_Values List and Table",
+              "input": {
+                "variable_workflow_01JQV4DBHVK5X46k0aHTZH8fXtQhAanDmTl": true,
+                "variable_workflow_01JQV4DBHVMNL1rPNLvE0PK8qngYffuxXiK": "$activity.definition_activity_01QFMX7GWJ02E2u4P9GOvZfLIS4CsugkYFH.output.variable_workflow_01QFLQDIJHYFG4h5WYhN8aKUCJ6LW2ndLHG$",
+                "variable_workflow_01JQV4DBHVNS53rUEmsVYfguuLv92CHKcyo": "domain"
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "no_target": true
+              },
+              "workflow_id": "definition_workflow_01JQV4DC02D934XLB7J1u6CcmV9yNotBbE3"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01QFQGQ80NK7T1xEHLhdD5UJ74JQMthbGoA",
+        "name": "Group",
+        "title": "Approval Request",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Approval Request",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01QFNELUBKUAJ3eTv00aQBZZGA48QOQTueT",
+            "name": "Create Approval Request",
+            "title": "Create Global Approval Request",
+            "type": "task.approval_request",
+            "base_type": "activity",
+            "properties": {
+              "approval_choices": [
+                "Approve",
+                "Reject"
+              ],
+              "assignees": [
+                "$global.variable_01FRD6CFYLDRI3bIdQgVDj3OHgD1ZdNN2pO.global.variable_01FRD6CFYLDRI3bIdQgVDj3OHgD1ZdNN2pO$"
+              ],
+              "continue_on_failure": false,
+              "display_name": "Create Global Approval Request",
+              "due_date": {
+                "is_relative_time": true,
+                "relative_time": {
+                  "duration": 15,
+                  "time_units": "days"
+                },
+                "set_due_date": true
+              },
+              "expiration_date": {
+                "is_relative_time": true,
+                "relative_time": {
+                  "duration": 15,
+                  "time_units": "days"
+                }
+              },
+              "expiration_status": "Expired",
+              "minimum_approvals": 1,
+              "priority": "normal",
+              "skip_execution": false,
+              "subject_line": "Domain Block - Global Approval",
+              "task_message": "$activity.definition_activity_01QFNAWDH5GRW1uNROaalPnccWTVoNi0eR7.output.variable_workflow_01JQV4DBHVLI62IgPXRU6IkYoKppufifvU6$",
+              "task_owner": "$global.variable_01FRD6ICTYH2R72VDZq0gT8z3cSk0zt5Etj.global.variable_01FRD6ICTYH2R72VDZq0gT8z3cSk0zt5Etj$",
+              "task_requestor": "$global.variable_01FRD6ICTYH2R72VDZq0gT8z3cSk0zt5Etj.global.variable_01FRD6ICTYH2R72VDZq0gT8z3cSk0zt5Etj$"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01QFQGZE4LC8A1AedRTOsu9Ec0Vlglu5Bsf",
+        "name": "Group",
+        "title": "Notify",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Notify",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01QFNJZ0TXW3K59Kaq4ypMKgPN50t06mmZn",
+            "name": "Webex Teams - Search for Room",
+            "title": "Webex Teams - Search for Room",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Webex Teams - Search for Room",
+              "input": {
+                "variable_workflow_01FHMU6RWYQWI3QFUEzjWMT7JYBcz5vquuD": "",
+                "variable_workflow_01FHMU6RWYWY822p43LeMi8Lcx89Q9jeyek": "$workflow.definition_workflow_01QFMWUZAEW9Z7O9qE3CoSTpLenZc3GTMb8.local.variable_workflow_01QFNK7R08BUI5DuOUdkQCLvYCAiGWipu3q$",
+                "variable_workflow_01FHMU6RWYY481TVWDm0BQ1p0rWnqak191l": "$workflow.definition_workflow_01QFMWUZAEW9Z7O9qE3CoSTpLenZc3GTMb8.local.variable_workflow_01QFNKDSI0FQE0hlkIXNSceLjgy2Nkj1Qfw$",
+                "variable_workflow_01FHNGCYY2O6Z0NcPmUDabszT2P4P0oqMNd": ""
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target_group_criteria": true,
+                "target_group": {
+                  "run_on_all_targets": false,
+                  "use_criteria": {
+                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                    "conditions": [
+                      {
+                        "left_operand": "$targetgroup.target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH.common.display_name$",
+                        "operator": "eqi",
+                        "right_operand": "Webex Teams"
+                      }
+                    ]
+                  }
+                }
+              },
+              "workflow_id": "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01QFNHK2Z35CF6zDnmzSvgYlDbG6VLzqZpp",
+            "name": "Webex - Simple adaptive card v2",
+            "title": "Webex - Simple adaptive card v2",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Webex - Simple adaptive card v2",
+              "input": {
+                "variable_workflow_01MXL3QWT3MS83f7haI1reWKvlFOdwUqkMp": "Approval Request",
+                "variable_workflow_01MXL3QWT3R346h6tRrMPzAwdvuCygHlb9K": "https://security.cisco.com",
+                "variable_workflow_01MXL3QWT3S9K7L12ePg2iN3TWexOIA4rll": "Following Domain(s) is/are seen in Threat Grid Hourly Feeds and should be add to Umbrella Block List. Please connect to securex and Approve or Decline. $activity.definition_activity_01QFNAWDH5GRW1uNROaalPnccWTVoNi0eR7.output.variable_workflow_01JQV4DBHVLI62IgPXRU6IkYoKppufifvU6$",
+                "variable_workflow_01MXL3QWT3TET7i7EckKkaP2JcqCJgaNEYP": "$workflow.definition_workflow_01QFMWUZAEW9Z7O9qE3CoSTpLenZc3GTMb8.local.variable_workflow_01QFNKDSI0FQE0hlkIXNSceLjgy2Nkj1Qfw$",
+                "variable_workflow_01MXL3QWT3UNE3R9Z9Cq0ShPQLsaLptzd7C": "Domain(s) to be blocked in Umbrella",
+                "variable_workflow_01MXL3QWT3VPK5Yv456UL3laPHiJFabqlRv": "$activity.definition_activity_01QFNJZ0TXW3K59Kaq4ypMKgPN50t06mmZn.output.variable_workflow_01FHSVE2R6ZTQ6L92WEi0kWgR5T8zhMAUzO$",
+                "variable_workflow_01MXL3QWT3XYA1LjFcwBR6fZE0Cmdg8UQCU": "https://www.cisco.com/c/en_be/products/security/threat-response/jcr:content/Grid/category_atl_acfd/layout-category-atl/blade_6fe9/bladeContents/thirds_9e43/Th-Third-2/tile_ff6f/image.img.png/1575870274260.png",
+                "variable_workflow_01QFF3GHGBKMG155AxNbRywcY1Ca3qdPvks": "Securex"
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target_group_criteria": true,
+                "target_group": {
+                  "run_on_all_targets": false,
+                  "use_criteria": {
+                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                    "conditions": [
+                      {
+                        "left_operand": "$targetgroup.target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH.common.display_name$",
+                        "operator": "eqi",
+                        "right_operand": "Webex Teams"
+                      }
+                    ]
+                  }
+                }
+              },
+              "workflow_id": "definition_workflow_01MXL3QX1CI992DKEA4Anda0qAiNhyIdcCm"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01QFQH94PYAHS0WXBM103dBrw8pWRdvaYFe",
+        "name": "Group",
+        "title": "Wait for Approval",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Wait for Approval",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01QFNHDHK7BXB2GMfXu9uITCrouq5KVCc1c",
+            "name": "Wait For Event",
+            "title": "Wait For Event",
+            "type": "task.wait_for_event",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Wait For Event",
+              "event_info": {
+                "add_event": true,
+                "event_definition": {
+                  "conditions": {
+                    "left_operand": "$output.task_id$",
+                    "operator": "eq",
+                    "right_operand": "$activity.definition_activity_01QFNELUBKUAJ3eTv00aQBZZGA48QOQTueT.output.task_id$"
+                  }
+                }
+              },
+              "event_type": "approval_task.event",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01QFNQA0OVQS01CI2B092egogih5wt4WyBg",
+        "name": "Condition Block",
+        "title": "Approved ?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Approved ?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01QFNQA4H46K43uILOBMoX8eWjoDV933kYk",
+            "name": "Condition Branch",
+            "title": "Yes",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01QFNHDHK7BXB2GMfXu9uITCrouq5KVCc1c.output.response$",
+                "operator": "eqi",
+                "right_operand": "approve"
+              },
+              "continue_on_failure": false,
+              "display_name": "Yes",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01QFQINUB232N5eTeWYVOfZLk1eriKdOnAH",
+                "name": "Group",
+                "title": "Get destination list id",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get destination list id",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01QFO83L7D6995dZ7uy8jWrxIW5y5T4tW69",
+                    "name": "HTTP Request",
+                    "title": "Get destination list ",
+                    "type": "web-service.http_request",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "allow_auto_redirect": true,
+                      "continue_on_error_status_code": false,
+                      "continue_on_failure": false,
+                      "display_name": "Get destination list ",
+                      "method": "GET",
+                      "relative_url": "v1/organizations/$workflow.definition_workflow_01QFMWUZAEW9Z7O9qE3CoSTpLenZc3GTMb8.local.variable_workflow_01QFQ6HEBJ8VJ3fK9wH6iQRvla3ohUkmTs4$/destinationlists",
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target_group_criteria": true,
+                        "target_group": {
+                          "use_criteria": {
+                            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                            "conditions": [
+                              {
+                                "left_operand": "$targetgroup.target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH.common.display_name$",
+                                "operator": "eqi",
+                                "right_operand": "Umbrella Management V1"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01QFO971QYEYR5dy0xQQpZaRCIM7vF2t8rF",
+                    "name": "Read Table from JSON",
+                    "title": "Parse data",
+                    "type": "corejava.read_table_from_json",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Parse data",
+                      "input_json": "$activity.definition_activity_01QFO83L7D6995dZ7uy8jWrxIW5y5T4tW69.output.response_body$",
+                      "jsonpath_query": "$.data",
+                      "persist_output": true,
+                      "populate_columns": false,
+                      "skip_execution": false,
+                      "table_columns": [
+                        {
+                          "column_name": "id",
+                          "column_type": "string"
+                        },
+                        {
+                          "column_name": "name",
+                          "column_type": "string"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01QFO9ZA4S05K4DX7MpwzBGVfB87SYkce2E",
+                    "name": "Select from Table",
+                    "title": "Get ID for provided name",
+                    "type": "core.selectfromtable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "columns": [
+                        {
+                          "column_name": "id",
+                          "column_type": "string"
+                        }
+                      ],
+                      "continue_on_failure": false,
+                      "display_name": "Get ID for provided name",
+                      "input_table": "$activity.definition_activity_01QFO971QYEYR5dy0xQQpZaRCIM7vF2t8rF.output.read_table_from_json$",
+                      "number_of_rows": {
+                        "at_most": true,
+                        "first_n_rows": 1
+                      },
+                      "persist_output": false,
+                      "skip_execution": false,
+                      "sorting": {
+                        "no_sort": true
+                      },
+                      "where_clause": "name LIKE '$workflow.definition_workflow_01QFMWUZAEW9Z7O9qE3CoSTpLenZc3GTMb8.local.variable_workflow_01QFNUAYHQ71A1SZ3DLgs1afV7zuAbXOj47$'"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01QFNRMKWBZIN3cLcnZ3wrSGqCJmZ22uus4",
+                "name": "For Each",
+                "title": "Add each domain to destination list",
+                "type": "logic.for_each",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Add each domain to destination list",
+                  "skip_execution": false,
+                  "source_array": "$activity.definition_activity_01QFNAWDH5GRW1uNROaalPnccWTVoNi0eR7.output.variable_workflow_01JQV4DBHVHIX685M3pT0etFEJJ1YbyOX8E$"
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01QFNS0SWVC5G76dLdRnVgqEkcEcbpCeNuG",
+                    "name": "Umbrella - Management V1 - Add Record to Destination List",
+                    "title": "Umbrella - Management V1 - Add Record to Destination List",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Umbrella - Management V1 - Add Record to Destination List",
+                      "input": {
+                        "variable_workflow_01G69XFF4HLEZ7QayzU2DO9thN3J5u0SoSV": "$workflow.definition_workflow_01QFMWUZAEW9Z7O9qE3CoSTpLenZc3GTMb8.local.variable_workflow_01QFQ6HEBJ8VJ3fK9wH6iQRvla3ohUkmTs4$",
+                        "variable_workflow_01G69XFF4HSX14Tl2ZeZ5IltuMfgtTvdvaR": "$activity.definition_activity_01QFO9ZA4S05K4DX7MpwzBGVfB87SYkce2E.output.output_table[0].id$",
+                        "variable_workflow_01G69YIDRG6EL4aPWYIhXOayFu3Myu8ZgI1": "$activity.definition_activity_01QFNRMKWBZIN3cLcnZ3wrSGqCJmZ22uus4.input.source_array[@].distinctvalue$",
+                        "variable_workflow_01G69YNV23UZ71b2pOX15WUHGqceHm9hXUO": "TG Feed"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target_group_criteria": true,
+                        "target_group": {
+                          "run_on_all_targets": false,
+                          "use_criteria": {
+                            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                            "conditions": [
+                              {
+                                "left_operand": "$targetgroup.target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH.common.display_name$",
+                                "operator": "eqi",
+                                "right_operand": "Umbrella Management v1"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "workflow_id": "definition_workflow_01G69XFFLC3O94DC4lJCtqSiuUqtz259IS0"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01QFNQA56A1RC2wCz2dRkQSQDaaOXFD4PQG",
+            "name": "Condition Branch",
+            "title": "Decline",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01QFNHDHK7BXB2GMfXu9uITCrouq5KVCc1c.output.response$",
+                "operator": "eqi",
+                "right_operand": "reject"
+              },
+              "continue_on_failure": false,
+              "display_name": "Decline",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01QFNQNJV6RGZ1FoZQ0PlUD6cjJ47iE7J6A",
+                "name": "Completed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "succeeded",
+                  "continue_on_failure": false,
+                  "display_name": "Completed",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "triggers": {
+    "triggerschedule_01QFQADK0LSVW2NEtGMbzp2ju8EBRswYTXe": {
+      "workflow_id": "definition_workflow_01QFMWUZAEW9Z7O9qE3CoSTpLenZc3GTMb8",
+      "name": "Hourly",
+      "title": "",
+      "lowercase_name": "schedule.hourly",
+      "type": "schedule",
+      "base_type": "trigger",
+      "ref_id": "schedule_01QFQA79O6GAQ0J40P2FaGoqKbRuKs9FBEt",
+      "version": "1.0.0",
+      "disabled": true,
+      "unique_name": "triggerschedule_01QFQADK0LSVW2NEtGMbzp2ju8EBRswYTXe",
+      "object_type": "triggerschedule"
+    }
+  },
+  "schedules": {
+    "schedule_01QFQA79O6GAQ0J40P2FaGoqKbRuKs9FBEt": {
+      "unique_name": "schedule_01QFQA79O6GAQ0J40P2FaGoqKbRuKs9FBEt",
+      "name": "Hourly",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "Etc/GMT+0",
+        "starttime": "01:00",
+        "interval_hours": 1,
+        "interval_minutes": 0,
+        "number_of_times": 23,
+        "display_name": "Hourly",
+        "description": ""
+      },
+      "version": "1.0.0",
+      "object_type": "schedule"
+    }
+  },
+  "target_groups": {
+    "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH": {
+      "unique_name": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+      "name": "Default TargetGroup",
+      "title": "Default TargetGroup",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "web-service.endpoint",
+          "view_target_type": "web-service.endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "email.smtp_endpoint",
+          "view_target_type": "email.smtp_endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
+    }
+  },
+  "variables": {
+    "variable_01FRD6CFYLDRI3bIdQgVDj3OHgD1ZdNN2pO": {
+      "unique_name": "variable_01FRD6CFYLDRI3bIdQgVDj3OHgD1ZdNN2pO",
+      "properties": {
+        "value": "ivberlin@cisco.com",
+        "scope": "global",
+        "name": "Task Approver",
+        "type": "datatype.string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01FRD6ICTYH2R72VDZq0gT8z3cSk0zt5Etj": {
+      "unique_name": "variable_01FRD6ICTYH2R72VDZq0gT8z3cSk0zt5Etj",
+      "properties": {
+        "value": "ivberlin@cisco.com",
+        "scope": "global",
+        "name": "Task Requestor",
+        "type": "datatype.string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01JQV4DC02D934XLB7J1u6CcmV9yNotBbE3",
+    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
+    "definition_workflow_01G69XFFLC3O94DC4lJCtqSiuUqtz259IS0",
+    "definition_workflow_01MXL3QX1CI992DKEA4Anda0qAiNhyIdcCm",
+    "definition_workflow_01QFLDMMVX5L61VvlcUzlpg7Jp7vBMaDeFU"
+  ]
+}
