@@ -1,0 +1,315 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01QFIX6DEZDDB46xgD0DPKTZEWe89wzrIqh",
+    "name": "Secure EP - Get SCD List",
+    "title": "Secure EP - Get SCD List",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Json Output",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFJ1WE05EO66PVi1ykaynNlBmwXmgqYYV",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "Table Output Enable",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFJ26OG9YGI4qSnkRCtFxgzXKGPdC4TC8",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01MMVR58S7GEH5SlAYUWY8ZocY5Fs4lLYgi",
+        "properties": {
+          "scope": "output",
+          "name": "Table Output",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFJ2F8XU8TJ2eAGV35gX4iJwdEsgNbZRT",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco AMP for Endpoints",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "Get list of Simple Custom Detections list (guid and name)\nInput : Table Output Enable true/false\nOutput : Json and Table (if enable)",
+      "display_name": "Secure EP - Get SCD List",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01JSKJD20JMKV2bMS3euJLjHCrfKRweaN11",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01QFJ2LA967ZD1LHwgQ1UKCKjmohbrIYILh",
+        "name": "Group",
+        "title": "Get SCD list",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get SCD list",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01QFIZ2AWE06U4XxIVr8nFOLANgCQ1JqsQZ",
+            "name": "HTTP Request",
+            "title": "HTTP Request",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "HTTP Request",
+              "method": "GET",
+              "relative_url": "file_lists/simple_custom_detections?",
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "use_workflow_target": true
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01QFJ2TJIOW8P4gOLoQDR7cl4l74wp07xjI",
+        "name": "Group",
+        "title": "set Outputs",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "set Outputs",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01QFJ0SA2DG7K6JyeEZq7ea7lnKDD2PIpBp",
+            "name": "Read Table from JSON",
+            "title": "Read Table from JSON",
+            "type": "corejava.read_table_from_json",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Read Table from JSON",
+              "input_json": "$activity.definition_activity_01QFIZ2AWE06U4XxIVr8nFOLANgCQ1JqsQZ.output.response_body$",
+              "jsonpath_query": "$.data",
+              "persist_output": false,
+              "populate_columns": false,
+              "skip_execution": false,
+              "table_columns": [
+                {
+                  "column_name": "name",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "guid",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "type",
+                  "column_type": "string"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01QFJ32NXKBL56PU0ap4HDUCaTB4Woa04B1",
+            "name": "Set Variables",
+            "title": "Set Output Variable Json",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Output Variable Json",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01QFIX6DEZDDB46xgD0DPKTZEWe89wzrIqh.output.variable_workflow_01QFJ1WE05EO66PVi1ykaynNlBmwXmgqYYV$",
+                  "variable_value_new": "$activity.definition_activity_01QFIZ2AWE06U4XxIVr8nFOLANgCQ1JqsQZ.output.response_body$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01QFJ3LNQ6JFO661ML30UJMAbo4u3vT4eK3",
+            "name": "Condition Block",
+            "title": "Output Table Enable ?",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Output Table Enable ?",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01QFJ3LRG7GJP13vEKNakZtxNrJKRIvCZxP",
+                "name": "Condition Branch",
+                "title": "True",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$workflow.definition_workflow_01QFIX6DEZDDB46xgD0DPKTZEWe89wzrIqh.input.variable_workflow_01QFJ26OG9YGI4qSnkRCtFxgzXKGPdC4TC8$",
+                    "operator": "eq",
+                    "right_operand": true
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "True",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01QFJ3V6PZVZS45pPnkad6UJYZFhdBvuOsB",
+                    "name": "For Each",
+                    "title": "Add to Output Table",
+                    "type": "logic.for_each",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "description": "guid\nname",
+                      "display_name": "Add to Output Table",
+                      "skip_execution": false,
+                      "source_array": "$activity.definition_activity_01QFJ0SA2DG7K6JyeEZq7ea7lnKDD2PIpBp.output.read_table_from_json$"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01QFJ4IACNIVJ37cNUQy8faQQrqV6PNuqaZ",
+                        "name": "Add Row to Table",
+                        "title": "Add Row to Table",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Add Row to Table",
+                          "input_table": "$workflow.definition_workflow_01QFIX6DEZDDB46xgD0DPKTZEWe89wzrIqh.output.variable_workflow_01QFJ2F8XU8TJ2eAGV35gX4iJwdEsgNbZRT$",
+                          "row": [
+                            {
+                              "key": "ID",
+                              "type": "string",
+                              "value": "$activity.definition_activity_01QFJ3V6PZVZS45pPnkad6UJYZFhdBvuOsB.input.source_array[@].guid$"
+                            },
+                            {
+                              "key": "Value",
+                              "type": "string",
+                              "value": "$activity.definition_activity_01QFJ3V6PZVZS45pPnkad6UJYZFhdBvuOsB.input.source_array[@].name$"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01JSKJD20JMKV2bMS3euJLjHCrfKRweaN11": {
+      "unique_name": "definition_target_01JSKJD20JMKV2bMS3euJLjHCrfKRweaN11",
+      "name": "AMP_Target",
+      "title": "AMP_Target",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01M8821Q13PN42C25nvFOdRa0nA3JCDBEad",
+        "disable_certificate_validation": false,
+        "display_name": "AMP_Target",
+        "host": "api.amp.cisco.com",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "path": "/v1",
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01M8821Q13PN42C25nvFOdRa0nA3JCDBEad": {
+      "unique_name": "definition_runtime_user_01M8821Q13PN42C25nvFOdRa0nA3JCDBEad",
+      "name": "AMP_Credentials",
+      "title": "AMP_Credentials",
+      "description": "Account Key for AMP",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "*****",
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "AMP_Credentials"
+      }
+    }
+  },
+  "table_types": {
+    "tabletype_01MMVR58S7GEH5SlAYUWY8ZocY5Fs4lLYgi": {
+      "unique_name": "tabletype_01MMVR58S7GEH5SlAYUWY8ZocY5Fs4lLYgi",
+      "data_type": "datatype.tabletype",
+      "display_name": "ID",
+      "columns": [
+        {
+          "name": "ID",
+          "title": "ID",
+          "type": "string"
+        },
+        {
+          "name": "Value",
+          "title": "Value",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
