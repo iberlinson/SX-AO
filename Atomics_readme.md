@@ -22,6 +22,14 @@
     * Output :
       * IOCs List with name/id and description (Table And/Or Json format)
 
+* **Secure-EP-Get-SCD-List** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Secure-EP-Get-SCD-List__definition_workflow_01QFIX6DEZDDB46xgD0DPKTZEWe89wzrIqh)
+  * Get Cisco Secure Endpoint configured Simple Custom Detection Lists*
+    * Input :
+      * Output Table Enable : True/False
+    * Output :
+      * Json Output
+      * Table with GUID and name if set to true
+    
     
 ### SecureX Threat Response
 * **CTR-Get Incident Details**[Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/CTR-Get-Incident-Details__definition_workflow_01MUZKOII7TH77AMxE0a7QyA5SPUR670m5z)
