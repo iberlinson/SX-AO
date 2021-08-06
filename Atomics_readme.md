@@ -28,8 +28,23 @@
     * Input : 
       * Field to Update
       * New value
-      * Incident ID      
-
+      * Incident ID 
+      
+### Cisco Webex
+* **Webex-Teams-Send-Simple-Adaptive-Card** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Webex-Teams-Send-Simple-Adaptive-Card__definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q) *     
+  * **Deprecated version - incorrect field label** - maintain for compatibility with existing workflow*
+  * Send a pre-formated adaptive Card in Cisco Webex
+    * Input :
+      * Room ID : from action search room)
+      * Text 2 : Message title (large)
+      * Image URL : Url link for the Image/Logo
+      * Text 1 : Message Text - part 1
+      * Notification Type
+      + Webex Token 
+      * Button Link : Action Button "Details" Url
+      * Title : Message Text - part 2
+  
+      
 ### TheHive (http://thehive-project.org/)
 * **Create Incident** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Create-TheHive-Case__definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck)
   * Create an incident in TheHive
