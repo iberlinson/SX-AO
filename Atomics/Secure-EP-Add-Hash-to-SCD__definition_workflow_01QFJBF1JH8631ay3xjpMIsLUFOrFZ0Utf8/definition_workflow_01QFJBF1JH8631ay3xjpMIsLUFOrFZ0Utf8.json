@@ -11,19 +11,6 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "description",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01QFJEMRKA6TZ3IuHR2z9JxfpkXyJzyHVSE",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
           "name": "SCD_GUID",
           "type": "datatype.string",
           "description": "SCD GUID",
@@ -38,12 +25,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "observable_type",
+          "name": "observable_value",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01QFJDGOBJFZE4RYMGAFNRhD3VD2MzsrCHI",
+        "unique_name": "variable_workflow_01QFJDBBHWLBW0yslAhv8YCyN3gCeUTMQSN",
         "object_type": "variable_workflow"
       },
       {
@@ -51,12 +38,25 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "observable_value",
+          "name": "description",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01QFJDBBHWLBW0yslAhv8YCyN3gCeUTMQSN",
+        "unique_name": "variable_workflow_01QFJEMRKA6TZ3IuHR2z9JxfpkXyJzyHVSE",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QFJDGOBJFZE4RYMGAFNRhD3VD2MzsrCHI",
         "object_type": "variable_workflow"
       }
     ],
@@ -66,7 +66,7 @@
         "is_atomic": true
       },
       "delete_workflow_instance": false,
-      "description": "Get list of Simple Custom Detections list (guid and name)\nInput : Table Output Enable true/false\nOutput : Json and Table (if enable)",
+      "description": "Add  a hash to a Simple Custom Detections \n\nInput : Observable type and value, SCD GUID\n",
       "display_name": "Secure EP - Add Hash to SCD List",
       "runtime_user": {
         "target_default": true
