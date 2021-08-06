@@ -28,7 +28,7 @@
  * Notify in Cisco Webex about result
 
 [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Hunt_User_Webex.png)
-[Screenshot - Casebook](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Hunt_User_Casebook.png)
+[Screenshot - Casebook](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Hunt_User_casebook.png)
  
  * **Use Case and Installation** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/Hunt_User_readme.md)
  
