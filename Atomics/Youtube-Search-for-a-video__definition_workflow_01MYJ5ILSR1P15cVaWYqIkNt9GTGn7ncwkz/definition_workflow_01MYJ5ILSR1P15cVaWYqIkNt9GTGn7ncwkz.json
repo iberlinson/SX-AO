@@ -1,0 +1,234 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01MYJ5ILSR1P15cVaWYqIkNt9GTGn7ncwkz",
+    "name": "YouTube - Search a video",
+    "title": "YouTube - Search a video",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MYJ5ILLA8XO2uD0nbr1Yv6O7WtjIo28GY",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MYJ5ILLA5X80AaAo58yYqzqLIMC9aHue7",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "title",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MYJ6O2IWLQE2tIB3qmU1j15nO2aglyt27",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "videoID",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MYJ6J1RBNIZ5STYq0HSttEPDhv3UUylxE",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "YouTube",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "Search for a video in youtube based on keyword\nInput : keyword\nOutpuut : Short VideoID , Title",
+      "display_name": "YouTube - Search a video",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01MYJ5JMSREFG02WA7tPps8B1PrGbdslNt3",
+        "name": "HTTP Request",
+        "title": "Query Youtube for video - 1 result",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "Query Youtube for video - 1 result",
+          "method": "GET",
+          "relative_url": "/search?part=snippet\u0026maxResults=1\u0026q=$workflow.definition_workflow_01MYJ5ILSR1P15cVaWYqIkNt9GTGn7ncwkz.input.variable_workflow_01MYJ5ILLA5X80AaAo58yYqzqLIMC9aHue7$\u0026key=$global.variable_01MXK2WE85G6U2opuGVrKf3UOjMiVGReRlB.global.variable_01MXK2WE85G6U2opuGVrKf3UOjMiVGReRlB$\u0026type=video",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01MXJL3IYIB8V30gJl0QCOTBSMfj5dVX80Q"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MYJ5K0P674S0UP089WK4gVD7pcwMpHy86",
+        "name": "Read Table from JSON",
+        "title": "Read VideoID from JSON",
+        "type": "corejava.read_table_from_json",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Read VideoID from JSON",
+          "input_json": "$activity.definition_activity_01MYJ5JMSREFG02WA7tPps8B1PrGbdslNt3.output.response_body$",
+          "jsonpath_query": "$.items.[*].id",
+          "persist_output": false,
+          "populate_columns": false,
+          "skip_execution": false,
+          "table_columns": [
+            {
+              "column_name": "videoId",
+              "column_type": "string"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MYJ5KEPB53B381BAv90vlUmc8OlHQ1rJX",
+        "name": "Read Table from JSON",
+        "title": "Read Tiitle from JSON",
+        "type": "corejava.read_table_from_json",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Read Tiitle from JSON",
+          "input_json": "$activity.definition_activity_01MYJ5JMSREFG02WA7tPps8B1PrGbdslNt3.output.response_body$",
+          "jsonpath_query": "$.items.[*].snippet",
+          "persist_output": false,
+          "populate_columns": false,
+          "skip_execution": false,
+          "table_columns": [
+            {
+              "column_name": "title",
+              "column_type": "string"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MYJ6STBUVUZ7apBSyFZdVGO74HBrN6bOu",
+        "name": "Set Variables",
+        "title": "Set Output Variable VideoID",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Output Variable VideoID",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01MYJ5ILSR1P15cVaWYqIkNt9GTGn7ncwkz.output.variable_workflow_01MYJ6J1RBNIZ5STYq0HSttEPDhv3UUylxE$",
+              "variable_value_new": "$activity.definition_activity_01MYJ5K0P674S0UP089WK4gVD7pcwMpHy86.output.read_table_from_json[0].videoId$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MYJ74EVVBP22NqzmOx2xHQTCdAhCxuwlZ",
+        "name": "Set Variables",
+        "title": "Set Ouutput Variable Title",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Ouutput Variable Title",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01MYJ5ILSR1P15cVaWYqIkNt9GTGn7ncwkz.output.variable_workflow_01MYJ6O2IWLQE2tIB3qmU1j15nO2aglyt27$",
+              "variable_value_new": "$activity.definition_activity_01MYJ5KEPB53B381BAv90vlUmc8OlHQ1rJX.output.read_table_from_json[0].title$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01MXJL3IYIB8V30gJl0QCOTBSMfj5dVX80Q": {
+      "unique_name": "definition_target_01MXJL3IYIB8V30gJl0QCOTBSMfj5dVX80Q",
+      "name": "YouTube",
+      "title": "YouTube",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "YouTube",
+        "host": "www.googleapis.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "path": "/youtube/v3",
+        "protocol": "https"
+      }
+    }
+  },
+  "variables": {
+    "variable_01MXK2WE85G6U2opuGVrKf3UOjMiVGReRlB": {
+      "unique_name": "variable_01MXK2WE85G6U2opuGVrKf3UOjMiVGReRlB",
+      "properties": {
+        "value": "*****",
+        "scope": "global",
+        "name": "GoogleAPI-YT",
+        "type": "datatype.secure_string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  }
+}
