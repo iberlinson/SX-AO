@@ -1,25 +1,25 @@
 # 🛎  RT-Monitoring-SecureEP-Umbrella-Notification-Incident 
 
-## Use Case
+# Use Case
 
-### Index
+## Index
 
-1. [Problem Statement](###problem-statement)
-2. [Solution](###solution)
-3. [Design Overview](###design-overview)
-4. [Currently Supported Solutions and roadmap](###currently-supported-solutions-and-roadmap)
-5. [Prerequisites](###prerequisites)
-6. [Installation](###installation)
-7. [Notes](###notes)
-8. [Authors](##authors)
+1. [Problem Statement](#problem-statement)
+2. [Solution](#solution)
+3. [Design Overview](#design-overview)
+4. [Currently Supported Solutions and roadmap](#currently-supported-solutions-and-roadmap)
+5. [Prerequisites](#prerequisites)
+6. [Installation](#installation)
+7. [Notes](#notes)
+8. [Authors](#authors)
 
-### Problem Statement
+# Problem Statement
 
 * When faced with an attack that generates multiple alerts in multiple consoles, it can be difficult to quickly recognize that these alerts are all part of a common attack campaign.
 * Too many alerts can result in “Alert Fatigue” which leads to critical alerts being missed or overlooked
 * Management requires a simple monitoring platform to keep them abreast of an evolving situation.
 
-### Solution
+# Solution
 
 * Use SecureX Orchestration to assess, deduplicate and notify multiple alerts
 * Organizations need to get timely notification of an attack campaign within a common messaging platform, regardless of:
@@ -39,7 +39,7 @@
 
 ![readme___RT_Stat](https://github.com/iberlinson/SX-AO/blob/main/Images/usecase___RT_Monitoring_StatsTable.png)
 
-### Design Overview
+# Design Overview
 
 ![usecase___RT_Monitoring_DesignOverview](/Images/usecase___RT_Monitoring_DesignOverview.png)
 
@@ -63,7 +63,7 @@
 
 ![usecase___RT_Monitoring_Incident_Notify_stats_WKF](/Images/usecase___RT_Monitoring_Incident_Notify_stats_WKF.png) 
 
-### Currently Supported Solutions and roadmap
+# Currently Supported Solutions and roadmap
 
 * Cisco Secure Endpoint (Event)
 * Cisco Umbrella (Event)
@@ -77,18 +77,18 @@ Other messaging and Incident platforms have “stub” placeholder code for futu
 
 ![usecase___RT_Monitoring_placeholder](/Images/usecase___RT_Monitoring_placeholder.png) 
 
-### Prerequisites
+# Prerequisites
 
 * Umbrella reporting API Key. [Documentation](https://docs.umbrella.com/umbrella-api/docs/reporting-api-authentication)
 * Cisco Secure EP API key. [Documentation](https://console.amp.cisco.com/help/en/wwhelp/wwhimpl/js/html/wwhelp.htm)
 * Cisco Teams Bot for SecureX and a Cisco Teams Room. [Documentation](https://developer.webex.com/docs/bots)
 * Cisco Threat Response API key. [Documentation](https://securex.us.security.cisco.com/help/integration)
 
-### Installation
+# Installation
 * Detailed installation instructions can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_INSTALL.md)
 
-### Notes
+# Notes
 * Please test this properly before implementing in a production environment. 
 
-### Authors
+# Authors
 Moritz Wenz, Phil Wood, Sven Kutzer, Ivan Berlinson (Cisco)
