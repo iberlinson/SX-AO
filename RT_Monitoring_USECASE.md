@@ -4,14 +4,14 @@
 
 ### Index
 
-1. [Problem Statement](###Problem-Statement)
-2. [Solution](###Solution)
-3. [Design Overview](###Design-Overview)
-4. [Currently Supported Solutions and roadmap](###Currently-Supported-Solutions-and-roadmap)
-5. [Prerequisites](###Prerequisites)
-6. [Installation](###Installation)
-7. [Notes](###Notes)
-8. [Authors](##Authors)
+1. [Problem Statement](###problem-statement)
+2. [Solution](###solution)
+3. [Design Overview](###design-overview)
+4. [Currently Supported Solutions and roadmap](###currently-supported-solutions-and-roadmap)
+5. [Prerequisites](###prerequisites)
+6. [Installation](###installation)
+7. [Notes](###notes)
+8. [Authors](##authors)
 
 ### Problem Statement
 
