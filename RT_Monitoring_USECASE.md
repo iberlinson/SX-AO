@@ -1,7 +1,5 @@
 # 🛎  RT-Monitoring-SecureEP-Umbrella-Notification-Incident 
 
-# Use Case
-
 ## Index
 
 1. [Problem Statement](#problem-statement)
