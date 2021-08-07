@@ -51,7 +51,7 @@
       ** Json and Table with hostname and guid(if enable)
       
     
-### SecureX Threat Response
+### Cisco SecureX 
 * **CTR-Get Incident Details**[Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/CTR-Get-Incident-Details__definition_workflow_01MUZKOII7TH77AMxE0a7QyA5SPUR670m5z)
   * Get content of an Incident ID in SecureX (private CTIA)
     * Output :
@@ -66,12 +66,22 @@
       
 * **SX-TR-Post-Judgement-to-private-Intelligence** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/SX-TR-Post-Judgement-to-private-Intelligence__definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI)
   * Post a judgement about an observable in your SecureX Private Intelligence
-    Input :
+    * Input :
       * Observable Type and Value
       * Disposition Name and Number
       * Reasons
       + Expiration delay in days
-    
+      
+* **Core-Get-List-Table-with-unique-Values** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Core-Get-List-Table-with-unique-Values__definition_workflow_01JQV4DC02D934XLB7J1u6CcmV9yNotBbE3)
+  * From a list of multiple values, get a list or/and a table with only unique values 
+    * Input :
+      * Input json
+      * Column wanted from input json
+      * Output Tables : True/False
+    * Output :
+      * List of unique value
+      * Table with unique value if set to True  
+   
           
 ### Cisco Secure Malware Analytics (Threat Grid) 
 * **Cisco-Malware-Analytics-TG-Collect-Feed** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Cisco-Malware-Analytics-TG-Collect-Feed__definition_workflow_01QFLDMMVX5L61VvlcUzlpg7Jp7vBMaDeFU)
