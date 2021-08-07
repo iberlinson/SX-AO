@@ -138,7 +138,7 @@
     
 ![Readme___TGFeed_Umbrella_variables](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme___TGFeed_Umbrella_variables.png)
     
-* Enable fill the first block **Set Variables Tokens**
+* Enable and fill the first block **Set Variables Tokens**
   * **Variable to update 1** set to Global Variable **ThreatGrid API** (step3)
   * **Variable to update 2** set to Global Variable **Webex Bot Token** (step3)
   
