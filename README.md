@@ -22,22 +22,31 @@
 * **Installation** : Detailed installation instructions can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_INSTALL.md)
 
 ### 2. 🔦 Hunt - Search User - Orbital
- * Search for a given user via :
-   * Orbital (Account (Monitoring and Logged_In)
-   * Secure Endpoint - User Activity (telemetry)*
- * Notify in Cisco Webex about result
+* Search for a given user via :
+  * Orbital (Account (Monitoring and Logged_In)
+  * Secure Endpoint - User Activity (telemetry)*
+* Notify in Cisco Webex about result
 
 [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Hunt_User_Webex.png)
 [Screenshot - Casebook](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Hunt_User_casebook.png)
  
- * **Use Case and Installation** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/Hunt_User_readme.md)
+* **Use Case and Installation** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/Hunt_User_readme.md)
  
 ### 3. 🧽 Cisco Secure EP - Remove Inactive Endpoints
- * Cisco Seucre Endpoint
- * Identify and Remove from computers list endpoints with a last seen over a given number of days (default : 45 days)
- * Include 2 Tiers approval and Notification in Cisco Webex
+* Cisco Seucre Endpoint : Identify and Remove from computers list endpoints with a last seen over a given number of days (default : 45 days)
+  * Include 2-Tiers approval and Notification in Cisco Webex
  
 [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___EP_Removal_Webex.png)
 [Screenshot - Approval](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___EP_Removal_Approval.png)
 
 * **Use Case and Installation** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/SecureEP_Remove_InactiveEP_readme.md)
+
+### 4. TG-Feeds-to-Umbrella-BlockList-2-Tiers-approval
+* Download Threat Grid Curated feed and push domain to Cisco Umbrella Destinations Lists.
+  * Include 2-Tiers approval and Notification in Cisco Webex
+  
+[Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme_TGFeed_umbrella___notification.png)
+[Screenshot - Approval](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme_TGFeed_umbrella___approval.png)
+[Screenshot - Destinations-List](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme_TGFeed_umbrella___DestinationList.png)
+
+
