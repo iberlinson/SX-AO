@@ -55,6 +55,3 @@
     * [Screenshot - Destinations-List](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme_TGFeed_umbrella___DestinationList.png)
 
   * **Use Case and Installation** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/TGFeed_Umbrella___readme.md)
-
-
-
