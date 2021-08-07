@@ -1,14 +1,20 @@
 # SX-AO
 
-* Repository for workflows and Atomic Actions
+## Repository for Cisco SecureX Orchestration Workflows and Atomic Actions
 
-  * **NOTE:** If you don't have a SecureX Account, please follow the [Quick Start Guide](https://www.cisco.com/c/en/us/td/docs/security/secure-sign-on/sso-quick-start-guide/sso-qsg-welcome.html).
-  * Detailed instructions to add iberlinson/SX-A0 repositories to you Securex Instance can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/repositories.md)
-  * How to import a workflow : [HERE](https://ciscosecurity.github.io/sxo-05-security-workflows/importing)
-  * SecureX Orchestration Documentation : [HERE](https://ciscosecurity.github.io/sxo-05-security-workflows/)
-  * **Atomics Readme** [Here](https://github.com/iberlinson/SX-AO/blob/main/Atomics_readme.md)
-  
-### 1. 🛎 RT-Monitoring-SecureEP-Umbrella-Notification-Incident
+  * **NOTE:** 
+    * If you don't have a SecureX Account, please follow the [Quick Start Guide](https://www.cisco.com/c/en/us/td/docs/security/secure-sign-on/sso-quick-start-guide/sso-qsg-welcome.html).
+    * Detailed instructions to add iberlinson/SX-A0 repositories to you Securex Instance can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/repositories.md)
+    * How to import a workflow : [HERE](https://ciscosecurity.github.io/sxo-05-security-workflows/importing)
+    * SecureX Orchestration Documentation : [HERE](https://ciscosecurity.github.io/sxo-05-security-workflows/)
+
+## Available Atomics Actions
+
+* List and Readme [Here](https://github.com/iberlinson/SX-AO/blob/main/Atomics_readme.md)*
+
+## Available Use Cases (Workflows)  
+
+1. **🛎 RT-Monitoring-SecureEP-Umbrella-Notification-Incident**
 
 * Continuous monitoring of Umbrella and/or Secure EP Security events (loop)
 * Near real time Incident creation and update (grouped by endpoint hostname, **no duplicate event**)
@@ -21,7 +27,7 @@
 * **Use Case** : Detailed informations about the Use Case can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_USECASE.md)
 * **Installation** : Detailed installation instructions can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_INSTALL.md)
 
-### 2. 🔦 Hunt - Search User - Orbital
+2. **🔦 Hunt - Search User - Orbital**
 * Search for a given user via :
   * Orbital (Account (Monitoring and Logged_In)
   * Secure Endpoint - User Activity (telemetry)*
@@ -32,7 +38,7 @@
  
 * **Use Case and Installation** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/Hunt_User_readme.md)
  
-### 3. 🧽 Cisco Secure EP - Remove Inactive Endpoints
+3. **🧽 Cisco Secure EP - Remove Inactive Endpoints**
 * Cisco Seucre Endpoint : Identify and Remove from computers list endpoints with a last seen over a given number of days (default : 45 days)
   * Include 2-Tiers approval and Notification in Cisco Webex
  
@@ -41,7 +47,7 @@
 
 * **Use Case and Installation** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/SecureEP_Remove_InactiveEP_readme.md)
 
-### 4. TG-Feeds-to-Umbrella-BlockList-2-Tiers-approval
+4. **TG-Feeds-to-Umbrella-BlockList-2-Tiers-approval**
 * Download Threat Grid Curated feed and push domain to Cisco Umbrella Destinations Lists.
   * Include 2-Tiers approval and Notification in Cisco Webex
   
