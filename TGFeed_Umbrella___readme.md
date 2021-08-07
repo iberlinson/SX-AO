@@ -2,18 +2,15 @@
 
 > **NOTE:** This is sample code and needs to be tested properly before using in production!
 
-
 **Periodically check for TG Feed and push domains to Umbrella destinations block list with 2-Tiers approval and notification**
 
 ## Index
 
-## Index
+1. [Flow](#flow)
+2. [Requirement](#requirement)
+2. [Installation steps](#installation-steps)
 
-1. [Flow](##Flow)
-2. [Requirement](##Requirement)
-2. [Installation steps](##Installation-steps)
-
-## Flow
+# Flow
 
 * Trigger by an hourly schedule
   * Collect current hour TG Feed
@@ -26,7 +23,7 @@
 ![Screenshot - Approval](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme_TGFeed_umbrella___approval.png)
 ![Screenshot - Destinations-List](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme_TGFeed_umbrella___DestinationList.png)
 
-## Requirement
+# Requirement
 
 * Mandatory
   * Cisco Umbrella - Management API
@@ -34,7 +31,7 @@
 * Optional
   * Cisco Webex Token (Bot) - [click here to see how you can create a presistent Access Token](https://github.com/iberlinson/SX-AO/blob/main/WebexAccessToken.md)
   
-### Installation steps
+## Installation steps
 
 
 1. Logon to SecureX via: https://sign-on.security.cisco.com/. 
@@ -44,7 +41,7 @@
 
 3. Set up or Verify Targets, Account Keys and Variables
 
-* Go to "Account Keys" and create the following account. If it already exists under a different name, use it in step 4 for "Umbrella target"
+* Go to "Account Keys" and create the following account. If it already exists under a different name, use it in step step for "Umbrella target"
 
   * Cisco Umbrella Management API - Account Keys from your Umbrella console
   
