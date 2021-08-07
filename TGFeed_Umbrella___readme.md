@@ -1,24 +1,32 @@
-# TG-Feeds-to-Umbrella-BlockList-2-Tiers-approval
+# SecureX orchestration workflows : TG Feeds to Umbrella BlockList - 2-Tiers Approval
 
+> **NOTE:** This is sample code and needs to be tested properly before using in production!
 
-## Use Case
 
 **Periodically check for TG Feed and push domains to Umbrella destinations block list with 2-Tiers approval and notification**
 
+## Index
+
+## Index
+
+1. [Flow](##Flow)
+2. [Requirement](##Requirement)
+2. [Installation steps](##Installation-steps)
+
+## Flow
+
 * Trigger by an hourly schedule
-* Collect current hour TG Feed
-* Extract domains in feed
-* Get domains list with only unique values
-* Notify in Webex Team and Request for approval before adding to block list
-* On approval, add each domain to block list
+  * Collect current hour TG Feed
+  * Extract domains in feed
+  * Get domains list with only unique values
+  * Notify in Webex Team and Request for approval before adding to block list
+  * On approval, add each domain to block list
 
 ![Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme_TGFeed_umbrella___notification.png)
 ![Screenshot - Approval](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme_TGFeed_umbrella___approval.png)
 ![Screenshot - Destinations-List](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme_TGFeed_umbrella___DestinationList.png)
 
-## Installation Guide.
-
-### Requirement
+## Requirement
 
 * Mandatory
   * Cisco Umbrella - Management API
@@ -164,7 +172,3 @@
 9. Enable the Trigger in the workflow if you want the workflow to run automatically every hour.
 
 ![Readme___TGFeed_Umbrella_trigger](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme___TGFeed_Umbrella_trigger.png)
-
-## Notes
-* Please test this properly before implementing in a production environment. 
-  
