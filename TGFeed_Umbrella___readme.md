@@ -1,4 +1,6 @@
-# Installation Guide.
+# TG-Feeds-to-Umbrella-BlockList-2-Tiers-approval
+
+## Installation Guide.
 
 ### Requirement
 
@@ -134,18 +136,18 @@
     * sinkholed-ip-dns
     * stolen-cert-dns*
     
-![Readme___TGFeed_Umbrella_variables]()
+![Readme___TGFeed_Umbrella_variables](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme___TGFeed_Umbrella_variables.png)
     
 * Enable fill the first block **Set Variables Tokens**
   * **Variable to update 1** set to Global Variable **ThreatGrid API** (step3)
   * **Variable to update 2** set to Global Variable **Webex Bot Token** (step3)
   
-![Readme___TGFeed_Umbrella_Tokens]()
+![Readme___TGFeed_Umbrella_Tokens](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme___TGFeed_Umbrella_Tokens.png)
 8. Validate and test the workflow (run)
 
 9. Enable the Trigger in the workflow if you want the workflow to run automatically every hour.
 
-![Readme___TGFeed_Umbrella_trigger]()
+![Readme___TGFeed_Umbrella_trigger](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme___TGFeed_Umbrella_trigger.png)
 
 ## Notes
 * Please test this properly before implementing in a production environment. 
