@@ -1,5 +1,7 @@
 # 🛎  RT-Monitoring-SecureEP-Umbrella-Notification-Incident 
 
+> **NOTE:** This is sample code and needs to be tested properly before using in production!
+
 ## Index
 
 1. [Problem Statement](#problem-statement)
@@ -8,8 +10,7 @@
 4. [Currently Supported Solutions and roadmap](#currently-supported-solutions-and-roadmap)
 5. [Prerequisites](#prerequisites)
 6. [Installation](#installation)
-7. [Notes](#notes)
-8. [Authors](#authors)
+7. [Authors](#authors)
 
 # Problem Statement
 
@@ -78,6 +79,7 @@ Other messaging and Incident platforms have “stub” placeholder code for futu
 # Prerequisites
 
 * Umbrella reporting API Key. [Documentation](https://docs.umbrella.com/umbrella-api/docs/reporting-api-authentication)
+* Umbrella Org ID
 * Cisco Secure EP API key. [Documentation](https://console.amp.cisco.com/help/en/wwhelp/wwhimpl/js/html/wwhelp.htm)
 * Cisco Teams Bot for SecureX and a Cisco Teams Room. [Documentation](https://developer.webex.com/docs/bots)
 * Cisco Threat Response API key. [Documentation](https://securex.us.security.cisco.com/help/integration)
@@ -144,25 +146,13 @@ Other messaging and Incident platforms have “stub” placeholder code for futu
     * **Host** set to **private.intel.amp.cisco.com** or **private.eu.intel.amp.cisco.com**
     * **Port** set to **443**
 
-* Go to **Variables** and Create or verify global variables for your **TG API** and **Webex Token**
-  
-  * **TG_API**
-    * **Data Type** set to **Secure String**
-    * **Display Name** set to **ThreatGrid API**
-    * **Scope** set to **Global**
-    * **Value** set to **"YOUR THREATGRID API"**
+* Go to **Variables** and Create or verify global variables for your **Webex Token**
   
   * **Webex Token**
     * **Data Type** set to **Secure String**
     * **Display Name** set to **Webex Bot Token**
     * **Scope** set to **Global**
     * **Value** set to **"YOUR WEBEX BOT TOKEN"**
-    
-  * **Umbrella Org ID**
-    * **Data Type** set to **Secure String**
-    * **Display Name** set to **Umbrella Org ID**
-    * **Scope** set to **Global**
-    * **Value** set to **"YOUR UMBRELLA ORG ID"**
     
 
 4. Import SXO Atomic Actions from Github
@@ -195,12 +185,25 @@ Other messaging and Incident platforms have “stub” placeholder code for futu
 
   * **RT-Monitoring-SecureEP-Umbrella-Notification-Incident**
 
-* Update the missing informations
-  * **Webex Bots** : fill your **BOT bearer token** - [click here to see how you can create a presistent Access Token](https://github.com/iberlinson/SX-AO/blob/main/WebexAccessToken.md)
-  * **Umbrella Org ID** : fill your umbreall org id or none if net use  
+6. Open and edit the imported workflow 
 
-# Notes
-* Please test this properly before implementing in a production environment. 
+*  Adjust following variables to fit with your needs*
+  
+  * **Umbrella_Org_ID** set to **Your Umbrella Org ID** got from Umbrella console URL
+  * **Webex Room** set to the **Webex room name used for notification**. Remember to add you BOT to this room
+  
+  ![image](/Images/usecase___RT_Monitoring_Variables.png)
+  
+* Enable and fill the first block **Set Variables Webex Bot Token** in the first group **admin/Set Variables from Global/Notification Systems/Cisco Webex Enable**
+
+  * **Variable to update** set to Global Variable **Webex Bot Token** (step3)
+  
+    ![image](/Images/usecase___RT_Monitoring_Webex_Token_.png)
+  
+* Enable the trigger to run the workflow every 5 minutes
+
+  ![image](/Images/usecase___RT_Monitoring_Trigger.png)
+
 
 # Authors
 Moritz Wenz, Phil Wood, Sven Kutzer, Ivan Berlinson (Cisco)
