@@ -8,7 +8,8 @@
 
 1. [Flow](#flow)
 2. [Requirement](#requirement)
-2. [Installation steps](#installation-steps)
+3. [Installation steps](#installation-steps)
+4. [Author and Contact](#author-and-contact)
 
 # Flow
 
@@ -169,3 +170,6 @@
 9. Enable the Trigger in the workflow if you want the workflow to run automatically every hour.
 
 ![Readme___TGFeed_Umbrella_trigger](https://github.com/iberlinson/SX-AO/blob/main/Images/Readme___TGFeed_Umbrella_trigger.png)
+
+### Author and Contact
+Ivan Berlinson (Cisco) - <ivberlin@cisco.com>
