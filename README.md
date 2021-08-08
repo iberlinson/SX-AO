@@ -23,7 +23,7 @@
     * [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___RT_Webex.png)
     * [Screenshot - Incident](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___RT_Incident.png)
 
-  * **Use Case and Installations** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_README.md)
+  * **Use Case and Installations** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_USECASE.md)
 
 * **🔦 Hunt - Search User - Orbital**
   * Search for a given user via :
