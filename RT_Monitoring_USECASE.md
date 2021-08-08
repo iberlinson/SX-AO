@@ -217,6 +217,9 @@ Other messaging and Incident platforms have “stub” placeholder code for futu
   * To clear detection table, import and use the workflow **RT-Monitoring-Clear-detection-stats-table**
 
 # Authors
-Moritz Wenz, Phil Wood, Sven Kutzer, Ivan Berlinson (Cisco)
 
-# Contact : <ivberlin@cisco.com>
+* Moritz Wenz, Phil Wood, Sven Kutzer, Ivan Berlinson (Cisco)
+
+# Contact :
+
+* <ivberlin@cisco.com>
