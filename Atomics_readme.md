@@ -1,5 +1,9 @@
 # Atomics Action
 
+### Index
+
+1. [Cisco Umbrella](###cisco-umbrella)
+
 
 ### Cisco Umbrella
 * **Cisco-Umbrella-Get-Last-security-event-Table** [link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Cisco-Umbrella-Get-Last-security-event-Table__definition_workflow_01MTBS3PX08T13DnyQkuNld9GvrU538PXoI)
