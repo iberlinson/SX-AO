@@ -220,6 +220,6 @@ Other messaging and Incident platforms have “stub” placeholder code for futu
 
 * Moritz Wenz, Phil Wood, Sven Kutzer, Ivan Berlinson (Cisco)
 
-# Contact :
+# Contact
 
-* <ivberlin@cisco.com>
+* <mwenz@cisco.com<, <phwood@cisco.com>, <skutzer@cisco.com>, <ivberlin@cisco.com>
