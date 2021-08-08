@@ -204,6 +204,15 @@ Other messaging and Incident platforms have “stub” placeholder code for futu
 
 ![image](/Images/usecase___RT_Monitoring_Trigger.png)
 
+7. Run the workflow
+
+* Before a first run or if a previous run failed, go to **Variables** and reset the following global Variables
+  * **AO_Enrichment_Running** set to **False**
+  * **AO-AMP_Last_detection_date** set to the oldest event date you want to collect in Cisco Secure EP (in format YYYY-MM-DDThh:mm:ss)
+  * **AO-Umbrella_Last_detection_date** set to the oldest event date you want to collect in Cisco Umbrella (in format YYYY-MM-DDThh:mm:ss)
+
+![image](/Images/usecase___RT_Monitoring_Run.png)
+
 
 # Authors
 Moritz Wenz, Phil Wood, Sven Kutzer, Ivan Berlinson (Cisco)
