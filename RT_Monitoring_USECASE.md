@@ -188,13 +188,16 @@ Other messaging and Incident platforms have “stub” placeholder code for futu
 6. Open and edit the imported workflow 
 
 *  Adjust following variables to fit with your needs*
+  
   * **Umbrella_Org_ID** set to **Your Umbrella Org ID** got from Umbrella console URL
   * **Webex Room** set to the **Webex room name used for notification**. Remember to add you BOT to this room
   
 ![image](/Images/usecase___RT_Monitoring_Variables.png)
   
 * Enable and fill the first block **Set Variables Webex Bot Token** in the first group **admin/Set Variables from Global/Notification Systems/Cisco Webex Enable**
+
   * **Variable to update** set to Global Variable **Webex Bot Token** (step3)
+  
 ![image](/Images/usecase___RT_Monitoring_Webex_Token.png)
   
 * Enable the trigger to run the workflow every 5 minutes
