@@ -11,6 +11,7 @@
 5. [Prerequisites](#prerequisites)
 6. [Installation](#installation)
 7. [Authors](#authors)
+8. [Contact](#contact)
 
 # Problem Statement
 
@@ -213,6 +214,9 @@ Other messaging and Incident platforms have “stub” placeholder code for futu
 
 ![image](/Images/usecase___RT_Monitoring_Run.png)
 
+  * To clear detection table, import and use the workflow **RT-Monitoring-Clear-detection-stats-table**
 
 # Authors
 Moritz Wenz, Phil Wood, Sven Kutzer, Ivan Berlinson (Cisco)
+
+# Contact : <ivberlin@cisco.com>
