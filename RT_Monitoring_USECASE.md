@@ -222,4 +222,4 @@ Other messaging and Incident platforms have “stub” placeholder code for futu
 
 # Contact
 
-* <mwenz@cisco.com<, <phwood@cisco.com>, <skutzer@cisco.com>, <ivberlin@cisco.com>
+* <mwenz@cisco.com>, <phwood@cisco.com>, <skutzer@cisco.com>, <ivberlin@cisco.com>
