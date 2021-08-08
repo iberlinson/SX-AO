@@ -2,8 +2,16 @@
 
 ### Index
 
-1. [Cisco Umbrella](###cisco-umbrella)
-
+1. [Cisco Umbrella](#cisco-umbrella)
+2. [Cisco Secure Endpoint](#cisco-secure-endpoint)
+3. [Cisco SecureX](#cisco-securex)
+4. [Cisco Secure Malware Analytics](#cisco-secure-malware-analytics)
+5. [Cisco Webex](#cisco-webex)
+6. [Cisco Secure Email](#cisco-secure-email)
+7. [TheHive](#thehive)
+8. [NumVerify](#numverify)
+9. [YouTube](#youtube)
+10. [Notes](#notes)
 
 ### Cisco Umbrella
 * **Cisco-Umbrella-Get-Last-security-event-Table** [link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Cisco-Umbrella-Get-Last-security-event-Table__definition_workflow_01MTBS3PX08T13DnyQkuNld9GvrU538PXoI)
@@ -87,7 +95,7 @@
       * Table with unique value if set to True  
    
           
-### Cisco Secure Malware Analytics (Threat Grid) 
+### Cisco Secure Malware Analytics
 * **Cisco-Malware-Analytics-TG-Collect-Feed** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Cisco-Malware-Analytics-TG-Collect-Feed__definition_workflow_01QFLDMMVX5L61VvlcUzlpg7Jp7vBMaDeFU)
   * Collect Curated Hourly Feeds from Threat Grid Cloud 
     * Input : 
@@ -97,7 +105,7 @@
       * Raw feed in selected format
       * Table with parsed data if enable and format JSON
 
-### tCisco Webex
+### Cisco Webex
 * **Webex-Teams-Send-Simple-Adaptive-Card** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Webex-Teams-Send-Simple-Adaptive-Card__definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q) *     
   * **Deprecated version - incorrect field label** - maintain for compatibility with existing workflow*
   * Send a pre-formated adaptive Card in Cisco Webex
@@ -133,7 +141,7 @@
       * Full Json output
       * Table with hash if enable
 
-### TheHive (http://thehive-project.org/)
+### TheHive
 * **Create Incident** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Create-TheHive-Case__definition_workflow_01MKXD2ZOHC0G6MZ8JD9DIDdTGq2V3NXFck)
   * Create an incident in TheHive
     * Input :
@@ -150,8 +158,7 @@
       * TheHive Case ID
 
 
-### NumVerify (https://numverify.com/)
-
+### NumVerify
 * **(Atomic-NumVerify-ValidatePhoneNumber** [Link](https://github.com/iberlinson/SX-AO/tree/main/Atomics/Atomic-NumVerify-ValidatePhoneNumber__definition_workflow_01MXMBOXTJ9T13zB0Yg1VsLG9NRM7n9cpU4)
   * Verify a phone number using NumVerify
     * Input :
