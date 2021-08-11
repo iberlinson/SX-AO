@@ -1,7 +1,5 @@
 # SX-AO - Cisco SecureX Workflows
 
-[TOC]
-
 ### **Available Use Cases (Workflows) ** 
 
 #### **🛎 RT-Monitoring-SecureEP-Umbrella-Notification-Incident**
