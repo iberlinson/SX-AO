@@ -94,7 +94,7 @@
           "allow_auto_redirect": true,
           "body": "{\n  \"$workflow.definition_workflow_01MU6L38WDI011Gi239oxMLUnIwKdExKqGl.input.variable_workflow_01MUZ3D8T9F576iNq7xhjqBHnLlPBZuBWwp$\": \"$workflow.definition_workflow_01MU6L38WDI011Gi239oxMLUnIwKdExKqGl.input.variable_workflow_01MUZ3X8YBCQM7j9nY3Ci9MiNyhugYFEA38$\"\n}",
           "content_type": "application/json",
-          "continue_on_error_status_code": false,
+          "continue_on_error_status_code": true,
           "continue_on_failure": false,
           "custom_headers": [
             {
