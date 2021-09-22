@@ -4,7 +4,7 @@
 
   * **NOTE:** 
     * If you don't have a SecureX Account, please follow the [Quick Start Guide](https://www.cisco.com/c/en/us/td/docs/security/secure-sign-on/sso-quick-start-guide/sso-qsg-welcome.html).
-    * Detailed instructions to add iberlinson/SX-A0 repositories to you Securex Instance can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/repositories.md)
+    * Detailed instructions to add iberlinson/SX-AO repositories to you Securex Instance can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/repositories.md)
     * How to import a workflow : [HERE](https://ciscosecurity.github.io/sxo-05-security-workflows/importing)
     * SecureX Orchestration Documentation : [HERE](https://ciscosecurity.github.io/sxo-05-security-workflows/)
 
