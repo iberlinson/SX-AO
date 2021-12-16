@@ -7,20 +7,6 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.date",
-        "properties": {
-          "value": "0001-01-01",
-          "scope": "local",
-          "name": "temp_date-computer",
-          "type": "datatype.date",
-          "description": "Temp Variable to store last seen date (internal use)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01PQS73WQ4B9L4OEMhg3bdaT4fZKQ1IaBoK",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.secure_string",
         "properties": {
           "value": "",
@@ -31,33 +17,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01QEQBZ5MWE0268wO5oBmUqMhzQJ6WKfuNd",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
-        "properties": {
-          "scope": "local",
-          "name": "GUID to Remove",
-          "type": "datatype.table",
-          "description": "List of Computer(s) GUID to be removed (internal use)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01QEQ57T1N6S322ki0FtbEjAzg0U8vt3F61",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.date",
-        "properties": {
-          "value": "0001-01-01",
-          "scope": "local",
-          "name": "temp_date_past",
-          "type": "datatype.date",
-          "description": "Temp Variable to store past date calculate from delay (internal use)",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01PQRX8BNNJ7B4lYKukzpBGYwbYgywoZaW2",
         "object_type": "variable_workflow"
       },
       {
@@ -75,19 +34,6 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
-        "properties": {
-          "scope": "local",
-          "name": "Computer to remove",
-          "type": "datatype.table",
-          "description": "Type = GUID\nValue = Hostname",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01QEQVMCJSC350KLnz8yV9Nvang67h2hpk9",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "Alerting2",
@@ -99,6 +45,60 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01QEQDMTR1LT074Qws7rTXbmgM3KxwJrUVj",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.date",
+        "properties": {
+          "value": "0001-01-01",
+          "scope": "local",
+          "name": "temp_date-computer",
+          "type": "datatype.date",
+          "description": "Temp Variable to store last seen date (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01PQS73WQ4B9L4OEMhg3bdaT4fZKQ1IaBoK",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.date",
+        "properties": {
+          "value": "0001-01-01",
+          "scope": "local",
+          "name": "temp_date_past",
+          "type": "datatype.date",
+          "description": "Temp Variable to store past date calculate from delay (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01PQRX8BNNJ7B4lYKukzpBGYwbYgywoZaW2",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01EGEGSGVS20N13S1KPEz8fOy2ANAhTiYpj",
+        "properties": {
+          "scope": "local",
+          "name": "GUID to Remove",
+          "type": "datatype.table",
+          "description": "List of Computer(s) GUID to be removed (internal use)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QEQ57T1N6S322ki0FtbEjAzg0U8vt3F61",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+        "properties": {
+          "scope": "local",
+          "name": "Computer to remove",
+          "type": "datatype.table",
+          "description": "Type = GUID\nValue = Hostname",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QEQVMCJSC350KLnz8yV9Nvang67h2hpk9",
         "object_type": "variable_workflow"
       }
     ],
@@ -143,6 +143,7 @@
         "base_type": "activity",
         "properties": {
           "continue_on_failure": false,
+          "description": "Enable if you want to set the variable BOT Token from a global variable",
           "display_name": "Admin",
           "skip_execution": false
         },
@@ -183,21 +184,6 @@
         },
         "object_type": "definition_activity",
         "actions": [
-          {
-            "unique_name": "definition_activity_01PQR7S9MVFYA1wgAnZMp0BjDAUhEadCU4o",
-            "name": "Execute Python Script",
-            "title": "Calculate Current date",
-            "type": "python3.script",
-            "base_type": "activity",
-            "properties": {
-              "action_timeout": 180,
-              "continue_on_failure": false,
-              "display_name": "Calculate Current date",
-              "script": "from datetime import datetime\nimport sys\nif sys.version_info[0] \u003c 3 or sys.version_info[1] \u003c 4:\n    # python version \u003c 3.3\n    import time\n    def timestamp(date):\n        return time.mktime(date.timetuple())\nelse:\n    def timestamp(date):\n        return date.timestamp()\ndate1 = datetime.now()\nprint(date1)",
-              "skip_execution": false
-            },
-            "object_type": "definition_activity"
-          },
           {
             "unique_name": "definition_activity_01PQRFLREP0P36XZmoVbb7LRNV8A7AHRQ7Z",
             "name": "Execute Python Script",
@@ -250,6 +236,22 @@
                   "skip_execution": false
                 },
                 "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01TJP7EJRK1O52CD5k70sj4RBr1kLivchjV",
+                "name": "Format Date",
+                "title": "Format Date",
+                "type": "core.format_date",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Format Date",
+                  "format_string": "2006-01-02T15:04:05Z07:00",
+                  "original_date": "$activity.definition_activity_01PQS38RHATNV6drv29fAFGV0p99gYBZ5vz.output.matching_strings[0]$",
+                  "skip_execution": false,
+                  "use_custom_format": false
+                },
+                "object_type": "definition_activity"
               }
             ]
           },
@@ -266,7 +268,7 @@
               "variables_to_update": [
                 {
                   "variable_to_update": "$workflow.definition_workflow_01PQR5C3JYUAU20O6OId88VDKYnGqkWh0E3.local.variable_workflow_01PQRX8BNNJ7B4lYKukzpBGYwbYgywoZaW2$",
-                  "variable_value_new": "$activity.definition_activity_01PQS38RHATNV6drv29fAFGV0p99gYBZ5vz.output.matching_strings[0]$"
+                  "variable_value_new": "$activity.definition_activity_01TJP7EJRK1O52CD5k70sj4RBr1kLivchjV.output.result$"
                 }
               ]
             },
@@ -389,6 +391,22 @@
                 "object_type": "definition_activity"
               },
               {
+                "unique_name": "definition_activity_01TJPKIFYMGJU4P4kEK2Sn4Whj36OEGhZNu",
+                "name": "Format Date",
+                "title": "Format Date",
+                "type": "core.format_date",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Format Date",
+                  "format_string": "2006-01-02T15:04:05Z07:00",
+                  "original_date": "$activity.definition_activity_01PQS7SDGAX7F22ZuWIjv8buGoo36fdOrl1.output.matching_strings[0]$",
+                  "skip_execution": false,
+                  "use_custom_format": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
                 "unique_name": "definition_activity_01PQS76N9FLWQ5CilyxEUo739LYxT72xXjQ",
                 "name": "Set Variables",
                 "title": "Set Variables Temp Date Computer",
@@ -401,7 +419,7 @@
                   "variables_to_update": [
                     {
                       "variable_to_update": "$workflow.definition_workflow_01PQR5C3JYUAU20O6OId88VDKYnGqkWh0E3.local.variable_workflow_01PQS73WQ4B9L4OEMhg3bdaT4fZKQ1IaBoK$",
-                      "variable_value_new": "$activity.definition_activity_01PQS7SDGAX7F22ZuWIjv8buGoo36fdOrl1.output.matching_strings[0]$"
+                      "variable_value_new": "$activity.definition_activity_01TJPKIFYMGJU4P4kEK2Sn4Whj36OEGhZNu.output.result$"
                     }
                   ]
                 },
@@ -431,7 +449,7 @@
                 "properties": {
                   "condition": {
                     "left_operand": "$workflow.definition_workflow_01PQR5C3JYUAU20O6OId88VDKYnGqkWh0E3.local.variable_workflow_01PQS73WQ4B9L4OEMhg3bdaT4fZKQ1IaBoK$",
-                    "operator": "gte",
+                    "operator": "lt",
                     "right_operand": "$workflow.definition_workflow_01PQR5C3JYUAU20O6OId88VDKYnGqkWh0E3.local.variable_workflow_01PQRX8BNNJ7B4lYKukzpBGYwbYgywoZaW2$"
                   },
                   "continue_on_failure": false,
@@ -687,7 +705,7 @@
                 "properties": {
                   "continue_on_failure": false,
                   "display_name": "Notify for Approval",
-                  "skip_execution": false
+                  "skip_execution": true
                 },
                 "object_type": "definition_activity",
                 "actions": [
@@ -895,8 +913,54 @@
       }
     ],
     "categories": [
-      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+      "category_01SHEGVED8THM4PqOraExExCbP01GkhV89b"
     ]
+  },
+  "categories": {
+    "category_01SHEGVED8THM4PqOraExExCbP01GkhV89b": {
+      "unique_name": "category_01SHEGVED8THM4PqOraExExCbP01GkhV89b",
+      "name": "EP",
+      "title": "EP",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "triggers": {
+    "triggerschedule_01ROPP45FU0I46K2Dx7eRjuodJZHh7vcrpu": {
+      "workflow_id": "definition_workflow_01PQR5C3JYUAU20O6OId88VDKYnGqkWh0E3",
+      "name": "Daily",
+      "title": "",
+      "lowercase_name": "schedule.daily",
+      "type": "schedule",
+      "base_type": "trigger",
+      "ref_id": "schedule_01MMN7M1F6SWV6ApD6Sd7BVBmY3ybnn0BG4",
+      "version": "1.0.0",
+      "disabled": true,
+      "unique_name": "triggerschedule_01ROPP45FU0I46K2Dx7eRjuodJZHh7vcrpu",
+      "object_type": "triggerschedule"
+    }
+  },
+  "schedules": {
+    "schedule_01MMN7M1F6SWV6ApD6Sd7BVBmY3ybnn0BG4": {
+      "unique_name": "schedule_01MMN7M1F6SWV6ApD6Sd7BVBmY3ybnn0BG4",
+      "name": "Daily 1AM",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "Etc/GMT+0",
+        "starttime": "01:00",
+        "interval_hours": 0,
+        "interval_minutes": 0,
+        "number_of_times": 1,
+        "display_name": "Daily 1AM",
+        "description": ""
+      },
+      "version": "1.0.0",
+      "object_type": "schedule"
+    }
   },
   "target_groups": {
     "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH": {
@@ -986,7 +1050,7 @@
     }
   },
   "atomic_workflows": [
-    "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q",
-    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU"
+    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
+    "definition_workflow_01MMGML9TZA3Q0R6xzMOaQA1T5d8o4J1x1q"
   ]
 }
