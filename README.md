@@ -43,7 +43,7 @@
     * [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___EP_Removal_Webex.png)
     * [Screenshot - Approval](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___EP_Removal_Approval.png)
 
-  * **Use Case and Installation** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/SecureEP_Remove_InactiveEP_readme.md)
+  * **Use Case and Installation** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/SecureEP_Remove_InactiveEP_V2_readme.md)
 
 * **TG-Feeds-to-Umbrella-BlockList-2-Tiers-approval**
   * Download Threat Grid Curated feed and push domain to Cisco Umbrella Destinations Lists.
