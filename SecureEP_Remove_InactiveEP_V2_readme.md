@@ -26,8 +26,8 @@
 
 ### Currently Supported Solutions
 
- * Cisco Secure Endpoint (AMP)
- * Cisco Webex
+ * **Cisco Secure Endpoint (AMP)**
+ * **Cisco Webex**
 
 ### Design
 
@@ -67,7 +67,8 @@
 
 * Go to **"Account Keys"** and create or verify the following account. If it already exists under a different name, use it in next step.
 
-  * Cisco Secure Endpoint - Account Keys
+  * **Cisco Secure Endpoint** - Account Keys
+  
     * **Account Key Type* set to **HTTP Basic Authentication**
     * **Display Name** set to **AMP_Credentials**
     * **username**: **Cisco SecureEP API : 3rd Party API Client ID**
