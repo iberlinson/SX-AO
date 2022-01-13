@@ -7,20 +7,6 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Task Assignee",
-          "type": "datatype.string",
-          "description": "Task Assignee for the approval request - use the \"Set Variables\" action in the admin group",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01U7KGJY8B2LF7b3gn1C6CfwonBZUVsIIRi",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
         "properties": {
           "scope": "local",
@@ -31,34 +17,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01QEQVMCJSC350KLnz8yV9Nvang67h2hpk9",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "1",
-          "scope": "local",
-          "name": "number of days",
-          "type": "datatype.string",
-          "description": "Delay in number of days \n\nLast seen over XX days ago",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01PQSJCA32BKF2bWdaP5dQOI1vpBlyJbOxz",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.date",
-        "properties": {
-          "value": "0001-01-01",
-          "scope": "local",
-          "name": "temp_date-computer",
-          "type": "datatype.date",
-          "description": "Temp Variable to store last seen date (internal use) - do not modify",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01PQS73WQ4B9L4OEMhg3bdaT4fZKQ1IaBoK",
         "object_type": "variable_workflow"
       },
       {
@@ -78,15 +36,15 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "",
+          "value": "45",
           "scope": "local",
-          "name": "Task Requestor",
+          "name": "number of days",
           "type": "datatype.string",
-          "description": "Task Requestor for the approval request - use the \"Set Variables\" action in the admin group",
+          "description": "Delay in number of days \n\nLast seen over XX days ago",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01U7KF39YRO8O7gkY12BQsHjMO3qzbN4bzi",
+        "unique_name": "variable_workflow_01PQSJCA32BKF2bWdaP5dQOI1vpBlyJbOxz",
         "object_type": "variable_workflow"
       },
       {
@@ -101,6 +59,48 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01U7KFJ4TGK425ih3qBVRDzlfI1MmzyDwhy",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.date",
+        "properties": {
+          "value": "0001-01-01",
+          "scope": "local",
+          "name": "temp_date-computer",
+          "type": "datatype.date",
+          "description": "Temp Variable to store last seen date (internal use) - do not modify",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01PQS73WQ4B9L4OEMhg3bdaT4fZKQ1IaBoK",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Webex Bot Token",
+          "type": "datatype.secure_string",
+          "description": "Webex Bot Token - if notification enable, use the \"Set Variables\" action in the admin group",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QEQBZ5MWE0268wO5oBmUqMhzQJ6WKfuNd",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Alerting2",
+          "scope": "local",
+          "name": "Webex Room Name",
+          "type": "datatype.string",
+          "description": "Webex Room Name if notification enable - fill the value directly here.",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QEQDMTR1LT074Qws7rTXbmgM3KxwJrUVj",
         "object_type": "variable_workflow"
       },
       {
@@ -134,29 +134,29 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "Alerting2",
+          "value": "",
           "scope": "local",
-          "name": "Webex Room Name",
+          "name": "Task Assignee",
           "type": "datatype.string",
-          "description": "Webex Room Name if notification enable - fill the value directly here.",
+          "description": "Task Assignee for the approval request - use the \"Set Variables\" action in the admin group",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01QEQDMTR1LT074Qws7rTXbmgM3KxwJrUVj",
+        "unique_name": "variable_workflow_01U7KGJY8B2LF7b3gn1C6CfwonBZUVsIIRi",
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.secure_string",
+        "schema_id": "datatype.string",
         "properties": {
           "value": "",
           "scope": "local",
-          "name": "Webex Bot Token",
-          "type": "datatype.secure_string",
-          "description": "Webex Bot Token - if notification enable, use the \"Set Variables\" action in the admin group",
+          "name": "Task Requestor",
+          "type": "datatype.string",
+          "description": "Task Requestor for the approval request - use the \"Set Variables\" action in the admin group",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01QEQBZ5MWE0268wO5oBmUqMhzQJ6WKfuNd",
+        "unique_name": "variable_workflow_01U7KF39YRO8O7gkY12BQsHjMO3qzbN4bzi",
         "object_type": "variable_workflow"
       }
     ],
@@ -278,7 +278,7 @@
                               "variables_to_update": [
                                 {
                                   "variable_to_update": "$workflow.definition_workflow_01PQR5C3JYUAU20O6OId88VDKYnGqkWh0E3.local.variable_workflow_01QEQBZ5MWE0268wO5oBmUqMhzQJ6WKfuNd$",
-                                  "variable_value_new": "$global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8.global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8$"
+                                  "variable_value_new": ""
                                 }
                               ]
                             },
@@ -348,15 +348,15 @@
                               "variables_to_update": [
                                 {
                                   "variable_to_update": "$workflow.definition_workflow_01PQR5C3JYUAU20O6OId88VDKYnGqkWh0E3.local.variable_workflow_01U7KGJY8B2LF7b3gn1C6CfwonBZUVsIIRi$",
-                                  "variable_value_new": "ivberlin@cisco.com"
+                                  "variable_value_new": ""
                                 },
                                 {
                                   "variable_to_update": "$workflow.definition_workflow_01PQR5C3JYUAU20O6OId88VDKYnGqkWh0E3.local.variable_workflow_01U7KFJ4TGK425ih3qBVRDzlfI1MmzyDwhy$",
-                                  "variable_value_new": "ivberlin@cisco.com"
+                                  "variable_value_new": ""
                                 },
                                 {
                                   "variable_to_update": "$workflow.definition_workflow_01PQR5C3JYUAU20O6OId88VDKYnGqkWh0E3.local.variable_workflow_01U7KF39YRO8O7gkY12BQsHjMO3qzbN4bzi$",
-                                  "variable_value_new": "ivberlin@cisco.com"
+                                  "variable_value_new": ""
                                 }
                               ]
                             },
@@ -1326,21 +1326,6 @@
         }
       ],
       "object_type": "target_group"
-    }
-  },
-  "variables": {
-    "variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8": {
-      "unique_name": "variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8",
-      "properties": {
-        "value": "*****",
-        "scope": "global",
-        "name": "Cisco Teams BOT Token",
-        "type": "datatype.secure_string",
-        "description": "Enter here your Teams Bot token (https://developer.webex.com/docs/bots)- Remember to create a room named Alerting in Teams and add your bot as member",
-        "is_required": false,
-        "is_invisible": false
-      },
-      "object_type": "variable"
     }
   },
   "table_types": {
