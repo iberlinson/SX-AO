@@ -56,14 +56,16 @@
 
 ### Installation steps
 
-1. Logon to SecureX via: https://sign-on.security.cisco.com/. 
+1. **Logon to SecureX** via: https://sign-on.security.cisco.com/. 
 > **NOTE:** If you don't have a SecureX Account, please follow the [Quick Start Guide](https://www.cisco.com/c/en/us/td/docs/security/secure-sign-on/sso-quick-start-guide/sso-qsg-welcome.html).
-2. Go to Menu "Orchestration" 
-    ![Install___SXO_Menu](/Images/Install___SXO_Menu.jpg)
 
-3. Set up or Verify Targets, Account Keys and Variables
+2. **Go to Menu "Orchestration"**
+ 
+![Install___SXO_Menu](/Images/Install___SXO_Menu.jpg)
 
-* Go to "Account Keys" and create or verify the following account. If it already exists under a different name, use it in next step.
+3. **Set up or Verify Targets, Account Keys and Variables**
+
+* Go to **"Account Keys"** and create or verify the following account. If it already exists under a different name, use it in next step.
 
   * Cisco Secure Endpoint - Account Keys
     * **Account Key Type* set to **HTTP Basic Authentication**
@@ -72,9 +74,10 @@
     * **Password**: **Cisco Secure EP API : API Key**
     * **Authentication option**: **Basic**
 
-* Go to "Targets" and create the following accounts. If they already exists under a different display name and you can't rename or duplicate them, you will have to modify Target Criteria in the workflow.
+* Go to **"Targets"** and create the following accounts. If they already exists under a different display name and you can't rename or duplicate them, you will have to modify Target Criteria in the workflow.
 
-  * Cisco Secure Endpoint - Target 
+  * **Cisco Secure Endpoint** - Target 
+  
     * **Target Type** set to **HTTP Endpoint**
     * **Dislay Name** set to **AMP_Target**
     * **No Account Key** set to **false**
@@ -84,7 +87,8 @@
     * **Port** set to **443**
     * **Path** set to **/v1**
 
-  * Cisco Webex
+  * **Cisco Webex**
+  
     * **Target Type** set to **HTTP Endpoint**
     * **Display Name** set to **Webex Teams**
     * **No Account Key** set to **true**
@@ -95,29 +99,33 @@
 * Go to **Variables** and Create or verify global variables for your **Webex Token**
   
   * **Webex Token**
+  
     * **Data Type** set to **Secure String**
     * **Display Name** set to **Webex Bot Token**
     * **Scope** set to **Global**
     * **Value** set to **"YOUR WEBEX BOT TOKEN"**
     
-4. Import SXO Atomic Actions from Github
+4. **Import SXO Atomic Actions from Github**
 
-* Go to Workflows select "Atomic Actions" and **IMPORT** Atomoc Actions
+* Go to **Workflows** select **"Atomic Actions"** and **IMPORT** Atomoc Actions
 
 **This step is a pre-requirement to successful import the workflow in the next step!**
-  ![Install___SXO_ImportAtomic](/Images/Install___SXO_ImportAtomic.jpg)
-  * Import the following atomic action
-    * **Webex-Teams-Send-Simple-Adaptive-Card-V2** from [SX-AO Atomics](https://github.com/iberlinson/SX-AO/tree/main/Atomics)   
 
-5. Import the Workflow
+![Install___SXO_ImportAtomic](/Images/Install___SXO_ImportAtomic.jpg)
+
+* Import the following atomic action
+
+  * **Webex-Teams-Send-Simple-Adaptive-Card-V2** from [SX-AO Atomics](https://github.com/iberlinson/SX-AO/tree/main/Atomics)   
+
+5. **Import the Workflow**
 
 * Go to Workflows and **IMPORT** the following workflow from **SX-AO**
 
   * **Cisco-SecureEP-Remove-Inactive-Endpoints**
 
-6. Open and edit the imported workflow 
+6. **Open and edit the imported workflow** 
 
-*  Adjust following variables to fit with your needs*
+* Adjust following **variables** to fit with your needs
 
   * **Webex Room Name** set to the **Webex room name used for notification**. Remember to add you BOT to this room
   * **Number of days** set to the number of days for endpoint not seen connected
@@ -126,18 +134,21 @@
 
 ![image](/Images/readme___EP_Removal_Variables2.png)
 
-* If Approval Request set to True
+* If **Approval Request set to True**
+
   * fill the action **Set Variabble Task Approval Emails** in the first group **admin**
     * **Variable to update 1** set to **Task Assignee Email**
-    * **Variable to update 2 ** set to **Task Owner Email**
+    * **Variable to update 2** set to **Task Owner Email**
     * **Variable to update 3** set to **Task Requestor Email**
-    * ![image](/Images/readme___EP_Removal_Approval_email.png)
-  * If Notification set to True, fill the action **Set Variabble Webex Bot** in the first group **admin**
-    * **Variable to update** set to Global Variable **Webex Bot Token** (step3)
+
+![image](/Images/readme___EP_Removal_Approval_email.png)
+
+    * If **Notification set to True, fill the action **Set Variabble Webex Bot** in the first group **admin**
+      * **Variable to update** set to Global Variable **Webex Bot Token** (step3)
 
 ![image](/Images/readme___EP_Removal_Webex_Token1.png)
 
-* Validate the workflow
+* **Validate** the workflow
 
 ### Author and Contact
 Ivan Berlinson (Cisco) - <ivberlin@cisco.com>
