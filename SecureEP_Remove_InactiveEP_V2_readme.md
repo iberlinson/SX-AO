@@ -105,26 +105,14 @@
     * **Display Name** set to **Webex Bot Token**
     * **Scope** set to **Global**
     * **Value** set to **"YOUR WEBEX BOT TOKEN"**
-    
-4. **Import SXO Atomic Actions from Github**
-
-* Go to **Workflows** select **"Atomic Actions"** and **IMPORT** Atomoc Actions (or import manually)
-
-**This step is a pre-requirement to successful import the workflow in the next step!**
-
-![Install___SXO_ImportAtomic](/Images/Install___SXO_ImportAtomic.jpg)
-
-* Import the following atomic action
-
-  * **Webex-Teams-Send-Simple-Adaptive-Card-V2** from [SX-AO Atomics](https://github.com/iberlinson/SX-AO/tree/main/Atomics)   
-
-5. **Import the Workflow**
+     
+4. **Import the Workflow**
 
 * Go to Workflows and **IMPORT** the following workflow from **SX-AO** (or import manually)
 
   * **Cisco-SecureEP-Remove-Inactive-Endpoints-V2**
 
-6. **Open and edit the imported workflow** 
+5. **Open and edit the imported workflow** 
 
 * Adjust following **variables** to fit with your needs
 
@@ -149,7 +137,7 @@
 
 ![image](/Images/readme___EP_Removal_Webex_Token1.png)
 
-* **Validate** the workflow
+6. * **Validate** the workflow
 
 ### Author and Contact
 Ivan Berlinson (Cisco) - <ivberlin@cisco.com>
