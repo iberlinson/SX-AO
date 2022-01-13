@@ -1,4 +1,4 @@
-# 🧽 Cisco Secure EP - Remove Inactive Endpoints
+# 🧽 Cisco Secure EP - Remove Inactive Endpoints V2
 
 > **NOTE:** This is sample code and needs to be tested properly before using in production!
 
@@ -108,7 +108,7 @@
     
 4. **Import SXO Atomic Actions from Github**
 
-* Go to **Workflows** select **"Atomic Actions"** and **IMPORT** Atomoc Actions
+* Go to **Workflows** select **"Atomic Actions"** and **IMPORT** Atomoc Actions (or import manually)
 
 **This step is a pre-requirement to successful import the workflow in the next step!**
 
@@ -120,7 +120,7 @@
 
 5. **Import the Workflow**
 
-* Go to Workflows and **IMPORT** the following workflow from **SX-AO**
+* Go to Workflows and **IMPORT** the following workflow from **SX-AO** (or import manually)
 
   * **Cisco-SecureEP-Remove-Inactive-Endpoints**
 
