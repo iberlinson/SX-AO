@@ -122,7 +122,7 @@
 
 * Go to Workflows and **IMPORT** the following workflow from **SX-AO** (or import manually)
 
-  * **Cisco-SecureEP-Remove-Inactive-Endpoints**
+  * **Cisco-SecureEP-Remove-Inactive-Endpoints-V2**
 
 6. **Open and edit the imported workflow** 
 
