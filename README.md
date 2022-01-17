@@ -14,7 +14,7 @@
 
 ## Available Use Cases (Workflows)  
 
-* **Cisco Umbrella : Notification on Security Events (Umbrella-Notification-Security-Events)**
+* 🛎 **Cisco Umbrella : Notification on Security Events (Umbrella-Notification-Security-Events)**
 
   * Receive a near real time notification in Webex Teams on a new domain blobked by Umbrella
 
