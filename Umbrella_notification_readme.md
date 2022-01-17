@@ -13,7 +13,7 @@
 
 ### Use Case
 
-* Receive a near real time notification in Webex Teams or/and via Email on a new domain blobked by Umbrella
+* Receive a near real time notification in Webex Teams or/and via Email on a new domain blobked by Umbrella. The current version doens't support a filtering on security categories
 * Use SecureX Orchestration to periodically : 
   * Get new security event from last check
   * Notify in Webex Teams or/and via Email on new domains blocked seen for the first time in the organization

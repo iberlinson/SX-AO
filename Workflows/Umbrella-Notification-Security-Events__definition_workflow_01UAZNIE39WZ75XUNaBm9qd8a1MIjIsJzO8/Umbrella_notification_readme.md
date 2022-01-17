@@ -13,10 +13,10 @@
 
 ### Use Case
 
-* Receive a near real time notification in Webex Teams on a new domain blobked by Umbrella
+* Receive a near real time notification in Webex Teams or/and via Email on a new domain blobked by Umbrella. The current version doens't support a filtering on security categories
 * Use SecureX Orchestration to periodically : 
   * Get new security event from last check
-  * Notify in Webex Teams on new domains blocked seen for the first time in the organization
+  * Notify in Webex Teams or/and via Email on new domains blocked seen for the first time in the organization
   * Generate a statistiv table with number of hits for each domain and current notification status
 * This workflow can be trigger by a schedule to execute every X minutes
 * A control mechnism avoid simultaneous multiples runs of the workflow to limit risk of duplicate notification for the same domain.
@@ -35,7 +35,7 @@
        1. Yes - Completed
        2. No - Run the workflow and set Global Variable "running state" to "True"
     2. Admin Tasks
-       1. Webex : Get Bot Token from Global Variable and Search for notification room
+       1. If Webex Notification Enabled : Get Bot Token from Global Variable and Search for notification room
        2. Date : Calculate current date and get Last event date from global variable
     3. Query Umbrella Security Activity Report (start date = Last event date / to-date = current date)
     4. New security Events ?
@@ -43,11 +43,13 @@
        2. Yes - continue workflow execution
     5. For each entries in the security report, check if the domain exists in the Global statistics table
        1. if No :
-          1. Notify in Webex Teams
-          2. Add the domain to statistics table with Notified.= True and Hits = 1
+          1. If enable, Notify in Webex Teams
+          2. If enable, Notify via Email
+          3. Add the domain to statistics table with Notified.= True and Hits = 1
        2. If yes and Notified = False (notifcation enable for the domain)
-          1. Notify in Webex Teams
-          2. Update row in statistics table with Notified.= True and Hits = Hits + 1
+          1. If enable, Notify in Webex Teams
+          2. If enable, Notify via Emil
+          3. Update row in statistics table with Notified.= True and Hits = Hits + 1
        3. If yes and Notified = True (notification disable)
           1. Update row in statistics table with Notified.= True and Hits = Hits + 1
     6. Admin
@@ -92,6 +94,10 @@
     * **Authentication option**: **Basic**
     
       
+    
+  * If Email notiication is enable, please verify you have a valid Email account keys configured
+
+    
 
 * Go to **"Targets"** and create the following accounts. If they already exists under a different display name and you can't rename or duplicate them, you will have to modify Target Criteria in the workflow.
 
@@ -117,21 +123,19 @@
 
       
 
-  * **Cisco Webex** - Target
+  * If Enable, **Cisco Webex** - Target
 
     * **Target Type** set to **HTTP Endpoint**
-    
     * **Display Name** set to **Webex Teams**
-    
     * **No Account Key** set to **true**
-    
     * **Protocol** set to **HTTPS**
-    
     * **Host** set to **webexapis.com**
-    
     * **Port** set to **443**
+    * 
     
-      
+  * If Email notification is enabled, verify you have a valid SMTP target with a display name set to "Email Endpoint"
+
+    
 
 * Go to **Variables** and Create or verify global variables for your **Webex Token**
   
@@ -161,6 +165,9 @@
 
   * **Webex Room Name** set to the **Webex room name used for notification**. Remember to add your BOT to this room
   * **Umbrella Organization ID ** 
+  * **Webex Notification Enable** set to **True** if you want to get notification via Cisco Webex
+  * **Email Notification Enable** set to **True** if you want to get notification via Cisco Webex
+    * If set to true, set the **Email recipient address** variable 
 
 ![image](/Images/readme___Umbrella_Notification_Variables.png)
 
@@ -178,7 +185,7 @@
 
      
 
-7. At first run the workflow will use the date 2022-01-17T01:00:00-00:00. If you want to change this behavior you have to edit the global variable **"AO-Umbrella-Notification-lastevent_date"**
+7. At first run the workflow will use the date 2022-01-17T01:00:00Z. If you want to change this behavior you have to edit the global variable **"AO-Umbrella-Notification-lastevent_date"**
 
    
 
