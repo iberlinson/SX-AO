@@ -1,0 +1,147 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01UB5DL2LW6D54Zi2ye1NkRkPabAUga3PEA",
+    "name": "🧽 AO Umbrella Noification - Clear stats table",
+    "title": "🧽 AO Umbrella Noification - Clear stats table",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "🧽 AO Umbrella Noification - Clear stats table",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01UB5DL54RDYM60QQ4SnDb8hYBMMPqEJvSs",
+        "name": "Delete from Table",
+        "title": "Delete from Table  stat",
+        "type": "core.deleterowfromtable",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Delete from Table  stat",
+          "input_table": "$global.variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c.global.variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c$",
+          "rows": {
+            "all_rows": true
+          },
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01APQ1SF3EVRH4WYM1c0JtOZbGDtxU0sJQd"
+    ]
+  },
+  "categories": {
+    "category_01APQ1SF3EVRH4WYM1c0JtOZbGDtxU0sJQd": {
+      "unique_name": "category_01APQ1SF3EVRH4WYM1c0JtOZbGDtxU0sJQd",
+      "name": "AO.General.Utilities",
+      "title": "AO.General.Utilities",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "variables": {
+    "variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c": {
+      "unique_name": "variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c",
+      "schema_id": "tabletype_01UB18R6YH7UF2R4D3N5MZotD0QVsTmpHMv",
+      "properties": {
+        "value": [
+          {
+            "column_data": {
+              "Domain": "getmalware.com",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "legitmalware.xyz",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "retdemos.com",
+              "Hits": 3,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "retdemos.com",
+              "Hits": 3,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "retdemos.com",
+              "Hits": 1,
+              "Notified": true
+            }
+          }
+        ],
+        "scope": "global",
+        "name": "AO_Umbrella_Notification_stats",
+        "type": "datatype.table",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "table_types": {
+    "tabletype_01UB18R6YH7UF2R4D3N5MZotD0QVsTmpHMv": {
+      "unique_name": "tabletype_01UB18R6YH7UF2R4D3N5MZotD0QVsTmpHMv",
+      "data_type": "datatype.tabletype",
+      "display_name": "AO-Umbrella-notification",
+      "columns": [
+        {
+          "name": "Domain",
+          "title": "Domain",
+          "type": "string"
+        },
+        {
+          "name": "Notified",
+          "title": "Notified",
+          "type": "boolean"
+        },
+        {
+          "name": "Hits",
+          "title": "Hits",
+          "type": "integer"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
