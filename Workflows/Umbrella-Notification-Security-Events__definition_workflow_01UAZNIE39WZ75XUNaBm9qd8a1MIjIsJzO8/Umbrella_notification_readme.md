@@ -155,7 +155,7 @@
 
    
 
-* Go to Workflows and **IMPORT** the following workflow from **SX-AO** (or import manually)
+* Go to Workflows and **IMPORT** the following workflow from **SX-AO** (or import manually from [here](https://github.com/iberlinson/SX-AO/blob/main/Workflows/Umbrella-Notification-Security-Events__definition_workflow_01UAZNIE39WZ75XUNaBm9qd8a1MIjIsJzO8/definition_workflow_01UAZNIE39WZ75XUNaBm9qd8a1MIjIsJzO8.json)
 
   * **Umbrella-Notification-Security-Events**
 
