@@ -16,7 +16,7 @@
 
 * 🛎 **Cisco Umbrella : Notification on Security Events (Umbrella-Notification-Security-Events)**
 
-  * Receive a near real time notification in Webex Teams on a new domain blobked by Umbrella
+  * Receive a near real time notification in Webex Teams or via Email on a new domain blobked by Umbrella
 
     * Use SecureX Orchestration to periodically : 
       * Get new security event from last check
