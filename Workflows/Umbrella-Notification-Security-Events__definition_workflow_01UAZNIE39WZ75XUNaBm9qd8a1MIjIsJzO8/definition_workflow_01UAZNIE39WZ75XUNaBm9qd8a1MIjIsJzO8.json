@@ -1,0 +1,2320 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01UAZNIE39WZ75XUNaBm9qd8a1MIjIsJzO8",
+    "name": "Umbrella Notification - Security Events",
+    "title": "Umbrella Notification - Security Events",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Webex Token",
+          "type": "datatype.secure_string",
+          "description": "Local variable to store Webex Bot Token from global variable",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01UB1SQWIOKJT3aJ4gmktyJicckTpjnMrPa",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "1862631",
+          "scope": "local",
+          "name": "Umbrella Organization ID",
+          "type": "datatype.string",
+          "description": "Set here your Umbrella Organization ID",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01UB2WP4GCIAX1SAEvpnyUKHXWvcOdjgxJ5",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.date",
+        "properties": {
+          "value": "0001-01-01T00:00:00+00:00",
+          "scope": "local",
+          "name": "Past Date",
+          "type": "datatype.date",
+          "description": "Local variable to store last event date from Global variable",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01UB22WSPSTF06OJWBnW5wQydLdTvRUj2Ht",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Alerting2",
+          "scope": "local",
+          "name": "Webex Room",
+          "type": "datatype.string",
+          "description": "Webex room for notification",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01UB1SBQEFFQ40XobuwZrRq8uU7sDWsdCqT",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": true,
+      "description": "Enable near real time notification in Cisco Teams on New domain blocked by Umbrella (Security Events)",
+      "display_name": "Umbrella Notification - Security Events",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+          "run_on_all_targets": false,
+          "selected_target_types": [
+            "web-service.endpoint"
+          ],
+          "use_criteria": {
+            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+            "conditions": [
+              {
+                "operator": "eqi",
+                "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                "right_operand": "Cisco Umbrella Reporting v1"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01UB2GUFKK7144Y2DJcxjD72viWmlOqJdXO",
+        "name": "Group",
+        "title": "Get current running state",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get current running state",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01UB2H14M8VD9244zn9qCdKM8uPoXSSQM9g",
+            "name": "Condition Block",
+            "title": "Still running ?",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Still running ?",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01UB2H14VK8FV1TAJgq9flbnsTugVttn8fk",
+                "name": "Condition Branch",
+                "title": "Yes - completed",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$global.variable_01UB2HUUSRI661JdABaMC5I2NKaniPOxoDd.global.variable_01UB2HUUSRI661JdABaMC5I2NKaniPOxoDd$",
+                    "operator": "eq",
+                    "right_operand": true
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "Yes - completed",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01UB2HARTI2NC0KTYyQJENAuf5nwqhC2hvJ",
+                    "name": "Completed",
+                    "title": "Completed",
+                    "type": "logic.completed",
+                    "base_type": "activity",
+                    "properties": {
+                      "completion_type": "succeeded",
+                      "continue_on_failure": false,
+                      "display_name": "Completed",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01UB2KQWP5WB31KJdHdHywlBqDuIsL3Ji0p",
+                "name": "Condition Branch",
+                "title": "No - run",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$global.variable_01UB2HUUSRI661JdABaMC5I2NKaniPOxoDd.global.variable_01UB2HUUSRI661JdABaMC5I2NKaniPOxoDd$",
+                    "operator": "eq",
+                    "right_operand": false
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "No - run",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01UB2KYLQH4VU5DbMvfqlCoCtI5OssnRrcC",
+                    "name": "Set Variables",
+                    "title": "Set running state to True",
+                    "type": "core.set_multiple_variables",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Set running state to True",
+                      "skip_execution": false,
+                      "variables_to_update": [
+                        {
+                          "variable_to_update": "$global.variable_01UB2HUUSRI661JdABaMC5I2NKaniPOxoDd.global.variable_01UB2HUUSRI661JdABaMC5I2NKaniPOxoDd$",
+                          "variable_value_new": true
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01UAZO3CABFGP2Nw9PdRAHPYAZIcBSKxiiE",
+        "name": "Group",
+        "title": "Admin",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Admin",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01UB2VF8MD91J7bvRIJCanZ8o19wRl7mK3l",
+            "name": "Group",
+            "title": "Webex",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Webex",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01UB1SKLWC4IV3ZAstZH8URBFcdaCZOTqPz",
+                "name": "Set Variables",
+                "title": "Get Bot Token",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Bot Token",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01UAZNIE39WZ75XUNaBm9qd8a1MIjIsJzO8.local.variable_workflow_01UB1SQWIOKJT3aJ4gmktyJicckTpjnMrPa$",
+                      "variable_value_new": "$global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8.global.variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01UB1QQS6K5423KjpLY7WLiaXfVYucMi99L",
+                "name": "Webex Teams - Search for Room",
+                "title": "Webex Teams - Search for Room",
+                "type": "workflow.atomic_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Webex Teams - Search for Room",
+                  "input": {
+                    "variable_workflow_01PP790MCX1DN3EitpQebkUyJS65DbwS3nU": "$workflow.definition_workflow_01UAZNIE39WZ75XUNaBm9qd8a1MIjIsJzO8.local.variable_workflow_01UB1SQWIOKJT3aJ4gmktyJicckTpjnMrPa$",
+                    "variable_workflow_01PP790MCXB392D3R8pxh9fgOTjTde2bcMW": "$workflow.definition_workflow_01UAZNIE39WZ75XUNaBm9qd8a1MIjIsJzO8.local.variable_workflow_01UB1SBQEFFQ40XobuwZrRq8uU7sDWsdCqT$",
+                    "variable_workflow_01PP790MCXHP55YE6ylOEITWsWbUFJeyWGv": "",
+                    "variable_workflow_01PP790MCXM9W1MUwo85y8iNRCoQuQ4RGNa": ""
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target_group_criteria": true,
+                    "target_group": {
+                      "run_on_all_targets": false,
+                      "use_criteria": {
+                        "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                        "conditions": [
+                          {
+                            "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                            "operator": "eqi",
+                            "right_operand": "Webex Teams"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "workflow_id": "definition_workflow_01PP790MKJNWV6XyJuLdUyNlM2UV3JJACez"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01UB1R5L9QKMX1UyBTXFKD9v2j299VPDF0N",
+            "name": "Group",
+            "title": "Set Dates",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Dates",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01UB02GNS9RJM7f60rNuIIwExn7EfsZznEt",
+                "name": "Execute Python Script",
+                "title": "Get Current Date",
+                "type": "python3.script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Get Current Date",
+                  "script": "from datetime import datetime\nimport sys\n\ndate1 = datetime.now()\ndate2 = date1.strftime(\"%Y-%m-%dT%H:%M:%S+00:00\")\n",
+                  "script_queries": [
+                    {
+                      "script_query": "date2",
+                      "script_query_name": "current_date",
+                      "script_query_type": "date"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01UB231Y0G06Q6vT4cl9Pieqbh4w5MI0uME",
+                "name": "Set Variables",
+                "title": "Get Last event date from Global variable",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Last event date from Global variable",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01UAZNIE39WZ75XUNaBm9qd8a1MIjIsJzO8.local.variable_workflow_01UB22WSPSTF06OJWBnW5wQydLdTvRUj2Ht$",
+                      "variable_value_new": "$global.variable_01UB23Q62HSJB4WWxMMvcL87eeqWN42riW1.global.variable_01UB23Q62HSJB4WWxMMvcL87eeqWN42riW1$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01UB1RFN49Z133JkAhWMiFzqhBTU4H6HdI9",
+        "name": "Group",
+        "title": "Get Umbrella Security Events",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Umbrella Security Events",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01UAZSVRDQF823OmdOyjMq3U3y2jadVSlst",
+            "name": "Umbrella - Reporting - Get Security Activity Report",
+            "title": "Umbrella - Reporting - Get Security Activity Report",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Umbrella - Reporting - Get Security Activity Report",
+              "input": {
+                "variable_workflow_01PP7720M2HJD7M05NQCa61HPceKDjakG7E": "$activity.definition_activity_01UB02GNS9RJM7f60rNuIIwExn7EfsZznEt.output.script_queries.current_date$",
+                "variable_workflow_01PP7720M2IU43fx7ClbWkBjbhs5GzL3KCS": "$workflow.definition_workflow_01UAZNIE39WZ75XUNaBm9qd8a1MIjIsJzO8.local.variable_workflow_01UB22WSPSTF06OJWBnW5wQydLdTvRUj2Ht$",
+                "variable_workflow_01PP7720M2L7P65M8oVa5K1AJWuJKO8wKdo": "$workflow.definition_workflow_01UAZNIE39WZ75XUNaBm9qd8a1MIjIsJzO8.local.variable_workflow_01UB2WP4GCIAX1SAEvpnyUKHXWvcOdjgxJ5$",
+                "variable_workflow_01PP7720M2MDG75YOnDf4XHL4ih90NMtlvp": 100
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "use_workflow_target_group": true
+              },
+              "workflow_id": "definition_workflow_01PP7720TL3J45qKv34GB8H2ZPTkNBf84xe"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01UB2ELF2ZIFI0EU9IkkUhY3mbCMehJvGy2",
+        "name": "Condition Block",
+        "title": "New event ?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "New event ?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01UB2ELG423BA00v53hCMXSFpLN6rEM7m2B",
+            "name": "Condition Branch",
+            "title": "No - Completed",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01UAZSVRDQF823OmdOyjMq3U3y2jadVSlst.output.variable_workflow_01PP7720M2K1W3zn15nJeXmFESREkh7FBAY$",
+                "operator": "eq",
+                "right_operand": 0
+              },
+              "continue_on_failure": false,
+              "display_name": "No - Completed",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01UB2MJ5DSR4W5ZiHHPPzjfX6vfztifMqSF",
+                "name": "Set Variables",
+                "title": "Set Variables Running State",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables Running State",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$global.variable_01UB2HUUSRI661JdABaMC5I2NKaniPOxoDd.global.variable_01UB2HUUSRI661JdABaMC5I2NKaniPOxoDd$",
+                      "variable_value_new": false
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01UB2FSWPPYVN3eAUVuPoyxPgyRuLgRPBl3",
+                "name": "Completed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "succeeded",
+                  "continue_on_failure": false,
+                  "display_name": "Completed",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01UB2Q7YCERBM1xGn2L0Zn6kFdrwXWYGd2M",
+        "name": "Group",
+        "title": "Extract Data",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Extract Data",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01UAZNIW0J0OD5cNOYzO8dZB8O4cLt9Kjtl",
+            "name": "Read Table from JSON",
+            "title": "Read Destinations and dates from JSON",
+            "type": "corejava.read_table_from_json",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Read Destinations and dates from JSON",
+              "input_json": "$activity.definition_activity_01UAZSVRDQF823OmdOyjMq3U3y2jadVSlst.output.variable_workflow_01PP7720M2DKS13m4w1cDiqlD05hlTg0bjp$",
+              "jsonpath_query": "$.[*]",
+              "persist_output": true,
+              "populate_columns": false,
+              "skip_execution": false,
+              "table_columns": [
+                {
+                  "column_name": "destination",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "datetime",
+                  "column_type": "string",
+                  "zdate_type_format": ""
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01UAZNJIH2E8Q0MwSDE04lJVGkUuq4UyYuv",
+        "name": "For Each",
+        "title": "For Each domain blocked",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "For Each domain blocked",
+          "skip_execution": false,
+          "source_array": "$activity.definition_activity_01UAZNIW0J0OD5cNOYzO8dZB8O4cLt9Kjtl.output.read_table_from_json$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01UAZNJJXV90F2Xc3roiJ5zzWt8qF4qLUTV",
+            "name": "Group",
+            "title": "Check if alert already sent for this domain",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Check if alert already sent for this domain",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01UB1B3AYV9ZR3hZsKyNbteHCg7VxZW6Z9J",
+                "name": "Select from Table",
+                "title": "Select from Table",
+                "type": "core.selectfromtable",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "columns": [
+                    {
+                      "column_name": "Domain",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "Notified",
+                      "column_type": "boolean"
+                    },
+                    {
+                      "column_name": "Hits",
+                      "column_type": "integer"
+                    }
+                  ],
+                  "continue_on_failure": false,
+                  "display_name": "Select from Table",
+                  "input_table": "$global.variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c.global.variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c$",
+                  "number_of_rows": {
+                    "at_most": true,
+                    "first_n_rows": 1
+                  },
+                  "persist_output": false,
+                  "skip_execution": false,
+                  "sorting": {
+                    "no_sort": true
+                  },
+                  "where_clause": "Domain == \"$activity.definition_activity_01UAZNJIH2E8Q0MwSDE04lJVGkUuq4UyYuv.input.source_array[@].destination$\""
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01UAZNJNKCWF52pLTaf0dJSEE4ori8yugyB",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01UAZNJOHAVP310dF7BOUi2KslJjjm4LTsU",
+                "name": "Condition Branch",
+                "title": "No - notify and add domain to stats table",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01UB1B3AYV9ZR3hZsKyNbteHCg7VxZW6Z9J.output.row_count$",
+                    "operator": "eq",
+                    "right_operand": 0
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "No - notify and add domain to stats table",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01UB1QCVXLANF5wBkx0MLvYE6nIPR92MCXh",
+                    "name": "Webex Teams - Post Message to Room",
+                    "title": "Webex Teams - Post Message to Room",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Webex Teams - Post Message to Room",
+                      "input": {
+                        "variable_workflow_01PP78DJH1TI76BYfsu9g0Tqj2S6cUxjtu5": "$activity.definition_activity_01UB1QQS6K5423KjpLY7WLiaXfVYucMi99L.output.variable_workflow_01PP790MCXJ7Y5cAWcGZWbG4Es0126zb1I6$",
+                        "variable_workflow_01PP78DJH1XNQ7gNQ5iZdperRHqrppzARXC": "$workflow.definition_workflow_01UAZNIE39WZ75XUNaBm9qd8a1MIjIsJzO8.local.variable_workflow_01UB1SQWIOKJT3aJ4gmktyJicckTpjnMrPa$",
+                        "variable_workflow_01PP78DJH1YWL3allalGQbg1VkgKwh9GvCi": "",
+                        "variable_workflow_01PP78DJH22BB3Ej3I8tJ4OCQur0unYGjj9": "",
+                        "variable_workflow_01SVERQNMKN8N6vqX2djMtAfshphGydGsH8": "[\n{\n\"contentType\": \"application/vnd.microsoft.card.adaptive\",\n\"content\": {\n\"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n\"version\": \"1.2\",\n\"type\": \"AdaptiveCard\",\n\"body\": [\n{\n\"type\": \"ColumnSet\",\n\"columns\": [\n{\n\"type\": \"Column\",\n\"items\": [\n{\n\"type\": \"Image\",\n\"style\": \"Default\",\n\"url\": \"https://securex.us.security.cisco.com/logo192.png\",\n\"size\": \"Medium\",\n\"height\": \"50px\"\n}\n],\n\"width\": \"auto\"\n},\n{\n\"type\": \"Column\",\n\"items\": [\n{\n\"type\": \"TextBlock\",\n\"text\": \"SecureX Orchestration\",\n\"weight\": \"Lighter\",\n\"color\": \"Accent\"\n},\n{\n\"type\": \"TextBlock\",\n\"weight\": \"Bolder\",\n\"text\": \"Umbrella Security Notification - Domain Blocked\",\n\"wrap\": true,\n\"color\": \"Light\",\n\"size\": \"Large\",\n\"spacing\": \"Small\"\n}\n],\n\"width\": \"stretch\"\n}\n]\n},\n{\n\"type\": \"TextBlock\",\n\"text\": \"This domain , seen for the first time, has been blocked by Umbrella for security reasons : $activity.definition_activity_01UAZNJIH2E8Q0MwSDE04lJVGkUuq4UyYuv.input.source_array[@].destination$ \",\n\"wrap\": true\n},\n{\n\"type\": \"ActionSet\",\n\"actions\": [\n\n{\n\"type\": \"Action.OpenUrl\",\n\"title\": \"SecureX\",\n\"style\": \"default\",\n\"url\": \"https://security.cisco.com/\"\n}\n],\n\"spacing\": \"Medium\"\n}\n]\n}\n}\n]"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target_group_criteria": true,
+                        "target_group": {
+                          "run_on_all_targets": false,
+                          "use_criteria": {
+                            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                            "conditions": [
+                              {
+                                "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                "operator": "eqi",
+                                "right_operand": "Webex Teams"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "workflow_id": "definition_workflow_01PP78DJMXS415nTjonujf03ROkr6t2PNyw"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01UB1KPXF2Q1Y2CmMfWyytOCEoALxeF1tgW",
+                    "name": "Add Row to Table",
+                    "title": "Add Row to Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Add Row to Table",
+                      "input_table": "$global.variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c.global.variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c$",
+                      "row": [
+                        {
+                          "key": "Domain",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01UAZNJIH2E8Q0MwSDE04lJVGkUuq4UyYuv.input.source_array[@].destination$"
+                        },
+                        {
+                          "key": "Notified",
+                          "type": "boolean",
+                          "value": true
+                        },
+                        {
+                          "key": "Hits",
+                          "type": "integer",
+                          "value": 1
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01UB1LFOJJ2TL3WZ2BCKmbLVjBRYCjti7Hf",
+                "name": "Condition Branch",
+                "title": "Yes but not notified : notify and update hits",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": {
+                      "left_operand": "$activity.definition_activity_01UB1B3AYV9ZR3hZsKyNbteHCg7VxZW6Z9J.output.row_count$",
+                      "operator": "gt",
+                      "right_operand": 0
+                    },
+                    "operator": "and",
+                    "right_operand": {
+                      "left_operand": "$activity.definition_activity_01UB1B3AYV9ZR3hZsKyNbteHCg7VxZW6Z9J.output.output_table[0].Notified$",
+                      "operator": "eq",
+                      "right_operand": false
+                    }
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "Yes but not notified : notify and update hits",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01UB1XP79IDL41vFHt6efMZxbJCPiyycEoo",
+                    "name": "Webex Teams - Post Message to Room",
+                    "title": "Webex Teams - Post Message to Room",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Webex Teams - Post Message to Room",
+                      "input": {
+                        "variable_workflow_01PP78DJH1TI76BYfsu9g0Tqj2S6cUxjtu5": "$activity.definition_activity_01UB1QQS6K5423KjpLY7WLiaXfVYucMi99L.output.variable_workflow_01PP790MCXJ7Y5cAWcGZWbG4Es0126zb1I6$",
+                        "variable_workflow_01PP78DJH1XNQ7gNQ5iZdperRHqrppzARXC": "$workflow.definition_workflow_01UAZNIE39WZ75XUNaBm9qd8a1MIjIsJzO8.local.variable_workflow_01UB1SQWIOKJT3aJ4gmktyJicckTpjnMrPa$",
+                        "variable_workflow_01PP78DJH1YWL3allalGQbg1VkgKwh9GvCi": "",
+                        "variable_workflow_01PP78DJH22BB3Ej3I8tJ4OCQur0unYGjj9": "",
+                        "variable_workflow_01SVERQNMKN8N6vqX2djMtAfshphGydGsH8": "[\n{\n\"contentType\": \"application/vnd.microsoft.card.adaptive\",\n\"content\": {\n\"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n\"version\": \"1.2\",\n\"type\": \"AdaptiveCard\",\n\"body\": [\n{\n\"type\": \"ColumnSet\",\n\"columns\": [\n{\n\"type\": \"Column\",\n\"items\": [\n{\n\"type\": \"Image\",\n\"style\": \"Default\",\n\"url\": \"https://securex.us.security.cisco.com/logo192.png\",\n\"size\": \"Medium\",\n\"height\": \"50px\"\n}\n],\n\"width\": \"auto\"\n},\n{\n\"type\": \"Column\",\n\"items\": [\n{\n\"type\": \"TextBlock\",\n\"text\": \"SecureX Orchestration\",\n\"weight\": \"Lighter\",\n\"color\": \"Accent\"\n},\n{\n\"type\": \"TextBlock\",\n\"weight\": \"Bolder\",\n\"text\": \"Umbrella Security Notification - Domain Blocked\",\n\"wrap\": true,\n\"color\": \"Light\",\n\"size\": \"Large\",\n\"spacing\": \"Small\"\n}\n],\n\"width\": \"stretch\"\n}\n]\n},\n{\n\"type\": \"TextBlock\",\n\"text\": \"This domain has been blocked by Umbrella for security reasons : $activity.definition_activity_01UAZNJIH2E8Q0MwSDE04lJVGkUuq4UyYuv.input.source_array[@].destination$ \",\n\"wrap\": true\n},\n{\n\"type\": \"ActionSet\",\n\"actions\": [\n\n{\n\"type\": \"Action.OpenUrl\",\n\"title\": \"SecureX\",\n\"style\": \"default\",\n\"url\": \"https://security.cisco.com/\"\n}\n],\n\"spacing\": \"Medium\"\n}\n]\n}\n}\n]"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target_group_criteria": true,
+                        "target_group": {
+                          "run_on_all_targets": false,
+                          "use_criteria": {
+                            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                            "conditions": [
+                              {
+                                "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                "operator": "eqi",
+                                "right_operand": "Webex Teams"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "workflow_id": "definition_workflow_01PP78DJMXS415nTjonujf03ROkr6t2PNyw"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01UB1MYS150VG5AcqE5Yqw3pNEmEsshmgfp",
+                    "name": "Update Row in Table",
+                    "title": "Update Row in Table",
+                    "type": "core.updaterowintable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "columns": [
+                        {
+                          "column_name": "Notified",
+                          "column_type": "boolean"
+                        },
+                        {
+                          "column_name": "Hits",
+                          "column_type": "integer"
+                        }
+                      ],
+                      "continue_on_failure": false,
+                      "display_name": "Update Row in Table",
+                      "input_table": "$global.variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c.global.variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c$",
+                      "row": [
+                        {
+                          "key": "Notified",
+                          "type": "boolean",
+                          "value": true
+                        },
+                        {
+                          "key": "Hits",
+                          "type": "integer",
+                          "value": "$activity.definition_activity_01UB1B3AYV9ZR3hZsKyNbteHCg7VxZW6Z9J.output.output_table[0].Hits$+1"
+                        }
+                      ],
+                      "rows": {
+                        "rows_matching_criteria": true,
+                        "where_clause": "Domain == \"$activity.definition_activity_01UAZNJIH2E8Q0MwSDE04lJVGkUuq4UyYuv.input.source_array[@].destination$\""
+                      },
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01UB1MG116ARF4BEsgSvt4CFiBpKQX8kEEK",
+                "name": "Condition Branch",
+                "title": "Yes - update hits",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": {
+                      "left_operand": "$activity.definition_activity_01UB1B3AYV9ZR3hZsKyNbteHCg7VxZW6Z9J.output.row_count$",
+                      "operator": "gt",
+                      "right_operand": 0
+                    },
+                    "operator": "and",
+                    "right_operand": {
+                      "left_operand": "$activity.definition_activity_01UB1B3AYV9ZR3hZsKyNbteHCg7VxZW6Z9J.output.output_table[0].Notified$",
+                      "operator": "ne",
+                      "right_operand": false
+                    }
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "Yes - update hits",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01UB1OEG8DK604ULVBBEyCPYsUJr8QuZKn7",
+                    "name": "Update Row in Table",
+                    "title": "Update Row in Table",
+                    "type": "core.updaterowintable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "columns": [
+                        {
+                          "column_name": "Hits",
+                          "column_type": "integer"
+                        }
+                      ],
+                      "continue_on_failure": false,
+                      "display_name": "Update Row in Table",
+                      "input_table": "$global.variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c.global.variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c$",
+                      "row": [
+                        {
+                          "key": "Hits",
+                          "type": "integer",
+                          "value": "$activity.definition_activity_01UB1B3AYV9ZR3hZsKyNbteHCg7VxZW6Z9J.output.output_table[0].Hits$+1"
+                        }
+                      ],
+                      "rows": {
+                        "rows_matching_criteria": true,
+                        "where_clause": "Domain == \"$activity.definition_activity_01UAZNJIH2E8Q0MwSDE04lJVGkUuq4UyYuv.input.source_array[@].destination$\""
+                      },
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01UB1MG11BPI32Waovuyxl6ty1sAV7iORw9",
+                    "name": "Add Row to Table",
+                    "title": "Add Row to Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Add Row to Table",
+                      "input_table": "$global.variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c.global.variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c$",
+                      "row": [
+                        {
+                          "key": "Domain",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01UAZNJIH2E8Q0MwSDE04lJVGkUuq4UyYuv.input.source_array[@].destination$"
+                        },
+                        {
+                          "key": "Notified",
+                          "type": "boolean",
+                          "value": true
+                        },
+                        {
+                          "key": "Hits",
+                          "type": "integer",
+                          "value": 1
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01UB2IWZH3YEV4zIhvBAxwOd4YgU2Edhwba",
+        "name": "Group",
+        "title": "Admin",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Admin",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01UB2CBKO61DM6LtMtdpwf3q3EtCQUWG1V3",
+            "name": "Format Date",
+            "title": "Format Date Last event",
+            "type": "core.format_date",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Format Date Last event",
+              "format_string": "2006-01-02T15:04:05Z07:00",
+              "original_date": "$activity.definition_activity_01UAZNIW0J0OD5cNOYzO8dZB8O4cLt9Kjtl.output.read_table_from_json[0].datetime$",
+              "skip_execution": false,
+              "use_custom_format": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01UB2CSC2H2II5GgEYNviDJnLIiKtLwo3q0",
+            "name": "Set Variables",
+            "title": "Set Variables Last Event Date and running",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables Last Event Date and running",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$global.variable_01UB23Q62HSJB4WWxMMvcL87eeqWN42riW1.global.variable_01UB23Q62HSJB4WWxMMvcL87eeqWN42riW1$",
+                  "variable_value_new": "$activity.definition_activity_01UB2CBKO61DM6LtMtdpwf3q3EtCQUWG1V3.output.result$"
+                },
+                {
+                  "variable_to_update": "$global.variable_01UB2HUUSRI661JdABaMC5I2NKaniPOxoDd.global.variable_01UB2HUUSRI661JdABaMC5I2NKaniPOxoDd$",
+                  "variable_value_new": false
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r"
+    ]
+  },
+  "categories": {
+    "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r": {
+      "unique_name": "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r",
+      "name": "SecureX",
+      "title": "SecureX",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "triggers": {
+    "triggerschedule_01UB2S8RGW4JU2oADaxn1zVi3kpZoItciVQ": {
+      "workflow_id": "definition_workflow_01UAZNIE39WZ75XUNaBm9qd8a1MIjIsJzO8",
+      "name": "Every Minute",
+      "title": "",
+      "lowercase_name": "schedule.every_minute",
+      "type": "schedule",
+      "base_type": "trigger",
+      "ref_id": "schedule_01T7BDL06A6PE2oeLn92Afuvi1WABn7hIv7",
+      "version": "",
+      "disabled": false,
+      "unique_name": "triggerschedule_01UB2S8RGW4JU2oADaxn1zVi3kpZoItciVQ",
+      "object_type": "triggerschedule"
+    }
+  },
+  "schedules": {
+    "schedule_01T7BDL06A6PE2oeLn92Afuvi1WABn7hIv7": {
+      "unique_name": "schedule_01T7BDL06A6PE2oeLn92Afuvi1WABn7hIv7",
+      "name": "Every minute",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "Etc/GMT+0",
+        "starttime": "00:00",
+        "interval_hours": 0,
+        "interval_minutes": 1,
+        "number_of_times": 1440,
+        "display_name": "Every minute",
+        "description": ""
+      },
+      "version": "1.0.0",
+      "object_type": "schedule"
+    }
+  },
+  "target_groups": {
+    "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH": {
+      "unique_name": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+      "name": "Default TargetGroup",
+      "title": "Default TargetGroup",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "web-service.endpoint",
+          "view_target_type": "web-service.endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "email.smtp_endpoint",
+          "view_target_type": "email.smtp_endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
+    }
+  },
+  "variables": {
+    "variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8": {
+      "unique_name": "variable_01KEH4RU5N6VM1dCv2HDrsRXCbj0pv64GI8",
+      "properties": {
+        "value": "*****",
+        "scope": "global",
+        "name": "Cisco Teams BOT Token",
+        "type": "datatype.secure_string",
+        "description": "Enter here your Teams Bot token (https://developer.webex.com/docs/bots)- Remember to create a room named Alerting in Teams and add your bot as member",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c": {
+      "unique_name": "variable_01UB1HDTIQDBB7EuUK1WP8ckTGSYJmju86c",
+      "schema_id": "tabletype_01UB18R6YH7UF2R4D3N5MZotD0QVsTmpHMv",
+      "properties": {
+        "value": [
+          {
+            "column_data": {
+              "Domain": "test",
+              "Hits": 0,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "480028225.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 5,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "trk62.zzzperform.com",
+              "Hits": 5,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479830150.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 5,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479652794.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "wasscaltontuld.com",
+              "Hits": 8,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "wasscaltontuld.com",
+              "Hits": 8,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479456855.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479343484.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "a.exdynsrv.com",
+              "Hits": 6,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "478906944.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "thdifferuken.com",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "my.noip.com",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "480028225.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 5,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "trk62.zzzperform.com",
+              "Hits": 5,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479830150.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 5,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479652794.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "wasscaltontuld.com",
+              "Hits": 8,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "wasscaltontuld.com",
+              "Hits": 8,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479456855.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479343484.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "a.exdynsrv.com",
+              "Hits": 6,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "478906944.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "thdifferuken.com",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "my.noip.com",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "480028225.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 5,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "trk62.zzzperform.com",
+              "Hits": 5,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479830150.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 5,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479652794.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "wasscaltontuld.com",
+              "Hits": 8,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "wasscaltontuld.com",
+              "Hits": 8,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479456855.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479343484.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "a.exdynsrv.com",
+              "Hits": 6,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "a.exdynsrv.com",
+              "Hits": 6,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "478906944.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "thdifferuken.com",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "my.noip.com",
+              "Hits": 4,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "478783880.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 2,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "478662759.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 2,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "480028225.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 5,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "trk62.zzzperform.com",
+              "Hits": 5,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479830150.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 5,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479652794.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 84,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "api.2ip.ua",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 16,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "kotob.top",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "wasscaltontuld.com",
+              "Hits": 8,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "wasscaltontuld.com",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479456855.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479343484.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "a.exdynsrv.com",
+              "Hits": 6,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "a.exdynsrv.com",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "478906944.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "thdifferuken.com",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "my.noip.com",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "478783880.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "478662759.zazfttitt-15o1.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 18,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "ivberlin.hopto.org",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "480028225.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "trk62.zzzperform.com",
+              "Hits": 1,
+              "Notified": true
+            }
+          },
+          {
+            "column_data": {
+              "Domain": "479830150.zazfttitt-15o2.c8599e54-c17a-4dbb-8ce2-9c42cc55eb97.d0.dsnu.net",
+              "Hits": 1,
+              "Notified": true
+            }
+          }
+        ],
+        "scope": "global",
+        "name": "AO_Umbrella_Notification_stats",
+        "type": "datatype.table",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01UB23Q62HSJB4WWxMMvcL87eeqWN42riW1": {
+      "unique_name": "variable_01UB23Q62HSJB4WWxMMvcL87eeqWN42riW1",
+      "properties": {
+        "value": "2022-01-17T12:05:16Z",
+        "scope": "global",
+        "name": "AO-Umbrella-Notification-lastevent_date",
+        "type": "datatype.date",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01UB2HUUSRI661JdABaMC5I2NKaniPOxoDd": {
+      "unique_name": "variable_01UB2HUUSRI661JdABaMC5I2NKaniPOxoDd",
+      "properties": {
+        "value": false,
+        "scope": "global",
+        "name": "AO-Umbrella-running",
+        "type": "datatype.boolean",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "table_types": {
+    "tabletype_01UB18R6YH7UF2R4D3N5MZotD0QVsTmpHMv": {
+      "unique_name": "tabletype_01UB18R6YH7UF2R4D3N5MZotD0QVsTmpHMv",
+      "data_type": "datatype.tabletype",
+      "display_name": "AO-Umbrella-notification",
+      "columns": [
+        {
+          "name": "Hits",
+          "title": "Hits",
+          "type": "integer"
+        },
+        {
+          "name": "Domain",
+          "title": "Domain",
+          "type": "string"
+        },
+        {
+          "name": "Notified",
+          "title": "Notified",
+          "type": "boolean"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01PP78DJMXS415nTjonujf03ROkr6t2PNyw",
+    "definition_workflow_01PP790MKJNWV6XyJuLdUyNlM2UV3JJACez",
+    "definition_workflow_01PP7720TL3J45qKv34GB8H2ZPTkNBf84xe"
+  ]
+}
