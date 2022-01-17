@@ -14,17 +14,35 @@
 
 ## Available Use Cases (Workflows)  
 
+* **Cisco Umbrella : Notification on Security Events (Umbrella-Notification-Security-Events)**
+
+  * Receive a near real time notification in Webex Teams on a new domain blobked by Umbrella
+
+    * Use SecureX Orchestration to periodically : 
+      * Get new security event from last check
+      * Notify in Webex Teams on new domains blocked seen for the first time in the organization
+      * Maintain a statistic table with number of hits for each domain and current notification status
+
+  * This workflow can be trigger by a schedule to execute every X minutes
+
+    * [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Umbrella_Notification_Webex.png)
+
+  * **Use Case and Installations** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/Umbrella_notification_readme)
+
+    
+
 * **🛎 RT-Monitoring-SecureEP-Umbrella-Notification-Incident**
+  
   * Continuous monitoring of Umbrella and/or Secure EP Security events (loop)
   * Near real time Incident creation and update (grouped by endpoint hostname, **no duplicate event**)
   * Near real time notification on new or updated incident (**no duplicate notification for same event occurring multiple times**)
   * Statistic tables
-
+  
     * [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___RT_Webex.png)
     * [Screenshot - Incident](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___RT_Incident.png)
-
+  
   * **Use Case and Installations** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/RT_Monitoring_USECASE.md)
-
+  
 * **🔦 Hunt - Search User - Orbital**
   * Search for a given user via :
     * Orbital (Account (Monitoring and Logged_In)
@@ -33,13 +51,13 @@
 
     * [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Hunt_User_Webex.png)
     * [Screenshot - Casebook](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Hunt_User_casebook.png)
- 
+
   * **Use Case and Installation** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/Hunt_User_readme.md)
- 
+
 * **🧽 Cisco Secure EP - Remove Inactive Endpoints**
   * Cisco Seucre Endpoint : Identify and Remove from computers list endpoints with a last seen over a given number of days (default : 45 days)
     * Include 2-Tiers approval and Notification in Cisco Webex
- 
+
     * [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___EP_Removal_Webex.png)
     * [Screenshot - Approval](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___EP_Removal_Approval.png)
 
