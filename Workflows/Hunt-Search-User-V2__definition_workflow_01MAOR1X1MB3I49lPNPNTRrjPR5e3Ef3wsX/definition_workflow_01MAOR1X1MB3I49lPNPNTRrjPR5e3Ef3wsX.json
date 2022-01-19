@@ -1,0 +1,1897 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX",
+    "name": "🔦 Hunt - Search User Activity",
+    "title": "🔦 Hunt - Search User Activity",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Internal - Webex Bot Token",
+          "type": "datatype.secure_string",
+          "description": "Webex Bot Token from Global Variable - Do not modify here but use the Set Variable action in the admin group",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QE5BHNVKGB95mn4umFigNfvBFEKYUH34x",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "\u003chtml\u003e\n\t\u003chead\u003e\u003c/head\u003e\n\t\u003cbody dir=\"auto\" style=\"word-wrap: break-word; -webkit-nbsp-mode: space; line-break: after-white-space;\"\u003e\n\t\t\u003ctable width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"\u003e\n\t\t\t\u003ctbody\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd\u003e\n\t\t\t\t\t\t\u003ctable style=\"width:602px;\" class=\"main_table\" width=\"602\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"center\"\u003e\n\t\t\t\t\t\t\t\u003ctbody\u003e\n\t\t\t\t\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\t\t\t\t\u003ctd\u003e\n\t\t\t\t\t\t\t\t\t\t\u003ctable width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"\u003e\n\t\t\t\t\t\t\t\t\t\t\t\u003ctbody\u003e\n\t\t\t\t\t\t\t\t\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\t\t\t\t\t\t\t\t\u003ctd style=\"font-size:0px; line-height: 0px; height: 1px;\" height=\"1\" bgcolor=\"#cbcbcb\"\u003e\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\u003cimg src=\"http://msp.elateral.com/Studio/HTMLEmailImages/border-gray.gif\" height=\"1\" border=\"0\"\u003e\n                                                    \u003c/td\u003e\n                                                \u003c/tr\u003e\n                                                \u003ctr\u003e\n                                                    \u003ctd\u003e\n                                                        \u003ctable width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"\u003e\n                                                            \u003ctbody\u003e\n                                                                \u003ctr\u003e\n                                                                    \u003ctd\u003e\n                                                                        \u003ctable width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"\u003e\n                                                                            \u003ctbody\u003e\n                                                                                \u003ctr\u003e\n                                                                                    \u003ctd style=\"font-size:0px; line-height:0px;\" width=\"1\" bgcolor=\"#cbcbcb\"\u003e\n                                                                                        \u003cimg src=\"http://msp.elateral.com/Studio/HTMLEmailImages/border-gray.gif\" width=\"1\" border=\"0\"\u003e\n                                                                                    \u003c/td\u003e\n                                                                                    \u003ctd\u003e\n                                                                                        \u003ctable width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"\u003e\n                                                                                            \u003ctbody\u003e\n                                                                                                \u003ctr\u003e\n                                                                                                    \u003ctd\u003e\n                                                                                                        \u003cdiv class=\"\"\u003e\n                                                                                                            \u003ctable width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"\u003e\n                                                                                                                \u003ctbody\u003e\n                                                                                                                    \u003ctr\u003e\n                                                                                                                        \u003ctd\u003e\n                                                                                                                            \u003ctable style=\"background-color: #FFFFFF\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" bgcolor=\"#FFFFFF\"\u003e\n                                                                                                                                \u003ctbody\u003e\n                                                                                                                                    \u003ctr\u003e\n                                                                                                                                        \u003ctd style=\"font-size:0px; line-height:0px;\" width=\"29\"\u003e\u003c/td\u003e\n                                                                                                                                        \u003ctd\u003e\n                                                                                                                                            \u003ctable width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"\u003e\n                                                                                                                                                \u003ctbody\u003e\n                                                                                                                                                    \u003ctr\u003e\n                                                                                                                                                        \u003ctd style=\"font-size:0px; line-height:0px; height: 60px; vertical-align: middle;\" valign=\"middle\" height=\"60\" align=\"left\"\u003e\n                                                                                                                                                            \u003cimg src=\"http://Images.campaignmgr.cisco.com/EloquaImages/clients/CMCInternal/%7Bbe51ffe8-df4e-4c23-bc66-59e39bdb10aa%7D_cisco-logo-header.png\" alt=\"Cisco\" style=\"display: inline-block;\" border=\"0\"\u003e\n                                                                                                                                                        \u003c/td\u003e\n                                                                                                                                                    \u003c/tr\u003e\n                                                                                                                                                \u003c/tbody\u003e\n                                                                                                                                            \u003c/table\u003e\n                                                                                                                                        \u003c/td\u003e\n                                                                                                                                        \u003ctd style=\"font-size:0px; line-height:0px;\" class=\"\" width=\"29\"\u003e\u003c/td\u003e\n                                                                                                                                    \u003c/tr\u003e\n                                                                                                                                \u003c/tbody\u003e\n                                                                                                                            \u003c/table\u003e\n                                                                                                                        \u003c/td\u003e\n                                                                                                                    \u003c/tr\u003e\n                                                                                                                    \u003ctr\u003e\n                                                                                                                        \u003ctd\u003e\n                                                                                                                            \u003ctable style=\"background-color: #00BCEB\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" bgcolor=\"#00BCEB\"\u003e\n                                                                                                                                \u003ctbody\u003e\n                                                                                                                                    \u003ctr\u003e\n                                                                                                                                        \u003ctd style=\"font-size:0px; line-height:0px;\" class=\"\" width=\"29\"\u003e\u003c/td\u003e\n                                                                                                                                        \u003ctd\u003e\n                                                                                                                                            \u003ctable width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"\u003e\n                                                                                                                                                \u003ctbody\u003e\n                                                                                                                                                    \u003ctr\u003e\n                                                                                                                                                        \u003ctd style=\"font-size:0px; line-height:0px;\" class=\"\" height=\"25\" align=\"center\"\u003e\u003c/td\u003e\n                                                                                                                                                    \u003c/tr\u003e\n                                                                                                                                                    \u003ctr\u003e\n                                                                                                                                                        \u003ctd class=\"main_header\" style=\"font-family: CiscoSansTT, Arial, Helvetica, sans-serif; font-size: 30px; line-height: 30px; color: rgb(255, 255, 255);\" valign=\"top\" align=\"center\"\u003e\n                                                                                                                                                            \u003cfont face=\"CiscoSansTT, Arial, Helvetica, sans-serif\"\u003e\n                                                                                                                                                                {header}\n                                                                                                                                                            \u003c/font\u003e\n                                                                                                                                                        \u003c/td\u003e\n                                                                                                                                                    \u003c/tr\u003e\n                                                                                                                                                    \u003ctr\u003e\n                                                                                                                                                        \u003ctd style=\"font-size:0px; line-height:0px;\" class=\"\" height=\"5\" align=\"center\"\u003e\u003c/td\u003e\n                                                                                                                                                    \u003c/tr\u003e\n                                                                                                                                                    \u003ctr\u003e\n                                                                                                                                                        \u003ctd class=\"sub_header\" style=\"font-family: CiscoSansTT, Arial, Helvetica, sans-serif; font-size:22px; line-height:24px; color:#0d274d;\" valign=\"top\" align=\"center\"\u003e\n                                                                                                                                                            \u003cfont face=\"CiscoSansTT, Arial, Helvetica, sans-serif\"\u003e{subheader}\u003c/font\u003e\n                                                                                                                                                        \u003c/td\u003e\n                                                                                                                                                    \u003c/tr\u003e\n                                                                                                                                                    \u003ctr\u003e\n                                                                                                                                                        \u003ctd style=\"font-size:0px; line-height:0px;\" class=\"\" height=\"20\"\u003e\u003c/td\u003e\n                                                                                                                                                    \u003c/tr\u003e\n                                                                                                                                                \u003c/tbody\u003e\n                                                                                                                                            \u003c/table\u003e\n                                                                                                                                        \u003c/td\u003e\n                                                                                                                                        \u003ctd style=\"font-size:0px; line-height:0px;\" class=\"\" width=\"29\"\u003e\u003c/td\u003e\n                                                                                                                                    \u003c/tr\u003e\n                                                                                                                                \u003c/tbody\u003e\n                                                                                                                            \u003c/table\u003e\n                                                                                                                        \u003c/td\u003e\n                                                                                                                    \u003c/tr\u003e\n                                                                                                                \u003c/tbody\u003e\n                                                                                                            \u003c/table\u003e\n                                                                                                        \u003c/div\u003e\n                                                                                                    \u003c/td\u003e\n                                                                                                \u003c/tr\u003e\n                                                                                                \u003ctr\u003e\n                                                                                                    \u003ctd\u003e\n                                                                                                        \u003ctable width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"\u003e\n                                                                                                            \u003ctbody\u003e\n                                                                                                                \u003ctr\u003e\n                                                                                                                    \u003ctd style=\"font-size:0px; line-height:0px;\" class=\"\" width=\"30\"\u003e\u003c/td\u003e\n                                                                                                                    \u003ctd\u003e\n                                                                                                                        \u003ctable width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"\u003e\n                                                                                                                            \u003ctbody\u003e\n                                                                                                                                \u003ctr\u003e\n                                                                                                                                    \u003ctd style=\"font-size:0px; line-height:0px;\" class=\"\" height=\"20\"\u003e\u003c/td\u003e\n                                                                                                                                \u003c/tr\u003e\n                                                                                                                                \u003ctr\u003e\n                                                                                                                                    \u003ctd style=\"font-family: CiscoSansTT, Arial, Helvetica, sans-serif; font-size:14px; line-height:16px; color:#0d274d;\"\u003e\n                                                                                                                                        \u003cfont face=\"CiscoSansTT, Arial, Helvetica, sans-serif\"\u003e\n                                                                                                                                            {salutation}\n                                                                                                                                        \u003c/font\u003e\n                                                                                                                                    \u003c/td\u003e\n                                                                                                                                \u003c/tr\u003e\n                                                                                                                                \u003ctr class=\"\"\u003e\n                                                                                                                                    \u003ctd style=\"font-size:0px; line-height:0px;\" height=\"15\"\u003e\u003c/td\u003e\n                                                                                                                                \u003c/tr\u003e\n                                                                                                                                \u003ctr\u003e\n                                                                                                                                \u003ctd style=\"font-family: CiscoSansTT, Arial, Helvetica, sans-serif; font-size:14px; line-height:16px; color:#0d274d;\"\u003e\n                                                                                                                                        \u003cfont face=\"CiscoSansTT, Arial, Helvetica, sans-serif\"\u003e\n                                                                                                                                {content}\n                                                                                                                               \t\t\t\u003c/font\u003e\n                                                                                                                                    \u003c/td\u003e\n                                                                                                                                \u003c/tr\u003e\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\u003ctr class=\"\"\u003e\n                                                                                                                                    \u003ctd style=\"font-size:0px; line-height:0px;\" height=\"15\"\u003e\u003c/td\u003e\n                                                                                                                                \u003c/tr\u003e\n                                                                                                                            \u003c/tbody\u003e\n                                                                                                                        \u003c/table\u003e\n                                                                                                                    \u003c/td\u003e\n                                                                                                                    \u003ctd style=\"font-size:0px; line-height:0px;\" width=\"30\"\u003e\u003c/td\u003e\n                                                                                                                \u003c/tr\u003e\n                                                                                                            \u003c/tbody\u003e\n                                                                                                        \u003c/table\u003e\n                                                                                                    \u003c/td\u003e\n                                                                                                \u003c/tr\u003e\n                                                                                                \u003ctr\u003e\n                                                                                                    \u003ctd style=\" background-color: #DCDCDC;\"\u003e\n                                                                                                        \u003ctable width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" bgcolor=\"#DCDCDC\"\u003e\n                                                                                                            \u003ctbody\u003e\n                                                                                                                \u003ctr\u003e\n                                                                                                                    \u003ctd style=\"font-size:0px; line-height:0px;\" width=\"20\"\u003e\u003c/td\u003e\n                                                                                                                    \u003ctd\u003e\n                                                                                                                        \u003ctable width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"\u003e\n                                                                                                                            \u003ctbody\u003e\n                                                                                                                                \u003ctr\u003e\n                                                                                                                                    \u003ctd class=\"spc\" style=\"font-size:0px; line-height:0px;\" height=\"10\"\u003e\u003c/td\u003e\n                                                                                                                                \u003c/tr\u003e\n                                                                                                                                \u003ctr\u003e\n                                                                                                                                    \u003ctd\u003e\n                                                                                                                                        \u003ctable class=\"footer_full_width\" style=\"width: 425px;\" width=\"425\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"left\"\u003e\n                                                                                                                                            \u003ctbody\u003e\n                                                                                                                                                \u003ctr\u003e\n                                                                                                                                                    \u003ctd style=\"font-family: CiscoSansTT, Arial, Helvetica, sans-serif; font-size:10px; line-height:10px; color:#58585b;\" align=\"left\"\u003e\n                                                                                                                                                        \u003ctable class=\"footer_full_width\" style=\"width: 258px\" width=\"258\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"left\"\u003e\n                                                                                                                                                            \u003ctbody\u003e\n                                                                                                                                                                \u003ctr\u003e\n                                                                                                                                                                    \u003ctd style=\"font-size: 10px; line-height: 10px; color: rgb(88, 88, 91);\" align=\"left\"\u003e\n                                                                                                                                                                        \u003cfont face=\"CiscoSansTT, Arial, Helvetica, sans-serif\"\u003e\n                                                                                                                                                                            \u003ca href=\"http://www.cisco.com/?elqTrackId=12bb3f9b1c8d44548f14428453af2e1b\" style=\"text-decoration: none;\" target=\"_blank\"\u003e\n                                                                                                                                                                                \u003cspan style=\"color: rgb(0, 188, 235);\"\u003eCisco.com\u003c/span\u003e\n                                                                                                                                                                            \u003c/a\u003e | \n                                                                                                                                                                                        \n                                                                                                                                                                            \n                                                                                                                                                                            \n                                                                                                                                                                            \u003ca href=\"http://www.cisco.com/en/US/swassets/sw293/privacy_statement.html?elqTrackId=8ddd85d372ab4167ae3254c8af157b56\" style=\"text-decoration: none;\" target=\"_blank\"\u003e\n                                                                                                                                                                                \u003cspan style=\"color: rgb(0, 188, 235);\"\u003ePrivacy Statement\u003c/span\u003e\n                                                                                                                                                                            \u003c/a\u003e | \n                                                                                                                                                                                        \n                                                                                                                                                                            \n                                                                                                                                                                            \n                                                                                                                                                                            \u003ca href=\"http://www.cisco.com/en/US/swassets/sw293/trademark_statement.html?elqTrackId=846847c84bff44b6a94283e5b5e27f6b\" style=\"text-decoration: none;\" target=\"_blank\"\u003e\n                                                                                                                                                                                \u003cspan style=\"color: rgb(0, 188, 235);\"\u003eTrademarks\u003c/span\u003e\n                                                                                                                                                                            \u003c/a\u003e\n                                                                                                                                                                        \u003c/font\u003e\n                                                                                                                                                                    \u003c/td\u003e\n                                                                                                                                                                \u003c/tr\u003e\n                                                                                                                                                            \u003c/tbody\u003e\n                                                                                                                                                        \u003c/table\u003e\n                                                                                                                                                        \u003ctable class=\"footer_full_width\" style=\"width: 100%\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"left\"\u003e\n                                                                                                                                                            \u003ctbody\u003e\n                                                                                                                                                                \u003ctr\u003e\n                                                                                                                                                                    \u003ctd style=\"font-size:0px; line-height:0px;\" height=\"8\"\u003e\u003c/td\u003e\n                                                                                                                                                                \u003c/tr\u003e\n                                                                                                                                                            \u003c/tbody\u003e\n                                                                                                                                                        \u003c/table\u003e\n                                                                                                                                                        \u003ctable class=\"footer_full_width\" style=\"width: 100%\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"left\"\u003e\n                                                                                                                                                            \u003ctbody\u003e\n                                                                                                                                                                \u003ctr\u003e\n                                                                                                                                                                    \u003ctd style=\"font-size: 10px; line-height: 10px; color: rgb(88, 88, 91);\" align=\"left\"\u003e\n                                                                                                                                                                        \u003cfont face=\"CiscoSansTT, Arial, Helvetica, sans-serif\"\u003eThis is an automated email sent to you by Cisco SecureX.\u003c/font\u003e\n                                                                                                                                                                    \u003c/td\u003e\n                                                                                                                                                                \u003c/tr\u003e\n                                                                                                                                                            \u003c/tbody\u003e\n                                                                                                                                                        \u003c/table\u003e\n                                                                                                                                                        \u003ctable class=\"footer_full_width\" style=\"width: 100%\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"left\"\u003e\n                                                                                                                                                            \u003ctbody\u003e\n                                                                                                                                                                \u003ctr\u003e\n                                                                                                                                                                    \u003ctd style=\"font-size:0px; line-height:0px;\" height=\"8\"\u003e\u003c/td\u003e\n                                                                                                                                                                \u003c/tr\u003e\n                                                                                                                                                            \u003c/tbody\u003e\n                                                                                                                                                        \u003c/table\u003e\n                                                                                                                                                        \u003ctable class=\"footer_full_width\" style=\"width: 258px\" width=\"258\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"left\"\u003e\n                                                                                                                                                            \u003ctbody\u003e\n                                                                                                                                                                \u003ctr\u003e\n                                                                                                                                                                    \u003ctd style=\"font-size: 10px; line-height: 10px; color: rgb(88, 88, 91);\" align=\"left\"\u003e\n                                                                                                                                                                        \u003cfont face=\"CiscoSansTT, Arial, Helvetica, sans-serif\"\u003e2021 Cisco and/or its affiliates. All rights reserved.\u003c/font\u003e\n                                                                                                                                                                    \u003c/td\u003e\n                                                                                                                                                                \u003c/tr\u003e\n                                                                                                                                                            \u003c/tbody\u003e\n                                                                                                                                                        \u003c/table\u003e\n                                                                                                                                                        \u003ctable class=\"spacer\" style=\"width: 100%\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"left\"\u003e\n                                                                                                                                                            \u003ctbody\u003e\n                                                                                                                                                                \u003ctr\u003e\n                                                                                                                                                                    \u003ctd style=\"font-size:0px; line-height:0px;\" height=\"8\"\u003e\u003c/td\u003e\n                                                                                                                                                                \u003c/tr\u003e\n                                                                                                                                                            \u003c/tbody\u003e\n                                                                                                                                                        \u003c/table\u003e\n                                                                                                                                                    \u003c/td\u003e\n                                                                                                                                                \u003c/tr\u003e\n                                                                                                                                            \u003c/tbody\u003e\n                                                                                                                                        \u003c/table\u003e\n                                                                                                                                        \u003ctable class=\"footer_full_width\" style=\"width: 100px;\" width=\"100\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"right\"\u003e\n                                                                                                                                            \u003ctbody\u003e\n                                                                                                                                                \u003ctr\u003e\n                                                                                                                                                    \u003ctd class=\"spc\" style=\"font-size:10px; line-height:10px;\" height=\"10\"\u003e\u003c/td\u003e\n                                                                                                                                                \u003c/tr\u003e\n                                                                                                                                                \u003ctr\u003e\n                                                                                                                                                    \u003ctd style=\"font-family: CiscoSansTT, Arial, Helvetica, sans-serif; font-size:10px; line-height:10px; color:#58585b;\" align=\"left\"\u003e\n                                                                                                                                                        \u003cfont face=\"CiscoSansTT, Arial, Helvetica, sans-serif\"\u003e\u003c/font\u003e\n                                                                                                                                                    \u003c/td\u003e\n                                                                                                                                                \u003c/tr\u003e\n                                                                                                                                            \u003c/tbody\u003e\n                                                                                                                                        \u003c/table\u003e\n                                                                                                                                    \u003c/td\u003e\n                                                                                                                                \u003c/tr\u003e\n                                                                                                                                \u003ctr\u003e\n                                                                                                                                    \u003ctd class=\"spc\" style=\"font-size:0px; line-height:0px;\" height=\"10\"\u003e\u003c/td\u003e\n                                                                                                                                \u003c/tr\u003e\n                                                                                                                            \u003c/tbody\u003e\n                                                                                                                        \u003c/table\u003e\n                                                                                                                    \u003c/td\u003e\n                                                                                                                    \u003ctd style=\"font-size:0px; line-height:0px;\" width=\"20\"\u003e\u003c/td\u003e\n                                                                                                                \u003c/tr\u003e\n                                                                                                            \u003c/tbody\u003e\n                                                                                                        \u003c/table\u003e\n                                                                                                    \u003c/td\u003e\n                                                                                                \u003c/tr\u003e\n                                                                                            \u003c/tbody\u003e\n                                                                                        \u003c/table\u003e\n                                                                                    \u003c/td\u003e\n                                                                                    \u003ctd style=\"font-size:0px; line-height:0px;\" width=\"1\" bgcolor=\"#cbcbcb\"\u003e\n                                                                                        \u003cimg src=\"http://msp.elateral.com/Studio/HTMLEmailImages/border-gray.gif\" width=\"1\" border=\"0\"\u003e\n                                                                                    \u003c/td\u003e\n                                                                                \u003c/tr\u003e\n                                                                            \u003c/tbody\u003e\n                                                                        \u003c/table\u003e\n                                                                    \u003c/td\u003e\n                                                                \u003c/tr\u003e\n                                                            \u003c/tbody\u003e\n                                                        \u003c/table\u003e\n                                                    \u003c/td\u003e\n                                                \u003c/tr\u003e\n                                                \u003ctr\u003e\n                                                    \u003ctd style=\"font-size:0px; line-height: 0px; height: 1px;\" height=\"1\" bgcolor=\"#cbcbcb\"\u003e\n                                                        \u003cimg src=\"http://msp.elateral.com/Studio/HTMLEmailImages/border-gray.gif\" height=\"1\" border=\"0\"\u003e\n                                                    \u003c/td\u003e\n                                                \u003c/tr\u003e\n                                                \u003ctr\u003e\n                                                    \u003ctd style=\"font-size:0px; line-height:0px;\" class=\"\" height=\"5\"\u003e\u003c/td\u003e\n                                                \u003c/tr\u003e\n                                            \u003c/tbody\u003e\n                                        \u003c/table\u003e\n                                    \u003c/td\u003e\n                                \u003c/tr\u003e\n                            \u003c/tbody\u003e\n                        \u003c/table\u003e\n                    \u003c/td\u003e\n                \u003c/tr\u003e\n                \u003ctr\u003e\n                    \u003ctd style=\"font-size:0px; line-height:0px;\" height=\"15\"\u003e\u003c/td\u003e\n                \u003c/tr\u003e\n            \u003c/tbody\u003e\n        \u003c/table\u003e\n    \u003c/body\u003e\n\u003c/html\u003e",
+          "scope": "local",
+          "name": "Notification - Email Template",
+          "type": "datatype.string",
+          "description": "Email Template for notfication \n\nReplacement fields :\n{content}\n{header}\n{subheader}\n{salutation}",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01UBW925FWWK81r6cRPeZulr00takPkokoM",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": true,
+          "scope": "local",
+          "name": "Notification - Email Enable ?",
+          "type": "datatype.boolean",
+          "description": "Set to true if you want to enable email norification",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01U8IPX7JXBX72Ax2xvBVhkavECoG4iRGig",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "local",
+          "name": "Internal - Logged_In_Count",
+          "type": "datatype.integer",
+          "description": "Internal variable used to store the number of hostname for the Orbital Logged_In query - Do not Modify",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01UBUNE3PE0Z21uqcwruYpNteWlVW00rMSb",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Internal - Webex Room ID",
+          "type": "datatype.string",
+          "description": "Inernal variable use to store the Webex Room Id from the search room action - do not modify",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01UBPGDLVPU334KOx9Z3GkU6CcQ230rvkRo",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "ivberlin@cisco.com",
+          "scope": "local",
+          "name": "Notification - Email recipient",
+          "type": "datatype.string",
+          "description": "If Email notification is enable, set here the destination email adress",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01UBPIFVG0KVK5OLD825oyWMTj6phOKI7oC",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Alerting2",
+          "scope": "local",
+          "name": "Notification - Cisco Webex Room Name",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MAXKFRKT7OL5nB4E8KShFx4Ox6EUxbXBl",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+        "properties": {
+          "scope": "local",
+          "name": "Internal - hostname-table",
+          "type": "datatype.table",
+          "description": "Internal variable to store hostname (do not modify)",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MHBMAWYF9VG4S0kfpUXOor4NJqoF1qgK5",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "local",
+          "name": "Internal - Telemetry_Count",
+          "type": "datatype.integer",
+          "description": "Internal variable used to store the number of hostname for the Secure EndPoint telemetry - Do not Modify",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01UBUNUUFAEGG6BCrJk4ERbVzvdjQ9YXVcJ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "description": "User name - Input",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "description": "Observable Type - Input (only user is supported)",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MAOSADRIJR73T7fkW7YDHcirtIGHNIFsi",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": true,
+          "scope": "local",
+          "name": "Notification - Cisco WebexEnable ?",
+          "type": "datatype.boolean",
+          "description": "Set to \"True\" is you want to enable Cisco Webex Notification ",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01U8IQ4JIX1P62tToRrrOl4d0ZEZeQ4Z06Z",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "local",
+          "name": "Internal - UserAccountMonitoring_Count",
+          "type": "datatype.integer",
+          "description": "Internal variable used to store the number of hostname for the Orbital User Account Monitoring query - Do not Modify",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01UBUNN1J23HX0weYMCC3BkPWlw3DXwnpcx",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "Search for user activity using \n- Orbital (Account (Monitoring and Logged_In queries)\n- Cisco SecureEP telemetry\nNotify in Cisco Webex about result",
+      "display_name": "🔦 Hunt - Search User Activity",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+          "run_on_all_targets": false,
+          "selected_target_types": [
+            "web-service.endpoint",
+            "email.smtp_endpoint"
+          ],
+          "use_criteria": {
+            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+            "conditions": [
+              {
+                "operator": "eqi",
+                "left_operand": "$targetgroup.target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH.common.display_name$",
+                "right_operand": "Orbital_Target"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01U8DJ68I2ZHL6WxNpjTobg5gkQYRkY7AUG",
+        "name": "Condition Block",
+        "title": "Observable Type = User",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Observable Type = User",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01U8DJ68VBKVI30N4UtwI2difpeT3EYvPug",
+            "name": "Condition Branch",
+            "title": "No",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSADRIJR73T7fkW7YDHcirtIGHNIFsi$",
+                "operator": "ne",
+                "right_operand": "user"
+              },
+              "continue_on_failure": false,
+              "display_name": "No",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01U8DJX21AZWL3ZkPYdNNlOET8D3yCTaKHF",
+                "name": "Completed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "succeeded",
+                  "continue_on_failure": false,
+                  "display_name": "Completed",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01QETLQIX1FOY2nGRzsycnCykfFHEbaJVMM",
+        "name": "Group",
+        "title": "Admin",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Admin",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01U8IQBTF8GHF1YA0yobZ7Tqu4xeta0V9oO",
+            "name": "Group",
+            "title": "Threat Response",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Threat Response",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01U8GBF6EXYI80hQsd78PcpfO7v4aOdH2F8",
+                "name": "Threat Response - Generate Access Token",
+                "title": "Threat Response - Generate Access Token",
+                "type": "workflow.atomic_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Threat Response - Generate Access Token",
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target_group_criteria": true,
+                    "target_group": {
+                      "run_on_all_targets": false,
+                      "use_criteria": {
+                        "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                        "conditions": [
+                          {
+                            "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                            "operator": "eqi",
+                            "right_operand": "Orbital_For_Access_Token"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "workflow_id": "definition_workflow_01PP75S3LTBW4420OZU3rdHWKHFnE6aC7yH"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01U8ITCPMU3SV6zqwv9dn8DxiLm3tpXriEr",
+            "name": "Group",
+            "title": "Cisco Webex",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Cisco Webex",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01U8ITHD4UVX75msCDsVWpGPiWvtmepHOHy",
+                "name": "Condition Block",
+                "title": "Cisco Webex Notification Enable ?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Cisco Webex Notification Enable ?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01U8ITHDI8F401Oa7Ho5VfOEkgkD1NLOUJt",
+                    "name": "Condition Branch",
+                    "title": "Yes",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01U8IQ4JIX1P62tToRrrOl4d0ZEZeQ4Z06Z$",
+                        "operator": "eq",
+                        "right_operand": true
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Yes",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01QE5AGNAXB7L3bwg4wCI9j7LJ7RgGUTiYG",
+                        "name": "Set Variables",
+                        "title": "Set Webex Bot Token",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "Enable to use global variable",
+                          "display_name": "Set Webex Bot Token",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01QE5BHNVKGB95mn4umFigNfvBFEKYUH34x$",
+                              "variable_value_new": ""
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01U8GCR59TEQ637CIEeKrJkKtUWWU9YeIKz",
+                        "name": "Webex Teams - Search for Room",
+                        "title": "Webex Teams - Search for Room",
+                        "type": "workflow.atomic_workflow",
+                        "base_type": "subworkflow",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Webex Teams - Search for Room",
+                          "input": {
+                            "variable_workflow_01PP790MCX1DN3EitpQebkUyJS65DbwS3nU": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01QE5BHNVKGB95mn4umFigNfvBFEKYUH34x$",
+                            "variable_workflow_01PP790MCXB392D3R8pxh9fgOTjTde2bcMW": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01MAXKFRKT7OL5nB4E8KShFx4Ox6EUxbXBl$",
+                            "variable_workflow_01PP790MCXHP55YE6ylOEITWsWbUFJeyWGv": "",
+                            "variable_workflow_01PP790MCXM9W1MUwo85y8iNRCoQuQ4RGNa": ""
+                          },
+                          "runtime_user": {
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "override_workflow_target_group_criteria": true,
+                            "target_group": {
+                              "run_on_all_targets": false,
+                              "use_criteria": {
+                                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                "conditions": [
+                                  {
+                                    "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                    "operator": "eqi",
+                                    "right_operand": "Webex Teams"
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          "workflow_id": "definition_workflow_01PP790MKJNWV6XyJuLdUyNlM2UV3JJACez"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01UBPHNV3W4JD78CH4VgUrAKGt0ZV3clmtj",
+                        "name": "Set Variables",
+                        "title": "Store room id",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Store room id",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBPGDLVPU334KOx9Z3GkU6CcQ230rvkRo$",
+                              "variable_value_new": "$activity.definition_activity_01U8GCR59TEQ637CIEeKrJkKtUWWU9YeIKz.output.variable_workflow_01PP790MCXJ7Y5cAWcGZWbG4Es0126zb1I6$"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01MBGW8S4XM76529lFGLGNwDj5pbSmDmMqK",
+        "name": "Parallel Block",
+        "title": "Parallel Block - Queries",
+        "type": "logic.parallel",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Parallel Block - Queries",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01MBGW9MQXE065NRy9foOgrPki1ItHDmU5S",
+            "name": "Parallel Branch",
+            "title": "Orbital - Users Account Monitoring",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Orbital - Users Account Monitoring",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01UBUW0J5605V2eoqkmLDFnASvhv8Pyv4ZK",
+                "name": "Group",
+                "title": "Orbital Query",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Orbital Query",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01U8G7H4Z1QV769v19fuWzGd1hMsKvgB2p3",
+                    "name": "Orbital - Query All Endpoints",
+                    "title": "Orbital - Query All Endpoints",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": true,
+                      "display_name": "Orbital - Query All Endpoints",
+                      "input": {
+                        "variable_workflow_01PP74XXDJ6I02lUbtpjEKbDd7y0gpOYS4y": true,
+                        "variable_workflow_01PP74XXDJ7U10PBSYZl7md3gg6krQ03p57": "SELECT username FROM users WHERE username LIKE '$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$';",
+                        "variable_workflow_01PP74XXDJ95H0lvwlcEnTPXWXQgvbbTKe6": "",
+                        "variable_workflow_01PP74XXDJAL33MsBJCm3Iptr9I5iu7pLvI": "SX-User Table Search",
+                        "variable_workflow_01PP74XXDJFAH5HLlFGbENuXfD77aWNTPrF": "$activity.definition_activity_01U8GBF6EXYI80hQsd78PcpfO7v4aOdH2F8.output.variable_workflow_01PP75S3G7CJY6WAQr2IJC7qga2SIoE09gQ$",
+                        "variable_workflow_01PP74XXDJGFR2b0QKga75DJjqwiX0K9Nbt": 1,
+                        "variable_workflow_01SW2GRR9R9EH4rSK7JBaDZjavxyl8SX0UR": "0",
+                        "variable_workflow_01SW2H938IB3V0XwjYGxkRaW62xKwJH0gwF": ""
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01PP74XXLH4JK5RznBkKvbBUhiBqVm0A35C"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01UB7KSK1JPD24tbNi2L7w08m00nS0njKqO",
+                "name": "Condition Block",
+                "title": "Query Failed ? No Endpoint connected",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Query Failed ? No Endpoint connected",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01UB7KSKW1RZC2uxlA1hZGKeZaOCXgtAUk8",
+                    "name": "Condition Branch",
+                    "title": "No",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01U8G7H4Z1QV769v19fuWzGd1hMsKvgB2p3.output.succeeded$",
+                        "operator": "eq",
+                        "right_operand": true
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "No",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01UBUXGWYRD4I1SVismISApa3lGsE88bOhg",
+                        "name": "Group",
+                        "title": "Parse Result",
+                        "type": "logic.group",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Parse Result",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01MBDOB4Q3KJ30RXFC2bEpwMugJ9Bgg75qe",
+                            "name": "Read Table from JSON",
+                            "title": "Get Row Count",
+                            "type": "corejava.read_table_from_json",
+                            "base_type": "activity",
+                            "properties": {
+                              "action_timeout": 180,
+                              "continue_on_failure": true,
+                              "display_name": "Get Row Count",
+                              "input_json": "$activity.definition_activity_01U8G7H4Z1QV769v19fuWzGd1hMsKvgB2p3.output.variable_workflow_01PP74XXDJBRP6hhz6uRRyhmvLv1NKZQnt9$",
+                              "jsonpath_query": "$.[*]",
+                              "persist_output": false,
+                              "populate_columns": false,
+                              "skip_execution": false,
+                              "table_columns": [
+                                {
+                                  "column_name": "rowcount",
+                                  "column_type": "integer"
+                                },
+                                {
+                                  "column_name": "hostinfo",
+                                  "column_type": "string"
+                                }
+                              ]
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_01MCERO19CGWI09vCdbUyapArr8tU1cB76i",
+                        "name": "For Each",
+                        "title": "For Each Result",
+                        "type": "logic.for_each",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "For Each Result",
+                          "skip_execution": false,
+                          "source_array": "$activity.definition_activity_01MBDOB4Q3KJ30RXFC2bEpwMugJ9Bgg75qe.output.read_table_from_json$"
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01UBP3XSZZG9V2Ug0a2Dw4dQdVn8LpF0CaM",
+                            "name": "Condition Block",
+                            "title": "Row Count \u003e 0",
+                            "type": "logic.if_else",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Row Count \u003e 0",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "blocks": [
+                              {
+                                "unique_name": "definition_activity_01UBP3XT8WXZX3OUe9vq60NThsYcOHdFbdI",
+                                "name": "Condition Branch",
+                                "title": "Yes",
+                                "type": "logic.condition_block",
+                                "base_type": "activity",
+                                "properties": {
+                                  "condition": {
+                                    "left_operand": "$activity.definition_activity_01MCERO19CGWI09vCdbUyapArr8tU1cB76i.input.source_array[@].rowcount$",
+                                    "operator": "ne",
+                                    "right_operand": 0
+                                  },
+                                  "continue_on_failure": false,
+                                  "display_name": "Yes",
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity",
+                                "actions": [
+                                  {
+                                    "unique_name": "definition_activity_01UBUZTR4MMGX07ajMk4XfipRMFigo1kTye",
+                                    "name": "Group",
+                                    "title": "Store Hostname",
+                                    "type": "logic.group",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "continue_on_failure": false,
+                                      "display_name": "Store Hostname",
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity",
+                                    "actions": [
+                                      {
+                                        "unique_name": "definition_activity_01UBYBVA4QD5Y4wXSCki3e2eFRDKTSdLUEW",
+                                        "name": "JSONPath Query",
+                                        "title": "JSONPath Query - Get Hostname",
+                                        "type": "corejava.jsonpathquery",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "action_timeout": 180,
+                                          "continue_on_failure": false,
+                                          "display_name": "JSONPath Query - Get Hostname",
+                                          "input_json": "$activity.definition_activity_01MCERO19CGWI09vCdbUyapArr8tU1cB76i.input.source_array[@].hostinfo$",
+                                          "jsonpath_queries": [
+                                            {
+                                              "jsonpath_query": "$.hostname",
+                                              "jsonpath_query_name": "hostname",
+                                              "jsonpath_query_type": "string"
+                                            }
+                                          ],
+                                          "skip_execution": false
+                                        },
+                                        "object_type": "definition_activity"
+                                      },
+                                      {
+                                        "unique_name": "definition_activity_01MCEXAP7AK084hWFUzcx6XJagmMXMJKEwp",
+                                        "name": "Add Row to Table",
+                                        "title": "Add Row to Table Hostname",
+                                        "type": "core.addrowtotable",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "action_timeout": 180,
+                                          "continue_on_failure": false,
+                                          "display_name": "Add Row to Table Hostname",
+                                          "input_table": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01MHBMAWYF9VG4S0kfpUXOor4NJqoF1qgK5$",
+                                          "row": [
+                                            {
+                                              "key": "type",
+                                              "type": "string",
+                                              "value": "hostname"
+                                            },
+                                            {
+                                              "key": "value",
+                                              "type": "string",
+                                              "value": "$activity.definition_activity_01UBYBVA4QD5Y4wXSCki3e2eFRDKTSdLUEW.output.jsonpath_queries.hostname$"
+                                            }
+                                          ],
+                                          "skip_execution": false
+                                        },
+                                        "object_type": "definition_activity"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "unique_name": "definition_activity_01UBV061CPRSO1EaujaAxmrC256FHL8oezM",
+                                    "name": "Group",
+                                    "title": "Increment Counter",
+                                    "type": "logic.group",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "continue_on_failure": false,
+                                      "display_name": "Increment Counter",
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity",
+                                    "actions": [
+                                      {
+                                        "unique_name": "definition_activity_01UBUO27L4MBQ6idIrS67lKlaEylwFo6hha",
+                                        "name": "Set Variables",
+                                        "title": "Increment Result UAM Counter",
+                                        "type": "core.set_multiple_variables",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "continue_on_failure": false,
+                                          "display_name": "Increment Result UAM Counter",
+                                          "skip_execution": false,
+                                          "variables_to_update": [
+                                            {
+                                              "variable_to_update": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBUNN1J23HX0weYMCC3BkPWlw3DXwnpcx$",
+                                              "variable_value_new": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBUNN1J23HX0weYMCC3BkPWlw3DXwnpcx$+1"
+                                            }
+                                          ]
+                                        },
+                                        "object_type": "definition_activity"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MBGW9NF9GUL4de731uSfgFgqTYDIreHRN",
+            "name": "Parallel Branch",
+            "title": "Orbital - Logged In Users",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Orbital - Logged In Users",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01UBUW4J3GQGF0W6xiMcbp1RdAGW5WxonbH",
+                "name": "Group",
+                "title": "Orbital Query",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Orbital Query",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01U8GAC234H6V6H6bYx6dghvHua2zM76g5c",
+                    "name": "Orbital - Query All Endpoints",
+                    "title": "Orbital - Query All Endpoints",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": true,
+                      "display_name": "Orbital - Query All Endpoints",
+                      "input": {
+                        "variable_workflow_01PP74XXDJ6I02lUbtpjEKbDd7y0gpOYS4y": true,
+                        "variable_workflow_01PP74XXDJ7U10PBSYZl7md3gg6krQ03p57": "SELECT user FROM logged_in_users WHERE user LIKE '$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$';",
+                        "variable_workflow_01PP74XXDJ95H0lvwlcEnTPXWXQgvbbTKe6": "",
+                        "variable_workflow_01PP74XXDJAL33MsBJCm3Iptr9I5iu7pLvI": "SX-User Search - logged in",
+                        "variable_workflow_01PP74XXDJFAH5HLlFGbENuXfD77aWNTPrF": "$activity.definition_activity_01U8GBF6EXYI80hQsd78PcpfO7v4aOdH2F8.output.variable_workflow_01PP75S3G7CJY6WAQr2IJC7qga2SIoE09gQ$",
+                        "variable_workflow_01PP74XXDJGFR2b0QKga75DJjqwiX0K9Nbt": 1,
+                        "variable_workflow_01SW2GRR9R9EH4rSK7JBaDZjavxyl8SX0UR": "0",
+                        "variable_workflow_01SW2H938IB3V0XwjYGxkRaW62xKwJH0gwF": ""
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01PP74XXLH4JK5RznBkKvbBUhiBqVm0A35C"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01UBP5BI4CKNF0B8nCgH6GVaiPdH7zxKtFw",
+                "name": "Condition Block",
+                "title": "Query Failed ? No Endpoint connected",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Query Failed ? No Endpoint connected",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01UBP5BIDSM157Y0V90veYv0gKsRxVJUBl1",
+                    "name": "Condition Branch",
+                    "title": "No",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01U8GAC234H6V6H6bYx6dghvHua2zM76g5c.output.succeeded$",
+                        "operator": "eq",
+                        "right_operand": true
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "No",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01UBUYC7LMWMZ5o954Ij1rwPkd6hstZenT7",
+                        "name": "Group",
+                        "title": "Parse Result",
+                        "type": "logic.group",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Parse Result",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01MBGY31OGK3I2vu0PwDjfvhrxFF6xxA95V",
+                            "name": "Read Table from JSON",
+                            "title": "Get Row Count",
+                            "type": "corejava.read_table_from_json",
+                            "base_type": "activity",
+                            "properties": {
+                              "action_timeout": 180,
+                              "continue_on_failure": true,
+                              "display_name": "Get Row Count",
+                              "input_json": "$activity.definition_activity_01U8GAC234H6V6H6bYx6dghvHua2zM76g5c.output.variable_workflow_01PP74XXDJBRP6hhz6uRRyhmvLv1NKZQnt9$",
+                              "jsonpath_query": "$.[*]",
+                              "persist_output": false,
+                              "populate_columns": false,
+                              "skip_execution": false,
+                              "table_columns": [
+                                {
+                                  "column_name": "rowcount",
+                                  "column_type": "integer"
+                                },
+                                {
+                                  "column_name": "hostinfo",
+                                  "column_type": "string"
+                                }
+                              ]
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_01QETT7A0CUJD6dSmdwm8eQ2ZWBWw8PXsQk",
+                        "name": "For Each",
+                        "title": "For Each Result",
+                        "type": "logic.for_each",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "For Each Result",
+                          "skip_execution": false,
+                          "source_array": "$activity.definition_activity_01MBGY31OGK3I2vu0PwDjfvhrxFF6xxA95V.output.read_table_from_json$"
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01QETT75MUZFW1XTPr67q9xPcXetRkaU8Xl",
+                            "name": "Condition Block",
+                            "title": "Row Count \u003e 0",
+                            "type": "logic.if_else",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Row Count \u003e 0",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "blocks": [
+                              {
+                                "unique_name": "definition_activity_01QETT797TQ2D2FZPw9M2IxvHc3v0xco8S0",
+                                "name": "Condition Branch",
+                                "title": "Yes",
+                                "type": "logic.condition_block",
+                                "base_type": "activity",
+                                "properties": {
+                                  "condition": {
+                                    "left_operand": "$activity.definition_activity_01QETT7A0CUJD6dSmdwm8eQ2ZWBWw8PXsQk.input.source_array[@].rowcount$",
+                                    "operator": "ne",
+                                    "right_operand": 0
+                                  },
+                                  "continue_on_failure": false,
+                                  "display_name": "Yes",
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity",
+                                "actions": [
+                                  {
+                                    "unique_name": "definition_activity_01UBUZLRI5WZ624nfevi74PKd2HDOV7vgrw",
+                                    "name": "Group",
+                                    "title": "Store Hostname",
+                                    "type": "logic.group",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "continue_on_failure": false,
+                                      "display_name": "Store Hostname",
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity",
+                                    "actions": [
+                                      {
+                                        "unique_name": "definition_activity_01UBYDD7F8JRI1jUoYGeOcSHFU9IJiHuKsz",
+                                        "name": "JSONPath Query",
+                                        "title": "JSONPath Query - Get Hostname",
+                                        "type": "corejava.jsonpathquery",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "action_timeout": 180,
+                                          "continue_on_failure": false,
+                                          "display_name": "JSONPath Query - Get Hostname",
+                                          "input_json": "$activity.definition_activity_01QETT7A0CUJD6dSmdwm8eQ2ZWBWw8PXsQk.input.source_array[@].hostinfo$",
+                                          "jsonpath_queries": [
+                                            {
+                                              "jsonpath_query": "$.hostname",
+                                              "jsonpath_query_name": "hostname",
+                                              "jsonpath_query_type": "string"
+                                            }
+                                          ],
+                                          "skip_execution": false
+                                        },
+                                        "object_type": "definition_activity"
+                                      },
+                                      {
+                                        "unique_name": "definition_activity_01QETT7E6384Z6Ao75oJHmhMaCEXDy1965e",
+                                        "name": "Add Row to Table",
+                                        "title": "Add Row to Table Hostname",
+                                        "type": "core.addrowtotable",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "action_timeout": 180,
+                                          "continue_on_failure": true,
+                                          "display_name": "Add Row to Table Hostname",
+                                          "input_table": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01MHBMAWYF9VG4S0kfpUXOor4NJqoF1qgK5$",
+                                          "row": [
+                                            {
+                                              "key": "type",
+                                              "type": "string",
+                                              "value": "hostname"
+                                            },
+                                            {
+                                              "key": "value",
+                                              "type": "string",
+                                              "value": "$activity.definition_activity_01UBYDD7F8JRI1jUoYGeOcSHFU9IJiHuKsz.output.jsonpath_queries.hostname$"
+                                            }
+                                          ],
+                                          "skip_execution": false
+                                        },
+                                        "object_type": "definition_activity"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "unique_name": "definition_activity_01UBV0GLWTXMX70WG4nBnCr0CiVamKHS0NM",
+                                    "name": "Group",
+                                    "title": "Increment Counter",
+                                    "type": "logic.group",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "continue_on_failure": false,
+                                      "display_name": "Increment Counter",
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity",
+                                    "actions": [
+                                      {
+                                        "unique_name": "definition_activity_01UBUOXF5TYJR6nAHzmhoIEAyJDJCgUfBg1",
+                                        "name": "Set Variables",
+                                        "title": "Increment Result LoggedIn Counter",
+                                        "type": "core.set_multiple_variables",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "continue_on_failure": false,
+                                          "display_name": "Increment Result LoggedIn Counter",
+                                          "skip_execution": false,
+                                          "variables_to_update": [
+                                            {
+                                              "variable_to_update": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBUNE3PE0Z21uqcwruYpNteWlVW00rMSb$",
+                                              "variable_value_new": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBUNE3PE0Z21uqcwruYpNteWlVW00rMSb$+1"
+                                            }
+                                          ]
+                                        },
+                                        "object_type": "definition_activity"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01QETD9GMUFRE2U4UcO2H8haIdpRbsfTrPr",
+            "name": "Parallel Branch",
+            "title": "Secure EP - User Activity (Telemetry)",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Secure EP - User Activity (Telemetry)",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01UCOEPA2ST3S1lM3L4UzIXppJVgs2fOQsl",
+                "name": "Group",
+                "title": "Query Secure Endpoint User Activity",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Query Secure Endpoint User Activity",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01QETDWI90IO30bZp6HOP9tsTMw9Fmz7MhG",
+                    "name": "HTTP Request",
+                    "title": "Query EP User_Activity",
+                    "type": "web-service.http_request",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "allow_auto_redirect": true,
+                      "continue_on_error_status_code": false,
+                      "continue_on_failure": false,
+                      "display_name": "Query EP User_Activity",
+                      "method": "GET",
+                      "relative_url": "/computers/user_activity?q=$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$",
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target_group_criteria": true,
+                        "target_group": {
+                          "use_criteria": {
+                            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                            "conditions": [
+                              {
+                                "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                "operator": "eqi",
+                                "right_operand": "AMP_Target"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01QETG4APIP6G6Q3BnZY6qr0SVz5zVZ7wC5",
+                    "name": "Read Table from JSON",
+                    "title": "Get Hostname",
+                    "type": "corejava.read_table_from_json",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Get Hostname",
+                      "input_json": "$activity.definition_activity_01QETDWI90IO30bZp6HOP9tsTMw9Fmz7MhG.output.response_body$",
+                      "jsonpath_query": "$.data",
+                      "persist_output": false,
+                      "populate_columns": false,
+                      "skip_execution": false,
+                      "table_columns": [
+                        {
+                          "column_name": "hostname",
+                          "column_type": "string"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01QETTPQBPF5T5SXvbfUEdCV8U95aUXciBy",
+                "name": "Condition Block",
+                "title": "Is there Endpoints with User Acitvity matching ?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Is there Endpoints with User Acitvity matching ?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01QETTPTVJWZ84fit5IvQnpmBT2o8a7s8Wj",
+                    "name": "Condition Branch",
+                    "title": "Yes",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01QETG4APIP6G6Q3BnZY6qr0SVz5zVZ7wC5.output.row_count$",
+                        "operator": "ne",
+                        "right_operand": 0
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Yes",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01QETTPULIDEM2GHhcQnPvP7Q87u2Q9DcBO",
+                        "name": "For Each",
+                        "title": "For Each",
+                        "type": "logic.for_each",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "For Each",
+                          "skip_execution": false,
+                          "source_array": "$activity.definition_activity_01QETG4APIP6G6Q3BnZY6qr0SVz5zVZ7wC5.output.read_table_from_json$"
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01UCOFSVR6FFV6zJUKla4Z0uZzz8WKrJ8xv",
+                            "name": "Group",
+                            "title": "Store hostname",
+                            "type": "logic.group",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Store hostname",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_01QETTPYK81576NSWMX0CYKZJlLDnWMXqBf",
+                                "name": "Add Row to Table",
+                                "title": "Add Row to Table Hostname",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Row to Table Hostname",
+                                  "input_table": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01MHBMAWYF9VG4S0kfpUXOor4NJqoF1qgK5$",
+                                  "row": [
+                                    {
+                                      "key": "type",
+                                      "type": "string",
+                                      "value": "hostname"
+                                    },
+                                    {
+                                      "key": "value",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_01QETTPULIDEM2GHhcQnPvP7Q87u2Q9DcBO.input.source_array[@].hostname$"
+                                    }
+                                  ],
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01QEUBN4B4TAH608DaT2uKAf22uvnlqAUHO",
+        "name": "Group",
+        "title": "Admin",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Admin",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01QETUPCOY4J93KpNlaw2ZbJ2AyHpU3CswR",
+            "name": "Select from Table",
+            "title": "Select All from Table Hostname",
+            "type": "core.selectfromtable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "columns": [
+                {
+                  "column_name": "type",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "value",
+                  "column_type": "string"
+                }
+              ],
+              "continue_on_failure": false,
+              "display_name": "Select All from Table Hostname",
+              "input_table": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01MHBMAWYF9VG4S0kfpUXOor4NJqoF1qgK5$",
+              "number_of_rows": {
+                "all_rows": true
+              },
+              "persist_output": false,
+              "skip_execution": false,
+              "sorting": {
+                "no_sort": true
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01MAPDUP610Y2065DyutWTUtk6P2G8818pP",
+        "name": "Condition Block",
+        "title": "Host found ?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Host found ?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01MAXHOIE2HLG2NBFivUJUnYeLknBZxolQC",
+            "name": "Condition Branch",
+            "title": "Yes",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01QETUPCOY4J93KpNlaw2ZbJ2AyHpU3CswR.output.row_count$",
+                "operator": "gt",
+                "right_operand": 0
+              },
+              "continue_on_failure": false,
+              "display_name": "Yes",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01QEUC7GJNVBS31j1zPlBa6Bh8bBpXPUWnq",
+                "name": "Group",
+                "title": "Create Casebook",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Create Casebook",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01U8GDWT6ZYIX4v4l7VCdCFx2S1Ny7XQLF0",
+                    "name": "Threat Response - Generate Access Token",
+                    "title": "Threat Response - Generate Access Token",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Threat Response - Generate Access Token",
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target_group_criteria": true,
+                        "target_group": {
+                          "run_on_all_targets": false,
+                          "use_criteria": {
+                            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                            "conditions": [
+                              {
+                                "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                "operator": "eqi",
+                                "right_operand": "CTR_For_Access_Token"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "workflow_id": "definition_workflow_01PP75S3LTBW4420OZU3rdHWKHFnE6aC7yH"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01U8GE0XQ4BL136frzeT87ne9Fg0s3TGYub",
+                    "name": "Threat Response - Create Casebook",
+                    "title": "Threat Response - Create Casebook",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Threat Response - Create Casebook",
+                      "input": {
+                        "variable_workflow_01PP75X6NM0AY6YDlJckkMg6hCbMEMGO72O": "$activity.definition_activity_01QETUPCOY4J93KpNlaw2ZbJ2AyHpU3CswR.output.response_body$",
+                        "variable_workflow_01PP75X6NM1M46Jjob8LUKg8R3yRRVOvu9q": "$activity.definition_activity_01U8GDWT6ZYIX4v4l7VCdCFx2S1Ny7XQLF0.output.variable_workflow_01PP75S3G7CJY6WAQr2IJC7qga2SIoE09gQ$",
+                        "variable_workflow_01PP75X6NM2V27Or3EssfIABNZiE45Ddziu": "amber",
+                        "variable_workflow_01PP75X6NM4123PBwUedJ5QqeBr8G1sefjQ": "Hunting - User $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$",
+                        "variable_workflow_01PP75X6NM54W5qTbpCb1h6bTTrp7eFQjaq": "",
+                        "variable_workflow_01PP75X6NM7FE4BmQ3AKIykyWFDSV9umy02": "Evidences of user activity"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target_group_criteria": true,
+                        "target_group": {
+                          "run_on_all_targets": false,
+                          "use_criteria": {
+                            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                            "conditions": [
+                              {
+                                "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                "operator": "eqi",
+                                "right_operand": "Private_CTIA_Target"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "workflow_id": "definition_workflow_01PP75X6VPQNK4hKE1XQXIMeIcHrE1khIML"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01QEWIGQIWS6074carHrX2Y9bW2J3FiVI7N",
+                "name": "Group",
+                "title": "Notify \"User Found\"",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Notify \"User Found\"",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01UBP9XR1QFDD2LBzGp3241EVQRNvvH3vJ9",
+                    "name": "Condition Block",
+                    "title": "Webex Enable ?",
+                    "type": "logic.if_else",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Webex Enable ?",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "blocks": [
+                      {
+                        "unique_name": "definition_activity_01UBP9XRA4H8O10s6Ry9t51AiNmFXCkC4Vy",
+                        "name": "Condition Branch",
+                        "title": "Yes",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01U8IQ4JIX1P62tToRrrOl4d0ZEZeQ4Z06Z$",
+                            "operator": "eq",
+                            "right_operand": true
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "Yes",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01UBPGSC032MX2k1OshLDAKeFuE0rGj0KQ6",
+                            "name": "Webex Teams - Post Message to Room",
+                            "title": "Webex Teams - Post Message to Room",
+                            "type": "workflow.atomic_workflow",
+                            "base_type": "subworkflow",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Webex Teams - Post Message to Room",
+                              "input": {
+                                "variable_workflow_01PP78DJH1TI76BYfsu9g0Tqj2S6cUxjtu5": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBPGDLVPU334KOx9Z3GkU6CcQ230rvkRo$",
+                                "variable_workflow_01PP78DJH1XNQ7gNQ5iZdperRHqrppzARXC": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01QE5BHNVKGB95mn4umFigNfvBFEKYUH34x$",
+                                "variable_workflow_01PP78DJH1YWL3allalGQbg1VkgKwh9GvCi": "",
+                                "variable_workflow_01PP78DJH22BB3Ej3I8tJ4OCQur0unYGjj9": "",
+                                "variable_workflow_01SVERQNMKN8N6vqX2djMtAfshphGydGsH8": "[\n{\n\"contentType\": \"application/vnd.microsoft.card.adaptive\",\n\"content\": {\n\"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n\"version\": \"1.2\",\n\"type\": \"AdaptiveCard\",\n\"body\": [\n{\n\"type\": \"ColumnSet\",\n\"columns\": [\n{\n\"type\": \"Column\",\n\"items\": [\n{\n\"type\": \"Image\",\n\"style\": \"Default\",\n\"url\": \"https://securex.us.security.cisco.com/logo192.png\",\n\"size\": \"Medium\",\n\"height\": \"50px\"\n}\n],\n\"width\": \"auto\"\n},\n{\n\"type\": \"Column\",\n\"items\": [\n{\n\"type\": \"TextBlock\",\n\"text\": \"SecureX Orchestration\",\n\"weight\": \"Lighter\",\n\"color\": \"Accent\"\n},\n{\n\"type\": \"TextBlock\",\n\"weight\": \"Bolder\",\n\"text\": \"Hunting - User Found : $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$\",\n\"wrap\": true,\n\"color\": \"Light\",\n\"size\": \"Large\",\n\"spacing\": \"Small\"\n}\n],\n\"width\": \"stretch\"\n}\n]\n},\n{\n\"type\": \"TextBlock\",\n\"text\": \"User Account Monitoring - Number of Endpoint(s) : $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBUNN1J23HX0weYMCC3BkPWlw3DXwnpcx$\",\n\"wrap\": true\n},\n{\n\"type\": \"TextBlock\",\n\"text\": \"Currently logged in - Number of Endpoint(s) : $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBUNE3PE0Z21uqcwruYpNteWlVW00rMSb$\",\n\"wrap\": true\n},\n{\n\"type\": \"TextBlock\",\n\"text\": \"Cisco Secure Endpoint Telemetry - Number of Endpoint(s) :  $activity.definition_activity_01QETG4APIP6G6Q3BnZY6qr0SVz5zVZ7wC5.output.row_count$ \",\n\"wrap\": true\n},\n{\n\"type\": \"ActionSet\",\n\"actions\": [\n\n{\n\"type\": \"Action.OpenUrl\",\n\"title\": \"SecureX\",\n\"style\": \"default\",\n\"url\": \"https://security.cisco.com/\"\n}\n],\n\"spacing\": \"Medium\"\n}\n]\n}\n}\n]"
+                              },
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "override_workflow_target_group_criteria": true,
+                                "target_group": {
+                                  "run_on_all_targets": false,
+                                  "use_criteria": {
+                                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                    "conditions": [
+                                      {
+                                        "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                        "operator": "eqi",
+                                        "right_operand": "Webex Teams"
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              "workflow_id": "definition_workflow_01PP78DJMXS415nTjonujf03ROkr6t2PNyw"
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01UBRUTSL517Z4yY4J0NOA5PP5VErMcWgRS",
+                    "name": "Condition Block",
+                    "title": "Email Notification Enable ?",
+                    "type": "logic.if_else",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Email Notification Enable ?",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "blocks": [
+                      {
+                        "unique_name": "definition_activity_01UBRUTSL5QRI26I9W7gOprPnPjOGKrF1NB",
+                        "name": "Condition Branch",
+                        "title": "Condition Branch",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01U8IPX7JXBX72Ax2xvBVhkavECoG4iRGig$",
+                            "operator": "eq",
+                            "right_operand": true
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "Condition Branch",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01UBW9EPK573P6muAJ5adefvzoVcBBD9NoX",
+                            "name": "Replace String",
+                            "title": "Format Email Message",
+                            "type": "core.replacestring",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Format Email Message",
+                              "input_string": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBW925FWWK81r6cRPeZulr00takPkokoM$",
+                              "replace_list": [
+                                {
+                                  "replaced_string": "{content}",
+                                  "replacement_string": "This user exists on $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBUNN1J23HX0weYMCC3BkPWlw3DXwnpcx$ Endpoints (Orbital).\u003cBR\u003e\nThere is evidence of user activity on  $activity.definition_activity_01QETG4APIP6G6Q3BnZY6qr0SVz5zVZ7wC5.output.row_count$ endpoint (Cisco Secure EP telemetry)\u003cBR\u003e\nThis user is currently logged in $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBUNE3PE0Z21uqcwruYpNteWlVW00rMSb$ endpoint(s)\u003cBR\u003e\nA casebook has been created with hostname in securex"
+                                },
+                                {
+                                  "replaced_string": "{header}",
+                                  "replacement_string": "SecureX - Hunt User"
+                                },
+                                {
+                                  "replaced_string": "{subheader}",
+                                  "replacement_string": "User Found $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$"
+                                },
+                                {
+                                  "replaced_string": "{salutation}",
+                                  "replacement_string": "Hello"
+                                }
+                              ],
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_01QEWKCY00SM06fqfNYM53yldjTMnD6XWhB",
+                            "name": "Send Email",
+                            "title": "Send Email",
+                            "type": "email.smtp_send_email",
+                            "base_type": "activity",
+                            "properties": {
+                              "action_timeout": 180,
+                              "body": "$activity.definition_activity_01UBW9EPK573P6muAJ5adefvzoVcBBD9NoX.output.result_string$",
+                              "continue_if_one_address_valid": false,
+                              "continue_on_failure": false,
+                              "display_name": "Send Email",
+                              "from": "SecureX",
+                              "html": true,
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "subject": "Securex Hunt - User $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$ Found",
+                              "target": {
+                                "override_workflow_target_group_criteria": true,
+                                "target_group": {
+                                  "use_criteria": {
+                                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                    "conditions": [
+                                      {
+                                        "left_operand": "$targetgroup.email smtp_endpoint.input.display_name$",
+                                        "operator": "eqi",
+                                        "right_operand": "Email Endpoint"
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              "to": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBPIFVG0KVK5OLD825oyWMTj6phOKI7oC$"
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MAPDVANBI7L3eIsSJIQHmj2z9FLKWfET3",
+            "name": "Condition Branch",
+            "title": "No",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01QETUPCOY4J93KpNlaw2ZbJ2AyHpU3CswR.output.row_count$",
+                "operator": "eq",
+                "right_operand": 0
+              },
+              "continue_on_failure": false,
+              "display_name": "No",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01QEUCKWMPP355aLy2jzJPJk4y2jJbHQc5R",
+                "name": "Group",
+                "title": "Notify \"User Not Found\"",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Notify \"User Not Found\"",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01UBRV1EI3BRK7a0DHONM9EVqRn4VWFzW0l",
+                    "name": "Condition Block",
+                    "title": "Webex Enable ?",
+                    "type": "logic.if_else",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Webex Enable ?",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "blocks": [
+                      {
+                        "unique_name": "definition_activity_01UBRV1EI3WJW4oOpu5OXVSTxUe4cyVYjUV",
+                        "name": "Condition Branch",
+                        "title": "Yes",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01U8IQ4JIX1P62tToRrrOl4d0ZEZeQ4Z06Z$",
+                            "operator": "eq",
+                            "right_operand": true
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "Yes",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01UBRV1EI81L31CcdAvgDzwLWt2Mai823gq",
+                            "name": "Webex Teams - Post Message to Room",
+                            "title": "Webex Teams - Post Message to Room",
+                            "type": "workflow.atomic_workflow",
+                            "base_type": "subworkflow",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Webex Teams - Post Message to Room",
+                              "input": {
+                                "variable_workflow_01PP78DJH1TI76BYfsu9g0Tqj2S6cUxjtu5": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBPGDLVPU334KOx9Z3GkU6CcQ230rvkRo$",
+                                "variable_workflow_01PP78DJH1XNQ7gNQ5iZdperRHqrppzARXC": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01QE5BHNVKGB95mn4umFigNfvBFEKYUH34x$",
+                                "variable_workflow_01PP78DJH1YWL3allalGQbg1VkgKwh9GvCi": "",
+                                "variable_workflow_01PP78DJH22BB3Ej3I8tJ4OCQur0unYGjj9": "",
+                                "variable_workflow_01SVERQNMKN8N6vqX2djMtAfshphGydGsH8": "[\n{\n\"contentType\": \"application/vnd.microsoft.card.adaptive\",\n\"content\": {\n\"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n\"version\": \"1.2\",\n\"type\": \"AdaptiveCard\",\n\"body\": [\n{\n\"type\": \"ColumnSet\",\n\"columns\": [\n{\n\"type\": \"Column\",\n\"items\": [\n{\n\"type\": \"Image\",\n\"style\": \"Default\",\n\"url\": \"https://securex.us.security.cisco.com/logo192.png\",\n\"size\": \"Medium\",\n\"height\": \"50px\"\n}\n],\n\"width\": \"auto\"\n},\n{\n\"type\": \"Column\",\n\"items\": [\n{\n\"type\": \"TextBlock\",\n\"text\": \"SecureX Orchestration\",\n\"weight\": \"Lighter\",\n\"color\": \"Accent\"\n},\n{\n\"type\": \"TextBlock\",\n\"weight\": \"Bolder\",\n\"text\": \"Hunting - User Not Found : $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$\",\n\"wrap\": true,\n\"color\": \"Light\",\n\"size\": \"Large\",\n\"spacing\": \"Small\"\n}\n],\n\"width\": \"stretch\"\n}\n]\n},\n{\n\"type\": \"TextBlock\",\n\"text\": \"There is no evidence of activity for this user\",\n\"wrap\": true\n},\n{\n\"type\": \"ActionSet\",\n\"actions\": [\n\n{\n\"type\": \"Action.OpenUrl\",\n\"title\": \"SecureX\",\n\"style\": \"default\",\n\"url\": \"https://security.cisco.com/\"\n}\n],\n\"spacing\": \"Medium\"\n}\n]\n}\n}\n]"
+                              },
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "override_workflow_target_group_criteria": true,
+                                "target_group": {
+                                  "run_on_all_targets": false,
+                                  "use_criteria": {
+                                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                    "conditions": [
+                                      {
+                                        "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                        "operator": "eqi",
+                                        "right_operand": "Webex Teams"
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              "workflow_id": "definition_workflow_01PP78DJMXS415nTjonujf03ROkr6t2PNyw"
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01UBRUANJO8XP0zDlOid4BdRoR3C3SGM4pC",
+                "name": "Condition Block",
+                "title": "Email Notification Enable ?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Email Notification Enable ?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01UBRUAO07B9600GM9zM7sbtozR4YHsDW4A",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01U8IPX7JXBX72Ax2xvBVhkavECoG4iRGig$",
+                        "operator": "eq",
+                        "right_operand": true
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01UBWDNC8U60D6776XtXT8UWmbDxO5jYkYZ",
+                        "name": "Replace String",
+                        "title": "Format Email Message",
+                        "type": "core.replacestring",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Format Email Message",
+                          "input_string": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBW925FWWK81r6cRPeZulr00takPkokoM$",
+                          "replace_list": [
+                            {
+                              "replaced_string": "{content}",
+                              "replacement_string": "There is no evidence of activity for this user"
+                            },
+                            {
+                              "replaced_string": "{header}",
+                              "replacement_string": "SecureX - Hunt User"
+                            },
+                            {
+                              "replaced_string": "{subheader}",
+                              "replacement_string": "User Not Found $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$"
+                            },
+                            {
+                              "replaced_string": "{salutation}",
+                              "replacement_string": "Hello"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01UBRVO76JRE32yX3aDtTa3Dy5ITe5VAhDT",
+                        "name": "Send Email",
+                        "title": "Send Email",
+                        "type": "email.smtp_send_email",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "body": "$activity.definition_activity_01UBWDNC8U60D6776XtXT8UWmbDxO5jYkYZ.output.result_string$",
+                          "continue_if_one_address_valid": false,
+                          "continue_on_failure": false,
+                          "display_name": "Send Email",
+                          "from": "SecureX",
+                          "html": true,
+                          "runtime_user": {
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "subject": "Securex - Hunt - User $workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.input.variable_workflow_01MAOSIC0093T2QfijYihus6C7emk0kGzKO$ Not Found",
+                          "target": {
+                            "override_workflow_target_group_criteria": true,
+                            "target_group": {
+                              "use_criteria": {
+                                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                "conditions": [
+                                  {
+                                    "left_operand": "$targetgroup.email smtp_endpoint.input.display_name$",
+                                    "operator": "eqi",
+                                    "right_operand": "Email Endpoint"
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          "to": "$workflow.definition_workflow_01MAOR1X1MB3I49lPNPNTRrjPR5e3Ef3wsX.local.variable_workflow_01UBPIFVG0KVK5OLD825oyWMTj6phOKI7oC$"
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_01FM7CGPZZCMY0KcvgiGjVH5UaB4y4aDJ7m",
+      "category_01MMI5PI3UBO53NElffV0DcDEO9M2yotqbf"
+    ]
+  },
+  "categories": {
+    "category_01FM7CGPZZCMY0KcvgiGjVH5UaB4y4aDJ7m": {
+      "unique_name": "category_01FM7CGPZZCMY0KcvgiGjVH5UaB4y4aDJ7m",
+      "name": "response",
+      "title": "response",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01MMI5PI3UBO53NElffV0DcDEO9M2yotqbf": {
+      "unique_name": "category_01MMI5PI3UBO53NElffV0DcDEO9M2yotqbf",
+      "name": "Hunt",
+      "title": "Hunt",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "target_groups": {
+    "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH": {
+      "unique_name": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+      "name": "Default TargetGroup",
+      "title": "Default TargetGroup",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "web-service.endpoint",
+          "view_target_type": "web-service.endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "email.smtp_endpoint",
+          "view_target_type": "email.smtp_endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
+    }
+  },
+  "table_types": {
+    "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6": {
+      "unique_name": "tabletype_01JAKNOH5LZ3376mLdVYxZU7xgzjAYovas6",
+      "data_type": "datatype.tabletype",
+      "display_name": "Observable",
+      "description": "Observable Type and Value",
+      "columns": [
+        {
+          "is_required": true,
+          "name": "value",
+          "title": "value",
+          "type": "string"
+        },
+        {
+          "is_required": true,
+          "name": "type",
+          "title": "type",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01PP74XXLH4JK5RznBkKvbBUhiBqVm0A35C",
+    "definition_workflow_01PP75X6VPQNK4hKE1XQXIMeIcHrE1khIML",
+    "definition_workflow_01PP78DJMXS415nTjonujf03ROkr6t2PNyw",
+    "definition_workflow_01PP75S3LTBW4420OZU3rdHWKHFnE6aC7yH",
+    "definition_workflow_01PP790MKJNWV6XyJuLdUyNlM2UV3JJACez"
+  ]
+}
