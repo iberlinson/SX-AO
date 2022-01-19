@@ -31,7 +31,7 @@
 
     
 
-* **🔦 Hunt - Search User **
+* 🔦 **Hunt - Search User** 
   
   * Search for a given user via :
     * Orbital (Account (Monitoring and Logged_In)
