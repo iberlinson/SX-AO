@@ -25,7 +25,7 @@
 
   * This workflow can be trigger by a schedule to execute every X minutes
 
-    * [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Umbrella_Notification_Webex2.png)
+    * [Screenshot - Notification Webex](https://github.com/iberlinson/SX-AO/blob/main/Images/readme___Umbrella_notification_Webex.png)
 
   * **Use Case and Installations** : Detailed informations about the workflow can be found [HERE](https://github.com/iberlinson/SX-AO/blob/main/Umbrella_notification_readme.md)
 
