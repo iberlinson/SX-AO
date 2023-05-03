@@ -11,12 +11,13 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "reason_indicator",
+          "name": "disposition",
           "type": "datatype.string",
+          "description": "0, 1 or 2",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4",
+        "unique_name": "variable_workflow_01JV2A7W9IYGZ2HVzCA6IldHqxvcMDNwidQ",
         "object_type": "variable_workflow"
       },
       {
@@ -24,12 +25,13 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "disposition_number",
+          "name": "Expriation_Delay",
           "type": "datatype.string",
+          "description": "in day(s)",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01JWZONSNQ1MQ42KqsDEEbu7SJt5EuxxqHf",
+        "unique_name": "variable_workflow_01QFI5Z70FWVE6gV5uBysZNU3h1vropct2R",
         "object_type": "variable_workflow"
       },
       {
@@ -63,13 +65,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "disposition",
+          "name": "disposition_number",
           "type": "datatype.string",
-          "description": "0, 1 or 2",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01JV2A7W9IYGZ2HVzCA6IldHqxvcMDNwidQ",
+        "unique_name": "variable_workflow_01JWZONSNQ1MQ42KqsDEEbu7SJt5EuxxqHf",
         "object_type": "variable_workflow"
       },
       {
@@ -77,13 +78,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "Expriation_Delay",
+          "name": "reason_indicator",
           "type": "datatype.string",
-          "description": "in day(s)",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01QFI5Z70FWVE6gV5uBysZNU3h1vropct2R",
+        "unique_name": "variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4",
         "object_type": "variable_workflow"
       },
       {
@@ -97,6 +97,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01JRKRJS0SOK253bM4kvHLwgbmlqTP89IJN",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "id",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_021L1Y5IWYLE52UyN9h1QO1p8wv5pzKzoeL",
         "object_type": "variable_workflow"
       }
     ],
@@ -191,7 +204,8 @@
         "properties": {
           "action_timeout": "180",
           "allow_auto_redirect": true,
-          "body": "{\n  \"valid_time\": {\n    \"start_time\": \"$activity.definition_activity_01MQ7V31JIIKB7J76x2x6rebUoM3lCVWFJj.output.script_queries.current_date$\",\n    \"end_time\": \"$activity.definition_activity_01MQ7VJVTB8N524kWPIU7beY4X9H01eMZFZ.output.response_body$\"\n  },\n  \"observable\": {\n    \"value\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKRO6TUD7R7bVNdMpyZhQ7LrN4zLXWID$\",\n    \"type\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKRJS0SOK253bM4kvHLwgbmlqTP89IJN$\"\n  },\n  \"type\": \"judgement\",\n  \"source\": \"SecureX AO\",\n  \"disposition\": $workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JWZONSNQ1MQ42KqsDEEbu7SJt5EuxxqHf$,\n  \n  \"reason\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4$\",\n  \"disposition_name\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JV2A7W9IYGZ2HVzCA6IldHqxvcMDNwidQ$\",\n  \"priority\": 0,\n  \"severity\": \"High\",\n  \"tlp\": \"white\",\n  \"confidence\": \"High\"\n}",
+          "allow_headers_redirect": false,
+          "body": "{\n  \"valid_time\": {\n    \"start_time\": \"$activity.definition_activity_01MQ7V31JIIKB7J76x2x6rebUoM3lCVWFJj.output.script_queries.current_date$\",\n    \"end_time\": \"$activity.definition_activity_01MQ7VJVTB8N524kWPIU7beY4X9H01eMZFZ.output.response_body$\"\n  },\n  \"observable\": {\n    \"value\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKRO6TUD7R7bVNdMpyZhQ7LrN4zLXWID$\",\n    \"type\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKRJS0SOK253bM4kvHLwgbmlqTP89IJN$\"\n  },\n  \"type\": \"judgement\",\n  \"source\": \"SXO\",\n  \"disposition\": $workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JWZONSNQ1MQ42KqsDEEbu7SJt5EuxxqHf$,\n  \n  \"reason\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JRKR52YXHFR3QDifqGJSmsXN0xt3ipCB4$\",\n  \"disposition_name\": \"$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.input.variable_workflow_01JV2A7W9IYGZ2HVzCA6IldHqxvcMDNwidQ$\",\n  \"priority\": 0,\n  \"severity\": \"High\",\n  \"tlp\": \"white\",\n  \"confidence\": \"High\"\n}",
           "content_type": "application/json",
           "continue_on_error_status_code": false,
           "continue_on_failure": false,
@@ -212,6 +226,67 @@
           "target": {
             "use_workflow_target": true
           }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_021L1Y818HG256YPY9XVlc2PgrotCbKSM7B",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "JSONPath Query",
+          "input_json": "$activity.definition_activity_01JRJ2CZ3UEE20xylN1DrTMfYPeizSOWjSh.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.id",
+              "jsonpath_query_name": "id",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_021L2BAH88YF54T7E2FgaYSCIZlcqtCkA0J",
+        "name": "Replace String",
+        "title": "Replace String",
+        "type": "core.replacestring",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Replace String",
+          "input_string": "$activity.definition_activity_021L1Y818HG256YPY9XVlc2PgrotCbKSM7B.output.jsonpath_queries.id$",
+          "replace_list": [
+            {
+              "replaced_string": "https://private.intel.amp.cisco.com:443/ctia/judgement/",
+              "replacement_string": ""
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_021L26RWCEZM55zjfKtMLOvq4lIxQTIXNyU",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01JRJ1YM36RRL5LtoOJpNil5rHHFmw9PlOI.output.variable_workflow_021L1Y5IWYLE52UyN9h1QO1p8wv5pzKzoeL$",
+              "variable_value_new": "$activity.definition_activity_021L1Y818HG256YPY9XVlc2PgrotCbKSM7B.output.jsonpath_queries.id$"
+            }
+          ]
         },
         "object_type": "definition_activity"
       }
